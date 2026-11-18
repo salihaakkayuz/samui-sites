@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Pi Nan's Sabai Sabai, Maenam</title>
+<meta name="description" content="Pi Nan's open street kitchen in Maenam, Koh Samui. Mango sticky rice, tom yum, curries, big plates, menu in Thai and English.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;800&display=swap" rel="stylesheet">
+<style>
+/* hallmark: theme custom "two-ink riso" (by hand, deal: manual) · genre playful · job: visit · signature: mango sticky rice, set huge */
+/* critique: pink paper, one orange ink, rounded heavy face; the kitchen you can watch from the road */
+:root{
+  --color-paper:oklch(0.93 0.05 10);
+  --color-paper-2:oklch(0.97 0.025 10);
+  --color-ink:oklch(0.3 0.09 15);
+  --color-muted:oklch(0.45 0.08 15);
+  --color-accent:oklch(0.7 0.18 50);
+  --color-accent-ink:oklch(0.25 0.08 15);
+  --color-rule:oklch(0.3 0.09 15 / .2);
+  --color-focus:oklch(0.3 0.09 15);
+  --font-display:"Rubik",system-ui,sans-serif;
+  --font-body:"Rubik",system-ui,sans-serif;
+  --radius:28px;--radius-pill:999px;
+  --space-1:.5rem;--space-2:1rem;--space-3:1.5rem;--space-4:2.5rem;--space-5:4rem;--space-6:6rem;
+  --measure:1160px;
+  --dur:200ms;--ease:cubic-bezier(.3,1.4,.5,1);
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip;margin:0}
+body{background:var(--color-paper);color:var(--color-ink);font:400 1.0625rem/1.6 var(--font-body)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--color-focus);outline-offset:3px}
+.wrap{max-width:var(--measure);margin:0 auto;padding:0 var(--space-3)}
+h1,h2,h3{font-family:var(--font-display);font-weight:800;line-height:.98;letter-spacing:-.02em;margin:0;overflow-wrap:break-word;min-width:0}
+nav{display:flex;justify-content:space-between;align-items:center;padding:var(--space-3) 0;gap:var(--space-2)}
+.mark{font-weight:800;font-size:1.35rem;text-decoration:none}
+.btn{display:inline-flex;padding:.85rem 1.5rem;border-radius:var(--radius-pill);background:var(--color-accent);color:var(--color-accent-ink);text-decoration:none;font-weight:500;border:2px solid var(--color-ink);transition:transform var(--dur) var(--ease),opacity var(--dur) var(--ease)}
+.btn:hover{transform:translateY(-3px) rotate(-1deg)}
+.btn:active{transform:none;opacity:.85}
+.btn.ghost{background:var(--color-paper-2)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-4);align-items:center;padding:var(--space-2) 0 var(--space-5)}
+.hero h1{font-size:clamp(3rem,7.6vw,6.2rem)}
+.hero p{font-size:1.25rem;color:var(--color-muted);margin:var(--space-3) 0;max-width:28ch}
+.actions{display:flex;flex-wrap:wrap;gap:var(--space-2)}
+.hero img{border-radius:var(--radius);aspect-ratio:4/3;object-fit:cover;width:100%;border:2px solid var(--color-ink)}
+.menu{background:var(--color-paper-2);border-radius:var(--radius);padding:var(--space-5) var(--space-4);border:2px solid var(--color-ink)}
+.menu h2{font-size:clamp(2.6rem,5.5vw,4.2rem);margin-bottom:var(--space-4)}
+.rows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 var(--space-5)}
+.rows div{display:flex;justify-content:space-between;gap:var(--space-2);padding:.9rem 0;border-bottom:2px dotted var(--color-rule)}
+.rows span:last-child{color:var(--color-muted);text-align:right}
+.note{color:var(--color-muted);font-size:.95rem;margin-top:var(--space-3)}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-4);padding:var(--space-6) 0;align-items:center}
+.pair img{border-radius:var(--radius);aspect-ratio:16/10;object-fit:cover;width:100%;border:2px solid var(--color-ink)}
+.pair h2{font-size:clamp(2.4rem,5vw,3.8rem);margin-bottom:var(--space-2)}
+.pair p{color:var(--color-muted);max-width:40ch}
+.tags{display:flex;flex-wrap:wrap;gap:var(--space-1);margin-top:var(--space-3);padding:0;list-style:none}
+.tags li{padding:.4rem .9rem;border-radius:var(--radius-pill);border:2px solid var(--color-ink);font-size:.95rem}
+.visit{background:var(--color-accent);border-top:2px solid var(--color-ink);padding:var(--space-6) 0}
+.visit .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:var(--space-4)}
+.visit h2{font-size:clamp(2.6rem,6vw,4.6rem);margin-bottom:var(--space-3)}
+.visit .btn{background:var(--color-paper-2)}
+.slot{border:2px dashed var(--color-ink);border-radius:var(--radius);padding:var(--space-3)}
+footer{padding:var(--space-4) 0;font-size:.88rem;color:var(--color-muted)}
+footer p{margin:.3rem 0}
+.demo{font-size:.88rem;text-align:center;padding:.55rem var(--space-2);background:var(--color-ink);color:var(--color-paper-2)}
+@media (max-width:860px){.hero,.pair,.rows,.visit .wrap{grid-template-columns:minmax(0,1fr)}.menu{padding:var(--space-4) var(--space-3)}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="demo">Sample website made for Pi Nan's Sabai Sabai. Not live yet; nothing here is final.</div>
+<div class="wrap">
+  <nav>
+    <a class="mark" href="#top">Pi Nan's Sabai Sabai</a>
+    <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Pi+Nan%27s+Sabai+Sabai+Mae+Nam+Koh+Samui">Directions</a>
+  </nav>
+  <header class="hero" id="top">
+    <div>
+      <h1>Mango sticky rice and a happy table</h1>
+      <p>Pi Nan's open kitchen on the Maenam road. Thai food, big plates.</p>
+      <div class="actions">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Pi+Nan%27s+Sabai+Sabai+Mae+Nam+Koh+Samui">Come by</a>
+        <a class="btn ghost" href="#menu">See the menu</a>
+      </div>
+    </div>
+    <img src="img/mango.jpg" alt="Mango sticky rice with coconut cream" width="1400" height="1050">
+  </header>
+
+  <section class="menu" id="menu">
+    <h2>On the menu</h2>
+    <div class="rows">
+      <div><span>Tom yum</span><span>prawn or mushroom</span></div>
+      <div><span>Massaman curry</span><span>chicken or tofu</span></div>
+      <div><span>Spring rolls</span><span>fried fresh</span></div>
+      <div><span>Seafood stir-fry</span><span>with chilli and basil</span></div>
+      <div><span>Papaya salad</span><span>tell us how hot</span></div>
+      <div><span>Mango sticky rice</span><span>when mangoes are sweet</span></div>
+      <div><span>Thai iced tea</span><span>the orange one</span></div>
+      <div><span>Ice cream and cold beer</span><span>for hot evenings</span></div>
+    </div>
+    <p class="note">Sample menu. We will put your real dishes and prices here. The menu comes in Thai and English.</p>
+  </section>
+
+  <section class="pair">
+    <img src="img/tomyum.jpg" alt="A bowl of clear tom yum soup" width="1400" height="788" loading="lazy">
+    <div>
+      <h2>Watch it cooked</h2>
+      <p>The kitchen is right at the front, so you can see your food made. It is a small, family place with a few tables by the road.</p>
+      <ul class="tags">
+        <li>vegetarian dishes</li><li>seafood</li><li>good for kids</li><li>big portions</li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div>
+      <h2>Find Pi Nan</h2>
+      <p>34 Mae Nam, Koh Samui 84330</p>
+      <div class="actions">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Pi+Nan%27s+Sabai+Sabai+Mae+Nam+Koh+Samui">Open in Google Maps</a>
+        <a class="btn" href="tel:+66896495374">Call 089 649 5374</a>
+        <a class="btn" href="https://www.facebook.com/pi.nans.sabai.sabai">Facebook</a>
+      </div>
+    </div>
+    <div class="slot"><strong>Opening hours</strong><p>Your hours go here. Tell us and we will add them.</p></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Pi Nan's Sabai Sabai, Mae Nam, Koh Samui.</p>
+    <p>Stand-in photos from Wikimedia Commons, to be replaced with your own: <a href="https://commons.wikimedia.org/wiki/File:Mango_sticky_rice_served_in_Thailand.jpg">Arthur Taksin, CC BY 4.0</a>; <a href="https://commons.wikimedia.org/wiki/File:Tom_Yum_mixed_with_clear_soup.jpg">Boonlert, CC0</a></p>
+  </div>
+</footer>
+</body>
+</html>

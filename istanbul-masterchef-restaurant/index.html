@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>İstanbul MasterChef, Koh Samui</title>
+<meta name="description" content="Authentic Turkish cooking on Chaweng Beach Road, Koh Samui. Lentil soup, kebab, fresh bread, Turkish tea. All halal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* hallmark: theme custom "cobalt tile" (by hand, deal: manual) · genre editorial · job: book · signature: lentil soup and tea glass, the welcome */
+/* critique: white glaze, one cobalt ink, serif heads; tea on the house feeling, halal said plainly */
+:root{
+  --color-paper:oklch(0.985 0.004 250);
+  --color-paper-2:oklch(0.95 0.02 250);
+  --color-ink:oklch(0.24 0.06 260);
+  --color-muted:oklch(0.45 0.05 260);
+  --color-accent:oklch(0.45 0.17 262);
+  --color-accent-ink:oklch(0.985 0.004 250);
+  --color-rule:oklch(0.45 0.17 262 / .22);
+  --color-focus:oklch(0.45 0.17 262);
+  --font-display:"DM Serif Display",Georgia,serif;
+  --font-body:"Manrope",system-ui,sans-serif;
+  --radius:4px;--radius-pill:999px;
+  --space-1:.5rem;--space-2:1rem;--space-3:1.5rem;--space-4:2.5rem;--space-5:4rem;--space-6:6rem;
+  --measure:1160px;
+  --dur:180ms;--ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip;margin:0}
+body{background:var(--color-paper);color:var(--color-ink);font:400 1.0625rem/1.6 var(--font-body)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--color-focus);outline-offset:3px}
+.wrap{max-width:var(--measure);margin:0 auto;padding:0 var(--space-3)}
+h1,h2,h3{font-family:var(--font-display);font-weight:400;line-height:1.02;margin:0;overflow-wrap:break-word;min-width:0;color:var(--color-ink)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:var(--space-3) 0;gap:var(--space-2);border-bottom:1px solid var(--color-rule)}
+.mark{font-family:var(--font-display);font-size:1.6rem;text-decoration:none}
+.btn{display:inline-flex;padding:.8rem 1.4rem;border-radius:var(--radius-pill);background:var(--color-accent);color:var(--color-accent-ink);text-decoration:none;font-weight:600;border:1px solid var(--color-accent);transition:transform var(--dur) var(--ease),opacity var(--dur) var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:none;opacity:.85}
+.btn.ghost{background:transparent;color:var(--color-accent)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-5);align-items:center;padding:var(--space-5) 0}
+.hero h1{font-size:clamp(3rem,7vw,5.8rem)}
+.hero p{font-size:1.2rem;color:var(--color-muted);margin:var(--space-3) 0;max-width:30ch}
+.actions{display:flex;flex-wrap:wrap;gap:var(--space-2)}
+.hero img{aspect-ratio:4/3;object-fit:cover;width:100%;border-radius:var(--radius);box-shadow:0 0 0 1px var(--color-rule),14px 14px 0 var(--color-paper-2)}
+.menu{background:var(--color-paper-2);padding:var(--space-6) 0}
+.menu h2{font-size:clamp(2.6rem,5.5vw,4.4rem);margin-bottom:var(--space-4)}
+.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-4)}
+.cols h3{font-size:1.6rem;margin-bottom:var(--space-2);color:var(--color-accent)}
+.cols ul{list-style:none;margin:0;padding:0}
+.cols li{padding:.7rem 0;border-bottom:1px solid var(--color-rule)}
+.cols li small{display:block;color:var(--color-muted);font-size:.92rem}
+.note{color:var(--color-muted);font-size:.95rem;margin-top:var(--space-3)}
+.welcome{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--space-5);align-items:center;padding:var(--space-6) 0}
+.welcome img{aspect-ratio:3/4;object-fit:cover;width:100%;border-radius:var(--radius)}
+.welcome h2{font-size:clamp(2.4rem,5vw,4rem);margin-bottom:var(--space-3)}
+.welcome p{color:var(--color-muted);max-width:44ch}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-3);margin-top:var(--space-4)}
+.facts strong{display:block}
+.facts span{color:var(--color-muted);font-size:.98rem}
+.wide img{width:100%;aspect-ratio:21/9;object-fit:cover;border-radius:var(--radius)}
+.visit{padding:var(--space-6) 0}
+.visit .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:var(--space-5)}
+.visit h2{font-size:clamp(2.6rem,5.5vw,4.4rem);margin-bottom:var(--space-3)}
+.visit p{color:var(--color-muted)}
+.slot{border:1px dashed var(--color-accent);border-radius:var(--radius);padding:var(--space-3);color:var(--color-muted)}
+.slot strong{color:var(--color-ink)}
+footer{padding:var(--space-4) 0;font-size:.88rem;color:var(--color-muted);border-top:1px solid var(--color-rule)}
+footer p{margin:.3rem 0}
+.demo{font-size:.88rem;text-align:center;padding:.55rem var(--space-2);background:var(--color-accent);color:var(--color-accent-ink)}
+@media (max-width:860px){.hero,.welcome,.visit .wrap,.cols,.facts{grid-template-columns:minmax(0,1fr)}.hero{padding-top:var(--space-3)}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="demo">Sample website made for İstanbul MasterChef. Not live yet; nothing here is final.</div>
+<div class="wrap">
+  <nav>
+    <a class="mark" href="#top">İstanbul MasterChef</a>
+    <a class="btn" href="tel:+66826218460">Book a table</a>
+  </nav>
+  <header class="hero" id="top">
+    <div>
+      <h1>Turkish home cooking in Samui</h1>
+      <p>Lentil soup, kebab off the grill, warm bread and tea. All halal.</p>
+      <div class="actions">
+        <a class="btn" href="tel:+66826218460">Call to book</a>
+        <a class="btn ghost" href="#menu">See the menu</a>
+      </div>
+    </div>
+    <img src="img/mercimek.jpg" alt="A bowl of Turkish red lentil soup with lemon" width="1400" height="1050">
+  </header>
+</div>
+
+<section class="menu" id="menu">
+  <div class="wrap">
+    <h2>From our kitchen</h2>
+    <div class="cols">
+      <div><h3>Start</h3><ul><li>Mercimek çorbası<small>red lentil soup</small></li><li>Ezme and hummus<small>with fresh pide bread</small></li><li>Shepherd's salad<small>tomato, cucumber, onion</small></li></ul></div>
+      <div><h3>Grill</h3><ul><li>Adana kebab<small>spiced minced lamb</small></li><li>Chicken shish<small>marinated, charcoal grilled</small></li><li>Mixed grill<small>for two to share</small></li></ul></div>
+      <div><h3>Sweet, and tea</h3><ul><li>Baklava<small>pistachio</small></li><li>Künefe<small>served hot</small></li><li>Turkish tea and coffee<small>the proper way</small></li></ul></div>
+    </div>
+    <p class="note">Sample menu. We will put your real dishes and prices here. Breakfast and takeaway too.</p>
+  </div>
+</section>
+
+<div class="wrap">
+  <section class="welcome">
+    <img src="img/cay.jpg" alt="Turkish tea in a tulip glass" width="1050" height="1400" loading="lazy">
+    <div>
+      <h2>Come in, have a tea</h2>
+      <p>Food the way it tastes in Turkey, made fresh in a clean, modern room. Sit down and the tea comes first.</p>
+      <div class="facts">
+        <div><strong>All halal</strong><span>Every dish on the menu.</span></div>
+        <div><strong>Breakfast</strong><span>Turkish breakfast in the morning.</span></div>
+        <div><strong>Takeaway</strong><span>Call ahead and pick it up.</span></div>
+      </div>
+    </div>
+  </section>
+  <section class="wide" aria-label="Kebab"><img src="img/kebab.jpg" alt="Kebab plate with rice and salad" width="1400" height="933" loading="lazy"></section>
+</div>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div>
+      <h2>Find us</h2>
+      <p>72 Chaweng Beach Road, Bo Put, Koh Samui 84320. A little hidden: look for our sign at the back.</p>
+      <div class="actions">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Istanbul+MasterChef+Restaurant+Koh+Samui">Directions</a>
+        <a class="btn ghost" href="tel:+66826218460">082 621 8460</a>
+        <a class="btn ghost" href="https://www.instagram.com/istanbulmasterchefrestaurant/">Instagram</a>
+      </div>
+    </div>
+    <div class="slot"><strong>Opening hours</strong><p>Your hours go here. Tell us and we will add them. Booking is a good idea at peak hours.</p></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>İstanbul MasterChef Restaurant, Koh Samui.</p>
+    <p>Stand-in photos from Wikimedia Commons, to be replaced with your own: <a href="https://commons.wikimedia.org/wiki/File:Mercimek_%C3%A7orbasi.jpg">E4024, CC BY-SA 4.0</a>; <a href="https://commons.wikimedia.org/wiki/File:Turkish_tea2.jpg">henribergius, CC BY-SA 2.0</a>; <a href="https://commons.wikimedia.org/wiki/File:Sultan_Kebab,_Sultan_Turkish_Restaurant,_Bussorah_Street_(201928).jpg">Moheen Reeyad, CC BY-SA 4.0</a></p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Omsin Restaurant, Bophut</title>
+<meta name="description" content="Family-run Thai kitchen in Bophut, Koh Samui. Smoky pad thai, fried rice, soups and smoothies.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* hallmark: theme custom "signboard" (by hand, deal: manual) · genre playful · job: visit · signature: the smoky pad thai, big */
+/* critique: one loud face, two inks on yellow, photos carry appetite; no invented prices or reviews */
+:root{
+  --color-paper:oklch(0.91 0.14 95);
+  --color-paper-2:oklch(0.97 0.05 95);
+  --color-ink:oklch(0.27 0.06 155);
+  --color-ink-2:oklch(0.38 0.07 155);
+  --color-accent:oklch(0.56 0.21 28);
+  --color-accent-ink:oklch(0.98 0.02 95);
+  --color-rule:oklch(0.27 0.06 155 / .25);
+  --color-focus:oklch(0.56 0.21 28);
+  --font-display:"Big Shoulders Display",Impact,sans-serif;
+  --font-body:"Work Sans",system-ui,sans-serif;
+  --radius:14px;--radius-pill:999px;
+  --space-1:.5rem;--space-2:1rem;--space-3:1.5rem;--space-4:2.5rem;--space-5:4rem;--space-6:6rem;
+  --measure:1180px;
+  --dur:180ms;--ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip;margin:0}
+body{background:var(--color-paper);color:var(--color-ink);font:400 1.0625rem/1.55 var(--font-body)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--color-focus);outline-offset:3px}
+.wrap{max-width:var(--measure);margin:0 auto;padding:0 var(--space-3)}
+h1,h2,h3{font-family:var(--font-display);font-weight:800;line-height:.92;margin:0;overflow-wrap:break-word;min-width:0;letter-spacing:.005em;text-transform:uppercase}
+nav{display:flex;justify-content:space-between;align-items:center;padding:var(--space-2) 0;gap:var(--space-2)}
+.mark{font-family:var(--font-display);font-size:1.9rem;text-decoration:none;text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.4rem;border-radius:var(--radius-pill);background:var(--color-accent);color:var(--color-accent-ink);text-decoration:none;font-weight:600;border:2px solid var(--color-accent);transition:transform var(--dur) var(--ease),opacity var(--dur) var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0);opacity:.85}
+.btn.ghost{background:transparent;color:var(--color-ink);border-color:var(--color-ink)}
+.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:var(--space-4);align-items:center;padding:var(--space-3) 0 var(--space-5)}
+.hero h1{font-size:clamp(3.4rem,9vw,7.5rem)}
+.hero p{font-size:1.25rem;max-width:30ch;margin:var(--space-3) 0}
+.actions{display:flex;flex-wrap:wrap;gap:var(--space-2)}
+.hero figure{margin:0;border-radius:var(--radius);overflow:hidden;border:3px solid var(--color-ink);aspect-ratio:1/1}
+.hero figure img{width:100%;height:100%;object-fit:cover}
+.band{background:var(--color-ink);color:var(--color-paper);padding:var(--space-6) 0}
+.band h2{font-size:clamp(2.6rem,6vw,4.6rem)}
+.menu{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-5);margin-top:var(--space-4)}
+.menu h3{font-size:1.9rem;color:var(--color-paper);margin-bottom:var(--space-2)}
+.menu ul{list-style:none;margin:0;padding:0}
+.menu li{display:flex;justify-content:space-between;gap:var(--space-2);padding:.85rem 0;border-bottom:1px solid oklch(0.91 0.14 95 / .25)}
+.menu li span:last-child{opacity:.7;font-size:.95rem;text-align:right}
+.note{font-size:.95rem;opacity:.75;margin-top:var(--space-3)}
+.pics{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-3);padding:var(--space-6) 0}
+.pics figure{margin:0}
+.pics img{border-radius:var(--radius);aspect-ratio:4/3;object-fit:cover;width:100%;border:3px solid var(--color-ink)}
+.pics figcaption{font-size:.95rem;margin-top:.6rem}
+.good{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:var(--space-4);padding:0 0 var(--space-6);align-items:start}
+.good h2{font-size:clamp(2.4rem,5vw,3.8rem)}
+.good dl{margin:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-3) var(--space-4)}
+.good dt{font-weight:600;font-size:1.1rem}
+.good dd{margin:.2rem 0 0}
+.visit{background:var(--color-paper-2);padding:var(--space-6) 0;border-top:3px solid var(--color-ink)}
+.visit .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:var(--space-5)}
+.visit h2{font-size:clamp(2.6rem,6vw,4.6rem);margin-bottom:var(--space-3)}
+.slot{border:2px dashed var(--color-ink-2);border-radius:var(--radius);padding:var(--space-3);color:var(--color-ink-2)}
+footer{padding:var(--space-4) 0;font-size:.9rem}
+footer p{margin:.3rem 0}
+.demo{background:var(--color-ink);color:var(--color-paper);font-size:.9rem;padding:.6rem 0;text-align:center}
+@media (max-width:820px){.hero,.menu,.good,.visit .wrap,.good dl{grid-template-columns:minmax(0,1fr)}.pics{grid-template-columns:minmax(0,1fr)}.hero{padding-top:var(--space-1)}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="demo">Sample website made for Omsin Restaurant. Not live yet; nothing here is final.</div>
+<div class="wrap">
+  <nav>
+    <a class="mark" href="#top">Omsin</a>
+    <a class="btn ghost" href="tel:+66878911259">Call 087 891 1259</a>
+  </nav>
+  <header class="hero" id="top">
+    <div>
+      <h1>Smoky pad thai, cooked by family</h1>
+      <p>A small Thai kitchen on the Bophut road, cooking it the home way.</p>
+      <div class="actions">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Omsin+Restaurant+Bo+Put+Koh+Samui">Get directions</a>
+        <a class="btn ghost" href="#menu">See the menu</a>
+      </div>
+    </div>
+    <figure><img src="img/padthai.jpg" alt="Pad thai with prawns, fresh from the wok" width="1400" height="1400"></figure>
+  </header>
+</div>
+
+<section class="band" id="menu">
+  <div class="wrap">
+    <h2>What we cook</h2>
+    <div class="menu">
+      <div>
+        <h3>From the wok</h3>
+        <ul>
+          <li><span>Pad thai</span><span>the smoky one</span></li>
+          <li><span>Khao pad, Thai fried rice</span><span>chicken, prawn or tofu</span></li>
+          <li><span>Pad kra pao</span><span>holy basil, fried egg</span></li>
+          <li><span>Stir-fried morning glory</span><span>vegan</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Soups, salads, drinks</h3>
+        <ul>
+          <li><span>Tom yum</span><span>clear or creamy</span></li>
+          <li><span>Som tam, papaya salad</span><span>as hot as you like</span></li>
+          <li><span>Fresh fruit smoothies</span><span>mango, banana, passion fruit</span></li>
+          <li><span>Cold beer</span><span>Chang, Singha, Leo</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="note">Sample menu. We will put your real dishes and prices here.</p>
+  </div>
+</section>
+
+<div class="wrap">
+  <section class="pics" aria-label="Food">
+    <figure><img src="img/friedrice.jpg" alt="Thai fried rice with chicken" width="1400" height="1054" loading="lazy"><figcaption>Fried rice, big portions</figcaption></figure>
+    <figure><img src="img/somtam.jpg" alt="Green papaya salad" width="1400" height="1050" loading="lazy"><figcaption>Som tam, pounded to order</figcaption></figure>
+  </section>
+
+  <section class="good">
+    <h2>Good to know</h2>
+    <dl>
+      <div><dt>Vegan friendly</dt><dd>Most dishes can be made without meat, fish sauce or egg. Just ask.</dd></div>
+      <div><dt>Big plates</dt><dd>Portions are generous. One dish is a real meal.</dd></div>
+      <div><dt>Cash is easiest</dt><dd>Cards may not work, so bring some baht.</dd></div>
+      <div><dt>Come early</dt><dd>No booking needed, but it fills up at peak hours.</dd></div>
+    </dl>
+  </section>
+</div>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div>
+      <h2>Find us</h2>
+      <p>175/62 Moo 1, Bo Put, Koh Samui 84320</p>
+      <div class="actions">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Omsin+Restaurant+Bo+Put+Koh+Samui">Open in Google Maps</a>
+        <a class="btn ghost" href="https://www.facebook.com/profile.php?id=100083315981885">Facebook</a>
+      </div>
+    </div>
+    <div class="slot">
+      <strong>Opening hours</strong>
+      <p>Your hours go here. Tell us and we will add them.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Omsin Restaurant, Bo Put, Koh Samui. Phone <a href="tel:+66878911259">087 891 1259</a></p>
+    <p>Stand-in photos from Wikimedia Commons, to be replaced with your own: <a href="https://commons.wikimedia.org/wiki/File:Phat_Thai_kung_Chang_Khien_street_stall.jpg">Takeaway, CC BY-SA 3.0</a>; <a href="https://commons.wikimedia.org/wiki/File:Khao_Pad_(Rosa%27s_Fried_Rice)_with_Chicken_-_Rosa%27s_Thai_2025-07-22.jpg">Andy Li, CC0</a>; <a href="https://commons.wikimedia.org/wiki/File:Som_Tam_green_papaya_salad,_Bangkok,_Thailand.jpg">Vyacheslav Argenberg, CC BY 4.0</a></p>
+  </div>
+</footer>
+</body>
+</html>

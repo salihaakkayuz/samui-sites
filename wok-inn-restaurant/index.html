@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Wok Inn, Bophut</title>
+<meta name="description" content="A small family Thai restaurant in Bophut, Koh Samui. Green curry, fresh fish, spring rolls, and a resident cat.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* hallmark: theme custom "lamplight" (by hand, deal: manual) · genre atmospheric · job: book · signature: green curry under warm light, the wait made honest */
+/* critique: dark evening room, one lime signal; booking by phone up front because dinner has a queue */
+:root{
+  --color-paper:oklch(0.22 0.03 200);
+  --color-paper-2:oklch(0.27 0.035 200);
+  --color-ink:oklch(0.95 0.02 90);
+  --color-muted:oklch(0.78 0.03 90);
+  --color-accent:oklch(0.86 0.17 125);
+  --color-accent-ink:oklch(0.2 0.03 200);
+  --color-rule:oklch(0.95 0.02 90 / .16);
+  --color-focus:oklch(0.86 0.17 125);
+  --font-display:"Instrument Serif",Georgia,serif;
+  --font-body:"Figtree",system-ui,sans-serif;
+  --radius:6px;--radius-pill:999px;
+  --space-1:.5rem;--space-2:1rem;--space-3:1.5rem;--space-4:2.5rem;--space-5:4rem;--space-6:6.5rem;
+  --measure:1160px;
+  --dur:200ms;--ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip;margin:0}
+body{background:var(--color-paper);color:var(--color-ink);font:400 1.0625rem/1.6 var(--font-body)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--color-focus);outline-offset:3px}
+.wrap{max-width:var(--measure);margin:0 auto;padding:0 var(--space-3)}
+h1,h2,h3{font-family:var(--font-display);font-weight:400;line-height:1;margin:0;overflow-wrap:break-word;min-width:0}
+nav{display:flex;justify-content:space-between;align-items:center;padding:var(--space-3) 0;gap:var(--space-2)}
+.mark{font-family:var(--font-display);font-size:1.8rem;text-decoration:none}
+.btn{display:inline-flex;padding:.8rem 1.4rem;border-radius:var(--radius-pill);background:var(--color-accent);color:var(--color-accent-ink);text-decoration:none;font-weight:600;border:1px solid var(--color-accent);transition:transform var(--dur) var(--ease),opacity var(--dur) var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:none;opacity:.85}
+.btn.ghost{background:transparent;color:var(--color-ink);border-color:var(--color-rule)}
+.hero{position:relative;min-height:min(86vh,760px);display:grid;align-items:end;border-radius:var(--radius);overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 40%;filter:saturate(1.05) brightness(.8)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,oklch(0.22 0.03 200 / .85) 0%,oklch(0.22 0.03 200 / .35) 55%,oklch(0.22 0.03 200 / 0) 80%)}
+.hero .txt{z-index:1}
+.hero .txt{position:relative;padding:var(--space-5) var(--space-4);max-width:640px}
+.hero h1{font-size:clamp(3.2rem,8vw,6.6rem)}
+.hero p{font-size:1.25rem;margin:var(--space-2) 0 var(--space-3);color:var(--color-ink)}
+.actions{display:flex;flex-wrap:wrap;gap:var(--space-2)}
+section{padding:var(--space-6) 0}
+.lede{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-5);align-items:center}
+.lede h2{font-size:clamp(2.6rem,5.5vw,4.4rem)}
+.lede p{color:var(--color-muted);font-size:1.15rem;max-width:42ch}
+.lede img{border-radius:var(--radius);aspect-ratio:4/3;object-fit:cover;width:100%}
+.menu{border-top:1px solid var(--color-rule)}
+.menu h2{font-size:clamp(2.6rem,5.5vw,4.4rem);margin-bottom:var(--space-4)}
+.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-4)}
+.cols h3{font-size:1.7rem;margin-bottom:var(--space-2);color:var(--color-accent)}
+.cols ul{list-style:none;margin:0;padding:0}
+.cols li{padding:.7rem 0;border-bottom:1px solid var(--color-rule)}
+.cols li small{display:block;color:var(--color-muted);font-size:.92rem}
+.note{color:var(--color-muted);font-size:.95rem;margin-top:var(--space-3)}
+.wait{background:var(--color-paper-2);border-radius:var(--radius);padding:var(--space-5) var(--space-4);display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:var(--space-4);align-items:center}
+.wait h2{font-size:clamp(2.4rem,5vw,3.8rem)}
+.wait p{color:var(--color-muted);margin:var(--space-2) 0 0}
+.visit{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-5);border-top:1px solid var(--color-rule)}
+.visit h2{font-size:clamp(2.6rem,5.5vw,4.4rem);margin-bottom:var(--space-3)}
+.visit p{color:var(--color-muted)}
+.slot{border:1px dashed var(--color-muted);border-radius:var(--radius);padding:var(--space-3);color:var(--color-muted)}
+.slot strong{color:var(--color-ink)}
+footer{padding:var(--space-4) 0;font-size:.88rem;color:var(--color-muted);border-top:1px solid var(--color-rule)}
+footer p{margin:.3rem 0}
+.demo{font-size:.88rem;color:var(--color-muted);text-align:center;padding:.6rem var(--space-2);border-bottom:1px solid var(--color-rule)}
+@media (max-width:860px){.lede,.cols,.wait,.visit{grid-template-columns:minmax(0,1fr)}.hero .txt{padding:var(--space-4) var(--space-3)}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="demo">Sample website made for Wok Inn. Not live yet; nothing here is final.</div>
+<div class="wrap">
+  <nav>
+    <a class="mark" href="#top">Wok Inn</a>
+    <a class="btn" href="tel:+66628923693">Book a table</a>
+  </nav>
+  <header class="hero" id="top">
+    <img src="img/curry.jpg" alt="Thai green curry with roti on a wooden table" width="1400" height="937">
+    <div class="txt">
+      <h1>Dinner at a Thai family table</h1>
+      <p>Fresh fish, green curry and a cat who greets you.</p>
+      <div class="actions">
+        <a class="btn" href="tel:+66628923693">Call to book</a>
+        <a class="btn ghost" href="#menu">See the menu</a>
+      </div>
+    </div>
+  </header>
+</div>
+
+<section class="wrap lede">
+  <div>
+    <h2>Small room, cool air, home cooking</h2>
+    <p>Wok Inn is a few tables in Bophut, run by one family. The room is air-conditioned and quiet. Everything is cooked to order, so food comes when it is ready.</p>
+  </div>
+  <img src="img/rolls.jpg" alt="Crispy Thai spring rolls with sweet chilli sauce" width="1400" height="1000" loading="lazy">
+</section>
+
+<section class="wrap menu" id="menu">
+  <h2>The menu</h2>
+  <div class="cols">
+    <div>
+      <h3>To start</h3>
+      <ul>
+        <li>Spring rolls<small>crispy, sweet chilli dip</small></li>
+        <li>Papaya salad<small>mild to Thai hot</small></li>
+        <li>Chicken satay<small>peanut sauce</small></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Curries</h3>
+      <ul>
+        <li>Green curry<small>chicken, prawn or tofu</small></li>
+        <li>Massaman curry<small>slow and mild</small></li>
+        <li>Panang curry<small>rich, with kaffir lime</small></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Fish and wok</h3>
+      <ul>
+        <li>Whole fish<small>with lime, garlic and chilli</small></li>
+        <li>Pad thai<small>prawns or vegetables</small></li>
+        <li>Cashew stir-fry<small>vegetarian on request</small></li>
+      </ul>
+    </div>
+  </div>
+  <p class="note">Sample menu. We will put your real dishes and prices here. Vegetarian and vegan versions on request.</p>
+</section>
+
+<div class="wrap">
+  <div class="wait">
+    <div>
+      <h2>Busy at dinner, worth it</h2>
+      <p>At peak hours food can take 30 to 45 minutes. Call ahead for a table, and order a starter while you wait.</p>
+    </div>
+    <div class="actions"><a class="btn" href="tel:+66628923693">062 892 3693</a></div>
+  </div>
+</div>
+
+<section class="wrap visit" id="visit">
+  <div>
+    <h2>Find us</h2>
+    <p>119/27 Bo Put, Koh Samui 84320</p>
+    <div class="actions">
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=WOK+INN+Restaurant+Bo+Put+Koh+Samui">Directions</a>
+      <a class="btn ghost" href="https://www.instagram.com/wokinnrestaurant_kohsamui/">Instagram</a>
+    </div>
+  </div>
+  <div class="slot"><strong>Opening hours</strong><p>Your hours go here. Tell us and we will add them.</p></div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Wok Inn, Bo Put, Koh Samui. Cash and cards accepted.</p>
+    <p>Stand-in photos from Wikimedia Commons, to be replaced with your own: <a href="https://commons.wikimedia.org/wiki/File:Thai_green_chicken_curry_and_roti.jpg">Takeaway, CC BY-SA 3.0</a>; <a href="https://commons.wikimedia.org/wiki/File:Thai_spring_rolls.jpg">Ruth Hartnup, CC BY 2.0</a></p>
+  </div>
+</footer>
+</body>
+</html>
