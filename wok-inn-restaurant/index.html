@@ -4,77 +4,105 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Wok Inn, Bophut</title>
-<meta name="description" content="A small family Thai restaurant in Bophut, Koh Samui. Green curry, fresh fish, spring rolls, and a resident cat.">
+<title>Wok Inn, Chaweng</title>
+<meta name="description" content="Small family Thai restaurant in north Chaweng, Koh Samui. Lek cooks, Boat looks after you. Air-conditioned, closed Saturdays.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;800&display=swap" rel="stylesheet">
 <style>
-/* hallmark: theme custom "lamplight" (by hand, deal: manual) · genre atmospheric · job: book · signature: green curry under warm light, the wait made honest */
-/* critique: dark evening room, one lime signal; booking by phone up front because dinner has a queue */
+/* hallmark: theme custom "wok sign" (from Wok Inn's own logo: green disc, black wok, orange flame) · genre playful · job: book · signature: Lek's wok, drawn with its flame */
+/* critique: charcoal room, logo green as the action colour, flame orange once per drawing; prices only where the April 2026 menu is clearly legible */
 :root{
-  --color-paper:oklch(0.22 0.03 200);
-  --color-paper-2:oklch(0.27 0.035 200);
-  --color-ink:oklch(0.95 0.02 90);
-  --color-muted:oklch(0.78 0.03 90);
-  --color-accent:oklch(0.86 0.17 125);
-  --color-accent-ink:oklch(0.2 0.03 200);
-  --color-rule:oklch(0.95 0.02 90 / .16);
-  --color-focus:oklch(0.86 0.17 125);
-  --font-display:"Instrument Serif",Georgia,serif;
-  --font-body:"Figtree",system-ui,sans-serif;
-  --radius:6px;--radius-pill:999px;
-  --space-1:.5rem;--space-2:1rem;--space-3:1.5rem;--space-4:2.5rem;--space-5:4rem;--space-6:6.5rem;
+  --color-paper:oklch(0.22 0.012 150);
+  --color-paper-2:oklch(0.27 0.014 150);
+  --color-paper-3:oklch(0.96 0.02 130);
+  --color-ink:oklch(0.97 0.01 120);
+  --color-ink-dark:oklch(0.22 0.012 150);
+  --color-muted:oklch(0.8 0.02 140);
+  --color-muted-dark:oklch(0.42 0.02 150);
+  --color-accent:oklch(0.76 0.2 142);
+  --color-accent-ink:oklch(0.2 0.02 150);
+  --color-flame:oklch(0.72 0.19 50);
+  --color-yolk:oklch(0.86 0.14 85);
+  --color-prawn:oklch(0.78 0.12 40);
+  --color-curry:oklch(0.62 0.18 32);
+  --color-rule:oklch(0.97 0.01 120 / .16);
+  --color-rule-dark:oklch(0.22 0.012 150 / .16);
+  --color-focus:oklch(0.76 0.2 142);
+  --font-display:"Archivo",system-ui,sans-serif;
+  --font-body:"Archivo",system-ui,sans-serif;
+  --radius:14px;--radius-pill:999px;
+  --space-1:.5rem;--space-2:1rem;--space-3:1.5rem;--space-4:2.5rem;--space-5:4rem;--space-6:6rem;
   --measure:1160px;
-  --dur:200ms;--ease:cubic-bezier(.2,.7,.2,1);
+  --dur:180ms;--ease:cubic-bezier(.2,.7,.2,1);
 }
 *{box-sizing:border-box}
 html,body{overflow-x:clip;margin:0}
-body{background:var(--color-paper);color:var(--color-ink);font:400 1.0625rem/1.6 var(--font-body)}
-img{display:block;max-width:100%;height:auto}
+body{background:var(--color-paper);color:var(--color-ink);font:400 1.0625rem/1.6 var(--font-body);padding-bottom:4.5rem}
+img,svg{display:block;max-width:100%;height:auto}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--color-focus);outline-offset:3px}
 .wrap{max-width:var(--measure);margin:0 auto;padding:0 var(--space-3)}
-h1,h2,h3{font-family:var(--font-display);font-weight:400;line-height:1;margin:0;overflow-wrap:break-word;min-width:0}
-nav{display:flex;justify-content:space-between;align-items:center;padding:var(--space-3) 0;gap:var(--space-2)}
-.mark{font-family:var(--font-display);font-size:1.8rem;text-decoration:none}
-.btn{display:inline-flex;padding:.8rem 1.4rem;border-radius:var(--radius-pill);background:var(--color-accent);color:var(--color-accent-ink);text-decoration:none;font-weight:600;border:1px solid var(--color-accent);transition:transform var(--dur) var(--ease),opacity var(--dur) var(--ease)}
+h1,h2,h3{font-family:var(--font-display);margin:0;overflow-wrap:break-word;min-width:0;line-height:1;letter-spacing:-.02em}
+h1,h2{font-weight:800}
+h3{font-weight:500;font-size:1.25rem;letter-spacing:0}
+.demo{font-size:.88rem;text-align:center;padding:.55rem var(--space-2);background:var(--color-paper-2);color:var(--color-muted)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:var(--space-2) 0;gap:var(--space-2)}
+.logo{display:flex;align-items:center;gap:.7rem;text-decoration:none;font-weight:800;font-size:1.2rem}
+.logo svg{width:2.8rem;height:2.8rem}
+.btn{display:inline-flex;align-items:center;padding:.75rem 1.35rem;border-radius:var(--radius-pill);background:var(--color-accent);color:var(--color-accent-ink);text-decoration:none;font-weight:500;border:2px solid var(--color-accent);transition:transform var(--dur) var(--ease),opacity var(--dur) var(--ease)}
 .btn:hover{transform:translateY(-2px)}
 .btn:active{transform:none;opacity:.85}
 .btn.ghost{background:transparent;color:var(--color-ink);border-color:var(--color-rule)}
-.hero{position:relative;min-height:min(86vh,760px);display:grid;align-items:end;border-radius:var(--radius);overflow:hidden}
-.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 40%;filter:saturate(1.05) brightness(.8)}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,oklch(0.22 0.03 200 / .85) 0%,oklch(0.22 0.03 200 / .35) 55%,oklch(0.22 0.03 200 / 0) 80%)}
-.hero .txt{z-index:1}
-.hero .txt{position:relative;padding:var(--space-5) var(--space-4);max-width:640px}
-.hero h1{font-size:clamp(3.2rem,8vw,6.6rem)}
-.hero p{font-size:1.25rem;margin:var(--space-2) 0 var(--space-3);color:var(--color-ink)}
+.hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:var(--space-4);align-items:center;padding:var(--space-2) 0 var(--space-5)}
+.hero h1{font-size:clamp(3rem,6.8vw,5.6rem)}
+.hero .lede{font-size:1.2rem;color:var(--color-muted);margin:var(--space-3) 0;max-width:34ch}
+.facts{list-style:none;margin:0 0 var(--space-3);padding:0;display:grid;gap:.3rem}
+.facts strong{font-weight:500}
 .actions{display:flex;flex-wrap:wrap;gap:var(--space-2)}
-section{padding:var(--space-6) 0}
-.lede{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-5);align-items:center}
-.lede h2{font-size:clamp(2.6rem,5.5vw,4.4rem)}
-.lede p{color:var(--color-muted);font-size:1.15rem;max-width:42ch}
-.lede img{border-radius:var(--radius);aspect-ratio:4/3;object-fit:cover;width:100%}
-.menu{border-top:1px solid var(--color-rule)}
-.menu h2{font-size:clamp(2.6rem,5.5vw,4.4rem);margin-bottom:var(--space-4)}
-.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-4)}
-.cols h3{font-size:1.7rem;margin-bottom:var(--space-2);color:var(--color-accent)}
-.cols ul{list-style:none;margin:0;padding:0}
-.cols li{padding:.7rem 0;border-bottom:1px solid var(--color-rule)}
-.cols li small{display:block;color:var(--color-muted);font-size:.92rem}
-.note{color:var(--color-muted);font-size:.95rem;margin-top:var(--space-3)}
-.wait{background:var(--color-paper-2);border-radius:var(--radius);padding:var(--space-5) var(--space-4);display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:var(--space-4);align-items:center}
-.wait h2{font-size:clamp(2.4rem,5vw,3.8rem)}
-.wait p{color:var(--color-muted);margin:var(--space-2) 0 0}
-.visit{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-5);border-top:1px solid var(--color-rule)}
+.rating{margin-top:var(--space-3);font-size:.98rem;color:var(--color-muted)}
+.draw .ink{fill:none;stroke:var(--color-ink-dark);stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.draw .thin{fill:none;stroke:var(--color-ink-dark);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.draw .disc{fill:var(--color-accent)}
+.draw .black{fill:var(--color-ink-dark)}
+.draw .flame{fill:var(--color-flame)}
+.draw .yolk{fill:var(--color-yolk)}
+.draw .prawn{fill:var(--color-prawn)}
+.draw .curry{fill:var(--color-curry)}
+.draw .leaf{fill:oklch(0.6 0.14 145)}
+.draw .white{fill:var(--color-paper-3)}
+.draw .gold{fill:oklch(0.74 0.12 70)}
+.menu{background:var(--color-paper-3);color:var(--color-ink-dark);padding:var(--space-6) 0}
+.menu .head{display:flex;justify-content:space-between;align-items:end;gap:var(--space-3);flex-wrap:wrap;margin-bottom:var(--space-4)}
+.menu h2{font-size:clamp(2.6rem,5.5vw,4.4rem)}
+.menu .src{color:var(--color-muted-dark);font-size:.95rem;max-width:40ch;margin:0}
+.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-4) var(--space-5)}
+.cols h3{margin-bottom:var(--space-1)}
+.cols ul{list-style:none;margin:0 0 var(--space-3);padding:0}
+.cols li{display:flex;justify-content:space-between;gap:var(--space-2);padding:.5rem 0;border-bottom:1px solid var(--color-rule-dark)}
+.cols li span:last-child{white-space:nowrap;font-variant-numeric:tabular-nums}
+.cols li small{display:block;color:var(--color-muted-dark);font-size:.88rem}
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-3);padding:var(--space-6) 0 var(--space-5)}
+.trio figure{margin:0;background:var(--color-paper-3);border-radius:var(--radius);padding:var(--space-3) var(--space-2) var(--space-2)}
+.trio figcaption{color:var(--color-ink-dark);text-align:center;font-weight:500;margin-top:.4rem}
+.trio figcaption small{display:block;font-weight:400;color:var(--color-muted-dark)}
+.good{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-3) var(--space-4);padding:var(--space-4) 0 var(--space-6);border-top:1px solid var(--color-rule)}
+.good strong{display:block;font-weight:500}
+.good span{color:var(--color-muted);font-size:.98rem}
+.visit{background:var(--color-paper-2);padding:var(--space-6) 0}
+.visit .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:var(--space-5)}
 .visit h2{font-size:clamp(2.6rem,5.5vw,4.4rem);margin-bottom:var(--space-3)}
 .visit p{color:var(--color-muted)}
-.slot{border:1px dashed var(--color-muted);border-radius:var(--radius);padding:var(--space-3);color:var(--color-muted)}
-.slot strong{color:var(--color-ink)}
-footer{padding:var(--space-4) 0;font-size:.88rem;color:var(--color-muted);border-top:1px solid var(--color-rule)}
+.hours{width:100%;border-collapse:collapse}
+.hours td{padding:.55rem 0;border-bottom:1px solid var(--color-rule)}
+.hours td:last-child{text-align:right}
+footer{padding:var(--space-4) 0;font-size:.88rem;color:var(--color-muted)}
 footer p{margin:.3rem 0}
-.demo{font-size:.88rem;color:var(--color-muted);text-align:center;padding:.6rem var(--space-2);border-bottom:1px solid var(--color-rule)}
-@media (max-width:860px){.lede,.cols,.wait,.visit{grid-template-columns:minmax(0,1fr)}.hero .txt{padding:var(--space-4) var(--space-3)}}
+.bar{position:fixed;left:0;right:0;bottom:0;display:none;gap:1px;background:var(--color-rule);z-index:5}
+.bar a{flex:1;text-align:center;padding:.95rem .5rem;background:var(--color-paper-2);color:var(--color-ink);text-decoration:none;font-weight:500}
+.bar a:first-child{background:var(--color-accent);color:var(--color-accent-ink)}
+@media (max-width:860px){.hero,.visit .wrap{grid-template-columns:minmax(0,1fr)}.cols,.good,.trio{grid-template-columns:minmax(0,1fr)}.bar{display:flex}}
+@media (min-width:861px){body{padding-bottom:0}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -82,88 +110,177 @@ footer p{margin:.3rem 0}
 <div class="demo">Sample website made for Wok Inn. Not live yet; nothing here is final.</div>
 <div class="wrap">
   <nav>
-    <a class="mark" href="#top">Wok Inn</a>
+    <a class="logo" href="#top">
+      <svg class="draw" viewBox="0 0 60 60" aria-hidden="true"><circle class="disc" cx="30" cy="30" r="29"/><path class="flame" d="M24 26c-2-6 2-10 5-14 0 5 4 6 4 10 2-2 2-5 1-7 4 3 6 8 3 12z"/><path class="black" d="M12 30h36c0 8-8 14-18 14S12 38 12 30z"/><path class="ink" d="M48 32l8-4"/></svg>
+      @Wok Inn
+    </a>
     <a class="btn" href="tel:+66628923693">Book a table</a>
   </nav>
   <header class="hero" id="top">
-    <img src="img/curry.jpg" alt="Thai green curry with roti on a wooden table" width="1400" height="937">
-    <div class="txt">
-      <h1>Dinner at a Thai family table</h1>
-      <p>Fresh fish, green curry and a cat who greets you.</p>
+    <div>
+      <h1>Lek cooks, Boat looks after you</h1>
+      <p class="lede">A small family Thai restaurant in north Chaweng, cooked fresh to order.</p>
+      <ul class="facts">
+        <li><strong>Sunday to Friday</strong>, 14:00 to 22:00</li>
+        <li><strong>Closed on Saturdays</strong></li>
+        <li>On the main road between The Briza and 7-Eleven</li>
+      </ul>
       <div class="actions">
         <a class="btn" href="tel:+66628923693">Call to book</a>
         <a class="btn ghost" href="#menu">See the menu</a>
       </div>
+      <p class="rating"><a href="https://www.google.com/maps/search/?api=1&query=WOK+INN+Restaurants+Bo+Put+Koh+Samui">4.9 on Google from 468 reviews</a>, November 2026</p>
     </div>
+    <svg class="draw" viewBox="0 0 420 340" role="img" aria-label="Drawing of a wok over a flame, tossing stir-fried chicken with basil and chilli">
+      <circle class="disc" cx="210" cy="170" r="160"/>
+      <path class="flame" d="M150 312c-8-24 10-36 16-56 6 14 16 18 14 36 8-8 10-18 8-28 14 12 20 30 10 48z"/>
+      <path class="flame" d="M196 318c-10-28 12-44 18-66 8 16 20 22 16 42 10-8 12-20 10-32 16 14 22 36 10 56z"/>
+      <path class="flame" d="M252 312c-6-20 8-32 12-48 6 12 14 16 12 30 8-6 8-16 8-24 12 12 14 28 4 42z"/>
+      <path class="black" d="M78 196Q210 330 342 196Z"/>
+      <path class="ink" d="M342 194l62-30M78 196l-30-10"/>
+      <ellipse class="black" cx="210" cy="196" rx="134" ry="30"/>
+      <ellipse fill="oklch(0.35 0.01 150)" cx="210" cy="198" rx="120" ry="22"/>
+      <path class="gold" d="M108 200c14-18 44-26 70-20 22-10 50-10 74-2 22-6 44 2 58 18-30 16-70 20-102 20s-74-2-100-16z"/>
+      <path class="thin" d="M130 196c10-6 22-6 30 0M190 188c12-6 26-4 34 2M248 192c10-4 20-2 28 4"/>
+      <path class="leaf" d="M160 186c8-12 24-16 34-10-8 12-22 14-34 10zM242 182c12-8 26-8 34 0-10 8-24 8-34 0z"/>
+      <path class="flame" d="M212 184c6-4 14-2 16 4-6 4-14 2-16-4z"/>
+      <path class="gold" d="M184 120c4-10 18-12 24-4 4 8-2 16-12 16s-14-6-12-12z"/>
+      <path class="thin" d="M184 120c4-10 18-12 24-4 4 8-2 16-12 16s-14-6-12-12z"/>
+      <path class="gold" d="M236 96c6-8 18-6 22 2 2 8-6 14-14 12s-12-8-8-14z"/>
+      <path class="thin" d="M236 96c6-8 18-6 22 2 2 8-6 14-14 12s-12-8-8-14z"/>
+      <path class="leaf" d="M146 104c6-14 20-20 32-16-6 14-20 20-32 16zM270 132c10-10 24-12 34-4-10 10-24 12-34 4z"/>
+      <path class="flame" d="M216 64c6-5 14-3 16 3-6 5-14 3-16-3zM166 146c6-4 12-2 14 4-6 4-12 2-14-4z"/>
+      <path class="thin" d="M122 160c4-6 8-10 14-12M296 160c-2-8-6-12-12-16M200 150c0-8 2-14 6-20"/>
+    </svg>
   </header>
 </div>
 
-<section class="wrap lede">
-  <div>
-    <h2>Small room, cool air, home cooking</h2>
-    <p>Wok Inn is a few tables in Bophut, run by one family. The room is air-conditioned and quiet. Everything is cooked to order, so food comes when it is ready.</p>
+<section class="menu" id="menu">
+  <div class="wrap">
+    <div class="head">
+      <h2>From Lek's kitchen</h2>
+      <p class="src">Prices in baht from the Wok Inn menu, April 2026. Where there are two prices, the second is for beef or seafood. Ask about pizza and starters too.</p>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>Curries and soups</h3>
+        <ul>
+          <li><span>Green curry</span><span>169 / 189</span></li>
+          <li><span>Red curry</span><span>169 / 189</span></li>
+          <li><span>Panang curry</span><span>169 / 189</span></li>
+          <li><span>Massaman curry<small>with peanuts and coconut milk</small></span><span>169 / 189</span></li>
+          <li><span>Red curry with roast duck</span><span>249</span></li>
+          <li><span>Tom yum kung<small>small or large</small></span><span>189 / 359</span></li>
+          <li><span>Tom yum kung in a coconut</span><span>289</span></li>
+          <li><span>Tom kha</span><span>169 / 189</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Noodles and rice</h3>
+        <ul>
+          <li><span>Pad thai</span><span>119 / 189</span></li>
+          <li><span>Pad see ew</span><span>119 / 189</span></li>
+          <li><span>Noodle soup</span><span>119 / 189</span></li>
+          <li><span>Tom yum noodle soup with shrimp</span><span>189</span></li>
+          <li><span>Tom yum fried rice with shrimp</span><span>189</span></li>
+          <li><span>Pineapple fried rice<small>baked in the pineapple</small></span><span>289</span></li>
+          <li><span>Crab fried rice</span><span>—</span></li>
+          <li><span>Steamed rice</span><span>20</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Salads and wok</h3>
+        <ul>
+          <li><span>Som tam, papaya salad</span><span>119</span></li>
+          <li><span>Som tam with shrimp</span><span>189</span></li>
+          <li><span>Spicy seafood salad</span><span>189</span></li>
+          <li><span>Glass noodle salad</span><span>189</span></li>
+          <li><span>Nam tok moo</span><span>189</span></li>
+          <li><span>Morning glory</span><span>99</span></li>
+          <li><span>Mixed vegetables</span><span>130</span></li>
+          <li><span>Thai omelette</span><span>89</span></li>
+          <li><span>Garlic bread</span><span>79</span></li>
+        </ul>
+      </div>
+    </div>
   </div>
-  <img src="img/rolls.jpg" alt="Crispy Thai spring rolls with sweet chilli sauce" width="1400" height="1000" loading="lazy">
-</section>
-
-<section class="wrap menu" id="menu">
-  <h2>The menu</h2>
-  <div class="cols">
-    <div>
-      <h3>To start</h3>
-      <ul>
-        <li>Spring rolls<small>crispy, sweet chilli dip</small></li>
-        <li>Papaya salad<small>mild to Thai hot</small></li>
-        <li>Chicken satay<small>peanut sauce</small></li>
-      </ul>
-    </div>
-    <div>
-      <h3>Curries</h3>
-      <ul>
-        <li>Green curry<small>chicken, prawn or tofu</small></li>
-        <li>Massaman curry<small>slow and mild</small></li>
-        <li>Panang curry<small>rich, with kaffir lime</small></li>
-      </ul>
-    </div>
-    <div>
-      <h3>Fish and wok</h3>
-      <ul>
-        <li>Whole fish<small>with lime, garlic and chilli</small></li>
-        <li>Pad thai<small>prawns or vegetables</small></li>
-        <li>Cashew stir-fry<small>vegetarian on request</small></li>
-      </ul>
-    </div>
-  </div>
-  <p class="note">Sample menu. We will put your real dishes and prices here. Vegetarian and vegan versions on request.</p>
 </section>
 
 <div class="wrap">
-  <div class="wait">
-    <div>
-      <h2>Busy at dinner, worth it</h2>
-      <p>At peak hours food can take 30 to 45 minutes. Call ahead for a table, and order a starter while you wait.</p>
-    </div>
-    <div class="actions"><a class="btn" href="tel:+66628923693">062 892 3693</a></div>
-  </div>
+  <section class="trio" aria-label="Drawings of guest favourites">
+    <figure>
+      <svg class="draw" viewBox="0 0 240 180" role="img" aria-label="Drawing of crispy prawn cakes with sweet chilli sauce">
+        <ellipse class="white" cx="120" cy="120" rx="104" ry="44"/><ellipse class="thin" cx="120" cy="120" rx="104" ry="44"/>
+        <ellipse class="gold" cx="76" cy="108" rx="34" ry="18"/><ellipse class="ink" cx="76" cy="108" rx="34" ry="18"/>
+        <ellipse class="gold" cx="132" cy="96" rx="34" ry="18"/><ellipse class="ink" cx="132" cy="96" rx="34" ry="18"/>
+        <ellipse class="gold" cx="112" cy="132" rx="34" ry="18"/><ellipse class="ink" cx="112" cy="132" rx="34" ry="18"/>
+        <path class="thin" d="M60 104h4M84 112h4M120 92h4M142 100h4M100 130h4M124 136h4"/>
+        <path class="white" d="M164 124c0-12 40-12 40 0s-8 18-20 18-20-6-20-18z"/><path class="ink" d="M164 124c0-12 40-12 40 0s-8 18-20 18-20-6-20-18z"/>
+        <ellipse class="flame" cx="184" cy="124" rx="16" ry="5"/>
+      </svg>
+      <figcaption>Tod mun kung<small>prawn cakes</small></figcaption>
+    </figure>
+    <figure>
+      <svg class="draw" viewBox="0 0 240 180" role="img" aria-label="Drawing of red curry with chicken in a bowl">
+        <path class="white" d="M34 80h172c0 46-38 80-86 80S34 126 34 80z"/><path class="ink" d="M34 80h172c0 46-38 80-86 80S34 126 34 80z"/>
+        <ellipse class="curry" cx="120" cy="80" rx="86" ry="18"/><ellipse class="ink" cx="120" cy="80" rx="86" ry="18"/>
+        <path class="white" d="M80 80c10-10 28-10 36 0-10 6-26 6-36 0zM130 76c10-8 26-8 32 0-8 6-24 6-32 0z"/>
+        <path class="leaf" d="M106 70c8-12 22-14 30-8-8 10-20 12-30 8z"/>
+        <path class="thin" d="M96 40c-6 8 6 14 0 22M120 32c-6 8 6 14 0 22M144 40c-6 8 6 14 0 22"/>
+      </svg>
+      <figcaption>Red curry<small>chicken, pork, beef or seafood</small></figcaption>
+    </figure>
+    <figure>
+      <svg class="draw" viewBox="0 0 240 180" role="img" aria-label="Drawing of grilled tiger prawns">
+        <ellipse class="white" cx="120" cy="124" rx="104" ry="40"/><ellipse class="thin" cx="120" cy="124" rx="104" ry="40"/>
+        <path class="prawn" d="M44 120c10-34 60-48 96-30-30-2-56 10-66 34z"/><path class="ink" d="M44 120c10-34 60-48 96-30-30-2-56 10-66 34zM44 120l-14 6 8-14z"/>
+        <path class="prawn" d="M84 146c14-30 66-38 100-16-30-4-56 4-70 26z"/><path class="ink" d="M84 146c14-30 66-38 100-16-30-4-56 4-70 26zM84 146l-14 4 10-12z"/>
+        <path class="thin" d="M80 100l6 10M96 92l4 12M112 90l2 12M120 128l6 10M136 120l4 12M152 118l2 12"/>
+        <path class="yolk" d="M180 96c14-6 30 0 34 12-14 6-30 0-34-12z"/><path class="thin" d="M180 96c14-6 30 0 34 12-14 6-30 0-34-12z"/>
+      </svg>
+      <figcaption>BBQ tiger prawns</figcaption>
+    </figure>
+  </section>
+
+  <section class="good" aria-label="Good to know">
+    <div><strong>Air-conditioned</strong><span>Cool and quiet inside, with Wi-Fi.</span></div>
+    <div><strong>Your spice level</strong><span>Tell Boat how hot. Extra coconut milk if it is too much.</span></div>
+    <div><strong>Busy evenings</strong><span>Cooked to order, so it can take 15 to 20 minutes.</span></div>
+    <div><strong>Vegetarian and vegan</strong><span>Ask and Lek will make it.</span></div>
+    <div><strong>Cards and tap to pay</strong><span>Debit cards and phone payments.</span></div>
+    <div><strong>Takeaway</strong><span>Call ahead and pick it up.</span></div>
+  </section>
 </div>
 
-<section class="wrap visit" id="visit">
-  <div>
-    <h2>Find us</h2>
-    <p>119/27 Bo Put, Koh Samui 84320</p>
-    <div class="actions">
-      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=WOK+INN+Restaurant+Bo+Put+Koh+Samui">Directions</a>
-      <a class="btn ghost" href="https://www.instagram.com/wokinnrestaurant_kohsamui/">Instagram</a>
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div>
+      <h2>Find us</h2>
+      <p>119/27 Bo Put, Koh Samui 84320. North Chaweng, on the main road between The Briza Beach Resort and 7-Eleven.</p>
+      <div class="actions">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=WOK+INN+Restaurants+Bo+Put+Koh+Samui">Open in Google Maps</a>
+        <a class="btn ghost" href="tel:+66628923693">062 892 3693</a>
+        <a class="btn ghost" href="https://www.instagram.com/wokinnrestaurant_kohsamui/">Instagram</a>
+      </div>
     </div>
+    <table class="hours" aria-label="Opening hours">
+      <tr><td>Sunday to Friday</td><td>14:00 to 22:00</td></tr>
+      <tr><td>Saturday</td><td>closed</td></tr>
+    </table>
   </div>
-  <div class="slot"><strong>Opening hours</strong><p>Your hours go here. Tell us and we will add them.</p></div>
 </section>
 
 <footer>
   <div class="wrap">
-    <p>Wok Inn, Bo Put, Koh Samui. Cash and cards accepted.</p>
-    <p>Stand-in photos from Wikimedia Commons, to be replaced with your own: <a href="https://commons.wikimedia.org/wiki/File:Thai_green_chicken_curry_and_roti.jpg">Takeaway, CC BY-SA 3.0</a>; <a href="https://commons.wikimedia.org/wiki/File:Thai_spring_rolls.jpg">Ruth Hartnup, CC BY 2.0</a></p>
+    <p>@Wok Inn Restaurant, Chaweng, Koh Samui.</p>
+    <p>Drawings made for this page. Menu, hours and details from Wok Inn's menu, Instagram and Google Maps, November 2026.</p>
   </div>
 </footer>
+
+<nav class="bar" aria-label="Quick actions">
+  <a href="tel:+66628923693">Call to book</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=WOK+INN+Restaurants+Bo+Put+Koh+Samui">Directions</a>
+  <a href="#menu">Menu</a>
+</nav>
 </body>
 </html>

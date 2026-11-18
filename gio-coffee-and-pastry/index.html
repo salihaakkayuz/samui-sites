@@ -4,147 +4,256 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Gio Coffee and Pastry</title>
-<meta name="description" content="Coffee, sourdough and pastry baked in the house. A quiet cafe with cats on Bophut road, Koh Samui.">
+<title>Gio Coffee and Brunch, Bophut</title>
+<meta name="description" content="All-day brunch, homemade bakery and organic Arabica coffee in Bophut, Koh Samui. Open every day, 8:00 to 17:30.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-/* hallmark: theme custom "white bench" (by hand, deal: manual) · genre modern-minimal · job: visit · signature: the loaf, cut big on white */
-/* critique: austere grid, hairline rules, one sky signal; it says breakfast and how to find a hidden door */
+/* hallmark: theme custom "slate facade" (from Gio's own building and logo) · genre editorial · job: visit · signature: the owner's own breakfast photos in low sun */
+/* critique: slate blue like the facade, white thin face like the sign, warm wood as the only warmth; every fact sourced from Google Maps and Gio's Facebook, Nov 2026 */
 :root{
-  --color-paper:oklch(0.985 0.003 90);
-  --color-paper-2:oklch(0.955 0.006 90);
-  --color-ink:oklch(0.2 0.01 260);
-  --color-muted:oklch(0.48 0.01 260);
-  --color-accent:oklch(0.62 0.13 240);
-  --color-accent-ink:oklch(0.99 0 0);
-  --color-rule:oklch(0.2 0.01 260 / .14);
-  --color-focus:oklch(0.62 0.13 240);
-  --font-display:"Inter Tight",system-ui,sans-serif;
-  --font-body:"Inter Tight",system-ui,sans-serif;
-  --radius:0;--radius-pill:999px;
+  --color-paper:oklch(0.33 0.025 240);
+  --color-paper-2:oklch(0.28 0.022 240);
+  --color-paper-3:oklch(0.97 0.006 80);
+  --color-ink:oklch(0.97 0.006 80);
+  --color-ink-dark:oklch(0.25 0.02 240);
+  --color-muted:oklch(0.82 0.015 240);
+  --color-muted-dark:oklch(0.45 0.02 240);
+  --color-accent:oklch(0.74 0.11 65);
+  --color-accent-ink:oklch(0.22 0.02 240);
+  --color-rule:oklch(0.97 0.006 80 / .16);
+  --color-rule-dark:oklch(0.25 0.02 240 / .14);
+  --color-focus:oklch(0.74 0.11 65);
+  --font-display:"Outfit",system-ui,sans-serif;
+  --font-body:"Outfit",system-ui,sans-serif;
+  --radius:10px;--radius-pill:999px;
   --space-1:.5rem;--space-2:1rem;--space-3:1.5rem;--space-4:2.5rem;--space-5:4rem;--space-6:6rem;
-  --measure:1200px;
-  --dur:160ms;--ease:cubic-bezier(.2,.7,.2,1);
+  --measure:1180px;
+  --dur:180ms;--ease:cubic-bezier(.2,.7,.2,1);
 }
 *{box-sizing:border-box}
 html,body{overflow-x:clip;margin:0}
-body{background:var(--color-paper);color:var(--color-ink);font:400 1.0625rem/1.55 var(--font-body)}
+html{scroll-behavior:smooth}
+body{background:var(--color-paper);color:var(--color-ink);font:400 1.0625rem/1.6 var(--font-body);padding-bottom:4.5rem}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--color-focus);outline-offset:3px}
 .wrap{max-width:var(--measure);margin:0 auto;padding:0 var(--space-3)}
-h1,h2,h3{font-family:var(--font-display);font-weight:700;letter-spacing:-.035em;line-height:.95;margin:0;overflow-wrap:break-word;min-width:0}
-nav{display:flex;justify-content:space-between;align-items:center;padding:var(--space-2) 0;border-bottom:1px solid var(--color-rule);gap:var(--space-2)}
-.mark{font-weight:700;text-decoration:none;font-size:1.15rem;letter-spacing:-.02em}
+h1,h2,h3{font-family:var(--font-display);font-weight:300;line-height:1.02;letter-spacing:-.02em;margin:0;overflow-wrap:break-word;min-width:0}
+.demo{font-size:.88rem;text-align:center;padding:.55rem var(--space-2);background:var(--color-paper-2);color:var(--color-muted)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:var(--space-2) 0;gap:var(--space-2)}
+.logo{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.logo b{display:grid;place-items:center;width:3rem;height:3rem;border-radius:50%;background:var(--color-ink-dark);color:var(--color-ink);font-weight:400;font-size:1.25rem;letter-spacing:-.03em}
+.logo span{font-size:1.05rem}
 .navlinks{display:flex;gap:var(--space-3);align-items:center}
-.navlinks a{text-decoration:none;font-size:.98rem}
-.navlinks a:hover{text-decoration:underline}
-.btn{display:inline-flex;padding:.75rem 1.3rem;border-radius:var(--radius-pill);background:var(--color-ink);color:var(--color-paper);text-decoration:none;font-weight:500;border:1px solid var(--color-ink);transition:transform var(--dur) var(--ease),opacity var(--dur) var(--ease)}
-.btn:hover{transform:translateY(-1px);opacity:.9}
-.btn:active{transform:none;opacity:.8}
-.btn.ghost{background:transparent;color:var(--color-ink)}
-.hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--space-4);padding:var(--space-4) 0 var(--space-5);align-items:end}
-.hero h1{font-size:clamp(3.2rem,7.4vw,6.4rem)}
-.hero p{font-size:1.2rem;color:var(--color-muted);max-width:28ch;margin:var(--space-3) 0}
+.navlinks a.t{text-decoration:none}
+.navlinks a.t:hover{text-decoration:underline}
+.btn{display:inline-flex;align-items:center;padding:.75rem 1.3rem;border-radius:var(--radius-pill);background:var(--color-accent);color:var(--color-accent-ink);text-decoration:none;font-weight:500;border:1px solid var(--color-accent);transition:transform var(--dur) var(--ease),opacity var(--dur) var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:none;opacity:.85}
+.btn.ghost{background:transparent;color:var(--color-ink);border-color:var(--color-rule)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-5);align-items:center;padding:var(--space-3) 0 var(--space-5)}
+.hero h1{font-size:clamp(3rem,6.6vw,5.6rem)}
+.hero p.lede{font-size:1.2rem;color:var(--color-muted);margin:var(--space-3) 0;max-width:32ch}
+.facts{list-style:none;margin:0 0 var(--space-3);padding:0;display:grid;gap:.35rem}
+.facts li{font-size:1rem}
+.facts strong{font-weight:500}
 .actions{display:flex;flex-wrap:wrap;gap:var(--space-2)}
-.hero img{aspect-ratio:3/2;object-fit:cover;width:100%}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--color-rule);border-left:1px solid var(--color-rule)}
-.grid > div{border-right:1px solid var(--color-rule);border-bottom:1px solid var(--color-rule);padding:var(--space-4) var(--space-3)}
-.grid h3{font-size:1.6rem;margin-bottom:var(--space-2)}
-.grid ul{list-style:none;padding:0;margin:0}
-.grid li{padding:.35rem 0;color:var(--color-muted)}
-.note{font-size:.92rem;color:var(--color-muted);padding:var(--space-2) 0 0}
-.duo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-4);padding:var(--space-6) 0;align-items:center}
-.duo img{aspect-ratio:3/4;object-fit:cover;width:100%}
-.duo h2{font-size:clamp(2.4rem,5vw,4rem);margin-bottom:var(--space-3)}
-.duo p{color:var(--color-muted);max-width:40ch}
-.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-3);padding:var(--space-4) 0;border-top:1px solid var(--color-rule)}
-.facts strong{display:block;font-size:1.05rem;margin-bottom:.25rem}
-.facts span{color:var(--color-muted);font-size:.98rem}
-.visit{background:var(--color-ink);color:var(--color-paper);padding:var(--space-6) 0}
-.visit .wrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--space-4)}
-.visit h2{font-size:clamp(2.8rem,6vw,5rem)}
-.visit p{opacity:.8}
-.visit .btn{background:var(--color-accent);border-color:var(--color-accent);color:var(--color-accent-ink)}
-.visit .btn.ghost{background:transparent;border-color:oklch(0.985 0.003 90 / .4);color:var(--color-paper)}
-.slot{border:1px dashed oklch(0.985 0.003 90 / .45);padding:var(--space-3)}
+.hero img{border-radius:var(--radius);aspect-ratio:4/5;object-fit:cover;width:100%;max-height:640px}
+.rating{margin-top:var(--space-3);font-size:.98rem;color:var(--color-muted)}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-3);padding:0 0 var(--space-6)}
+.pair figure{margin:0}
+.pair img{border-radius:var(--radius);aspect-ratio:4/5;object-fit:cover;width:100%}
+.pair figcaption{font-size:.95rem;color:var(--color-muted);margin-top:.6rem}
+.menu{background:var(--color-paper-3);color:var(--color-ink-dark);padding:var(--space-6) 0}
+.menu .head{display:flex;justify-content:space-between;align-items:end;gap:var(--space-3);flex-wrap:wrap;margin-bottom:var(--space-4)}
+.menu h2{font-size:clamp(2.6rem,5.5vw,4.4rem)}
+.menu .src{color:var(--color-muted-dark);font-size:.95rem;max-width:36ch}
+.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-4) var(--space-5)}
+.cols h3{font-size:1.5rem;font-weight:400;margin-bottom:var(--space-1)}
+.cols ul{list-style:none;margin:0 0 var(--space-3);padding:0}
+.cols li{display:flex;justify-content:space-between;gap:var(--space-2);padding:.5rem 0;border-bottom:1px solid var(--color-rule-dark)}
+.cols li span:last-child{white-space:nowrap;font-variant-numeric:tabular-nums}
+.cols li small{display:block;color:var(--color-muted-dark);font-size:.88rem}
+.menu .note{color:var(--color-muted-dark);font-size:.95rem;margin-top:var(--space-2)}
+.shelf{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--space-5);align-items:center;padding:var(--space-6) 0}
+.shelf img{border-radius:var(--radius);aspect-ratio:3/4;object-fit:cover;width:100%}
+.shelf h2{font-size:clamp(2.4rem,5vw,3.8rem);margin-bottom:var(--space-3)}
+.shelf p{color:var(--color-muted);max-width:44ch}
+.good{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-3) var(--space-4);padding:var(--space-4) 0 var(--space-6);border-top:1px solid var(--color-rule)}
+.good strong{display:block;font-weight:500;margin-bottom:.2rem}
+.good span{color:var(--color-muted);font-size:.98rem}
+.visit{background:var(--color-paper-2);padding:var(--space-6) 0}
+.visit .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:var(--space-5)}
+.visit h2{font-size:clamp(2.6rem,5.5vw,4.4rem);margin-bottom:var(--space-3)}
+.visit p{color:var(--color-muted)}
+.hours{width:100%;border-collapse:collapse}
+.hours td{padding:.55rem 0;border-bottom:1px solid var(--color-rule)}
+.hours td:last-child{text-align:right;font-variant-numeric:tabular-nums}
 footer{padding:var(--space-4) 0;font-size:.88rem;color:var(--color-muted)}
 footer p{margin:.3rem 0}
-.demo{font-size:.88rem;background:var(--color-paper-2);text-align:center;padding:.55rem var(--space-2);color:var(--color-muted)}
-@media (max-width:860px){.hero,.duo,.visit .wrap{grid-template-columns:minmax(0,1fr)}.grid{grid-template-columns:minmax(0,1fr)}.facts{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.navlinks a.hide{display:none}}
-@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+.bar{position:fixed;left:0;right:0;bottom:0;display:none;gap:1px;background:var(--color-rule);border-top:1px solid var(--color-rule);z-index:5}
+.bar a{flex:1;text-align:center;padding:.95rem .5rem;background:var(--color-paper-2);color:var(--color-ink);text-decoration:none;font-weight:500}
+@media (max-width:860px){.hero,.shelf,.visit .wrap{grid-template-columns:minmax(0,1fr)}.cols,.good{grid-template-columns:minmax(0,1fr)}.navlinks a.t{display:none}.bar{display:flex}.hero img{aspect-ratio:4/3}}
+@media (min-width:861px){body{padding-bottom:0}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
-<div class="demo">Sample website made for Gio Coffee and Pastry. Not live yet; nothing here is final.</div>
+<div class="demo">Sample website made for Gio. Not live yet; nothing here is final.</div>
 <div class="wrap">
   <nav>
-    <a class="mark" href="#top">Gio</a>
+    <a class="logo" href="#top"><b>Gio</b><span>Coffee and Brunch</span></a>
     <div class="navlinks">
-      <a class="hide" href="#menu">Menu</a>
-      <a class="btn" href="#visit">How to find us</a>
+      <a class="t" href="#menu">Menu</a>
+      <a class="t" href="#visit">Find us</a>
+      <a class="btn" href="tel:+66859249122">Call</a>
     </div>
   </nav>
   <header class="hero" id="top">
     <div>
-      <h1>Bread and coffee, made here</h1>
-      <p>Sourdough, pastry and good coffee in a quiet corner of Bophut.</p>
+      <h1>All-day brunch, baked here</h1>
+      <p class="lede">Organic Arabica coffee, homemade bakery and breakfast until closing.</p>
+      <ul class="facts">
+        <li><strong>Open every day</strong>, 8:00 to 17:30</li>
+        <li>109/17 Bo Put, on road 4169, Koh Samui</li>
+      </ul>
       <div class="actions">
-        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Gio+Coffee+and+Pastry+Bo+Phut+Koh+Samui">Directions</a>
-        <a class="btn ghost" href="#menu">What we bake</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Gio+Coffee+and+Pastry+Bo+Put">Directions</a>
+        <a class="btn ghost" href="#menu">See the menu</a>
+      </div>
+      <p class="rating"><a href="https://www.google.com/maps/search/?api=1&query=Gio+Coffee+and+Pastry+Bo+Put">4.9 on Google from 368 reviews</a>, November 2026</p>
+    </div>
+    <img src="img/pancake.jpg" alt="Pancakes with butter and maple syrup being poured, on a black plate" width="1000" height="1334">
+  </header>
+
+  <section class="pair" aria-label="From the kitchen">
+    <figure><img src="img/breakfast.jpg" alt="Gio breakfast plate with toast, poached eggs, bacon, sausages, ham, avocado and salad" width="1000" height="1334" loading="lazy"><figcaption>Gio Classic Breakfast</figcaption></figure>
+    <figure><img src="img/waffle.jpg" alt="Waffle with fresh fruit, maple syrup and ice cream" width="1000" height="1338" loading="lazy"><figcaption>Waffle with fresh fruit</figcaption></figure>
+  </section>
+</div>
+
+<section class="menu" id="menu">
+  <div class="wrap">
+    <div class="head">
+      <h2>The menu</h2>
+      <p class="src">Prices in baht, from Gio's printed menu, March 2026. Cakes and pastries change daily: ask at the counter.</p>
+    </div>
+    <div class="cols">
+      <div>
+        <h3>All-day breakfast</h3>
+        <ul>
+          <li><span>Gio Mixed Grilled Breakfast<small>salmon gravlax, prawn, bacon, sausage, chicken, eggs</small></span><span>390</span></li>
+          <li><span>Gio Classic Breakfast</span><span>325</span></li>
+          <li><span>Gio Croissant Breakfast</span><span>270</span></li>
+          <li><span>Green Garden Breakfast<small>vegan</small></span><span>250</span></li>
+          <li><span>Salmon Benedict</span><span>280</span></li>
+          <li><span>Parma Ham Egg Benedict</span><span>320</span></li>
+          <li><span>Bacon Benedict</span><span>240</span></li>
+        </ul>
+        <h3>Toasts and croissants</h3>
+        <ul>
+          <li><span>Salmon Cream Cheese toast</span><span>270</span></li>
+          <li><span>Grilled Prawn Avocado toast</span><span>260</span></li>
+          <li><span>Avocado Eggs on Toast</span><span>200</span></li>
+          <li><span>Croissant Parma Ham and Burrata</span><span>350</span></li>
+          <li><span>Croissant Salmon Avocado</span><span>250</span></li>
+          <li><span>Croissant Ham and Cheese</span><span>180</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Bagels and salads</h3>
+        <ul>
+          <li><span>Bagel Salmon Avocado</span><span>280</span></li>
+          <li><span>Bagel Salmon Gravlax</span><span>240</span></li>
+          <li><span>Vegan Bagel</span><span>180</span></li>
+          <li><span>Burrata and Rocket Salad</span><span>350</span></li>
+          <li><span>Gio Mixed Salad</span><span>280</span></li>
+          <li><span>Vegan Bowl</span><span>220</span></li>
+        </ul>
+        <h3>Bowls, pancakes, waffles</h3>
+        <ul>
+          <li><span>Mango Smoothie Bowl</span><span>200</span></li>
+          <li><span>Yogurt Bowl</span><span>185</span></li>
+          <li><span>Pancake Banana<small>caramel sauce, vanilla ice cream</small></span><span>175</span></li>
+          <li><span>Waffle Fresh Fruit</span><span>195</span></li>
+          <li><span>French Toasted</span><span>200</span></li>
+          <li><span>Homemade gelato, 2 scoops</span><span>95</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Coffee, hot or iced</h3>
+        <ul>
+          <li><span>Espresso, single or double</span><span>70 / 90</span></li>
+          <li><span>Americano</span><span>80 / 90</span></li>
+          <li><span>Cappuccino</span><span>85 / 95</span></li>
+          <li><span>Flat white</span><span>85</span></li>
+          <li><span>Matcha latte</span><span>100 / 110</span></li>
+          <li><span>Espresso tonic</span><span>125</span></li>
+          <li><span>Coconut coffee</span><span>125</span></li>
+        </ul>
+        <h3>Smoothies and juices</h3>
+        <ul>
+          <li><span>Mango smoothie</span><span>115</span></li>
+          <li><span>Mango passion fruit</span><span>135</span></li>
+          <li><span>Juice boosters, no sugar added</span><span>125</span></li>
+          <li><span>Fresh coconut</span><span>80</span></li>
+        </ul>
       </div>
     </div>
-    <img src="img/sourdough.jpg" alt="A sourdough loaf, cut open" width="1400" height="934">
-  </header>
-</div>
-
-<div class="wrap" id="menu">
-  <div class="grid">
-    <div><h3>Coffee</h3><ul><li>Espresso</li><li>Flat white</li><li>Latte, hot or iced</li><li>Soy, almond or oat milk</li></ul></div>
-    <div><h3>From the oven</h3><ul><li>Sourdough loaves</li><li>Butter croissants</li><li>Fruit pies</li><li>Something new most days</li></ul></div>
-    <div><h3>Breakfast and brunch</h3><ul><li>Eggs on sourdough</li><li>Fresh fruit and yogurt</li><li>Sandwiches</li><li>Fresh juices</li></ul></div>
+    <p class="note">Oat, almond, coconut or soy milk +20. This is part of the menu; the full menu is in the café.</p>
   </div>
-  <p class="note">Sample menu. We will put your real items and prices here.</p>
-</div>
+</section>
 
 <div class="wrap">
-  <section class="duo">
-    <img src="img/cappuccino.jpg" alt="A cappuccino on a cafe table" width="1050" height="1400" loading="lazy">
+  <section class="shelf">
+    <img src="img/shelf.jpg" alt="Shelf with Yame and Uji matcha tins and Gio bags of granola and cookies" width="1000" height="1334" loading="lazy">
     <div>
-      <h2>Slow mornings, with cats</h2>
-      <p>Everything is baked on the premises, the sourdough too. The room is calm and simple, our cats wander about, and dogs are welcome.</p>
+      <h2>Take some home</h2>
+      <p>First-harvest ceremonial matcha from Yame and Uji, plus granola and cookies baked here, packed in Gio bags.</p>
     </div>
   </section>
-  <section class="facts" aria-label="Good to know">
-    <div><strong>Cash only</strong><span>We do not take cards.</span></div>
-    <div><strong>Busy at breakfast</strong><span>Mornings fill up. Come a bit early.</span></div>
-    <div><strong>Pets welcome</strong><span>Dogs can sit with you.</span></div>
-    <div><strong>Delivery</strong><span>Ask us about delivery.</span></div>
+
+  <section class="good" aria-label="Good to know">
+    <div><strong>Cards welcome</strong><span>Credit, debit and tap to pay.</span></div>
+    <div><strong>Dogs welcome inside</strong><span>And you may meet our cats.</span></div>
+    <div><strong>Kids</strong><span>Kids' menu and high chairs.</span></div>
+    <div><strong>Free Wi-Fi</strong><span>Stay for a second coffee.</span></div>
+    <div><strong>Free parking</strong><span>Parking lot and street parking.</span></div>
+    <div><strong>Delivery</strong><span>Order on Grab or foodpanda.</span></div>
   </section>
 </div>
 
 <section class="visit" id="visit">
   <div class="wrap">
     <div>
-      <h2>A little hidden, look for our sign</h2>
-      <p>109 Bo Phut road, Bo Put, Koh Samui 84320</p>
+      <h2>Find us</h2>
+      <p>109/17 Bo Put, Koh Samui 84320, on road 4169 near Soi Khao Phra. Look for the slate-blue building with the white Gio sign.</p>
       <div class="actions">
-        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Gio+Coffee+and+Pastry+Bo+Phut+Koh+Samui">Open in Google Maps</a>
-        <a class="btn ghost" href="tel:+66859249122">Call 085 924 9122</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Gio+Coffee+and+Pastry+Bo+Put">Open in Google Maps</a>
+        <a class="btn ghost" href="tel:+66859249122">085 924 9122</a>
         <a class="btn ghost" href="https://www.facebook.com/Giopastryandcoffee">Facebook</a>
       </div>
     </div>
-    <div class="slot"><strong>Opening hours</strong><p>Your hours go here. Tell us and we will add them.</p></div>
+    <table class="hours" aria-label="Opening hours">
+      <tr><td>Monday to Sunday</td><td>8:00 to 17:30</td></tr>
+      <tr><td>Breakfast</td><td>all day</td></tr>
+    </table>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <p>Gio Coffee and Pastry, Bo Put, Koh Samui.</p>
-    <p>Stand-in photos from Wikimedia Commons, to be replaced with your own: <a href="https://commons.wikimedia.org/wiki/File:6312_sourdough_bread.jpg">Virtual-Pano, CC BY-SA 4.0</a>; <a href="https://commons.wikimedia.org/wiki/File:Cappuccino_at_ARS_Cafe.jpg">Robert Smith, CC BY 4.0</a></p>
+    <p>Gio Coffee and Brunch, Bo Put, Koh Samui.</p>
+    <p>Photos from Gio's own Facebook page. Menu and hours from Google Maps and the café's menu, November 2026.</p>
   </div>
 </footer>
+
+<nav class="bar" aria-label="Quick actions">
+  <a href="tel:+66859249122">Call</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Gio+Coffee+and+Pastry+Bo+Put">Directions</a>
+  <a href="#menu">Menu</a>
+</nav>
 </body>
 </html>
