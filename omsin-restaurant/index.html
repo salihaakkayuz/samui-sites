@@ -8,299 +8,190 @@
 <meta name="description" content="Family Thai kitchen in Bophut, Koh Samui. Pick a dish, pick your meat, tell us how spicy. Open every day 10:00 to 21:00.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Kanit:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-/* hallmark: theme custom "menu board" (from Omsin's own menu boards: grey paper, pencil drawings, handwritten title) · genre playful · job: visit · signature: the pick-your-dish, pick-your-meat board */
-/* critique: graphite on grey paper, one chilli red; drawings instead of photos, every dish name from their boards and Google Maps, no prices because the boards show none */
+/* hallmark: shape "signboard" (centred, the logo as the cover) · theme custom "omsin sign" (green, red, yellow from the restaurant's own sign) · genre playful · job: visit · signature: the round dish board, pick your meat */
+/* critique: loud street-sign colours used in blocks, white food circles like the owner's own menu sheets; no prices because the boards show none */
 :root{
-  --color-paper:oklch(0.93 0.004 90);
-  --color-paper-2:oklch(0.97 0.003 90);
-  --color-paper-3:oklch(0.88 0.006 90);
-  --color-ink:oklch(0.27 0.01 60);
-  --color-muted:oklch(0.47 0.01 60);
-  --color-accent:oklch(0.55 0.2 27);
-  --color-accent-ink:oklch(0.98 0.003 90);
-  --color-pink:oklch(0.86 0.07 350);
-  --color-leaf:oklch(0.72 0.12 135);
-  --color-sun:oklch(0.86 0.13 85);
-  --color-curry:oklch(0.7 0.15 50);
-  --color-rule:oklch(0.27 0.01 60 / .18);
-  --color-focus:oklch(0.55 0.2 27);
-  --font-display:"Caveat",cursive;
+  --color-paper:oklch(0.99 0.004 95);
+  --color-green:oklch(0.52 0.15 150);
+  --color-green-2:oklch(0.44 0.13 150);
+  --color-red:oklch(0.55 0.21 27);
+  --color-yellow:oklch(0.88 0.16 95);
+  --color-ink:oklch(0.22 0.02 150);
+  --color-muted:oklch(0.45 0.02 150);
+  --color-on-color:oklch(0.99 0.004 95);
+  --color-rule:oklch(0.22 0.02 150 / .14);
+  --color-focus:oklch(0.55 0.21 27);
+  --font-display:"Kanit",system-ui,sans-serif;
   --font-body:"Kanit",system-ui,sans-serif;
-  --radius:16px;--radius-pill:999px;
+  --radius:18px;--radius-pill:999px;
   --space-1:.5rem;--space-2:1rem;--space-3:1.5rem;--space-4:2.5rem;--space-5:4rem;--space-6:6rem;
-  --measure:1160px;
+  --measure:1100px;
   --dur:180ms;--ease:cubic-bezier(.2,.7,.2,1);
 }
 *{box-sizing:border-box}
 html,body{overflow-x:clip;margin:0}
 body{background:var(--color-paper);color:var(--color-ink);font:300 1.0625rem/1.6 var(--font-body);padding-bottom:4.5rem}
-img,svg{display:block;max-width:100%;height:auto}
+img{display:block;max-width:100%;height:auto}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--color-focus);outline-offset:3px}
 .wrap{max-width:var(--measure);margin:0 auto;padding:0 var(--space-3)}
-h1,h2,h3{margin:0;overflow-wrap:break-word;min-width:0;font-weight:500}
-h1,h2{font-family:var(--font-display);font-weight:600;line-height:.95}
-h3{font-family:var(--font-body);font-size:1.15rem}
-.demo{font-size:.88rem;text-align:center;padding:.55rem var(--space-2);background:var(--color-ink);color:var(--color-paper-2)}
-nav{display:flex;justify-content:space-between;align-items:center;padding:var(--space-2) 0;gap:var(--space-2)}
-.mark{font-family:var(--font-display);font-size:2.3rem;text-decoration:none;line-height:1}
-.btn{display:inline-flex;align-items:center;padding:.75rem 1.35rem;border-radius:var(--radius-pill);background:var(--color-accent);color:var(--color-accent-ink);text-decoration:none;font-weight:500;border:2px solid var(--color-accent);transition:transform var(--dur) var(--ease),opacity var(--dur) var(--ease)}
+h1,h2,h3{font-family:var(--font-display);margin:0;overflow-wrap:break-word;min-width:0;line-height:1.02}
+h1,h2{font-weight:700}
+h3{font-weight:600;font-size:1.15rem}
+.demo{font-size:.88rem;text-align:center;padding:.55rem var(--space-2);background:var(--color-ink);color:var(--color-on-color)}
+.btn{display:inline-flex;align-items:center;padding:.8rem 1.4rem;border-radius:var(--radius-pill);background:var(--color-red);color:var(--color-on-color);text-decoration:none;font-weight:600;border:2px solid var(--color-red);transition:transform var(--dur) var(--ease),opacity var(--dur) var(--ease)}
 .btn:hover{transform:translateY(-2px)}
 .btn:active{transform:none;opacity:.85}
-.btn.ghost{background:transparent;color:var(--color-ink);border-color:var(--color-ink)}
-.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-4);align-items:center;padding:var(--space-2) 0 var(--space-5)}
-.hero h1{font-size:clamp(3.4rem,8vw,6.4rem)}
-.hero .lede{font-size:1.2rem;color:var(--color-muted);margin:var(--space-2) 0 var(--space-3);max-width:32ch}
-.facts{list-style:none;margin:0 0 var(--space-3);padding:0;display:grid;gap:.3rem}
-.facts strong{font-weight:500}
-.actions{display:flex;flex-wrap:wrap;gap:var(--space-2)}
+.btn.alt{background:var(--color-paper);color:var(--color-green-2);border-color:var(--color-green-2)}
+.sign{text-align:center;padding:var(--space-4) 0 var(--space-5)}
+.sign .logo{width:min(440px,86%);margin:0 auto var(--space-3)}
+.sign h1{font-size:clamp(2.8rem,7vw,5.4rem);color:var(--color-green-2);max-width:14ch;margin:0 auto}
+.sign p{font-size:1.2rem;color:var(--color-muted);max-width:34ch;margin:var(--space-2) auto var(--space-3)}
+.sign .actions{display:flex;flex-wrap:wrap;gap:var(--space-2);justify-content:center}
 .rating{margin-top:var(--space-3);font-size:.98rem;color:var(--color-muted)}
-.board{background:var(--color-paper-2);border-radius:var(--radius);padding:var(--space-3)}
-.draw .ink{fill:none;stroke:var(--color-ink);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-.draw .thin{fill:none;stroke:var(--color-ink);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
-.draw .plate{fill:var(--color-paper-2)}
-.draw .noodle{fill:oklch(0.88 0.07 80)}
-.draw .pink{fill:var(--color-pink)}
-.draw .leaf{fill:var(--color-leaf)}
-.draw .sun{fill:var(--color-sun)}
-.draw .curry{fill:var(--color-curry)}
-.draw .red{fill:var(--color-accent)}
-.draw .white{fill:var(--color-paper-2)}
-.how{padding:var(--space-5) 0}
-.how h2{font-size:clamp(2.8rem,6vw,4.6rem);margin-bottom:var(--space-4)}
-.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-3)}
-.steps > div{border-top:2px solid var(--color-ink);padding-top:var(--space-2)}
-.steps b{font-family:var(--font-display);font-size:2.4rem;font-weight:600;display:block;line-height:1}
-.steps p{margin:.4rem 0 0;color:var(--color-muted)}
-.chips{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0;margin:var(--space-2) 0 0}
-.chips li{border:1.5px solid var(--color-ink);border-radius:var(--radius-pill);padding:.25rem .8rem;font-size:.95rem}
-.menu{background:var(--color-paper-2);padding:var(--space-6) 0}
-.menu .head{display:flex;justify-content:space-between;align-items:end;gap:var(--space-3);flex-wrap:wrap;margin-bottom:var(--space-4)}
-.menu h2{font-size:clamp(2.8rem,6vw,4.6rem)}
-.menu .src{color:var(--color-muted);font-size:.95rem;max-width:38ch;margin:0}
-.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-4) var(--space-5)}
-.cols h3{margin-bottom:var(--space-1)}
-.cols ul{list-style:none;margin:0 0 var(--space-3);padding:0}
-.cols li{padding:.45rem 0;border-bottom:1px dashed var(--color-rule)}
-.cols li small{display:block;color:var(--color-muted);font-size:.88rem}
-.cols li i{font-style:normal;color:var(--color-muted);font-size:.9rem;margin-left:.4rem}
-.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-3);padding:var(--space-6) 0 var(--space-5)}
-.trio figure{margin:0}
-.trio figcaption{font-family:var(--font-display);font-size:1.9rem;font-weight:600;text-align:center;margin-top:.3rem}
-.good{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-3) var(--space-4);padding:var(--space-4) 0 var(--space-6);border-top:2px solid var(--color-ink)}
-.good strong{display:block;font-weight:500}
-.good span{color:var(--color-muted);font-size:.98rem}
-.visit{background:var(--color-paper-3);padding:var(--space-6) 0}
-.visit .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:var(--space-5)}
-.visit h2{font-size:clamp(2.8rem,6vw,4.6rem);margin-bottom:var(--space-2)}
-.visit p{color:var(--color-muted)}
-.hours{width:100%;border-collapse:collapse}
-.hours td{padding:.55rem 0;border-bottom:1px solid var(--color-rule)}
-.hours td:last-child{text-align:right}
-footer{padding:var(--space-4) 0;font-size:.88rem;color:var(--color-muted)}
+.ribbon{background:var(--color-red);color:var(--color-on-color)}
+.ribbon .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--space-2) var(--space-5);padding:var(--space-2) var(--space-3);font-weight:400}
+.ribbon b{font-weight:600}
+.board{padding:var(--space-6) 0}
+.board h2{text-align:center;font-size:clamp(2.4rem,5vw,3.8rem);color:var(--color-green-2)}
+.board .sub{text-align:center;color:var(--color-muted);margin:var(--space-1) auto var(--space-4)}
+.dishes{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-4) var(--space-3);list-style:none;padding:0;margin:0}
+.dishes li{text-align:center}
+.dishes img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:50%;border:6px solid var(--color-yellow);box-shadow:0 0 0 2px var(--color-green)}
+.dishes b{display:block;font-weight:600;margin-top:var(--space-1);font-size:1.08rem}
+.dishes span{color:var(--color-muted);font-size:.95rem}
+.meats{background:var(--color-yellow);border-radius:var(--radius);padding:var(--space-4);margin-top:var(--space-5);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:var(--space-4);align-items:center}
+.meats h3{font-size:1.9rem;font-weight:700;line-height:1.05}
+.meats ul{display:flex;flex-wrap:wrap;gap:.6rem;list-style:none;margin:0;padding:0}
+.meats li{background:var(--color-paper);border:2px solid var(--color-ink);border-radius:var(--radius-pill);padding:.35rem 1rem;font-weight:400}
+.meats p{grid-column:1/-1;margin:0;color:var(--color-ink)}
+.greens{background:var(--color-green);color:var(--color-on-color);padding:var(--space-6) 0}
+.greens .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:var(--space-5);align-items:start}
+.greens h2{font-size:clamp(2.4rem,5vw,3.8rem)}
+.greens figure{margin:var(--space-4) 0 0}
+.greens img{border-radius:var(--radius);border:6px solid var(--color-yellow)}
+.greens figcaption{margin-top:var(--space-1);font-size:.95rem}
+.list{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-3) var(--space-4)}
+.list h3{color:var(--color-yellow);margin-bottom:.3rem}
+.list ul{list-style:none;margin:0;padding:0}
+.list li{padding:.3rem 0;border-bottom:1px solid oklch(0.99 0.004 95 / .2)}
+.list small{opacity:.8}
+.list .note{grid-column:1/-1;margin:0;opacity:.85}
+.good{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-3);padding:var(--space-6) 0}
+.good div{border:2px solid var(--color-ink);border-radius:var(--radius);padding:var(--space-3)}
+.good strong{display:block;font-weight:600;font-size:1.1rem}
+.good span{color:var(--color-muted)}
+.visit{background:var(--color-red);color:var(--color-on-color);padding:var(--space-6) 0;text-align:center}
+.visit h2{font-size:clamp(2.6rem,6vw,4.6rem)}
+.visit p{max-width:40ch;margin:var(--space-2) auto var(--space-3)}
+.visit .actions{display:flex;flex-wrap:wrap;gap:var(--space-2);justify-content:center}
+.visit .btn{background:var(--color-paper);color:var(--color-red);border-color:var(--color-paper)}
+.visit .btn.alt{background:transparent;color:var(--color-on-color);border-color:var(--color-on-color)}
+footer{padding:var(--space-4) 0;font-size:.88rem;color:var(--color-muted);text-align:center}
 footer p{margin:.3rem 0}
 .bar{position:fixed;left:0;right:0;bottom:0;display:none;gap:1px;background:var(--color-rule);z-index:5}
-.bar a{flex:1;text-align:center;padding:.95rem .5rem;background:var(--color-ink);color:var(--color-paper-2);text-decoration:none;font-weight:500}
-@media (max-width:860px){.hero,.visit .wrap{grid-template-columns:minmax(0,1fr)}.steps,.cols,.good{grid-template-columns:minmax(0,1fr)}.trio{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.bar{display:flex}}
+.bar a{flex:1;text-align:center;padding:.95rem .5rem;background:var(--color-green-2);color:var(--color-on-color);text-decoration:none;font-weight:600}
+.bar a:first-child{background:var(--color-red)}
+@media (max-width:860px){.dishes{grid-template-columns:repeat(2,minmax(0,1fr))}.meats,.greens .wrap,.list,.good{grid-template-columns:minmax(0,1fr)}.bar{display:flex}}
 @media (min-width:861px){body{padding-bottom:0}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
 <div class="demo">Sample website made for Omsin Restaurant. Not live yet; nothing here is final.</div>
-<div class="wrap">
-  <nav>
-    <a class="mark" href="#top">Omsin Restaurant</a>
-    <a class="btn ghost" href="tel:+66878911259">Call 087 891 1259</a>
-  </nav>
-  <header class="hero" id="top">
-    <div>
-      <h1>Thai food, cooked by one family</h1>
-      <p class="lede">A roadside kitchen in Bophut. Pick a dish, pick your meat, tell us how spicy.</p>
-      <ul class="facts">
-        <li><strong>Open every day</strong>, 10:00 to 21:00</li>
-        <li>175/62 Moo 1, Bo Put, Koh Samui</li>
-        <li>Cash only</li>
-      </ul>
-      <div class="actions">
-        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Omsin+Restaurant+Bo+Put+Koh+Samui">Directions</a>
-        <a class="btn ghost" href="#menu">See the menu</a>
-      </div>
-      <p class="rating"><a href="https://www.google.com/maps/search/?api=1&query=Omsin+Restaurant+Bo+Put+Koh+Samui">4.9 on Google from 1,090 reviews</a>, November 2026</p>
-    </div>
-    <div class="board">
-      <svg class="draw" viewBox="20 60 360 230" role="img" aria-label="Drawing of a plate of pad thai with prawns, lime, peanuts and bean sprouts">
-        <ellipse class="plate" cx="200" cy="200" rx="170" ry="82"/>
-        <ellipse class="ink" cx="200" cy="200" rx="170" ry="82"/>
-        <ellipse class="thin" cx="200" cy="204" rx="136" ry="60"/>
-        <path class="noodle" d="M88 214c-6-44 46-92 112-94s118 44 108 92c-34 22-84 30-114 28s-80-6-106-26z"/>
-        <path class="ink" d="M88 214c-6-44 46-92 112-94s118 44 108 92c-34 22-84 30-114 28s-80-6-106-26z"/>
-        <path class="thin" d="M104 196c18-26 44-12 64-26s46-20 70-8 34 2 52 14M98 212c26-14 46 4 72-8s46-16 70-4 40 6 62-2M116 226c22-6 44 8 68 0s44-10 66-2 26 4 44-4M126 178c16-14 36-6 52-16s38-12 58-2M150 160c14-8 30-2 44-8s28-6 42 0"/>
-        <g class="pink">
-          <path d="M138 170c-20 0-30 18-24 34 4 10 16 14 26 10l-2-12c-6 2-11-1-12-6-2-8 4-14 12-14z"/>
-          <path d="M236 160c20-4 34 12 30 30-2 11-13 17-24 15l1-12c6 0 10-3 11-8 1-8-6-14-14-13z"/>
-          <path d="M190 138c-18 6-22 26-10 38l7-9c-5-4-5-12 2-16z"/>
-        </g>
-        <path class="ink" d="M138 170c-20 0-30 18-24 34 4 10 16 14 26 10l-2-12c-6 2-11-1-12-6-2-8 4-14 12-14zM138 170l8-8 2 10zM236 160c20-4 34 12 30 30-2 11-13 17-24 15l1-12c6 0 10-3 11-8 1-8-6-14-14-13zM236 160l-9-7-1 10zM190 138c-18 6-22 26-10 38l7-9c-5-4-5-12 2-16zM190 138l2-10 6 8z"/>
-        <path class="thin" d="M118 182l10 4M116 194l11 1M258 172l-10 5M262 184l-11 1M178 150l8 3M178 162l8 0"/>
-        <path class="sun" d="M300 168c30 0 52 18 54 42-26 8-54-6-66-30z"/>
-        <path class="ink" d="M300 168c30 0 52 18 54 42-26 8-54-6-66-30zM300 168c14 16 30 30 54 42"/>
-        <path class="thin" d="M312 178l8 10M324 186l8 8M336 194l8 6"/>
-        <path class="white ink" d="M60 210c10-26 34-40 60-30-12 22-36 34-60 30z"/>
-        <path class="thin" d="M66 206l46-24M78 208l30-20M70 198l34-14"/>
-        <path class="leaf" d="M224 108c14-30 40-44 64-38-10 26-36 40-64 38z"/>
-        <path class="ink" d="M224 108c14-30 40-44 64-38-10 26-36 40-64 38zM228 104c18-12 36-24 58-32"/>
-        <path class="thin" d="M262 238l3 2M244 244l3 1M222 248l3 0M280 230l3 2M206 116l3 1M214 112l2 2M200 108l3 0M220 120l2 1"/>
-        <path class="red ink" d="M96 120c10-6 24-4 30 4-10 6-24 4-30-4z"/>
-        <path class="ink" d="M126 124c6-4 10-10 10-16"/>
-      </svg>
-    </div>
-  </header>
+
+<header class="sign wrap" id="top">
+  <img class="logo" src="img/logo.jpg" alt="Omsin Restaurant, ออมสิน ตามสั่ง" width="700" height="508">
+  <h1>Pick a dish, pick your meat</h1>
+  <p>Thai food cooked to order by one family, on the Bophut road. Tell us how spicy.</p>
+  <div class="actions">
+    <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Omsin+Restaurant+Bo+Put+Koh+Samui">Directions</a>
+    <a class="btn alt" href="tel:+66878911259">Call 087 891 1259</a>
+  </div>
+  <p class="rating"><a href="https://www.google.com/maps/search/?api=1&query=Omsin+Restaurant+Bo+Put+Koh+Samui">4.9 on Google from 1,090 reviews</a>, November 2026</p>
+</header>
+
+<div class="ribbon">
+  <div class="wrap">
+    <span><b>Open every day</b> 10:00 to 21:00</span>
+    <span><b>Cash only</b></span>
+    <span><b>175/62 Moo 1</b> Bo Put</span>
+  </div>
 </div>
 
-<section class="wrap how" aria-labelledby="how">
-  <h2 id="how">How to order</h2>
-  <div class="steps">
-    <div><b>1</b><h3>Pick a dish</h3><p>Curry, stir-fry, fried rice, noodles or noodle soup.</p></div>
-    <div><b>2</b><h3>Pick your meat</h3><ul class="chips"><li>chicken</li><li>pork</li><li>shrimp</li><li>squid</li><li>beef</li><li>crispy pork</li></ul></div>
-    <div><b>3</b><h3>Say how spicy</h3><p>We cook every plate to order, mild to Thai hot. Vegetarian and vegan too.</p></div>
+<section class="board wrap" id="menu" aria-labelledby="board">
+  <h2 id="board">Best sellers</h2>
+  <p class="sub">From Omsin's own menu board.</p>
+  <ul class="dishes">
+    <li><img src="img/padthai.jpg" alt="Pad thai with prawns" width="520" height="520" loading="lazy"><b>Pad Thai</b><span>ผัดไทย</span></li>
+    <li><img src="img/tomyum.jpg" alt="Tom yum goong soup" width="520" height="520" loading="lazy"><b>Tom Yum Goong</b><span>ต้มยำกุ้ง</span></li>
+    <li><img src="img/panang.jpg" alt="Panang curry" width="520" height="520" loading="lazy"><b>Panang Curry</b><span>พะแนง</span></li>
+    <li><img src="img/greencurry.jpg" alt="Green curry" width="520" height="520" loading="lazy"><b>Green Curry</b><span>แกงเขียวหวาน</span></li>
+    <li><img src="img/seeew.jpg" alt="Fried noodles in soy sauce" width="520" height="520" loading="lazy"><b>Fried Noodle in Soy Sauce</b><span>ผัดซีอิ๊ว</span></li>
+    <li><img src="img/redcurry.jpg" alt="Red curry" width="520" height="520" loading="lazy"><b>Red Curry</b><span>แกงกะทิ</span></li>
+    <li><img src="img/tomkha.jpg" alt="Chicken coconut soup" width="520" height="520" loading="lazy"><b>Chicken Coconut Soup</b><span>ต้มข่าไก่</span></li>
+    <li><img src="img/radna.jpg" alt="Fried noodles in gravy" width="520" height="520" loading="lazy"><b>Fried Noodle in Gravy</b><span>ราดหน้า</span></li>
+  </ul>
+  <div class="meats">
+    <h3>Then choose your meat</h3>
+    <ul><li>Chicken</li><li>Pork</li><li>Shrimp</li><li>Squid</li><li>Beef</li><li>Crispy pork</li></ul>
+    <p>Vegetarian or vegan? Ask and we cook it without meat. Mild or Thai hot, you decide.</p>
   </div>
 </section>
 
-<section class="menu" id="menu">
+<section class="greens">
   <div class="wrap">
-    <div class="head">
-      <h2>The menu</h2>
-      <p class="src">Dishes from Omsin's menu boards, April 2026. Prices are on the board in the restaurant.</p>
+    <div>
+      <h2>More from the wok</h2>
+      <figure>
+        <img src="img/omelette.jpg" alt="Thai omelette on rice with cucumber" width="900" height="675" loading="lazy">
+        <figcaption>Thai omelette on rice</figcaption>
+      </figure>
     </div>
-    <div class="cols">
-      <div>
-        <h3>Best sellers</h3>
-        <ul>
-          <li>Pad Thai<i>ผัดไทย</i></li>
-          <li>Panang curry<i>พะแนง</i></li>
-          <li>Green curry<i>แกงเขียวหวาน</i></li>
-          <li>Red curry<i>แกงกะทิ</i></li>
-          <li>Tom yum goong<i>ต้มยำกุ้ง</i></li>
-          <li>Chicken coconut soup<i>ต้มข่าไก่</i></li>
-          <li>Fried noodle in soy sauce<i>ผัดซีอิ๊ว</i></li>
-          <li>Fried noodle in gravy<i>ราดหน้า</i></li>
-        </ul>
-      </div>
-      <div>
-        <h3>With rice</h3>
-        <ul>
-          <li>Stir-fried holy basil<i>ผัดกะเพรา</i></li>
-          <li>Crispy pork with rice<i>ข้าวหมูกรอบ</i></li>
-          <li>Fried rice<i>ข้าวผัด</i></li>
-          <li>Fried rice with green curry</li>
-          <li>Kale with crispy pork</li>
-          <li>Garlic and pepper</li>
-          <li>Sweet and sour</li>
-          <li>Chilli paste, black pepper, curry, green peppers</li>
-        </ul>
-      </div>
-      <div>
-        <h3>Noodle soup</h3>
-        <ul>
-          <li>Clear, thick or hot and sour<small>with rice stick, glass, vermicelli, wide, egg or instant noodles</small></li>
-        </ul>
-        <h3>Salads and sides</h3>
-        <ul>
-          <li>Papaya salad<i>ส้มตำ</i></li>
-          <li>Thai spicy minced salad</li>
-          <li>Fried morning glory</li>
-          <li>Thai omelette</li>
-          <li>Grilled skewers and sausages</li>
-        </ul>
-        <h3>Sweet and cold</h3>
-        <ul>
-          <li>Mango sticky rice</li>
-          <li>Fresh young coconut</li>
-          <li>Fruit smoothies</li>
-          <li>Cold beer</li>
-        </ul>
-      </div>
+    <div class="list">
+      <div><h3>With rice</h3><ul>
+        <li>Stir-fried holy basil, กะเพรา</li><li>Crispy pork with rice</li><li>Fried rice</li><li>Fried rice with green curry</li><li>Kale with crispy pork</li><li>Garlic and pepper</li><li>Sweet and sour</li><li>Chilli paste, black pepper, green peppers</li>
+      </ul></div>
+      <div><h3>Noodle soup</h3><ul>
+        <li>Clear, thick or hot and sour<br><small>rice stick, glass, vermicelli, wide, egg or instant noodles</small></li>
+      </ul>
+      <h3 style="margin-top:var(--space-3)">Salads and sides</h3><ul>
+        <li>Papaya salad, ส้มตำ</li><li>Thai spicy minced salad</li><li>Fried morning glory</li><li>Grilled skewers and sausages</li>
+      </ul>
+      <h3 style="margin-top:var(--space-3)">Sweet and cold</h3><ul>
+        <li>Mango sticky rice</li><li>Fresh young coconut</li><li>Fruit smoothies</li><li>Cold beer</li>
+      </ul></div>
+      <p class="note">Dishes from Omsin's menu boards, April 2026. Prices are on the board in the restaurant.</p>
     </div>
   </div>
 </section>
 
 <div class="wrap">
-  <section class="trio" aria-label="Drawings of favourite dishes">
-    <figure>
-      <svg class="draw" viewBox="0 0 240 200" role="img" aria-label="Drawing of panang curry in a bowl">
-        <path class="white" d="M30 90h180c0 50-40 84-90 84S30 140 30 90z"/>
-        <path class="ink" d="M30 90h180c0 50-40 84-90 84S30 140 30 90zM90 174h60"/>
-        <ellipse class="curry" cx="120" cy="90" rx="90" ry="20"/>
-        <ellipse class="ink" cx="120" cy="90" rx="90" ry="20"/>
-        <path class="thin" d="M70 88c10-6 20 4 30-2M120 84c10-6 22 4 32-2M90 98c8-4 18 2 26 0"/>
-        <path class="leaf ink" d="M140 80c8-12 22-14 30-8-8 10-20 12-30 8z"/>
-        <path class="red ink" d="M96 76c12-4 24-2 30 4-12 4-24 2-30-4z"/>
-        <path class="thin" d="M100 40c-6 10 6 16 0 26M122 34c-6 10 6 16 0 26M144 40c-6 10 6 16 0 26"/>
-      </svg>
-      <figcaption>Panang curry</figcaption>
-    </figure>
-    <figure>
-      <svg class="draw" viewBox="0 0 240 200" role="img" aria-label="Drawing of a fresh young coconut with a straw">
-        <path class="leaf" d="M70 110c0-40 22-70 50-70s50 30 50 70-22 64-50 64-50-24-50-64z"/>
-        <path class="ink" d="M70 110c0-40 22-70 50-70s50 30 50 70-22 64-50 64-50-24-50-64z"/>
-        <path class="white ink" d="M92 62c8-18 48-18 56 0-10 8-46 8-56 0z"/>
-        <path class="thin" d="M84 120c4 20 14 36 28 44M156 120c-4 20-14 36-28 44"/>
-        <path class="ink" d="M126 66l24-50"/>
-        <path class="red ink" d="M148 20l6-10 6 3-6 10z"/>
-        <path class="thin" d="M40 176h160"/>
-      </svg>
-      <figcaption>Young coconut</figcaption>
-    </figure>
-    <figure>
-      <svg class="draw" viewBox="0 0 240 200" role="img" aria-label="Drawing of mango sticky rice with coconut cream">
-        <ellipse class="plate" cx="120" cy="140" rx="100" ry="38"/>
-        <ellipse class="ink" cx="120" cy="140" rx="100" ry="38"/>
-        <path class="white ink" d="M50 136c0-26 20-40 44-40s40 16 40 40c-14 10-70 10-84 0z"/>
-        <path class="thin" d="M62 120h2M76 112h2M92 118h2M104 108h2M114 124h2M70 128h2"/>
-        <path class="sun ink" d="M126 132c10-30 44-44 74-30-4 22-34 38-74 30z"/>
-        <path class="thin" d="M140 124l40-16M150 128l38-14"/>
-        <path class="white ink" d="M64 100c10-10 34-12 50-2-14 6-36 8-50 2z"/>
-        <path class="thin" d="M86 100l2 2"/>
-      </svg>
-      <figcaption>Mango sticky rice</figcaption>
-    </figure>
-  </section>
-
   <section class="good" aria-label="Good to know">
-    <div><strong>Cash only</strong><span>Please bring baht.</span></div>
-    <div><strong>Vegan and vegetarian</strong><span>Ask and we cook it without meat.</span></div>
     <div><strong>Families and groups</strong><span>Good for kids and big tables.</span></div>
     <div><strong>Inside or outside</strong><span>Sit by the wok or indoors.</span></div>
-    <div><strong>Takeaway and delivery</strong><span>Both available.</span></div>
-    <div><strong>Free parking and Wi-Fi</strong><span>Parking lot and street parking.</span></div>
+    <div><strong>Takeaway and delivery</strong><span>Both available. Free parking and Wi-Fi.</span></div>
   </section>
 </div>
 
 <section class="visit" id="visit">
   <div class="wrap">
-    <div>
-      <h2>Find us</h2>
-      <p>175/62 Moo 1, Bo Put, Koh Samui 84320, close to Bophut beach.</p>
-      <div class="actions">
-        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Omsin+Restaurant+Bo+Put+Koh+Samui">Open in Google Maps</a>
-        <a class="btn ghost" href="tel:+66878911259">087 891 1259</a>
-        <a class="btn ghost" href="https://www.facebook.com/profile.php?id=100083315981885">Facebook</a>
-      </div>
+    <h2>Come and eat</h2>
+    <p>175/62 Moo 1, Bo Put, Koh Samui 84320, close to Bophut beach. Every day 10:00 to 21:00. Cash only.</p>
+    <div class="actions">
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Omsin+Restaurant+Bo+Put+Koh+Samui">Open in Google Maps</a>
+      <a class="btn alt" href="tel:+66878911259">087 891 1259</a>
+      <a class="btn alt" href="https://www.facebook.com/profile.php?id=100083315981885">Facebook</a>
     </div>
-    <table class="hours" aria-label="Opening hours">
-      <tr><td>Monday to Sunday</td><td>10:00 to 21:00</td></tr>
-      <tr><td>Payment</td><td>cash</td></tr>
-    </table>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <p>Omsin Restaurant, Bo Put, Koh Samui. ร้านออมสิน</p>
-    <p>Drawings made for this page. Dishes, hours and details from Omsin's menu boards and Google Maps, November 2026.</p>
+    <p>Omsin Restaurant, ออมสิน ตามสั่ง, Bo Put, Koh Samui.</p>
+    <p>Logo and dish photos from Omsin's own menu sheets on Google Maps, cropped for this page. Details from Google Maps, November 2026.</p>
   </div>
 </footer>
 

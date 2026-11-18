@@ -8,268 +8,201 @@
 <meta name="description" content="Thai home cooking in Maenam, Koh Samui, near the pier. Every plate cooked to order. Monday to Saturday, 11:00 to 22:00.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Barlow:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-/* hallmark: theme custom "menu tabs" (from Pi Nan's own menu: white pages, magenta price tabs, big food) · genre playful · job: book · signature: pineapple fried rice, drawn big */
-/* critique: white page, one magenta, condensed caps-free heads; prices only as printed on the February 2026 menu */
+/* hallmark: shape "menu book" (photo collage with price tabs, sticky section tabs) · theme custom "sabai badge" (pink-red disc, black outline, cream) from the restaurant's own logo · genre playful · job: book · signature: pineapple fried rice with its price tab */
+/* critique: cream paper, one hot pink, black; the owner's Facebook photos as big as the printed menu shows them; prices only from the February 2026 menu */
 :root{
-  --color-paper:oklch(0.985 0.004 330);
-  --color-paper-2:oklch(0.95 0.02 330);
-  --color-ink:oklch(0.27 0.06 330);
-  --color-muted:oklch(0.48 0.04 330);
-  --color-accent:oklch(0.5 0.2 340);
-  --color-accent-ink:oklch(0.985 0.004 330);
-  --color-sun:oklch(0.86 0.14 88);
-  --color-pine:oklch(0.8 0.15 95);
-  --color-leaf:oklch(0.62 0.15 140);
-  --color-shrimp:oklch(0.76 0.13 40);
-  --color-soup:oklch(0.7 0.16 45);
-  --color-rule:oklch(0.27 0.06 330 / .15);
-  --color-focus:oklch(0.5 0.2 340);
-  --font-display:"Barlow Condensed",system-ui,sans-serif;
+  --color-paper:oklch(0.97 0.015 85);
+  --color-paper-2:oklch(0.93 0.025 85);
+  --color-ink:oklch(0.18 0.01 20);
+  --color-muted:oklch(0.42 0.02 20);
+  --color-accent:oklch(0.58 0.21 5);
+  --color-accent-ink:oklch(0.98 0.01 85);
+  --color-rule:oklch(0.18 0.01 20 / .15);
+  --color-focus:oklch(0.58 0.21 5);
+  --font-display:"Anton",Impact,sans-serif;
   --font-body:"Barlow",system-ui,sans-serif;
-  --radius:12px;--radius-pill:999px;
+  --radius:10px;--radius-pill:999px;
   --space-1:.5rem;--space-2:1rem;--space-3:1.5rem;--space-4:2.5rem;--space-5:4rem;--space-6:6rem;
-  --measure:1160px;
+  --measure:1200px;
   --dur:180ms;--ease:cubic-bezier(.2,.7,.2,1);
 }
 *{box-sizing:border-box}
 html,body{overflow-x:clip;margin:0}
+html{scroll-behavior:smooth}
 body{background:var(--color-paper);color:var(--color-ink);font:400 1.0625rem/1.6 var(--font-body);padding-bottom:4.5rem}
-img,svg{display:block;max-width:100%;height:auto}
+img{display:block;max-width:100%;height:auto}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--color-focus);outline-offset:3px}
 .wrap{max-width:var(--measure);margin:0 auto;padding:0 var(--space-3)}
 h1,h2,h3{margin:0;overflow-wrap:break-word;min-width:0;line-height:.98}
-h1,h2{font-family:var(--font-display);font-weight:700;letter-spacing:-.01em}
-h3{font-family:var(--font-body);font-weight:500;font-size:1.2rem}
+h1,h2{font-family:var(--font-display);font-weight:400;letter-spacing:.005em}
+h3{font-weight:600;font-size:1.15rem}
 .demo{font-size:.88rem;text-align:center;padding:.55rem var(--space-2);background:var(--color-ink);color:var(--color-paper)}
-nav{display:flex;justify-content:space-between;align-items:center;padding:var(--space-2) 0;gap:var(--space-2)}
-.mark{font-family:var(--font-display);font-weight:700;font-size:1.7rem;text-decoration:none}
-.tab{display:inline-block;background:var(--color-accent);color:var(--color-accent-ink);padding:.05rem .5rem;border-radius:4px}
-.btn{display:inline-flex;align-items:center;padding:.75rem 1.35rem;border-radius:var(--radius-pill);background:var(--color-accent);color:var(--color-accent-ink);text-decoration:none;font-weight:500;border:2px solid var(--color-accent);transition:transform var(--dur) var(--ease),opacity var(--dur) var(--ease)}
-.btn:hover{transform:translateY(-2px)}
+header.top{display:flex;justify-content:space-between;align-items:center;padding:var(--space-2) 0;gap:var(--space-2)}
+.badge{width:5.2rem;height:5.2rem;border-radius:50%}
+.btn{display:inline-flex;align-items:center;padding:.75rem 1.35rem;border-radius:var(--radius-pill);background:var(--color-accent);color:var(--color-accent-ink);text-decoration:none;font-weight:600;border:2px solid var(--color-ink);transition:transform var(--dur) var(--ease),opacity var(--dur) var(--ease)}
+.btn:hover{transform:translateY(-2px) rotate(-1deg)}
 .btn:active{transform:none;opacity:.85}
-.btn.ghost{background:transparent;color:var(--color-ink);border-color:var(--color-ink)}
-.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-4);align-items:center;padding:var(--space-2) 0 var(--space-5)}
-.hero h1{font-size:clamp(3.4rem,8vw,6.6rem)}
-.hero .lede{font-size:1.2rem;color:var(--color-muted);margin:var(--space-3) 0;max-width:34ch}
-.facts{list-style:none;margin:0 0 var(--space-3);padding:0;display:grid;gap:.3rem}
-.facts strong{font-weight:500}
+.btn.ghost{background:var(--color-paper);color:var(--color-ink)}
+.hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,4fr) minmax(0,3fr);grid-template-rows:auto auto;gap:var(--space-2);padding:var(--space-2) 0 var(--space-5)}
+.hero .text{grid-column:1;grid-row:1 / span 2;align-self:center;padding-right:var(--space-3)}
+.hero h1{font-size:clamp(3.4rem,7.5vw,6.6rem);text-transform:none}
+.hero .lede{font-size:1.2rem;color:var(--color-muted);margin:var(--space-2) 0 var(--space-3);max-width:32ch}
+.facts{list-style:none;margin:0 0 var(--space-3);padding:0;display:grid;gap:.25rem}
+.facts strong{font-weight:600}
 .actions{display:flex;flex-wrap:wrap;gap:var(--space-2)}
+.shot{position:relative;margin:0}
+.shot img{width:100%;height:100%;object-fit:cover;border-radius:var(--radius);border:3px solid var(--color-ink)}
+.shot.big{grid-column:2;grid-row:1 / span 2}
+.shot.big img{aspect-ratio:4/5}
+.shot.s1{grid-column:3;grid-row:1}.shot.s2{grid-column:3;grid-row:2}
+.shot.s1 img,.shot.s2 img{aspect-ratio:1}
+.tag{position:absolute;left:-.6rem;bottom:1rem;background:var(--color-accent);color:var(--color-accent-ink);border:2px solid var(--color-ink);border-radius:6px;padding:.25rem .7rem;font-weight:600;line-height:1.25;transform:rotate(-3deg);font-size:.98rem}
+.tag small{display:block;font-weight:500;font-size:.85rem}
 .rating{margin-top:var(--space-3);font-size:.98rem;color:var(--color-muted)}
-.art{background:var(--color-paper-2);border-radius:var(--radius);padding:var(--space-2)}
-.draw .ink{fill:none;stroke:var(--color-ink);stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
-.draw .thin{fill:none;stroke:var(--color-ink);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-.draw .pine{fill:var(--color-pine)}
-.draw .leaf{fill:var(--color-leaf)}
-.draw .rice{fill:oklch(0.92 0.06 85)}
-.draw .shrimp{fill:var(--color-shrimp)}
-.draw .soup{fill:var(--color-soup)}
-.draw .sun{fill:var(--color-sun)}
-.draw .white{fill:var(--color-paper)}
-.draw .mag{fill:var(--color-accent)}
-.draw .nut{fill:oklch(0.75 0.08 70)}
-.menu{background:var(--color-paper-2);padding:var(--space-6) 0}
-.menu .head{display:flex;justify-content:space-between;align-items:end;gap:var(--space-3);flex-wrap:wrap;margin-bottom:var(--space-4)}
-.menu h2{font-size:clamp(2.8rem,6vw,4.6rem)}
-.menu .src{color:var(--color-muted);font-size:.95rem;max-width:40ch;margin:0}
-.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-4) var(--space-5)}
-.cols h3{margin-bottom:var(--space-1)}
-.cols ul{list-style:none;margin:0 0 var(--space-3);padding:0}
-.cols li{padding:.5rem 0;border-bottom:1px solid var(--color-rule)}
-.cols li .row{display:flex;justify-content:space-between;gap:var(--space-2)}
-.cols li .row span:last-child{white-space:nowrap;font-variant-numeric:tabular-nums}
-.cols li small{display:block;color:var(--color-muted);font-size:.9rem;font-variant-numeric:tabular-nums}
-.menu .also{margin-top:var(--space-2);color:var(--color-muted)}
-.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-3);padding:var(--space-6) 0 var(--space-5)}
-.trio figure{margin:0}
-.trio figcaption{font-family:var(--font-display);font-size:1.6rem;font-weight:700;text-align:center;margin-top:.3rem}
-.good{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-3) var(--space-4);padding:var(--space-4) 0 var(--space-6);border-top:2px solid var(--color-ink)}
-.good strong{display:block;font-weight:500}
-.good span{color:var(--color-muted);font-size:.98rem}
+.book{display:grid;grid-template-columns:200px minmax(0,1fr);gap:var(--space-5);padding:var(--space-5) 0 var(--space-6);border-top:3px solid var(--color-ink)}
+.book nav{position:sticky;top:var(--space-3);align-self:start;display:grid;gap:.5rem}
+.book nav a{display:block;text-decoration:none;font-family:var(--font-display);font-size:1.5rem;padding:.35rem .8rem;border-radius:6px;border:2px solid var(--color-ink);background:var(--color-paper);transition:transform var(--dur) var(--ease)}
+.book nav a:hover{transform:translateX(4px);background:var(--color-accent);color:var(--color-accent-ink)}
+.book nav p{font-size:.9rem;color:var(--color-muted);margin:var(--space-2) 0 0}
+.chapter{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:var(--space-4);align-items:start;padding-bottom:var(--space-5);margin-bottom:var(--space-5);border-bottom:1px solid var(--color-rule);scroll-margin-top:var(--space-3)}
+.chapter:last-child{border-bottom:0;margin-bottom:0}
+.chapter img{border-radius:var(--radius);border:3px solid var(--color-ink);aspect-ratio:1;object-fit:cover;width:100%}
+.chapter h2{font-size:clamp(2.4rem,5vw,3.6rem);margin-bottom:var(--space-2)}
+.dish{padding:.6rem 0;border-bottom:1px dashed var(--color-rule)}
+.dish .row{display:flex;justify-content:space-between;gap:var(--space-2);font-weight:500}
+.dish .row span:last-child{background:var(--color-accent);color:var(--color-accent-ink);padding:0 .45rem;border-radius:4px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.dish .row span.na{background:transparent;color:var(--color-muted)}
+.dish small{display:block;color:var(--color-muted);font-size:.9rem;font-variant-numeric:tabular-nums}
+.also{color:var(--color-muted);margin-top:var(--space-2)}
+.ticket{background:var(--color-accent);color:var(--color-accent-ink);border:3px solid var(--color-ink);border-radius:var(--radius);padding:var(--space-4);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-3);margin-bottom:var(--space-6)}
+.ticket strong{display:block;font-family:var(--font-display);font-weight:400;font-size:1.7rem;line-height:1.05}
 .visit{background:var(--color-ink);color:var(--color-paper);padding:var(--space-6) 0}
 .visit .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:var(--space-5)}
 .visit h2{font-size:clamp(2.8rem,6vw,4.6rem);margin-bottom:var(--space-3)}
 .visit p{opacity:.85}
-.visit .btn.ghost{color:var(--color-paper);border-color:oklch(0.985 0.004 330 / .5)}
-.hours{width:100%;border-collapse:collapse}
-.hours td{padding:.55rem 0;border-bottom:1px solid oklch(0.985 0.004 330 / .2)}
-.hours td:last-child{text-align:right}
+.visit .btn.ghost{background:transparent;color:var(--color-paper);border-color:var(--color-paper)}
 footer{padding:var(--space-4) 0;font-size:.88rem;color:var(--color-muted)}
 footer p{margin:.3rem 0}
 .bar{position:fixed;left:0;right:0;bottom:0;display:none;gap:1px;background:var(--color-rule);z-index:5}
-.bar a{flex:1;text-align:center;padding:.95rem .5rem;background:var(--color-ink);color:var(--color-paper);text-decoration:none;font-weight:500}
+.bar a{flex:1;text-align:center;padding:.95rem .5rem;background:var(--color-ink);color:var(--color-paper);text-decoration:none;font-weight:600}
 .bar a:first-child{background:var(--color-accent)}
-@media (max-width:860px){.hero,.visit .wrap{grid-template-columns:minmax(0,1fr)}.cols,.good{grid-template-columns:minmax(0,1fr)}.trio{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.bar{display:flex}}
-@media (min-width:861px){body{padding-bottom:0}}
-@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media (max-width:960px){.hero{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.hero .text{grid-column:1/-1;grid-row:auto;padding:0}.shot.big{grid-column:1;grid-row:auto}.shot.s1{grid-column:2;grid-row:auto}.shot.s2{display:none}.book{grid-template-columns:minmax(0,1fr)}.book nav{position:static;display:flex;flex-wrap:wrap}.chapter,.visit .wrap,.ticket{grid-template-columns:minmax(0,1fr)}.bar{display:flex}}
+@media (min-width:961px){body{padding-bottom:0}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 <div class="demo">Sample website made for Pi Nan's Sabai Sabai. Not live yet; nothing here is final.</div>
 <div class="wrap">
-  <nav>
-    <a class="mark" href="#top">Pi Nan's <span class="tab">Sabai Sabai</span></a>
+  <header class="top">
+    <a href="#top"><img class="badge" src="img/logo.jpg" alt="Pi Nan's Sabai Sabai, Maenam" width="360" height="362"></a>
     <a class="btn" href="tel:+66896495374">Book a table</a>
-  </nav>
-  <header class="hero" id="top">
-    <div>
+  </header>
+
+  <section class="hero" id="top">
+    <div class="text">
       <h1>Every plate cooked to order</h1>
       <p class="lede">Thai home cooking in Maenam, close to the pier. Ask the chef for the recipe.</p>
       <ul class="facts">
         <li><strong>Monday to Saturday</strong>, 11:00 to 22:00</li>
         <li><strong>Closed on Sundays</strong></li>
-        <li>26/77 Moo 4, Mae Nam, Koh Samui</li>
+        <li>26/77 Moo 4, Mae Nam</li>
       </ul>
       <div class="actions">
         <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Pi+Nan%27s+Sabai+Sabai+Mae+Nam+Koh+Samui">Directions</a>
-        <a class="btn ghost" href="#menu">See the menu</a>
+        <a class="btn ghost" href="#soups">See the menu</a>
       </div>
       <p class="rating"><a href="https://www.google.com/maps/search/?api=1&query=Pi+Nan%27s+Sabai+Sabai+Mae+Nam+Koh+Samui">4.8 on Google from 375 reviews</a>, November 2026</p>
     </div>
-    <div class="art">
-      <svg class="draw" viewBox="0 0 400 320" role="img" aria-label="Drawing of fried rice with prawns and cashews served in a half pineapple">
-        <ellipse class="white" cx="200" cy="262" rx="176" ry="40"/><ellipse class="thin" cx="200" cy="262" rx="176" ry="40"/>
-        <path class="leaf" d="M318 170c22-34 50-52 74-50-14 26-42 46-74 50zM322 186c30-14 58-14 74-2-24 14-50 14-74 2zM312 160c8-38 26-62 48-70 0 30-18 56-48 70z"/>
-        <path class="thin" d="M318 170c22-20 46-36 74-50M322 186c24-4 50-4 74-2M312 160c12-24 28-48 48-70"/>
-        <path class="pine" d="M40 196c0-30 30-46 70-46h200c26 0 44 22 40 50-6 44-60 72-150 72S40 240 40 196z"/>
-        <path class="ink" d="M40 196c0-30 30-46 70-46h200c26 0 44 22 40 50-6 44-60 72-150 72S40 240 40 196z"/>
-        <path class="thin" d="M70 214l20 16M100 222l20 16M130 228l20 14M160 232l20 12M200 234l20 12M240 232l20 12M280 224l20 12M90 206l-14 14M130 220l-16 16M176 228l-16 14M224 230l-16 14M272 226l-16 14"/>
-        <path class="rice" d="M66 170c10-40 70-62 140-58s128 26 126 58c-40 16-96 22-140 22s-102-6-126-22z"/>
-        <path class="ink" d="M66 170c10-40 70-62 140-58s128 26 126 58c-40 16-96 22-140 22s-102-6-126-22z"/>
-        <path class="thin" d="M100 150h3M120 140h3M150 132h3M180 128h3M220 128h3M250 134h3M280 144h3M300 158h3M110 166h3M140 160h3M200 150h3M240 154h3M270 164h3M170 172h3"/>
-        <path class="shrimp" d="M120 128c-18 2-26 18-20 32 4 8 14 12 22 8l-4-10c-6 2-10-1-10-6 0-6 6-10 12-10z"/>
-        <path class="ink" d="M120 128c-18 2-26 18-20 32 4 8 14 12 22 8l-4-10c-6 2-10-1-10-6 0-6 6-10 12-10zM120 128l8-6 0 10z"/>
-        <path class="shrimp" d="M238 118c18-2 30 12 26 28-2 9-12 14-21 12l2-10c5 1 9-2 9-6 1-7-6-11-12-10z"/>
-        <path class="ink" d="M238 118c18-2 30 12 26 28-2 9-12 14-21 12l2-10c5 1 9-2 9-6 1-7-6-11-12-10zM238 118l-8-6 0 10z"/>
-        <path class="nut" d="M168 120c4-10 18-10 20 0-2 8-16 10-20 0zM198 108c6-8 18-6 18 4-4 8-16 6-18-4zM290 148c6-8 18-6 18 4-4 8-16 6-18-4zM146 152c4-10 18-10 20 0-2 8-16 10-20 0z"/>
-        <path class="thin" d="M168 120c4-10 18-10 20 0-2 8-16 10-20 0zM198 108c6-8 18-6 18 4-4 8-16 6-18-4zM290 148c6-8 18-6 18 4-4 8-16 6-18-4zM146 152c4-10 18-10 20 0-2 8-16 10-20 0z"/>
-        <path class="pine" d="M206 156l14-12 14 12-14 10z"/><path class="thin" d="M206 156l14-12 14 12-14 10z"/>
-        <path class="leaf" d="M262 160c6-10 18-12 24-6-6 8-16 10-24 6zM94 174c8-8 20-8 26-2-8 6-18 8-26 2z"/>
-      </svg>
-    </div>
-  </header>
-</div>
+    <figure class="shot big"><img src="img/pineapple.jpg" alt="Fried rice with prawns and cashews served in a pineapple" width="800" height="999"><span class="tag">Fried rice in pineapple<small>150 to 200 baht</small></span></figure>
+    <figure class="shot s1"><img src="img/padthai.jpg" alt="Pad thai with chicken, peanuts, lime and bean sprouts" width="700" height="700"><span class="tag">Pad thai<small>70 to 150</small></span></figure>
+    <figure class="shot s2"><img src="img/mango.jpg" alt="Mango sticky rice with peanuts" width="700" height="700" loading="lazy"><span class="tag">Mango sticky rice</span></figure>
+  </section>
 
-<section class="menu" id="menu">
-  <div class="wrap">
-    <div class="head">
-      <h2>On the menu</h2>
-      <p class="src">Prices in baht from Pi Nan's printed menu, February 2026. The menu is in Thai and English, with vegetarian dishes marked.</p>
+  <section class="book" aria-label="Menu">
+    <nav aria-label="Menu sections">
+      <a href="#soups">Soups</a>
+      <a href="#noodles">Noodles</a>
+      <a href="#rice">Rice and mains</a>
+      <p>Prices in baht from the February 2026 menu. Vegetarian dishes are marked on the menu.</p>
+    </nav>
+    <div>
+      <article class="chapter" id="soups">
+        <img src="img/shrimpsoup.jpg" alt="Shrimp soup with vegetables and mushrooms" width="700" height="700" loading="lazy">
+        <div>
+          <h2>Soups</h2>
+          <div class="dish"><div class="row"><span>Tom yum</span><span>100 to 200</span></div><small>vegetables 100, chicken 140, shrimp 180, seafood 200</small></div>
+          <div class="dish"><div class="row"><span>Tom ka</span><span>100 to 180</span></div><small>vegetables 100, chicken or pork 140, shrimp 180</small></div>
+          <div class="dish"><div class="row"><span>Chinese soup</span><span>100 to 150</span></div><small>vegetables 100, chicken or pork 120, seafood or shrimp 150</small></div>
+          <div class="dish"><div class="row"><span>Rice soup, khao tom</span><span>60 to 120</span></div></div>
+          <div class="dish"><div class="row"><span>Seafood noodle soup</span><span>150</span></div></div>
+          <div class="dish"><div class="row"><span>Tofu and vegetable soup</span><span>90</span></div></div>
+        </div>
+      </article>
+      <article class="chapter" id="noodles">
+        <img src="img/padthai.jpg" alt="Pad thai" width="700" height="700" loading="lazy">
+        <div>
+          <h2>Noodles</h2>
+          <div class="dish"><div class="row"><span>Pad thai</span><span>70 to 150</span></div><small>vegetables 70, chicken or pork 90, shrimp or seafood 150</small></div>
+          <div class="dish"><div class="row"><span>Pad see ew</span><span>70 to 150</span></div><small>vegetables 70, chicken or pork 90, shrimp or seafood 150</small></div>
+          <div class="dish"><div class="row"><span>Noodles in black soy or red chilli sauce</span><span>60</span></div></div>
+          <div class="dish"><div class="row"><span>The same, topped with a Thai omelette</span><span>70</span></div></div>
+        </div>
+      </article>
+      <article class="chapter" id="rice">
+        <img src="img/krapao.jpg" alt="Stir-fried holy basil with minced meat, rice and fried egg" width="700" height="700" loading="lazy">
+        <div>
+          <h2>Rice and mains</h2>
+          <div class="dish"><div class="row"><span>Fried rice in pineapple</span><span>150 to 200</span></div><small>chicken or pork 150, shrimp 190, seafood 200</small></div>
+          <div class="dish"><div class="row"><span>Pad kra pao with fried egg</span><span class="na">—</span></div></div>
+          <div class="dish"><div class="row"><span>Rice with shrimp paste</span><span>150</span></div></div>
+          <div class="dish"><div class="row"><span>Fried chicken with garlic on rice</span><span>120</span></div></div>
+          <div class="dish"><div class="row"><span>Shrimp with black pepper</span><span>180</span></div></div>
+          <div class="dish"><div class="row"><span>Chicken or pork with ginger</span><span>140</span></div></div>
+          <div class="dish"><div class="row"><span>Omelette with seafood</span><span>150</span></div></div>
+          <div class="dish"><div class="row"><span>Mango sticky rice</span><span class="na">—</span></div></div>
+          <p class="also">Also on the menu: burgers, pasta, all-day breakfast, suki and fish. A dash means ask us for the price.</p>
+        </div>
+      </article>
     </div>
-    <div class="cols">
-      <div>
-        <h3>Soups</h3>
-        <ul>
-          <li><div class="row"><span>Tom yum</span><span>100 to 200</span></div><small>vegetables 100, chicken 140, shrimp 180, seafood 200</small></li>
-          <li><div class="row"><span>Tom ka</span><span>100 to 180</span></div><small>vegetables 100, chicken or pork 140, shrimp 180</small></li>
-          <li><div class="row"><span>Chinese soup</span><span>100 to 150</span></div><small>vegetables 100, chicken or pork 120, seafood or shrimp 150</small></li>
-          <li><div class="row"><span>Rice soup, khao tom</span><span>60 to 120</span></div><small>vegetables 60, chicken or pork 80, seafood 120</small></li>
-          <li><div class="row"><span>Seafood noodle soup</span><span>150</span></div></li>
-          <li><div class="row"><span>Tofu and vegetable soup</span><span>90</span></div></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Noodles and rice</h3>
-        <ul>
-          <li><div class="row"><span>Pad thai</span><span>70 to 150</span></div><small>vegetables 70, chicken or pork 90, shrimp or seafood 150</small></li>
-          <li><div class="row"><span>Pad see ew, fried noodles</span><span>70 to 150</span></div><small>vegetables 70, chicken or pork 90, shrimp or seafood 150</small></li>
-          <li><div class="row"><span>Fried rice in pineapple</span><span>150 to 200</span></div><small>chicken or pork 150, shrimp 190, seafood 200</small></li>
-          <li><div class="row"><span>Rice with shrimp paste</span><span>150</span></div><small>vegetables, omelette, pork and shrimp</small></li>
-          <li><div class="row"><span>Fried chicken with garlic on rice</span><span>120</span></div></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Mains</h3>
-        <ul>
-          <li><div class="row"><span>Shrimp with black pepper</span><span>180</span></div></li>
-          <li><div class="row"><span>Chicken or pork with ginger</span><span>140</span></div></li>
-          <li><div class="row"><span>Omelette with seafood</span><span>150</span></div></li>
-          <li><div class="row"><span>Pad kra pao with fried egg</span><span>—</span></div></li>
-          <li><div class="row"><span>Massaman curry</span><span>—</span></div></li>
-          <li><div class="row"><span>Homemade spring rolls</span><span>—</span></div></li>
-          <li><div class="row"><span>Mango sticky rice</span><span>—</span></div></li>
-        </ul>
-      </div>
-    </div>
-    <p class="also">Also on the menu: burgers, pasta, all-day breakfast, suki and fish. Ask us for today's prices.</p>
+  </section>
+
+  <div class="ticket">
+    <div><strong>Book by phone</strong>089 649 5374</div>
+    <div><strong>Before your ferry</strong>Close to Maenam pier</div>
+    <div><strong>Drinks</strong>Beer, cocktails, wine, fresh coconut</div>
   </div>
-</section>
-
-<div class="wrap">
-  <section class="trio" aria-label="Drawings of guest favourites">
-    <figure>
-      <svg class="draw" viewBox="0 0 240 190" role="img" aria-label="Drawing of a bowl of tom yum soup with prawns">
-        <path class="white" d="M30 84h180c0 50-40 86-90 86S30 134 30 84z"/><path class="ink" d="M30 84h180c0 50-40 86-90 86S30 134 30 84z"/>
-        <ellipse class="soup" cx="120" cy="84" rx="90" ry="20"/><ellipse class="ink" cx="120" cy="84" rx="90" ry="20"/>
-        <path class="shrimp" d="M80 84c0-12 14-18 24-12-6 2-10 6-10 12z"/><path class="thin" d="M80 84c0-12 14-18 24-12-6 2-10 6-10 12z"/>
-        <path class="shrimp" d="M140 80c4-12 18-14 26-6-6 0-12 4-14 10z"/><path class="thin" d="M140 80c4-12 18-14 26-6-6 0-12 4-14 10z"/>
-        <path class="leaf" d="M110 74c6-10 18-12 26-6-6 8-18 10-26 6z"/>
-        <path class="thin" d="M96 44c-6 8 6 14 0 22M120 36c-6 8 6 14 0 22M144 44c-6 8 6 14 0 22"/>
-      </svg>
-      <figcaption>Tom yum</figcaption>
-    </figure>
-    <figure>
-      <svg class="draw" viewBox="0 0 240 190" role="img" aria-label="Drawing of crispy spring rolls with dipping sauce">
-        <ellipse class="white" cx="120" cy="130" rx="104" ry="40"/><ellipse class="thin" cx="120" cy="130" rx="104" ry="40"/>
-        <g class="sun"><rect x="40" y="96" width="110" height="22" rx="11" transform="rotate(-10 95 107)"/><rect x="56" y="122" width="110" height="22" rx="11" transform="rotate(-6 111 133)"/><rect x="70" y="146" width="100" height="20" rx="10" transform="rotate(-2 120 156)"/></g>
-        <g class="ink"><rect x="40" y="96" width="110" height="22" rx="11" transform="rotate(-10 95 107)"/><rect x="56" y="122" width="110" height="22" rx="11" transform="rotate(-6 111 133)"/><rect x="70" y="146" width="100" height="20" rx="10" transform="rotate(-2 120 156)"/></g>
-        <path class="white" d="M172 112c0-12 40-12 40 0s-8 18-20 18-20-6-20-18z"/><path class="ink" d="M172 112c0-12 40-12 40 0s-8 18-20 18-20-6-20-18z"/>
-        <ellipse class="mag" cx="192" cy="112" rx="16" ry="5"/>
-      </svg>
-      <figcaption>Spring rolls</figcaption>
-    </figure>
-    <figure>
-      <svg class="draw" viewBox="0 0 240 190" role="img" aria-label="Drawing of mango sticky rice">
-        <ellipse class="white" cx="120" cy="140" rx="100" ry="38"/><ellipse class="ink" cx="120" cy="140" rx="100" ry="38"/>
-        <path class="rice" d="M50 136c0-26 20-40 44-40s40 16 40 40c-14 10-70 10-84 0z"/><path class="ink" d="M50 136c0-26 20-40 44-40s40 16 40 40c-14 10-70 10-84 0z"/>
-        <path class="sun" d="M126 132c10-30 44-44 74-30-4 22-34 38-74 30z"/><path class="ink" d="M126 132c10-30 44-44 74-30-4 22-34 38-74 30z"/>
-        <path class="thin" d="M140 124l40-16M150 128l38-14M62 120h2M78 112h2M96 118h2M108 108h2"/>
-      </svg>
-      <figcaption>Mango sticky rice</figcaption>
-    </figure>
-  </section>
-
-  <section class="good" aria-label="Good to know">
-    <div><strong>Closed on Sundays</strong><span>Open Monday to Saturday.</span></div>
-    <div><strong>Book a table</strong><span>We take reservations by phone.</span></div>
-    <div><strong>Vegetarian</strong><span>Vegetarian dishes marked on the menu.</span></div>
-    <div><strong>Before your ferry</strong><span>Close to Maenam pier.</span></div>
-    <div><strong>Drinks</strong><span>Beer, cocktails, wine and fresh coconut.</span></div>
-    <div><strong>Easy access</strong><span>Wheelchair-friendly entrance and free parking.</span></div>
-  </section>
 </div>
 
 <section class="visit" id="visit">
   <div class="wrap">
     <div>
       <h2>Find us</h2>
-      <p>26/77 Moo 4, Mae Nam, Koh Samui 84330.</p>
+      <p>26/77 Moo 4, Mae Nam, Koh Samui 84330. Monday to Saturday 11:00 to 22:00, closed on Sundays.</p>
       <div class="actions">
         <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Pi+Nan%27s+Sabai+Sabai+Mae+Nam+Koh+Samui">Open in Google Maps</a>
-        <a class="btn ghost" href="tel:+66896495374">089 649 5374</a>
+        <a class="btn ghost" href="tel:+66896495374">Call</a>
         <a class="btn ghost" href="https://www.facebook.com/pi.nans.sabai.sabai">Facebook</a>
       </div>
     </div>
-    <table class="hours" aria-label="Opening hours">
-      <tr><td>Monday to Saturday</td><td>11:00 to 22:00</td></tr>
-      <tr><td>Sunday</td><td>closed</td></tr>
-    </table>
+    <p>Wheelchair-friendly entrance and seating. Free parking. Good for kids.</p>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
     <p>Pi Nan's Sabai Sabai, Mae Nam, Koh Samui.</p>
-    <p>Drawings made for this page. Menu, hours and details from Pi Nan's menu and Google Maps, November 2026.</p>
+    <p>Logo and photos from Pi Nan's own Facebook page, cropped and colour-adjusted for this page. Menu and details from the restaurant's menu and Google Maps, November 2026.</p>
   </div>
 </footer>
 
 <nav class="bar" aria-label="Quick actions">
   <a href="tel:+66896495374">Call</a>
   <a href="https://www.google.com/maps/search/?api=1&query=Pi+Nan%27s+Sabai+Sabai+Mae+Nam+Koh+Samui">Directions</a>
-  <a href="#menu">Menu</a>
+  <a href="#soups">Menu</a>
 </nav>
 </body>
 </html>

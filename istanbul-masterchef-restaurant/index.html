@@ -8,262 +8,208 @@
 <meta name="description" content="Turkish kitchen on Chaweng Beach Road, Koh Samui. Pide, kebab, Turkish breakfast. Unlimited Turkish tea on the house. Open every day 10:00 to 02:00.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Cormorant:ital,wght@0,500;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
 <style>
-/* hallmark: theme custom "istanbul night" (from the restaurant's own menu: black pages, gold heads, the city at night) · genre editorial · job: book · signature: the free tulip glass of tea, drawn in gold */
-/* critique: night black, one gold, serif heads; prices only from the September 2025 printed menu where legible, the rest left blank */
+/* hallmark: shape "night menu" (centred, one column, framed section heads) · theme custom "istanbul night" from the restaurant's own menu: black pages, gold frames, the city lit up · genre editorial · job: book · signature: the free tulip glass of tea */
+/* critique: black and gold only, Cinzel as the menu's own head face, centred like a printed menu; prices from the September 2025 menu, blanks where unreadable */
 :root{
-  --color-paper:oklch(0.17 0.008 70);
-  --color-paper-2:oklch(0.22 0.01 70);
-  --color-ink:oklch(0.95 0.015 85);
-  --color-muted:oklch(0.76 0.02 85);
-  --color-accent:oklch(0.8 0.11 85);
-  --color-accent-ink:oklch(0.17 0.008 70);
+  --color-paper:oklch(0.16 0.008 70);
+  --color-paper-2:oklch(0.21 0.01 70);
+  --color-ink:oklch(0.94 0.015 85);
+  --color-muted:oklch(0.75 0.02 85);
+  --color-gold:oklch(0.8 0.11 85);
+  --color-gold-ink:oklch(0.16 0.008 70);
   --color-tea:oklch(0.5 0.15 35);
-  --color-red:oklch(0.55 0.2 27);
-  --color-rule:oklch(0.8 0.11 85 / .25);
+  --color-rule:oklch(0.8 0.11 85 / .3);
+  --color-shade:oklch(0.12 0.008 70 / .7);
   --color-focus:oklch(0.8 0.11 85);
-  --font-display:"DM Serif Display",Georgia,serif;
+  --font-display:"Cormorant",Georgia,serif;
+  --font-label:"Cinzel",Georgia,serif;
   --font-body:"Jost",system-ui,sans-serif;
-  --radius:6px;--radius-pill:999px;
+  --radius:999px;
   --space-1:.5rem;--space-2:1rem;--space-3:1.5rem;--space-4:2.5rem;--space-5:4rem;--space-6:6rem;
-  --measure:1160px;
+  --measure:760px;--wide:1160px;
   --dur:180ms;--ease:cubic-bezier(.2,.7,.2,1);
 }
 *{box-sizing:border-box}
 html,body{overflow-x:clip;margin:0}
-body{background:var(--color-paper);color:var(--color-ink);font:400 1.0625rem/1.6 var(--font-body);padding-bottom:4.5rem}
+body{background:var(--color-paper);color:var(--color-ink);font:400 1.0625rem/1.65 var(--font-body);padding-bottom:4.5rem}
 img,svg{display:block;max-width:100%;height:auto}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--color-focus);outline-offset:3px}
-.wrap{max-width:var(--measure);margin:0 auto;padding:0 var(--space-3)}
+.narrow{max-width:var(--measure);margin:0 auto;padding:0 var(--space-3)}
+.wide{max-width:var(--wide);margin:0 auto;padding:0 var(--space-3)}
 h1,h2,h3{margin:0;overflow-wrap:break-word;min-width:0;line-height:1.02}
-h1,h2{font-family:var(--font-display);font-weight:400;color:var(--color-accent)}
-h3{font-family:var(--font-body);font-weight:500;font-size:1.2rem}
+h1,h2{font-family:var(--font-display);font-weight:500;color:var(--color-gold)}
 .demo{font-size:.88rem;text-align:center;padding:.55rem var(--space-2);background:var(--color-paper-2);color:var(--color-muted)}
-nav{display:flex;justify-content:space-between;align-items:center;padding:var(--space-2) 0;gap:var(--space-2);border-bottom:1px solid var(--color-rule)}
-.mark{font-family:var(--font-display);font-size:1.6rem;text-decoration:none;color:var(--color-accent)}
-.btn{display:inline-flex;align-items:center;padding:.75rem 1.35rem;border-radius:var(--radius-pill);background:var(--color-accent);color:var(--color-accent-ink);text-decoration:none;font-weight:500;border:1px solid var(--color-accent);transition:transform var(--dur) var(--ease),opacity var(--dur) var(--ease)}
+.btn{display:inline-flex;align-items:center;padding:.75rem 1.4rem;border-radius:var(--radius);background:var(--color-gold);color:var(--color-gold-ink);text-decoration:none;font-weight:500;border:1px solid var(--color-gold);transition:transform var(--dur) var(--ease),opacity var(--dur) var(--ease)}
 .btn:hover{transform:translateY(-2px)}
 .btn:active{transform:none;opacity:.85}
-.btn.ghost{background:transparent;color:var(--color-ink);border-color:var(--color-rule)}
-.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:var(--space-4);align-items:center;padding:var(--space-4) 0 var(--space-5)}
-.hero h1{font-size:clamp(3.2rem,7vw,5.8rem)}
-.hero .lede{font-size:1.2rem;color:var(--color-muted);margin:var(--space-3) 0;max-width:34ch}
-.facts{list-style:none;margin:0 0 var(--space-3);padding:0;display:grid;gap:.3rem}
-.facts strong{font-weight:500}
-.actions{display:flex;flex-wrap:wrap;gap:var(--space-2)}
-.rating{margin-top:var(--space-3);font-size:.98rem;color:var(--color-muted)}
-.draw .ink{fill:none;stroke:var(--color-accent);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
-.draw .thin{fill:none;stroke:var(--color-accent);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
-.draw .tea{fill:var(--color-tea)}
-.draw .gold{fill:var(--color-accent)}
-.draw .dough{fill:oklch(0.72 0.1 70)}
-.draw .meat{fill:oklch(0.48 0.1 40)}
-.draw .green{fill:oklch(0.62 0.14 140)}
-.draw .red{fill:var(--color-red)}
-.draw .dark{fill:var(--color-paper-2)}
-.menu{background:var(--color-paper-2);padding:var(--space-6) 0}
-.menu .head{display:flex;justify-content:space-between;align-items:end;gap:var(--space-3);flex-wrap:wrap;margin-bottom:var(--space-4)}
-.menu h2{font-size:clamp(2.6rem,5.5vw,4.4rem)}
-.menu .src{color:var(--color-muted);font-size:.95rem;max-width:40ch;margin:0}
-.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-4) var(--space-5)}
-.cols h3{margin-bottom:var(--space-1);color:var(--color-accent)}
-.cols ul{list-style:none;margin:0 0 var(--space-3);padding:0}
-.cols li{display:flex;justify-content:space-between;gap:var(--space-2);padding:.5rem 0;border-bottom:1px solid var(--color-rule)}
-.cols li span:last-child{white-space:nowrap;font-variant-numeric:tabular-nums}
-.cols li small{display:block;color:var(--color-muted);font-size:.88rem}
-.menu .also{margin-top:var(--space-2);color:var(--color-muted)}
-.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-3);padding:var(--space-6) 0 var(--space-5)}
-.trio figure{margin:0;border:1px solid var(--color-rule);border-radius:var(--radius);padding:var(--space-3) var(--space-2) var(--space-2)}
-.trio figcaption{text-align:center;margin-top:.4rem;font-family:var(--font-display);font-size:1.5rem;color:var(--color-accent)}
-.trio figcaption small{display:block;font-family:var(--font-body);font-size:.95rem;color:var(--color-muted)}
-.good{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-3) var(--space-4);padding:var(--space-4) 0 var(--space-6);border-top:1px solid var(--color-rule)}
-.good strong{display:block;font-weight:500}
-.good span{color:var(--color-muted);font-size:.98rem}
-.visit{background:var(--color-paper-2);padding:var(--space-6) 0}
-.visit .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:var(--space-5)}
-.visit h2{font-size:clamp(2.6rem,5.5vw,4.4rem);margin-bottom:var(--space-3)}
-.visit p{color:var(--color-muted)}
-.hours{width:100%;border-collapse:collapse}
-.hours td{padding:.55rem 0;border-bottom:1px solid var(--color-rule)}
-.hours td:last-child{text-align:right}
-footer{padding:var(--space-4) 0;font-size:.88rem;color:var(--color-muted)}
+.btn.line{background:transparent;color:var(--color-gold)}
+.night{position:relative;min-height:min(90vh,780px);display:grid;place-items:center;text-align:center;overflow:hidden}
+.night > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.night::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,var(--color-shade) 0%,oklch(0.12 0.008 70 / .45) 70%)}
+.night .in{position:relative;z-index:1;padding:var(--space-5) var(--space-3);max-width:780px}
+.frame{border:1px solid var(--color-gold);border-radius:4px;padding:var(--space-4) var(--space-4)}
+.name{font-family:var(--font-label);color:var(--color-gold);font-size:1.05rem;margin:0 0 var(--space-2)}
+.night h1{font-size:clamp(3.2rem,8vw,6.4rem)}
+.night p{font-size:1.2rem;margin:var(--space-2) auto var(--space-3);max-width:34ch}
+.actions{display:flex;flex-wrap:wrap;gap:var(--space-2);justify-content:center}
+.hours{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--space-2) var(--space-5);padding:var(--space-3) var(--space-3);border-bottom:1px solid var(--color-rule);text-align:center}
+.hours b{display:block;font-family:var(--font-label);font-weight:500;color:var(--color-gold);font-size:.95rem}
+.tea{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:var(--space-4);align-items:center;padding:var(--space-6) var(--space-3)}
+.tea h2{font-size:clamp(2.6rem,5.5vw,4.2rem)}
+.tea p{color:var(--color-muted)}
+.tea em{font-family:var(--font-display);font-size:1.6rem;color:var(--color-ink);font-style:italic}
+.draw .ink{fill:none;stroke:var(--color-gold);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.draw .thin{fill:none;stroke:var(--color-gold);stroke-width:1.4;stroke-linecap:round}
+.draw .tea-f{fill:var(--color-tea)}.draw .gold{fill:var(--color-gold)}.draw .dark{fill:var(--color-paper-2)}
+.store{margin:0}
+.store img{width:100%;border-radius:4px;border:1px solid var(--color-rule)}
+.store figcaption{text-align:center;color:var(--color-muted);font-size:.95rem;margin-top:.6rem}
+.menu{padding:var(--space-6) 0}
+.menu .intro{text-align:center;color:var(--color-muted);margin:var(--space-2) auto var(--space-5);max-width:46ch}
+.menu > .narrow > h2{text-align:center;font-size:clamp(2.8rem,6vw,4.6rem)}
+.pill{display:flex;align-items:center;gap:var(--space-2);margin:var(--space-5) 0 var(--space-2)}
+.pill::before,.pill::after{content:"";flex:1;height:1px;background:var(--color-rule)}
+.pill h3{font-family:var(--font-label);font-weight:500;color:var(--color-gold);border:1px solid var(--color-gold);border-radius:var(--radius);padding:.35rem 1.4rem;font-size:1.15rem}
+.row{display:flex;align-items:baseline;gap:.5rem;padding:.45rem 0}
+.row .n{display:flex;flex-direction:column}
+.row .n small{font-family:var(--font-display);font-style:italic;font-size:1.05rem;color:var(--color-muted)}
+.row i{flex:1;border-bottom:1px dotted var(--color-rule);transform:translateY(-.35rem)}
+.row b{font-weight:500;color:var(--color-gold);font-variant-numeric:tabular-nums;white-space:nowrap}
+.plate{margin:var(--space-4) auto}
+.plate img{border-radius:4px;border:1px solid var(--color-rule);aspect-ratio:4/5;object-fit:cover;width:min(420px,100%);margin:0 auto}
+.plate figcaption{text-align:center;color:var(--color-muted);font-size:.95rem;margin-top:.6rem}
+.menu .tail{text-align:center;color:var(--color-muted);margin-top:var(--space-4)}
+.visit{background:var(--color-paper-2);padding:var(--space-6) 0;text-align:center}
+.visit h2{font-size:clamp(2.6rem,5.5vw,4.4rem);margin-bottom:var(--space-2)}
+.visit p{color:var(--color-muted);max-width:44ch;margin:0 auto var(--space-3)}
+footer{padding:var(--space-4) 0;font-size:.88rem;color:var(--color-muted);text-align:center}
 footer p{margin:.3rem 0}
 .bar{position:fixed;left:0;right:0;bottom:0;display:none;gap:1px;background:var(--color-rule);z-index:5}
 .bar a{flex:1;text-align:center;padding:.95rem .5rem;background:var(--color-paper-2);color:var(--color-ink);text-decoration:none;font-weight:500}
-.bar a:first-child{background:var(--color-accent);color:var(--color-accent-ink)}
-@media (max-width:860px){.hero,.visit .wrap{grid-template-columns:minmax(0,1fr)}.cols,.good,.trio{grid-template-columns:minmax(0,1fr)}.bar{display:flex}.hero svg{max-width:340px;margin:0 auto}}
-@media (min-width:861px){body{padding-bottom:0}}
+.bar a:first-child{background:var(--color-gold);color:var(--color-gold-ink)}
+@media (max-width:760px){.tea{grid-template-columns:minmax(0,1fr)}.tea svg{max-width:260px;margin:0 auto}.frame{padding:var(--space-3) var(--space-2)}.bar{display:flex}}
+@media (min-width:761px){body{padding-bottom:0}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
 <div class="demo">Sample website made for İstanbul MasterChef. Not live yet; nothing here is final.</div>
-<div class="wrap">
-  <nav>
-    <a class="mark" href="#top">İstanbul MasterChef</a>
-    <a class="btn" href="tel:+66826218460">Book a table</a>
-  </nav>
-  <header class="hero" id="top">
-    <div>
-      <h1>The Turkish tea is on the house</h1>
-      <p class="lede">A Turkish kitchen on Chaweng Beach Road. Pide, kebab and breakfast, served late.</p>
-      <ul class="facts">
-        <li><strong>Open every day</strong>, 10:00 to 02:00</li>
-        <li>Chaweng Beach Road, Chaweng, Koh Samui</li>
-        <li>Halal</li>
-      </ul>
+
+<header class="night" id="top">
+  <img src="img/tower.jpg" alt="The Maiden's Tower in Istanbul at sunset" width="1600" height="899">
+  <div class="in">
+    <div class="frame">
+      <p class="name">İstanbul MasterChef</p>
+      <h1>A taste of İstanbul in Chaweng</h1>
+      <p>Pide, kebab and Turkish breakfast. The tea is on the house.</p>
       <div class="actions">
-        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Istanbul+MasterChef+Restaurant+Koh+Samui">Directions</a>
-        <a class="btn ghost" href="#menu">See the menu</a>
+        <a class="btn" href="tel:+66826218460">Book a table</a>
+        <a class="btn line" href="#menu">The menu</a>
       </div>
-      <p class="rating"><a href="https://www.google.com/maps/search/?api=1&query=Istanbul+MasterChef+Restaurant+Koh+Samui">4.9 on Google from 1,431 reviews</a>, November 2026</p>
     </div>
-    <svg class="draw" viewBox="0 0 360 380" role="img" aria-label="Drawing of a tulip glass of Turkish tea on a saucer with a sugar cube and spoon">
-      <path class="thin" d="M70 70c40-10 70 0 90-20M220 40c30 10 60 4 80-12M40 120c20-6 34-2 46-12"/>
-      <path class="gold" d="M282 60a26 26 0 1 0 0 40a32 32 0 1 1 0-40z"/>
-      <path class="gold" d="M314 70l4 10 10 1-8 6 3 10-9-6-9 6 3-10-8-6 10-1z"/>
-      <ellipse class="dark" cx="180" cy="320" rx="120" ry="28"/><ellipse class="ink" cx="180" cy="320" rx="120" ry="28"/>
-      <ellipse class="thin" cx="180" cy="318" rx="80" ry="16"/>
-      <path class="tea" d="M136 196c-14 30-4 64 10 82 8 10 12 20 10 30h48c-2-10 2-20 10-30 14-18 24-52 10-82z"/>
-      <path class="ink" d="M126 150c4 20 18 34 14 48-14 30-4 64 10 82 8 10 12 20 10 30h40c-2-10 2-20 10-30 14-18 24-52 10-82-4-14 10-28 14-48z"/>
-      <ellipse class="ink" cx="180" cy="150" rx="54" ry="10"/>
-      <path class="thin" d="M150 210c-4 20 0 40 8 54"/>
-      <rect class="gold" x="62" y="296" width="26" height="22" rx="3"/><path class="thin" d="M62 300l10-8h26l-10 8M88 300l10-8v20l-10 8"/>
-      <path class="thin" d="M166 128c-6-10 6-16 0-28M190 124c-6-10 6-16 0-28"/>
-    </svg>
-  </header>
+  </div>
+</header>
+
+<div class="hours">
+  <div><b>Every day</b>10:00 to 02:00</div>
+  <div><b>Chaweng Beach Road</b>Chaweng, Koh Samui</div>
+  <div><b>Halal</b>Turkish home cooking</div>
+  <div><b><a href="https://www.google.com/maps/search/?api=1&query=Istanbul+MasterChef+Restaurant+Koh+Samui">4.9 on Google</a></b>1,431 reviews, Nov 2026</div>
 </div>
 
-<section class="menu" id="menu">
-  <div class="wrap">
-    <div class="head">
-      <h2>From the kitchen</h2>
-      <p class="src">Prices in baht from the restaurant's printed menu. Dishes without a price are on the menu too; ask us for today's price.</p>
-    </div>
-    <div class="cols">
-      <div>
-        <h3>Pide and lahmacun</h3>
-        <ul>
-          <li><span>Minced meat pide</span><span>230</span></li>
-          <li><span>Cubed meat pide</span><span>250</span></li>
-          <li><span>Cheese pide</span><span>250</span></li>
-          <li><span>Sucuk and cheese pide</span><span>260</span></li>
-          <li><span>Spinach pide</span><span>210</span></li>
-          <li><span>Mixed pide</span><span>290</span></li>
-          <li><span>Lahmacun</span><span>180</span></li>
-        </ul>
-        <h3>Soup and breakfast</h3>
-        <ul>
-          <li><span>Lentil soup, mercimek</span><span>—</span></li>
-          <li><span>Menemen</span><span>—</span></li>
-          <li><span>Turkish breakfast</span><span>—</span></li>
-        </ul>
-      </div>
-      <div>
-        <h3>From the grill</h3>
-        <ul>
-          <li><span>İskender kebab</span><span>—</span></li>
-          <li><span>Mixed grill platter</span><span>—</span></li>
-          <li><span>Beyti kebab</span><span>420</span></li>
-          <li><span>Lamb shish</span><span>410</span></li>
-          <li><span>Chicken shish</span><span>330</span></li>
-          <li><span>Grilled meatballs, köfte</span><span>320</span></li>
-          <li><span>Grilled chicken breast</span><span>310</span></li>
-          <li><span>Adana wrap</span><span>275</span></li>
-          <li><span>Chicken wrap</span><span>250</span></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Hot starters</h3>
-        <ul>
-          <li><span>Shrimp casserole</span><span>280</span></li>
-          <li><span>Mushroom casserole</span><span>245</span></li>
-          <li><span>Fried calamari</span><span>240</span></li>
-          <li><span>Stuffed meatballs, içli köfte</span><span>250</span></li>
-          <li><span>Pastrami pastry, paçanga</span><span>220</span></li>
-          <li><span>Cheese rolls, sigara böreği</span><span>200</span></li>
-        </ul>
-        <h3>Desserts</h3>
-        <ul>
-          <li><span>Baklava</span><span>250</span></li>
-          <li><span>Sütlaç, rice pudding</span><span>150</span></li>
-          <li><span>Tiramisu</span><span>180</span></li>
-          <li><span>Chocolate soufflé</span><span>200</span></li>
-        </ul>
-      </div>
-    </div>
-    <p class="also">Also on the menu: pizza, pasta and mantı, salads and cold meze. Unlimited Turkish tea is our complimentary drink.</p>
+<section class="tea wide">
+  <svg class="draw" viewBox="40 20 300 340" role="img" aria-label="Drawing of a tulip glass of Turkish tea on a saucer">
+    <ellipse class="dark" cx="180" cy="320" rx="120" ry="28"/><ellipse class="ink" cx="180" cy="320" rx="120" ry="28"/>
+    <ellipse class="thin" cx="180" cy="318" rx="80" ry="16"/>
+    <path class="tea-f" d="M136 196c-14 30-4 64 10 82 8 10 12 20 10 30h48c-2-10 2-20 10-30 14-18 24-52 10-82z"/>
+    <path class="ink" d="M126 150c4 20 18 34 14 48-14 30-4 64 10 82 8 10 12 20 10 30h40c-2-10 2-20 10-30 14-18 24-52 10-82-4-14 10-28 14-48z"/>
+    <ellipse class="ink" cx="180" cy="150" rx="54" ry="10"/>
+    <path class="thin" d="M150 210c-4 20 0 40 8 54M166 128c-6-10 6-16 0-28M190 124c-6-10 6-16 0-28"/>
+    <rect class="gold" x="62" y="296" width="26" height="22" rx="3"/>
+  </svg>
+  <div>
+    <h2>Çay bizden</h2>
+    <p><em>The tea is on us.</em></p>
+    <p>Unlimited Turkish tea comes with your meal, in the tulip glass, the way it is served at home. Ask Mustafa for a Turkish coffee too.</p>
   </div>
 </section>
 
-<div class="wrap">
-  <section class="trio" aria-label="Drawings of house favourites">
-    <figure>
-      <svg class="draw" viewBox="0 0 240 170" role="img" aria-label="Drawing of a boat-shaped Turkish pide with meat filling">
-        <path class="dough" d="M14 92C50 52 190 52 226 92 190 128 50 128 14 92z"/><path class="ink" d="M14 92C50 52 190 52 226 92 190 128 50 128 14 92z"/>
-        <path class="meat" d="M44 92c30-20 122-20 152 0-30 18-122 18-152 0z"/><path class="thin" d="M44 92c30-20 122-20 152 0-30 18-122 18-152 0z"/>
-        <path class="green" d="M90 88h6M120 84h6M150 90h6M104 98h6"/>
-        <path class="thin" d="M70 90l4 2M100 86l4 2M130 92l4 2M160 88l4 2M84 98l4 1M140 98l4 1"/>
-      </svg>
-      <figcaption>Pide<small>cubed meat, cheese or sucuk</small></figcaption>
-    </figure>
-    <figure>
-      <svg class="draw" viewBox="0 0 240 170" role="img" aria-label="Drawing of grilled kebab skewer with peppers and tomato">
-        <path class="ink" d="M20 120L224 60"/>
-        <path class="meat" d="M56 96c10-8 48-20 62-18 6 4 6 12 0 16-14 4-50 16-62 14-6-2-6-10 0-12z"/><path class="ink" d="M56 96c10-8 48-20 62-18 6 4 6 12 0 16-14 4-50 16-62 14-6-2-6-10 0-12z"/>
-        <path class="thin" d="M70 96l4 10M86 90l4 10M102 86l4 10"/>
-        <circle class="red" cx="140" cy="80" r="14"/><circle class="ink" cx="140" cy="80" r="14"/>
-        <path class="green" d="M164 64c8-6 22-4 26 4-6 8-20 8-26-4z"/><path class="thin" d="M164 64c8-6 22-4 26 4-6 8-20 8-26-4z"/>
-        <circle class="gold" cx="226" cy="60" r="5"/>
-      </svg>
-      <figcaption>Kebab<small>Beyti, Adana, lamb and chicken shish</small></figcaption>
-    </figure>
-    <figure>
-      <svg class="draw" viewBox="0 0 240 170" role="img" aria-label="Drawing of baklava squares with pistachio">
-        <ellipse class="dark" cx="120" cy="120" rx="104" ry="34"/><ellipse class="thin" cx="120" cy="120" rx="104" ry="34"/>
-        <path class="dough" d="M46 104l40-20 40 20-40 20z"/><path class="ink" d="M46 104l40-20 40 20-40 20zM46 104v12l40 20v-12M126 104v12l-40 20"/>
-        <path class="dough" d="M110 94l40-20 40 20-40 20z"/><path class="ink" d="M110 94l40-20 40 20-40 20zM110 94v12l40 20v-12M190 94v12l-40 20"/>
-        <path class="green" d="M80 102h12v4H80zM144 92h12v4h-12z"/>
-        <path class="thin" d="M50 110l36 18M114 100l36 18"/>
-      </svg>
-      <figcaption>Baklava<small>with pistachio</small></figcaption>
-    </figure>
-  </section>
-
-  <section class="good" aria-label="Good to know">
-    <div><strong>Tea on the house</strong><span>Unlimited Turkish tea with your meal.</span></div>
-    <div><strong>Halal</strong><span>Turkish home cooking, made fresh.</span></div>
-    <div><strong>Breakfast to late</strong><span>From 10 in the morning to 2 at night.</span></div>
-    <div><strong>Takeaway and delivery</strong><span>Both available.</span></div>
-    <div><strong>Families</strong><span>Kids' menu and high chairs.</span></div>
-    <div><strong>Free Wi-Fi</strong><span>Plenty of space between tables.</span></div>
-  </section>
+<div class="narrow">
+  <figure class="store">
+    <img src="img/storefront.jpg" alt="The lit İstanbul MasterChef Restaurant sign with Turkish and Thai flags" width="1000" height="746" loading="lazy">
+    <figcaption>Look for the lit sign and the flags on Chaweng Beach Road.</figcaption>
+  </figure>
 </div>
 
+<section class="menu" id="menu">
+  <div class="narrow">
+    <h2>Menü</h2>
+    <p class="intro">Prices in baht from the restaurant's printed menu, September 2025. A dash means the dish is on the menu but we could not read its price.</p>
+
+    <div class="pill"><h3>Pide</h3></div>
+    <div class="row"><span class="n">Cubed meat pide<small>kuşbaşılı pide</small></span><i></i><b>250</b></div>
+    <div class="row"><span class="n">Minced meat pide<small>kıymalı pide</small></span><i></i><b>230</b></div>
+    <div class="row"><span class="n">Sucuk and cheese pide<small>sucuklu kaşarlı</small></span><i></i><b>260</b></div>
+    <div class="row"><span class="n">Cheese pide<small>kaşarlı pide</small></span><i></i><b>250</b></div>
+    <div class="row"><span class="n">Spinach pide<small>ıspanaklı pide</small></span><i></i><b>210</b></div>
+    <div class="row"><span class="n">Mixed pide<small>karışık pide</small></span><i></i><b>290</b></div>
+    <div class="row"><span class="n">Lahmacun</span><i></i><b>180</b></div>
+
+    <div class="pill"><h3>Grill</h3></div>
+    <figure class="plate">
+      <img src="img/adana.jpg" alt="Two plates of Adana kebab with rice, salad and grilled peppers" width="900" height="1125" loading="lazy">
+      <figcaption>Adana kebab, from the restaurant's own photos</figcaption>
+    </figure>
+    <div class="row"><span class="n">İskender kebab</span><i></i><b>—</b></div>
+    <div class="row"><span class="n">Mixed grill platter<small>karışık ızgara</small></span><i></i><b>—</b></div>
+    <div class="row"><span class="n">Beyti kebab</span><i></i><b>420</b></div>
+    <div class="row"><span class="n">Lamb shish<small>kuzu şiş</small></span><i></i><b>410</b></div>
+    <div class="row"><span class="n">Chicken shish<small>tavuk şiş</small></span><i></i><b>330</b></div>
+    <div class="row"><span class="n">Grilled meatballs<small>ızgara köfte</small></span><i></i><b>320</b></div>
+    <div class="row"><span class="n">Adana wrap<small>Adana dürüm</small></span><i></i><b>275</b></div>
+    <div class="row"><span class="n">Chicken wrap<small>tavuk dürüm</small></span><i></i><b>250</b></div>
+
+    <div class="pill"><h3>Hot starters</h3></div>
+    <div class="row"><span class="n">Shrimp casserole<small>karides güveç</small></span><i></i><b>280</b></div>
+    <div class="row"><span class="n">Stuffed meatballs<small>içli köfte</small></span><i></i><b>250</b></div>
+    <div class="row"><span class="n">Fried calamari</span><i></i><b>240</b></div>
+    <div class="row"><span class="n">Pastrami pastry<small>paçanga böreği</small></span><i></i><b>220</b></div>
+    <div class="row"><span class="n">Cheese rolls<small>sigara böreği</small></span><i></i><b>200</b></div>
+
+    <div class="pill"><h3>Soup and breakfast</h3></div>
+    <div class="row"><span class="n">Lentil soup<small>mercimek çorbası</small></span><i></i><b>—</b></div>
+    <div class="row"><span class="n">Menemen</span><i></i><b>—</b></div>
+    <div class="row"><span class="n">Turkish breakfast<small>kahvaltı</small></span><i></i><b>—</b></div>
+
+    <div class="pill"><h3>Desserts</h3></div>
+    <div class="row"><span class="n">Baklava</span><i></i><b>250</b></div>
+    <div class="row"><span class="n">Rice pudding<small>sütlaç</small></span><i></i><b>150</b></div>
+    <div class="row"><span class="n">Chocolate soufflé<small>sufle</small></span><i></i><b>200</b></div>
+    <div class="row"><span class="n">Tiramisu</span><i></i><b>180</b></div>
+
+    <p class="tail">Also: pizza, pasta, mantı and salads. Takeaway and delivery available.</p>
+  </div>
+</section>
+
 <section class="visit" id="visit">
-  <div class="wrap">
-    <div>
-      <h2>Find us</h2>
-      <p>Chaweng Beach Road, Chaweng, Koh Samui. Look for the Turkish flags.</p>
-      <div class="actions">
-        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Istanbul+MasterChef+Restaurant+Koh+Samui">Open in Google Maps</a>
-        <a class="btn ghost" href="tel:+66826218460">082 621 8460</a>
-        <a class="btn ghost" href="https://www.instagram.com/istanbulmasterchefrestaurant/">Instagram</a>
-      </div>
+  <div class="narrow">
+    <h2>Hoş geldiniz</h2>
+    <p>Chaweng Beach Road, Chaweng, Koh Samui. Every day from 10 in the morning to 2 at night. Kids' menu, high chairs and free Wi-Fi.</p>
+    <div class="actions">
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Istanbul+MasterChef+Restaurant+Koh+Samui">Open in Google Maps</a>
+      <a class="btn line" href="tel:+66826218460">082 621 8460</a>
+      <a class="btn line" href="https://www.instagram.com/istanbulmasterchefrestaurant/">Instagram</a>
     </div>
-    <table class="hours" aria-label="Opening hours">
-      <tr><td>Monday to Sunday</td><td>10:00 to 02:00</td></tr>
-      <tr><td>Tea</td><td>on the house</td></tr>
-    </table>
   </div>
 </section>
 
 <footer>
-  <div class="wrap">
+  <div class="narrow">
     <p>İstanbul MasterChef Restaurant, Chaweng, Koh Samui.</p>
-    <p>Drawings made for this page. Menu, hours and details from the restaurant's menu and Google Maps, November 2026.</p>
+    <p>Photos uploaded by the restaurant to Google Maps, cropped and colour-graded for this page; the tea glass is drawn. Menu and details from the restaurant's menu and Google Maps, November 2026.</p>
   </div>
 </footer>
 
