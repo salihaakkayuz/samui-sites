@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Super Chef, Fisherman's Village</title>
+<meta name="description" content="Family Thai and seafood kitchen in Fisherman's Village, Bophut, Koh Samui. Open every day 10:00 to 22:00. Tripadvisor Travellers' Choice 2024.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Nunito+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+/* hallmark: shape "split poster" (sign panel beside the flame photo, plate wall, award line, dish index) · theme custom "chef sign" from the restaurant's own sign: dark brown board, cream letters, stars, flame orange · genre playful · job: visit · signature: the chef's wok in full flame */
+/* critique: dark board and cream, one flame accent; plates shown big as the owners present them; no prices anywhere because none were legible */
+:root{
+  --color-board:oklch(0.25 0.02 45);
+  --color-board-2:oklch(0.31 0.025 45);
+  --color-cream:oklch(0.95 0.025 85);
+  --color-cream-2:oklch(0.9 0.035 80);
+  --color-ink:oklch(0.25 0.02 45);
+  --color-muted:oklch(0.48 0.025 45);
+  --color-on-board-muted:oklch(0.8 0.03 80);
+  --color-flame:oklch(0.7 0.18 50);
+  --color-flame-ink:oklch(0.2 0.02 45);
+  --color-trip:oklch(0.76 0.13 165);
+  --color-rule:oklch(0.25 0.02 45 / .16);
+  --color-rule-on:oklch(0.95 0.025 85 / .18);
+  --color-focus:oklch(0.7 0.18 50);
+  --font-display:"Fjalla One",Impact,sans-serif;
+  --font-body:"Nunito Sans",system-ui,sans-serif;
+  --radius:12px;--radius-pill:999px;
+  --space-1:.5rem;--space-2:1rem;--space-3:1.5rem;--space-4:2.5rem;--space-5:4rem;--space-6:6rem;
+  --measure:1180px;
+  --dur:180ms;--ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip;margin:0}
+body{background:var(--color-cream);color:var(--color-ink);font:400 1.0625rem/1.6 var(--font-body);padding-bottom:4.5rem}
+img,svg{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--color-focus);outline-offset:3px}
+.wrap{max-width:var(--measure);margin:0 auto;padding:0 var(--space-3)}
+h1,h2,h3{margin:0;overflow-wrap:break-word;min-width:0;line-height:1;font-family:var(--font-display);font-weight:400}
+h3{font-family:var(--font-body);font-weight:800;font-size:1.1rem;line-height:1.2}
+.demo{font-size:.88rem;text-align:center;padding:.55rem var(--space-2);background:var(--color-flame);color:var(--color-flame-ink)}
+.btn{display:inline-flex;align-items:center;padding:.8rem 1.4rem;border-radius:var(--radius-pill);background:var(--color-flame);color:var(--color-flame-ink);text-decoration:none;font-weight:800;border:2px solid var(--color-flame);transition:transform var(--dur) var(--ease),opacity var(--dur) var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:none;opacity:.85}
+.btn.ghost{background:transparent;color:inherit;border-color:currentColor}
+.poster{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:min(92vh,820px)}
+.panel{background:var(--color-board);color:var(--color-cream);display:flex;flex-direction:column;justify-content:space-between;padding:var(--space-3) var(--space-4) var(--space-5)}
+.panel .top{display:flex;justify-content:space-between;align-items:center;gap:var(--space-2)}
+.emblem{display:flex;align-items:center;gap:.6rem;text-decoration:none;font-family:var(--font-display);font-size:1.2rem}
+.emblem svg{width:2.6rem;height:2.6rem}
+.draw .ln{fill:none;stroke:var(--color-cream);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.draw .st{fill:var(--color-cream)}
+.sign{font-family:var(--font-display);font-size:clamp(4rem,10vw,8rem);line-height:.88;margin:var(--space-4) 0 var(--space-2)}
+.ribbon{display:inline-block;border:1px solid var(--color-cream);border-radius:var(--radius-pill);padding:.25rem 1rem;font-size:.95rem;margin-bottom:var(--space-3)}
+.panel h1{font-family:var(--font-body);font-weight:600;font-size:clamp(1.25rem,2vw,1.5rem);line-height:1.35;max-width:30ch;color:var(--color-cream)}
+.panel .facts{list-style:none;padding:0;margin:var(--space-3) 0;display:grid;gap:.3rem;color:var(--color-on-board-muted)}
+.panel .facts b{color:var(--color-cream)}
+.actions{display:flex;flex-wrap:wrap;gap:var(--space-2)}
+.photo{position:relative;margin:0}
+.photo img{width:100%;height:100%;object-fit:cover}
+.photo figcaption{position:absolute;left:var(--space-3);bottom:var(--space-3);background:var(--color-board);color:var(--color-cream);padding:.4rem .9rem;border-radius:var(--radius-pill);font-size:.95rem}
+.award{background:var(--color-board-2);color:var(--color-cream)}
+.award .wrap{display:flex;flex-wrap:wrap;gap:var(--space-2) var(--space-5);align-items:center;justify-content:space-between;padding:var(--space-3) var(--space-3)}
+.award .badge{display:flex;align-items:center;gap:var(--space-2)}
+.award .badge span{display:grid;place-items:center;width:3.4rem;height:3.4rem;border-radius:50%;background:var(--color-trip);color:var(--color-board);font-weight:800;font-size:.9rem}
+.award a{color:var(--color-cream)}
+.wall{padding:var(--space-6) 0 var(--space-5)}
+.wall h2{font-size:clamp(2.6rem,6vw,4.6rem)}
+.wall .lede{color:var(--color-muted);max-width:52ch;margin:var(--space-2) 0 var(--space-4)}
+.plates{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-2)}
+.plates figure{margin:0}
+.plates img{border-radius:var(--radius);aspect-ratio:4/5;object-fit:cover;width:100%}
+.plates .wide{grid-column:span 2}
+.plates .wide img{aspect-ratio:8/5}
+.plates figcaption{margin-top:.5rem;font-weight:600}
+.index{background:var(--color-board);color:var(--color-cream);padding:var(--space-6) 0}
+.index h2{font-size:clamp(2.6rem,6vw,4.6rem)}
+.index .lede{color:var(--color-on-board-muted);max-width:56ch;margin:var(--space-2) 0 var(--space-4)}
+.groups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-4)}
+.groups h3{color:var(--color-flame);margin-bottom:var(--space-1)}
+.groups ul{list-style:none;margin:0;padding:0}
+.groups li{padding:.45rem 0;border-bottom:1px solid var(--color-rule-on)}
+.good{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-3);padding:var(--space-6) 0}
+.good div{background:var(--color-cream-2);border-radius:var(--radius);padding:var(--space-3)}
+.good b{display:block;font-weight:800}
+.good span{color:var(--color-muted);font-size:.98rem}
+.visit .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:var(--space-5);align-items:center;padding-bottom:var(--space-6)}
+.visit img{border-radius:var(--radius);aspect-ratio:3/4;object-fit:cover}
+.visit h2{font-size:clamp(2.6rem,6vw,4.6rem);margin-bottom:var(--space-2)}
+.visit p{color:var(--color-muted)}
+footer{padding:var(--space-4) 0;font-size:.88rem;color:var(--color-muted);border-top:1px solid var(--color-rule)}
+footer p{margin:.3rem 0}
+.bar{position:fixed;left:0;right:0;bottom:0;display:none;gap:1px;background:var(--color-rule);z-index:5}
+.bar a{flex:1;text-align:center;padding:.95rem .5rem;background:var(--color-board);color:var(--color-cream);text-decoration:none;font-weight:800}
+.bar a:first-child{background:var(--color-flame);color:var(--color-flame-ink)}
+@media (max-width:860px){.poster{grid-template-columns:minmax(0,1fr)}.photo{height:60vh}.plates{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.groups,.good,.visit .wrap{grid-template-columns:minmax(0,1fr)}.panel{padding:var(--space-3) var(--space-3) var(--space-4)}.bar{display:flex}}
+@media (min-width:861px){body{padding-bottom:0}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="demo">Sample website made for Super Chef. Not live yet; nothing here is final.</div>
+
+<header class="poster" id="top">
+  <div class="panel">
+    <div class="top">
+      <a class="emblem" href="#top" aria-label="Super Chef">
+        <svg class="draw" viewBox="0 0 60 60" aria-hidden="true"><circle class="ln" cx="30" cy="32" r="22"/><path class="ln" d="M20 44l20-20M40 44L20 24M18 22l4 4M42 22l-4 4"/><path class="st" d="M10 18l1.5 3 3 .4-2.2 2 .6 3-2.9-1.5-2.9 1.5.6-3-2.2-2 3-.4zM50 18l1.5 3 3 .4-2.2 2 .6 3-2.9-1.5-2.9 1.5.6-3-2.2-2 3-.4z"/><path class="ln" d="M22 10c0-4 4-6 8-6s8 2 8 6c0 2-2 3-3 3H25c-1 0-3-1-3-3z"/></svg>
+        Super Chef
+      </a>
+      <a class="btn ghost" href="tel:+66850421273">Call</a>
+    </div>
+    <div>
+      <div class="sign" aria-hidden="true">SUPER<br>CHEF</div>
+      <span class="ribbon">restaurant, food and drink</span>
+      <h1>Thai food and seafood, cooked by one family in Fisherman's Village.</h1>
+      <ul class="facts">
+        <li><b>Every day</b>, 10:00 to 22:00</li>
+        <li>100/2 Bo Put, Fisherman's Village</li>
+      </ul>
+      <div class="actions">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Super+Chef+Restaurant+Samui+fisherman+bophut">Directions</a>
+        <a class="btn ghost" href="#menu">What we cook</a>
+      </div>
+    </div>
+  </div>
+  <figure class="photo">
+    <img src="img/flame.jpg" alt="The chef tossing a wok over a tall flame in the Super Chef kitchen" width="1000" height="1250">
+    <figcaption>In our kitchen</figcaption>
+  </figure>
+</header>
+
+<div class="award">
+  <div class="wrap">
+    <div class="badge"><span>2024</span><p style="margin:0">Tripadvisor Travellers' Choice 2024</p></div>
+    <p style="margin:0"><a href="https://www.google.com/maps/search/?api=1&query=Super+Chef+Restaurant+Samui+fisherman+bophut">4.7 on Google from 627 reviews</a>, November 2026</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="wall" aria-labelledby="wall">
+    <h2 id="wall">Every plate dressed up</h2>
+    <p class="lede">Carved vegetables, orchids and a little sauce on the side. Photos from our own kitchen.</p>
+    <div class="plates">
+      <figure class="wide"><img src="img/woonsen.jpg" alt="Baked prawns with glass noodles, shiitake and herbs, with a chilli dip and frangipani" width="800" height="800" loading="lazy"><figcaption>Prawns with glass noodles</figcaption></figure>
+      <figure><img src="img/lobster.jpg" alt="Grilled lobster with cheese on salad with carved cucumber hearts" width="800" height="1000" loading="lazy"><figcaption>Lobster with cheese</figcaption></figure>
+      <figure><img src="img/seafood.jpg" alt="Seafood salad on a blue plate with an orchid and chilli sauce" width="800" height="1000" loading="lazy"><figcaption>Seafood, served with flowers</figcaption></figure>
+      <figure class="wide"><img src="img/tomyum.jpg" alt="Tom yum goong with prawns, lime and coriander" width="800" height="800" loading="lazy"><figcaption>Tom yum goong</figcaption></figure>
+    </div>
+  </section>
+</div>
+
+<section class="index" id="menu">
+  <div class="wrap">
+    <h2>What we cook</h2>
+    <p class="lede">Favourites from our menu. Ask for prices and for anything that's not on the list; we are happy to change a dish for you.</p>
+    <div class="groups">
+      <div><h3>Seafood</h3><ul>
+        <li>Deep-fried fish with garlic</li><li>Deep-fried white snapper</li><li>Steamed fish</li><li>Prawns with glass noodles</li><li>Lobster with cheese</li><li>Grilled salmon steak</li><li>Stir-fried seafood</li>
+      </ul></div>
+      <div><h3>Wok and curry</h3><ul>
+        <li>Pad thai, with shrimp</li><li>Stir-fried holy basil chicken</li><li>Massaman curry</li><li>Shrimp egg fried rice</li><li>Fried rice in pineapple</li><li>Stir-fried morning glory</li><li>Noodles with pork</li>
+      </ul></div>
+      <div><h3>To start, to share</h3><ul>
+        <li>Fresh vegetable spring rolls</li><li>Chicken satay</li><li>Corn fritters</li><li>Fried chicken wings</li><li>Spicy papaya salad</li><li>Fresh coconut, mango shake</li><li>Thai milk tea</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <section class="good" aria-label="Good to know">
+    <div><b>Kids welcome</b><span>Kids' menu, high chairs, a changing table and toys.</span></div>
+    <div><b>On the house</b><span>Slices of watermelon after your meal.</span></div>
+    <div><b>Breakfast to dinner</b><span>Open from 10 in the morning, every day.</span></div>
+    <div><b>Cards and delivery</b><span>Credit cards, tap to pay, takeaway and delivery.</span></div>
+  </section>
+</div>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <img src="img/storefront.jpg" alt="Super Chef from the street, with the Tripadvisor Travellers' Choice sign and the menu board" width="900" height="1200" loading="lazy">
+    <div>
+      <h2>Find us</h2>
+      <p>100/2 Bo Put, Koh Samui 84320, in Fisherman's Village. Look for the dark Super Chef sign with the little chef. Free Wi-Fi, bar, cocktails and happy hour.</p>
+      <p><b>Every day, 10:00 to 22:00.</b> Reservations welcome.</p>
+      <div class="actions">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Super+Chef+Restaurant+Samui+fisherman+bophut">Open in Google Maps</a>
+        <a class="btn ghost" href="tel:+66850421273">085 042 1273</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Super Chef Restaurant, Fisherman's Village, Bophut, Koh Samui.</p>
+    <p>Photos uploaded by Super Chef to Google Maps, cropped and colour-adjusted for this page. Details from Google Maps, November 2026.</p>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Quick actions">
+  <a href="tel:+66850421273">Call</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Super+Chef+Restaurant+Samui+fisherman+bophut">Directions</a>
+  <a href="#menu">Menu</a>
+</nav>
+</body>
+</html>

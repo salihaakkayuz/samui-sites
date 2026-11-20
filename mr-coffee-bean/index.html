@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Mr Coffee Bean, Chaweng</title>
+<meta name="description" content="Family-run breakfast, lunch and dinner spot in Chaweng, Koh Samui. English and Thai breakfast sets with coffee included, Thai food and seafood.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* hallmark: shape "breakfast counter" (big word, set cards like a ticket rail, thank-you strip) · theme custom "cream sign" from the shop's own sign: cream card, tomato red, tablecloth blue, orange chairs · genre editorial · job: visit · signature: the five breakfast sets, coffee included */
+/* critique: morning light, cream paper, one red and one blue; prices only from the December 2025 menu; hours unknown, so asked, not invented */
+:root{
+  --color-paper:oklch(0.97 0.025 90);
+  --color-paper-2:oklch(0.93 0.04 88);
+  --color-ink:oklch(0.25 0.03 40);
+  --color-muted:oklch(0.47 0.03 40);
+  --color-red:oklch(0.55 0.19 28);
+  --color-blue:oklch(0.47 0.13 262);
+  --color-orange:oklch(0.76 0.15 62);
+  --color-on:oklch(0.98 0.01 90);
+  --color-rule:oklch(0.25 0.03 40 / .15);
+  --color-focus:oklch(0.47 0.13 262);
+  --font-display:"Young Serif",Georgia,serif;
+  --font-body:"DM Sans",system-ui,sans-serif;
+  --radius:16px;--radius-pill:999px;
+  --space-1:.5rem;--space-2:1rem;--space-3:1.5rem;--space-4:2.5rem;--space-5:4rem;--space-6:6rem;
+  --measure:1180px;
+  --dur:180ms;--ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip;margin:0}
+body{background:var(--color-paper);color:var(--color-ink);font:400 1.0625rem/1.6 var(--font-body);padding-bottom:4.5rem}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--color-focus);outline-offset:3px}
+.wrap{max-width:var(--measure);margin:0 auto;padding:0 var(--space-3)}
+h1,h2,h3{margin:0;overflow-wrap:break-word;min-width:0;line-height:1.02}
+h1,h2{font-family:var(--font-display);font-weight:400}
+h3{font-weight:700;font-size:1.1rem}
+.demo{font-size:.88rem;text-align:center;padding:.55rem var(--space-2);background:var(--color-blue);color:var(--color-on)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:var(--space-2) 0;gap:var(--space-2)}
+.mark{font-family:var(--font-display);font-size:1.5rem;text-decoration:none;color:var(--color-red)}
+.btn{display:inline-flex;align-items:center;padding:.75rem 1.35rem;border-radius:var(--radius-pill);background:var(--color-red);color:var(--color-on);text-decoration:none;font-weight:700;border:2px solid var(--color-red);transition:transform var(--dur) var(--ease),opacity var(--dur) var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:none;opacity:.85}
+.btn.ghost{background:transparent;color:var(--color-ink);border-color:var(--color-ink)}
+.hero{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:var(--space-4);align-items:center;padding:var(--space-3) 0 var(--space-5)}
+.big{font-family:var(--font-display);font-size:clamp(3.4rem,8vw,6.4rem);line-height:.85;color:var(--color-red);letter-spacing:-.02em}
+.hero h1{font-size:clamp(1.9rem,3.6vw,2.8rem);margin:var(--space-2) 0}
+.hero p{color:var(--color-muted);font-size:1.15rem;max-width:34ch;margin:0 0 var(--space-3)}
+.when{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;padding:0;margin:0 0 var(--space-3)}
+.when li{background:var(--color-paper-2);border-radius:var(--radius-pill);padding:.3rem .9rem;font-weight:500}
+.actions{display:flex;flex-wrap:wrap;gap:var(--space-2)}
+.hero figure{margin:0;position:relative}
+.hero figure img{border-radius:var(--radius);aspect-ratio:4/5;object-fit:cover;width:100%}
+.stamp{position:absolute;right:-.6rem;bottom:1.2rem;background:var(--color-blue);color:var(--color-on);border-radius:var(--radius);padding:.7rem 1rem;transform:rotate(3deg);font-weight:700;line-height:1.2;max-width:14rem}
+.stamp small{display:block;font-weight:400}
+.sets{padding:var(--space-5) 0}
+.sets .head{display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-3)}
+.sets h2{font-size:clamp(2.4rem,5vw,3.8rem)}
+.sets .head p{margin:0;color:var(--color-muted);max-width:40ch}
+.rail{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--space-2)}
+.ticket{background:var(--color-on);border:2px solid var(--color-ink);border-radius:var(--radius);padding:var(--space-3) var(--space-2);display:flex;flex-direction:column;gap:.4rem;position:relative}
+.ticket::before{content:"";position:absolute;left:-2px;right:-2px;top:3.4rem;border-top:2px dashed var(--color-rule)}
+.ticket .no{font-family:var(--font-display);font-size:1.4rem;color:var(--color-red)}
+.ticket b{font-size:1.05rem}
+.ticket span{color:var(--color-muted);font-size:.93rem;flex:1}
+.ticket .price{font-family:var(--font-display);font-size:1.7rem;color:var(--color-blue)}
+.thai{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-2);margin-top:var(--space-2)}
+.thai .ticket{flex-direction:row;align-items:center;gap:var(--space-2)}
+.thai .ticket::before{display:none}
+.thai .ticket div{flex:1}
+.thai .ticket span{display:block}
+.plates{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr) minmax(0,1fr);gap:var(--space-2);align-items:end;padding:var(--space-4) 0 var(--space-5)}
+.plates figure{margin:0}
+.plates img{border-radius:var(--radius);width:100%;object-fit:cover}
+.plates .tall img{aspect-ratio:4/3}
+.plates .sq img{aspect-ratio:1}
+.plates figcaption{font-size:.95rem;color:var(--color-muted);margin-top:.5rem}
+.all{background:var(--color-paper-2);padding:var(--space-6) 0}
+.all h2{font-size:clamp(2.4rem,5vw,3.8rem);margin-bottom:var(--space-2)}
+.all .src{color:var(--color-muted);margin:0 0 var(--space-4);max-width:56ch}
+.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-4)}
+.cols h3{color:var(--color-red);margin-bottom:var(--space-1)}
+.cols ul{list-style:none;margin:0;padding:0}
+.cols li{display:flex;justify-content:space-between;gap:var(--space-2);padding:.5rem 0;border-bottom:1px solid var(--color-rule)}
+.cols li span:last-child{white-space:nowrap;font-weight:700;font-variant-numeric:tabular-nums}
+.thanks{background:var(--color-orange);color:var(--color-ink);padding:var(--space-4) 0}
+.thanks .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:var(--space-4);align-items:center}
+.thanks h2{font-size:clamp(2rem,4vw,3rem)}
+.thanks p{margin:0;font-size:1.1rem}
+.visit{padding:var(--space-6) 0}
+.visit .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:var(--space-5);align-items:center}
+.visit h2{font-size:clamp(2.4rem,5vw,3.8rem);margin-bottom:var(--space-2)}
+.visit p{color:var(--color-muted)}
+.visit img{border-radius:var(--radius)}
+footer{padding:var(--space-4) 0;font-size:.88rem;color:var(--color-muted);border-top:1px solid var(--color-rule)}
+footer p{margin:.3rem 0}
+.bar{position:fixed;left:0;right:0;bottom:0;display:none;gap:1px;background:var(--color-rule);z-index:5}
+.bar a{flex:1;text-align:center;padding:.95rem .5rem;background:var(--color-blue);color:var(--color-on);text-decoration:none;font-weight:700}
+.bar a:first-child{background:var(--color-red)}
+@media (max-width:960px){.rail{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:860px){.hero,.visit .wrap,.thanks .wrap{grid-template-columns:minmax(0,1fr)}.thai,.cols{grid-template-columns:minmax(0,1fr)}.plates{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.plates .tall{grid-column:1/-1}.stamp{right:.6rem}.bar{display:flex}}
+@media (min-width:861px){body{padding-bottom:0}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="demo">Sample website made for Mr Coffee Bean. Not live yet; nothing here is final.</div>
+<div class="wrap">
+  <nav>
+    <a class="mark" href="#top">Mr. Coffee Bean</a>
+    <a class="btn ghost" href="tel:+66815940646">Call 081 594 0646</a>
+  </nav>
+  <header class="hero" id="top">
+    <div>
+      <div class="big" aria-hidden="true">Breakfast</div>
+      <h1>Breakfast, lunch and dinner in Chaweng</h1>
+      <p>A family-run café near Central. English sets, Thai food and seafood.</p>
+      <ul class="when"><li>Breakfast</li><li>Lunch</li><li>Dinner</li></ul>
+      <div class="actions">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Mr+Coffee+Bean+Chaweng+Koh+Samui">Directions</a>
+        <a class="btn ghost" href="#sets">Breakfast sets</a>
+      </div>
+    </div>
+    <figure>
+      <img src="img/storefront.jpg" alt="Mr Coffee Bean from the street: rattan lamps, blue tablecloths and orange chairs" width="900" height="1125">
+      <p class="stamp"><a href="https://www.google.com/maps/search/?api=1&query=Mr+Coffee+Bean+Chaweng+Koh+Samui">4.9 on Google</a><small>450 reviews, November 2026</small></p>
+    </figure>
+  </header>
+
+  <section class="sets" id="sets">
+    <div class="head">
+      <h2>Pick a set</h2>
+      <p>Sets 1 to 4 and both Thai sets come with hot coffee or hot tea. Prices in baht from the menu, December 2025.</p>
+    </div>
+    <div class="rail">
+      <div class="ticket"><span class="no">Set 1</span><b>Breakfast pork</b><span>2 eggs, 2 bacon, 2 toast, roast potato, grilled tomato, butter and jam</span><span class="price">200</span></div>
+      <div class="ticket"><span class="no">Set 2</span><b>Breakfast chicken</b><span>2 eggs, 2 chicken sausages, 2 toast, roast potato, grilled tomato</span><span class="price">200</span></div>
+      <div class="ticket"><span class="no">Set 3</span><b>Vegetarian</b><span>2 eggs, 2 toast, roast potato, baked beans, grilled tomato</span><span class="price">200</span></div>
+      <div class="ticket"><span class="no">Set 4</span><b>Vegetarian style</b><span>2 eggs, 2 toast with salad, butter and jam</span><span class="price">160</span></div>
+      <div class="ticket"><span class="no">Set 5</span><b>English breakfast</b><span>2 eggs, 2 toast, 2 bacon, roast potato, butter and jam</span><span class="price">200</span></div>
+    </div>
+    <div class="thai">
+      <div class="ticket"><div><b>Thai set 1, fried rice</b><span>chicken or pork, with hot coffee or tea</span></div><span class="price">160</span></div>
+      <div class="ticket"><div><b>Thai set 2, rice soup</b><span>chicken or pork, with hot coffee or tea</span></div><span class="price">160</span></div>
+    </div>
+  </section>
+
+  <section class="plates" aria-label="From the kitchen">
+    <figure class="sq"><img src="img/breakfast.jpg" alt="Omelette with salmon, salad and dipping sauce" width="800" height="800" loading="lazy"><figcaption>From the breakfast menu</figcaption></figure>
+    <figure class="tall"><img src="img/prawns.jpg" alt="Grilled river prawns with carved carrot and seafood sauce" width="900" height="675" loading="lazy"><figcaption>Grilled prawns, from the seafood side</figcaption></figure>
+    <figure class="sq"><img src="img/mango.jpg" alt="Mango sticky rice with coconut cream and an orchid" width="800" height="800" loading="lazy"><figcaption>Mango sticky rice</figcaption></figure>
+  </section>
+</div>
+
+<section class="all" id="menu">
+  <div class="wrap">
+    <h2>More for the morning</h2>
+    <p class="src">Prices in baht from the menu, December 2025. Thai dishes, seafood and European food are on the menu too; ask us for those prices.</p>
+    <div class="cols">
+      <div><h3>On toast</h3><ul>
+        <li><span>Avocado toast, salmon, 2 eggs</span><span>200</span></li>
+        <li><span>Avocado toast, bacon, 2 eggs</span><span>200</span></li>
+        <li><span>Toast, scramble, spinach, cheese</span><span>150</span></li>
+        <li><span>Toast, omelette, tomato, cheese</span><span>150</span></li>
+        <li><span>2 toast with fried eggs</span><span>80</span></li>
+      </ul></div>
+      <div><h3>Bigger plates</h3><ul>
+        <li><span>The full plate<br><small>2 toast, 2 eggs, 2 sausages, 2 bacon, beans, coffee, orange juice</small></span><span>200</span></li>
+        <li><span>Toast, bacon, sausage, eggs</span><span>180</span></li>
+        <li><span>Breakfast burger<br><small>burger, poached egg, avocado, bacon</small></span><span>200</span></li>
+        <li><span>Breakfast wrap<br><small>potato, eggs, bacon, mozzarella</small></span><span>200</span></li>
+      </ul></div>
+      <div><h3>Also loved</h3><ul>
+        <li><span>Croissant with beans and cheese</span><span>120</span></li>
+        <li><span>Pad thai</span><span>—</span></li>
+        <li><span>Massaman chicken</span><span>—</span></li>
+        <li><span>Iced matcha, Thai iced tea</span><span>—</span></li>
+        <li><span>Fruit shakes</span><span>—</span></li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="thanks">
+  <div class="wrap">
+    <h2>A little thank-you</h2>
+    <p>Free cold water with your meal, and fresh watermelon on the house when you finish.</p>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div>
+      <h2>Find us</h2>
+      <p>162/226 Bo Put, Chaweng, Koh Samui. Off Chaweng Beach Road, a short walk from Central Festival. Inside and outside tables, free parking.</p>
+      <p>Opening hours: please call or message us. Debit cards and tap to pay accepted.</p>
+      <div class="actions">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Mr+Coffee+Bean+Chaweng+Koh+Samui">Open in Google Maps</a>
+        <a class="btn ghost" href="tel:+66815940646">081 594 0646</a>
+      </div>
+    </div>
+    <img src="img/sign.jpg" alt="The Mr. Coffee Bean sign: breakfast, lunch, dinner, European food, Thai food, seafood" width="900" height="527" loading="lazy">
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Mr Coffee Bean, Chaweng, Koh Samui.</p>
+    <p>Photos uploaded by Mr Coffee Bean to Google Maps, cropped and colour-adjusted for this page. Menu and details from Google Maps, November 2026.</p>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Quick actions">
+  <a href="tel:+66815940646">Call</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Mr+Coffee+Bean+Chaweng+Koh+Samui">Directions</a>
+  <a href="#sets">Menu</a>
+</nav>
+</body>
+</html>

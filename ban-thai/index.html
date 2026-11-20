@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Ban Thai บ้านไทย, Bophut</title>
+<meta name="description" content="Family home cooking near Fisherman's Village, Bophut, Koh Samui. Open every day 9:00 to 21:00. Cash only.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600&family=Sarabun:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* hallmark: shape "laminated board" (one numbered list, dish circles floating beside it, like the menu on the table) · theme custom "blue marble" from Ban Thai's own board: pale blue marble, gold veins, red oval name · genre playful · job: visit · signature: the numbered board, 1 to 21 */
+/* critique: soft marble blue, one red, gold hairlines; English and Thai side by side as on the board; prices from the August 2026 board only */
+:root{
+  --color-paper:oklch(0.95 0.025 220);
+  --color-paper-2:oklch(0.9 0.04 220);
+  --color-card:oklch(0.99 0.005 220);
+  --color-ink:oklch(0.25 0.03 240);
+  --color-muted:oklch(0.47 0.03 240);
+  --color-red:oklch(0.5 0.18 20);
+  --color-gold:oklch(0.78 0.09 80);
+  --color-green:oklch(0.7 0.14 140);
+  --color-on:oklch(0.99 0.005 220);
+  --color-rule:oklch(0.25 0.03 240 / .14);
+  --color-focus:oklch(0.5 0.18 20);
+  --font-display:"Prompt",system-ui,sans-serif;
+  --font-body:"Sarabun",system-ui,sans-serif;
+  --radius:20px;--radius-pill:999px;
+  --space-1:.5rem;--space-2:1rem;--space-3:1.5rem;--space-4:2.5rem;--space-5:4rem;--space-6:6rem;
+  --measure:1100px;
+  --dur:180ms;--ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip;margin:0}
+body{color:var(--color-ink);font:400 1.08rem/1.6 var(--font-body);padding-bottom:4.5rem;background:var(--color-paper) linear-gradient(115deg,transparent 0 30%,var(--color-gold) 30.05% 30.15%,transparent 30.2% 62%,var(--color-gold) 62.05% 62.12%,transparent 62.2%) fixed}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--color-focus);outline-offset:3px}
+.wrap{max-width:var(--measure);margin:0 auto;padding:0 var(--space-3)}
+h1,h2,h3{margin:0;overflow-wrap:break-word;min-width:0;line-height:1.08;font-family:var(--font-display);font-weight:600}
+.demo{font-size:.88rem;text-align:center;padding:.55rem var(--space-2);background:var(--color-red);color:var(--color-on)}
+.btn{display:inline-flex;align-items:center;padding:.8rem 1.4rem;border-radius:var(--radius-pill);background:var(--color-red);color:var(--color-on);text-decoration:none;font-family:var(--font-display);font-weight:500;border:2px solid var(--color-red);transition:transform var(--dur) var(--ease),opacity var(--dur) var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:none;opacity:.85}
+.btn.ghost{background:var(--color-card);color:var(--color-red)}
+.top{text-align:center;padding:var(--space-4) 0 var(--space-4)}
+.oval{width:min(340px,80%);margin:0 auto var(--space-3);border-radius:50%}
+.top h1{font-size:clamp(2.2rem,5.5vw,3.8rem);max-width:18ch;margin:0 auto}
+.top .lede{color:var(--color-muted);font-size:1.2rem;max-width:40ch;margin:var(--space-2) auto var(--space-3)}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;list-style:none;padding:0;margin:0 0 var(--space-3)}
+.chips li{background:var(--color-card);border-radius:var(--radius-pill);padding:.35rem 1rem;font-family:var(--font-display);font-weight:500;font-size:.98rem}
+.chips li.cash{background:var(--color-ink);color:var(--color-on)}
+.actions{display:flex;flex-wrap:wrap;gap:var(--space-2);justify-content:center}
+.rating{margin-top:var(--space-3);color:var(--color-muted);font-size:.98rem}
+.board{background:var(--color-card);border-radius:var(--radius);padding:var(--space-4);display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:var(--space-4);box-shadow:0 0 0 8px oklch(0.99 0.005 220 / .5)}
+.board h2{font-size:clamp(1.8rem,3.5vw,2.6rem);color:var(--color-red);margin-bottom:var(--space-1)}
+.board .src{color:var(--color-muted);font-size:.95rem;margin:0 0 var(--space-3)}
+.board ol{list-style:none;margin:0;padding:0;counter-reset:n}
+.board li{counter-increment:n;display:grid;grid-template-columns:2.2rem minmax(0,1fr) auto;gap:.2rem .6rem;padding:.55rem 0;border-bottom:1px solid var(--color-rule);align-items:baseline}
+.board li::before{content:counter(n) ".";font-family:var(--font-display);font-weight:600;color:var(--color-red)}
+.board li .en{font-weight:500}
+.board li .th{grid-column:2;color:var(--color-muted);font-size:.95rem}
+.board li .p{grid-column:3;grid-row:1;font-family:var(--font-display);font-weight:500;white-space:nowrap;font-variant-numeric:tabular-nums}
+.circles{display:grid;gap:var(--space-3);align-content:start}
+.circles figure{margin:0;text-align:center}
+.circles img{border-radius:50%;aspect-ratio:1;object-fit:cover;width:min(230px,100%);margin:0 auto;border:6px solid var(--color-paper)}
+.circles figcaption{font-family:var(--font-display);font-weight:500;margin-top:.4rem}
+.circles .r{transform:translateX(18%)}.circles .l{transform:translateX(-12%)}
+.meat{margin-top:var(--space-3);background:var(--color-paper);border-radius:var(--radius);padding:var(--space-2) var(--space-3)}
+.porch{padding:var(--space-6) 0}
+.porch h2{font-size:clamp(2.2rem,5vw,3.4rem);text-align:center}
+.porch .lede{text-align:center;color:var(--color-muted);max-width:52ch;margin:var(--space-2) auto var(--space-4)}
+.gifts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-3)}
+.gifts div{background:var(--color-card);border-radius:var(--radius);padding:var(--space-3);text-align:center}
+.gifts b{display:block;font-family:var(--font-display);font-weight:600;font-size:1.2rem;color:var(--color-red);margin-bottom:.3rem}
+.gifts span{color:var(--color-muted)}
+.also{background:var(--color-card);border-radius:var(--radius);padding:var(--space-4);margin-bottom:var(--space-6)}
+.also h2{font-size:clamp(1.8rem,3.5vw,2.6rem);margin-bottom:var(--space-2)}
+.also ul{display:flex;flex-wrap:wrap;gap:.5rem;list-style:none;margin:0;padding:0}
+.also li{border:2px solid var(--color-paper-2);border-radius:var(--radius-pill);padding:.35rem 1rem}
+.visit{background:var(--color-ink);color:var(--color-on);padding:var(--space-6) 0;text-align:center}
+.visit h2{font-size:clamp(2.4rem,5vw,3.8rem);margin-bottom:var(--space-2)}
+.visit p{max-width:46ch;margin:0 auto var(--space-3);opacity:.88}
+.visit .btn.ghost{background:transparent;color:var(--color-on);border-color:var(--color-on)}
+footer{padding:var(--space-4) 0;font-size:.88rem;color:var(--color-muted);text-align:center}
+footer p{margin:.3rem 0}
+.bar{position:fixed;left:0;right:0;bottom:0;display:none;gap:1px;background:var(--color-rule);z-index:5}
+.bar a{flex:1;text-align:center;padding:.95rem .5rem;background:var(--color-ink);color:var(--color-on);text-decoration:none;font-family:var(--font-display);font-weight:500}
+.bar a:first-child{background:var(--color-red)}
+@media (max-width:860px){.board{grid-template-columns:minmax(0,1fr);padding:var(--space-3)}.circles{grid-template-columns:repeat(2,minmax(0,1fr))}.circles .r,.circles .l{transform:none}.gifts{grid-template-columns:minmax(0,1fr)}.bar{display:flex}}
+@media (min-width:861px){body{padding-bottom:0}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="demo">Sample website made for Ban Thai. Not live yet; nothing here is final.</div>
+<div class="wrap">
+  <header class="top" id="top">
+    <img class="oval" src="img/logo.jpg" alt="บ้านไทย Ban Thai" width="500" height="250">
+    <h1>Like eating at a Thai family's home</h1>
+    <p class="lede">Home cooking near Fisherman's Village, made in front of you by one family.</p>
+    <ul class="chips"><li>Every day 9:00 to 21:00</li><li class="cash">Cash only</li><li>Vegan with tofu</li></ul>
+    <div class="actions">
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Ban+Thai+Bophut+Koh+Samui">Directions</a>
+      <a class="btn ghost" href="tel:+66970037867">Call 097 003 7867</a>
+    </div>
+    <p class="rating"><a href="https://www.google.com/maps/search/?api=1&query=Ban+Thai+Bophut+Koh+Samui">4.9 on Google from 1,771 reviews</a>, November 2026</p>
+  </header>
+
+  <section class="board" id="menu" aria-labelledby="menuh">
+    <div>
+      <h2 id="menuh">The board</h2>
+      <p class="src">Prices in baht from the menu board on our tables, August 2026. Where there are two prices, it depends on the meat you choose.</p>
+      <ol>
+        <li><span class="en">Rice and green curry, pork or chicken</span><span class="p">120 to 180</span><span class="th">ข้าว+แกงเขียวหวาน</span></li>
+        <li><span class="en">Rice and stir-fried vegetables</span><span class="p">120 to 180</span><span class="th">ผัดผักรวม ข้าว</span></li>
+        <li><span class="en">Rice and pepper curry</span><span class="p">120 to 180</span><span class="th">ข้าว+ผัดพริกแกง</span></li>
+        <li><span class="en">Pad thai, chicken, pork or shrimp</span><span class="p">120 to 180</span><span class="th">ผัดไทย</span></li>
+        <li><span class="en">Fried noodles with gravy on top</span><span class="p">120 to 180</span><span class="th">ก๋วยเตี๋ยวราดหน้า</span></li>
+        <li><span class="en">Fried noodles in soy sauce</span><span class="p">120 to 180</span><span class="th">ผัดซีอิ๊ว</span></li>
+        <li><span class="en">Fried rice</span><span class="p">120 to 180</span><span class="th">ข้าวผัด</span></li>
+        <li><span class="en">Tom yam koong, seafood</span><span class="p">160</span><span class="th">ต้มยำ กุ้ง/ซีฟู้ด</span></li>
+        <li><span class="en">Noodle soup, pork, chicken or seafood</span><span class="p">120 to 180</span><span class="th">ก๋วยเตี๋ยวน้ำ</span></li>
+        <li><span class="en">Clear soup, glass noodles, minced pork</span><span class="p">120</span><span class="th">แกงจืดวุ้นเส้นหมูสับ</span></li>
+        <li><span class="en">Tom kha kai</span><span class="p">120</span><span class="th">ต้มข่าไก่</span></li>
+        <li><span class="en">Tom kha koong</span><span class="p">180</span><span class="th">ต้มข่ากุ้ง</span></li>
+        <li><span class="en">Spicy seafood salad</span><span class="p">180</span><span class="th">ยำซีฟู้ด</span></li>
+        <li><span class="en">Spicy glass noodle salad</span><span class="p">180</span><span class="th">ยำวุ้นเส้น</span></li>
+        <li><span class="en">Spicy squid salad</span><span class="p">180</span><span class="th">ยำปลาหมึก</span></li>
+        <li><span class="en">Spicy shrimp salad</span><span class="p">180</span><span class="th">ยำกุ้งสด</span></li>
+        <li><span class="en">Sweet and sour with rice</span><span class="p">120 to 180</span><span class="th">ผัดเปรี้ยวหวาน</span></li>
+        <li><span class="en">Stir-fry with baby corn and rice</span><span class="p">120 to 180</span><span class="th">ผัดยอดข้าวโพดอ่อน</span></li>
+        <li><span class="en">Rice and mixed vegetables</span><span class="p">70 to 100</span><span class="th">ข้าว+ผัดผักรวม</span></li>
+        <li><span class="en">Garlic pepper shrimp or squid with rice</span><span class="p">120 to 180</span><span class="th">ทอดกระเทียมพริกไทย</span></li>
+        <li><span class="en">Oyster sauce chicken or pork with rice</span><span class="p">120 to 180</span><span class="th">ผัดน้ำมันหอย</span></li>
+      </ol>
+      <p class="meat">Choose chicken, pork, shrimp or squid. Tell us how spicy. There's a tofu menu for vegans too.</p>
+    </div>
+    <div class="circles" aria-label="Dishes from the board">
+      <figure><img src="img/friedrice.jpg" alt="Fried rice with spring onion" width="420" height="435" loading="lazy"><figcaption>Fried rice</figcaption></figure>
+      <figure class="l"><img src="img/krapao.jpg" alt="Stir-fried pork with basil and a fried egg on rice" width="420" height="427" loading="lazy"><figcaption>With a fried egg</figcaption></figure>
+      <figure class="r"><img src="img/padthai.jpg" alt="Pad thai with peanuts and lime" width="420" height="426" loading="lazy"><figcaption>Pad thai</figcaption></figure>
+      <figure class="l"><img src="img/omelette.jpg" alt="Thai omelette wrapped noodles" width="420" height="420" loading="lazy"><figcaption>Wrapped in egg</figcaption></figure>
+      <figure><img src="img/greencurry.jpg" alt="Green curry with chicken and vegetables" width="420" height="432" loading="lazy"><figcaption>Green curry</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="porch" aria-labelledby="porch">
+    <h2 id="porch">Little gifts from the kitchen</h2>
+    <p class="lede">Guests often find something extra on the table. It's the family's way of saying thank you.</p>
+    <div class="gifts">
+      <div><b>Fresh fruit</b><span>A plate of tropical fruit for the table.</span></div>
+      <div><b>Mango sticky rice</b><span>Sometimes a surprise for dessert.</span></div>
+      <div><b>Banana chips</b><span>A snack to take home.</span></div>
+    </div>
+  </section>
+
+  <section class="also" aria-labelledby="also">
+    <h2 id="also">Guests also love</h2>
+    <ul><li>Pad kra pao with fried egg</li><li>Massaman curry chicken</li><li>Panang curry</li><li>Papaya salad</li><li>Fresh coconut</li><li>Fried squid with rice</li><li>Fresh tropical fruit with rice</li></ul>
+  </section>
+</div>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <h2>Come and eat with us</h2>
+    <p>Lanthong Road, Bo Put, near Fisherman's Village, Koh Samui. Every day 9:00 to 21:00. Cash only. It gets busy at dinner, so you may wait a little for a table.</p>
+    <div class="actions">
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Ban+Thai+Bophut+Koh+Samui">Open in Google Maps</a>
+      <a class="btn ghost" href="tel:+66970037867">097 003 7867</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Ban Thai บ้านไทย, Bo Put, Koh Samui.</p>
+    <p>Logo and dish photos cut from Ban Thai's own menu board, as photographed on Google Maps. Details from Google Maps, November 2026.</p>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Quick actions">
+  <a href="tel:+66970037867">Call</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Ban+Thai+Bophut+Koh+Samui">Directions</a>
+  <a href="#menu">Menu</a>
+</nav>
+</body>
+</html>
