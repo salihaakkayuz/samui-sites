@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Hachiya Coffee Roastery, Mae Nam</title>
+<meta name="description" content="Japanese-owned coffee roastery in Mae Nam, Koh Samui. Café downstairs, workspace upstairs. 8:30 to 17:00, closed on Thursdays.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* hallmark: shape "two floors" (the name set vertically like a shop sign, the building shown as floors: roaster and café below, workspace above, beans on a shelf of cards) · theme custom "sumi and matcha" from Hachiya's black crest, pale walls and matcha · genre quiet-minimal · job: stop by for coffee or a desk · signature: the vertical name and the floor plan */
+/* critique: bean scores only where Hachiya printed them (Doi Saket card); coworking price not known so not shown; menu prices from their own online menu */
+:root{
+  --color-paper:oklch(0.965 0.006 100);
+  --color-card:oklch(0.99 0.003 100);
+  --color-sumi:oklch(0.2 0.006 260);
+  --color-ink:oklch(0.24 0.008 260);
+  --color-muted:oklch(0.5 0.01 260);
+  --color-matcha:oklch(0.62 0.11 135);
+  --color-matcha-pale:oklch(0.92 0.04 130);
+  --color-on:oklch(0.97 0.005 100);
+  --color-rule:oklch(0.24 0.008 260 / .14);
+  --font-display:"Shippori Mincho",serif;
+  --font-body:"Zen Kaku Gothic New",system-ui,sans-serif;
+  --space-1:.5rem;--space-2:1rem;--space-3:1.5rem;--space-4:2.5rem;--space-5:4rem;--space-6:6rem;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--color-paper);color:var(--color-ink);font:400 1rem/1.75 var(--font-body)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+a:focus-visible{outline:2px solid var(--color-matcha);outline-offset:3px}
+.wrap{width:min(1080px,100% - 2*var(--space-3));margin-inline:auto}
+.demo{font-size:.86rem;text-align:center;padding:.5rem var(--space-2);background:var(--color-sumi);color:var(--color-on)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;padding:var(--space-2) 0;border-bottom:1px solid var(--color-rule)}
+.top .mark{font-family:var(--font-display);font-weight:700;letter-spacing:.3em;text-decoration:none}
+.top nav{display:flex;gap:var(--space-3);font-size:.92rem}
+.top nav a{text-decoration:none;color:var(--color-muted)}
+.top nav a:hover{color:var(--color-ink)}
+.hero .wrap{display:grid;grid-template-columns:auto minmax(0,5fr) minmax(0,6fr);gap:var(--space-4);align-items:center;padding:var(--space-5) 0}
+.vertical{writing-mode:vertical-rl;font-family:var(--font-display);font-weight:700;font-size:clamp(2.6rem,6vw,4.4rem);letter-spacing:.35em;line-height:1;color:var(--color-sumi);border-left:1px solid var(--color-rule);padding-left:var(--space-2)}
+.hero h1{font-family:var(--font-display);font-weight:500;font-size:clamp(2rem,4vw,3.1rem);line-height:1.25;margin:0 0 var(--space-2)}
+.hero p{margin:0 0 var(--space-3);color:var(--color-muted);max-width:34ch}
+.hero .meta{font-size:.92rem;margin-bottom:var(--space-3)}
+.hero .meta b{font-weight:700;color:var(--color-matcha)}
+.hero figure{margin:0}
+.hero figure img{aspect-ratio:4/5;object-fit:cover;width:100%}
+.btns{display:flex;flex-wrap:wrap;gap:var(--space-1)}
+.btn{display:inline-block;padding:.75rem 1.3rem;background:var(--color-sumi);color:var(--color-on);text-decoration:none;font-weight:500;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--color-ink);box-shadow:inset 0 0 0 1px var(--color-ink)}
+section{padding:var(--space-5) 0}
+h2{font-family:var(--font-display);font-weight:500;font-size:clamp(1.7rem,3vw,2.3rem);line-height:1.3;margin:0 0 var(--space-2)}
+.lede{color:var(--color-muted);max-width:48ch;margin:0 0 var(--space-4)}
+.floors{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:var(--space-5);align-items:center}
+.plan{border:1.5px solid var(--color-sumi);background:var(--color-card)}
+.plan .roof{height:24px;background:linear-gradient(135deg,transparent 49%,var(--color-sumi) 50% 52%,transparent 53%) left/50% 100% no-repeat,linear-gradient(225deg,transparent 49%,var(--color-sumi) 50% 52%,transparent 53%) right/50% 100% no-repeat;border-bottom:1.5px solid var(--color-sumi)}
+.floor{display:grid;grid-template-columns:3.2rem minmax(0,1fr);border-bottom:1.5px solid var(--color-sumi)}
+.floor:last-child{border-bottom:0}
+.floor .n{font-family:var(--font-display);font-weight:700;font-size:1.4rem;display:grid;place-items:center;border-right:1.5px solid var(--color-sumi)}
+.floor div{padding:var(--space-3)}
+.floor h3{font-family:var(--font-display);font-weight:700;margin:0 0 .2rem;font-size:1.15rem}
+.floor p{margin:0;color:var(--color-muted);font-size:.95rem}
+.floor.up{background:var(--color-matcha-pale)}
+.floorpics{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-2)}
+.floorpics img{aspect-ratio:4/5;object-fit:cover;width:100%}
+.floorpics figure{margin:0}
+.floorpics figcaption{font-size:.85rem;color:var(--color-muted);margin-top:.4rem}
+.shelf{background:var(--color-sumi);color:var(--color-on)}
+.shelf .lede{color:oklch(0.97 0.005 100 / .7)}
+.cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-2)}
+.card{background:var(--color-card);color:var(--color-ink);padding:var(--space-3) var(--space-2);display:flex;flex-direction:column;gap:.35rem;min-height:100%}
+.card h3{font-family:var(--font-display);font-weight:700;font-size:1.05rem;margin:0}
+.card .proc{font-size:.88rem;color:var(--color-muted)}
+.card dl{display:grid;grid-template-columns:auto auto;gap:.15rem .8rem;font-size:.85rem;margin:.4rem 0 0}
+.card dd{margin:0;letter-spacing:.15em;color:var(--color-matcha)}
+.card .price{margin-top:auto;padding-top:.6rem;border-top:1px solid var(--color-rule);font-size:.88rem}
+.shelf .photos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-2);margin-top:var(--space-4)}
+.shelf .photos img{aspect-ratio:4/5;object-fit:cover;width:100%}
+.menu-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-4) var(--space-4)}
+.menu-grid h3{font-family:var(--font-display);font-weight:700;font-size:1.05rem;margin:0 0 .5rem;padding-bottom:.4rem;border-bottom:1.5px solid var(--color-sumi)}
+.row{display:flex;justify-content:space-between;gap:var(--space-2);padding:.3rem 0;font-size:.95rem}
+.row span:last-child{white-space:nowrap;font-variant-numeric:tabular-nums}
+.row small{display:block;color:var(--color-muted);font-size:.8rem;line-height:1.4}
+.note{font-size:.88rem;color:var(--color-muted);margin-top:var(--space-4)}
+.farm{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:var(--space-5);align-items:center}
+.farm img{aspect-ratio:4/5;object-fit:cover;width:100%}
+.visit{border-top:1px solid var(--color-rule)}
+.visit .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-4)}
+.visit dl{margin:0}
+.visit dt{font-family:var(--font-display);font-weight:700;margin-top:var(--space-2)}
+.visit dt:first-child{margin-top:0}
+.visit dd{margin:0;color:var(--color-muted)}
+footer{padding:var(--space-4) 0 var(--space-6);font-size:.85rem;color:var(--color-muted);text-align:center}
+footer p{margin:.3rem 0}
+.bar{position:fixed;left:0;right:0;bottom:0;display:none;gap:1px;background:var(--color-rule);z-index:5}
+.bar a{flex:1;text-align:center;padding:.95rem .5rem;background:var(--color-sumi);color:var(--color-on);text-decoration:none;font-weight:500}
+.bar a:first-child{background:var(--color-matcha);color:var(--color-sumi)}
+@media (max-width:880px){
+  .top nav{display:none}
+  .hero .wrap{grid-template-columns:auto minmax(0,1fr)}
+  .hero figure{grid-column:1/-1;order:-1}
+  .vertical{font-size:2.4rem}
+  .hero figure img{aspect-ratio:16/10}
+  .hero .wrap{padding:var(--space-3) 0}
+  .floors,.farm,.visit .wrap{grid-template-columns:minmax(0,1fr)}
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .menu-grid{grid-template-columns:minmax(0,1fr)}
+  .bar{display:flex}
+}
+@media (max-width:480px){.cards{grid-template-columns:minmax(0,1fr)}.shelf .photos{grid-template-columns:repeat(2,minmax(0,1fr))}.shelf .photos img:last-child{display:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="demo">Sample website made for Hachiya Coffee Roastery. Not live yet; nothing here is final.</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#">HACHIYA</a>
+    <nav aria-label="Sections"><a href="#floors">The house</a><a href="#beans">Beans</a><a href="#menu">Menu</a><a href="#visit">Visit</a></nav>
+  </div>
+</header>
+
+<section class="hero" style="padding:0">
+  <div class="wrap">
+    <div class="vertical" aria-hidden="true">HACHIYA</div>
+    <div>
+      <h1>Roasted in Mae Nam, poured with care</h1>
+      <p>A small Japanese-owned roastery. Café downstairs, a quiet place to work upstairs.</p>
+      <p class="meta"><b>8:30 – 17:00</b>, closed on Thursdays</p>
+      <div class="btns">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Hachiya+coffee+roastery+Koh+Samui">Directions</a>
+        <a class="btn ghost" href="#menu">Menu</a>
+      </div>
+    </div>
+    <figure><img src="img/latte.jpg" width="618" height="772" alt="A latte with heart latte art in a blue-glazed ceramic cup on a wooden table"></figure>
+  </div>
+</section>
+
+<section id="floors">
+  <div class="wrap floors">
+    <div>
+      <h2>Two floors, one roaster</h2>
+      <p class="lede">We roast Thai beans in the shop and brew them for you, by espresso, hand drip or syphon.</p>
+      <div class="plan" role="img" aria-label="Hachiya's building: workspace on the second floor, café and roaster on the first floor">
+        <div class="roof"></div>
+        <div class="floor up"><span class="n">2F</span><div><h3>Workspace</h3><p>A quiet room for your laptop. Ask us at the counter.</p></div></div>
+        <div class="floor"><span class="n">1F</span><div><h3>Café and roaster</h3><p>Coffee, Japanese matcha, homemade sweets, and beans to take home.</p></div></div>
+      </div>
+    </div>
+    <div class="floorpics">
+      <figure><img src="img/storefront.jpg" width="900" height="1125" alt="Hachiya's two-storey shop front with the round crest sign" loading="lazy"><figcaption>Our shop in Mae Nam</figcaption></figure>
+      <figure><img src="img/roaster.jpg" width="620" height="620" alt="Coffee beans seen through the window of the roasting drum" loading="lazy" style="aspect-ratio:4/5"><figcaption>Roasting in-house</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="shelf" id="beans">
+  <div class="wrap">
+    <h2>Beans on the shelf</h2>
+    <p class="lede">All from northern Thailand. Take a bag home, or ask us to brew one by hand.</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Chiang Mai, Doi Saket</h3>
+        <span class="proc">Washed, dark roast</span>
+        <dl><dt>Acidity</dt><dd>●</dd><dt>Sweetness</dt><dd>●●</dd><dt>Body</dt><dd>●●●●</dd><dt>Bitterness</dt><dd>●●●</dd></dl>
+        <span class="proc">Raisin, dark chocolate, spice</span>
+        <span class="price">100 g 140 · 200 g 250</span>
+      </div>
+      <div class="card"><h3>Chiang Rai, Pangkhon</h3><span class="proc">Washed, medium dark roast</span><span class="proc">Also as a honey process, medium roast</span><span class="price">Ask for today's bags</span></div>
+      <div class="card"><h3>Chiang Rai, Huai Nam Khun</h3><span class="proc">Natural process, light roast</span><span class="price">Ask for today's bags</span></div>
+      <div class="card"><h3>Chiang Mai, Kalayaniwattana</h3><span class="proc">Natural process, medium roast</span><span class="price">Ask for today's bags</span></div>
+    </div>
+    <div class="photos">
+      <img src="img/beans1.jpg" width="700" height="875" alt="A Hachiya coffee bag with its tasting card on a small easel" loading="lazy">
+      <img src="img/beans2.jpg" width="700" height="875" alt="Another Hachiya bean bag and card, with a jar of roasted beans" loading="lazy">
+      <img src="img/iced.jpg" width="800" height="600" alt="Iced coffee seen from above" loading="lazy" style="aspect-ratio:4/5">
+    </div>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="wrap">
+    <h2>Menu</h2>
+    <p class="lede">Prices in baht, from our online menu (November 2026). Most espresso drinks use a double shot.</p>
+    <div class="menu-grid">
+      <div>
+        <h3>Signature</h3>
+        <div class="row"><span>Espresso tonic<small>with mint syrup</small></span><span>100</span></div>
+        <div class="row"><span>Latte Valencia, hot<small>orange, cinnamon, our preserved orange</small></span><span>100</span></div>
+        <div class="row"><span>Latte Valencia, iced</span><span>110</span></div>
+        <div class="row"><span>Iced matcha kuromitsu espresso latte</span><span>130</span></div>
+        <div class="row"><span>Black shogun<small>espresso, Shogun orange juice</small></span><span>100</span></div>
+        <div class="row"><span>Iced long black yuzu</span><span>100</span></div>
+        <div class="row"><span>Black &amp; white<small>espresso, fresh cacao pulp juice</small></span><span>200</span></div>
+        <div class="row"><span>Coffee flower tea, hot / iced</span><span>70 / 80</span></div>
+        <div class="row"><span>Sayama green tea, hot / iced</span><span>70 / 80</span></div>
+      </div>
+      <div>
+        <h3>Espresso</h3>
+        <div class="row"><span>Espresso / double</span><span>60 / 75</span></div>
+        <div class="row"><span>Long black</span><span>80</span></div>
+        <div class="row"><span>Flat white</span><span>90</span></div>
+        <div class="row"><span>Latte or cappuccino</span><span>90</span></div>
+        <div class="row"><span>Mocha or caramel latte</span><span>95</span></div>
+        <div class="row"><span>Iced latte or cappuccino</span><span>95</span></div>
+        <div class="row"><span>Shakerato</span><span>100</span></div>
+        <div class="row"><span>Es yenn, Thai-style iced coffee</span><span>100</span></div>
+        <div class="row"><span>Extra shot, almond, soy or golden milk</span><span>+30</span></div>
+        <h3 style="margin-top:var(--space-3)">Slow coffee</h3>
+        <div class="row"><span>Hand drip</span><span>150</span></div>
+        <div class="row"><span>Syphon</span><span>160</span></div>
+        <div class="row"><span>Cold brew / tonic / yuzu</span><span>80 / 90 / 90</span></div>
+      </div>
+      <div>
+        <h3>Matcha and chocolate</h3>
+        <div class="row"><span>Premium matcha latte, hot / iced<small>Kurasawa, Shizuoka</small></span><span>170 / 180</span></div>
+        <div class="row"><span>Premium usucha, hot / iced</span><span>120 / 130</span></div>
+        <div class="row"><span>Matcha latte, hot / iced</span><span>80 / 90</span></div>
+        <div class="row"><span>Matcha kuromitsu, hot / iced</span><span>85 / 95</span></div>
+        <div class="row"><span>Hojicha latte, hot / iced</span><span>90 / 100</span></div>
+        <div class="row"><span>Thai craft chocolate, hot / iced</span><span>150 / 160</span></div>
+        <h3 style="margin-top:var(--space-3)">Sweets</h3>
+        <div class="row"><span>Japanese rare cheesecake</span><span>100</span></div>
+        <div class="row"><span>Homemade tiramisu</span><span>120</span></div>
+        <div class="row"><span>Affogato<small>local coconut ice cream</small></span><span>120</span></div>
+        <div class="row"><span>Dorayaki</span><span>80</span></div>
+        <div class="row"><span>Nerikiri / yuzu nerikiri</span><span>110 / 100</span></div>
+        <div class="row"><span>Strawberry daifuku</span><span>120</span></div>
+        <div class="row"><span>Cookies</span><span>40</span></div>
+      </div>
+    </div>
+    <p class="note">Full menu: <a href="https://hachiya.gimme.menu/">hachiya.gimme.menu</a>. Filter coffee depends on the day, so please ask.</p>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap farm">
+    <img src="img/cherries.jpg" width="620" height="775" alt="Ripe red coffee cherries on the branch at a farm in northern Thailand" loading="lazy">
+    <div>
+      <h2>From the farm to your cup</h2>
+      <p class="lede">We visit the farms in the north where our beans grow. Ask us about the bean you're drinking; we're happy to talk coffee.</p>
+      <p class="lede">And yes, there's a cat.</p>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div>
+      <h2>Visit</h2>
+      <p class="lede">Free parking in front. Cards and phone payments welcome.</p>
+      <div class="btns">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Hachiya+coffee+roastery+Koh+Samui">Open in Google Maps</a>
+        <a class="btn ghost" href="https://www.instagram.com/hachiya_coffee/">Instagram</a>
+      </div>
+    </div>
+    <dl>
+      <dt>Address</dt><dd>93/1 Mae Nam, Koh Samui, Surat Thani 84330</dd>
+      <dt>Hours</dt><dd>8:30 to 17:00. Closed on Thursdays.</dd>
+      <dt>Phone</dt><dd>095 284 7090</dd>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Hachiya Coffee Roastery, Mae Nam, Koh Samui.</p>
+    <p>Photos from Hachiya's own Google Maps and Instagram posts. Prices from hachiya.gimme.menu; details from Google Maps, November 2026.</p>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Quick actions">
+  <a href="tel:+66952847090">Call</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Hachiya+coffee+roastery+Koh+Samui">Directions</a>
+  <a href="#menu">Menu</a>
+</nav>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Mer Fresh &amp; Full Café, Samui</title>
+<meta name="description" content="French-style café and restaurant on Koh Samui: croissants, coconut tart, brunch all day, Thai dishes and coffee. 8:00 to 18:00, closed on Tuesdays.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* hallmark: shape "arched windows" (every photo set in the arch of the café's own windows, a row of three arches like the dining room, menu as a carte on a coral panel) · theme custom "velvet and coral" from Mer Fresh & Full's teal velvet chairs and coral wall panels · genre salon-chic · job: come for brunch or cake · signature: the arches */
+/* critique: no prices, because the only menu photo is from January 2024 and guests mention a new menu; the eggs benedict, croissant and bowl images look like stock, so only the café's real photos are used */
+:root{
+  --color-velvet:oklch(0.36 0.06 190);
+  --color-velvet-2:oklch(0.44 0.07 190);
+  --color-coral:oklch(0.62 0.13 35);
+  --color-coral-deep:oklch(0.52 0.13 32);
+  --color-blush:oklch(0.94 0.025 35);
+  --color-card:oklch(0.99 0.006 35);
+  --color-ink:oklch(0.25 0.03 200);
+  --color-muted:oklch(0.47 0.03 200);
+  --color-on:oklch(0.97 0.012 35);
+  --color-rule:oklch(0.25 0.03 200 / .14);
+  --font-display:"DM Serif Display",Georgia,serif;
+  --font-body:"Jost",system-ui,sans-serif;
+  --space-1:.5rem;--space-2:1rem;--space-3:1.5rem;--space-4:2.5rem;--space-5:4rem;--space-6:6rem;
+  --arch:999px 999px 6px 6px;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--color-blush);color:var(--color-ink);font:400 1.05rem/1.65 var(--font-body)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--color-coral);outline-offset:3px}
+.wrap{width:min(1120px,100% - 2*var(--space-3));margin-inline:auto}
+.demo{font-size:.88rem;text-align:center;padding:.55rem var(--space-2);background:var(--color-velvet);color:var(--color-on)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:var(--space-2);padding:var(--space-2) 0}
+.name{font-family:var(--font-display);font-size:1.5rem;text-decoration:none;line-height:1.1}
+.name small{display:block;font-family:var(--font-body);font-size:.75rem;letter-spacing:.2em;color:var(--color-coral-deep)}
+.top nav{display:flex;gap:var(--space-3);font-weight:500}
+.top nav a{text-decoration:none}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:var(--space-5);align-items:center;padding:var(--space-3) 0 var(--space-5)}
+.hero h1{font-family:var(--font-display);font-weight:400;font-size:clamp(2.5rem,5.4vw,4.3rem);line-height:1.04;margin:0 0 var(--space-2);color:var(--color-velvet)}
+.hero p{margin:0 0 var(--space-3);color:var(--color-muted);max-width:36ch}
+.hero .hrs{font-weight:600;color:var(--color-ink)}
+.hero .arch{border-radius:var(--arch);overflow:hidden;border:10px solid var(--color-coral);background:var(--color-coral)}
+.hero .arch img{aspect-ratio:3/4;object-fit:cover;width:100%;border-radius:var(--arch)}
+.btns{display:flex;flex-wrap:wrap;gap:var(--space-1)}
+.btn{display:inline-block;padding:.85rem 1.4rem;border-radius:999px;background:var(--color-velvet);color:var(--color-on);font-weight:500;text-decoration:none;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--color-ink);box-shadow:inset 0 0 0 1.5px var(--color-ink)}
+section{padding:var(--space-5) 0}
+h2{font-family:var(--font-display);font-weight:400;font-size:clamp(1.9rem,3.6vw,2.8rem);line-height:1.1;margin:0 0 var(--space-2)}
+.lede{color:var(--color-muted);max-width:50ch;margin:0 0 var(--space-4)}
+.room{background:var(--color-velvet);color:var(--color-on)}
+.room .lede{color:oklch(0.97 0.012 35 / .75)}
+.arches{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-3)}
+.arches figure{margin:0}
+.arches .a{border-radius:var(--arch);overflow:hidden;border:6px solid var(--color-coral)}
+.arches img{aspect-ratio:3/4;object-fit:cover;width:100%}
+.arches figcaption{text-align:center;margin-top:.7rem;font-family:var(--font-display);font-size:1.15rem}
+.carte-wrap{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:var(--space-5);align-items:start}
+.carte-wrap .a{border-radius:var(--arch);overflow:hidden;border:6px solid var(--color-velvet)}
+.carte-wrap img{aspect-ratio:3/4;object-fit:cover;width:100%}
+.carte{background:var(--color-coral);color:var(--color-on);padding:var(--space-4);border-radius:6px}
+.carte h3{font-family:var(--font-display);font-weight:400;font-size:1.45rem;margin:var(--space-3) 0 .4rem;border-bottom:1px solid oklch(0.97 0.012 35 / .35);padding-bottom:.3rem}
+.carte h3:first-of-type{margin-top:0}
+.carte p{margin:0;line-height:1.9}
+.carte .pick{font-size:.92rem;opacity:.85;margin-top:var(--space-3)}
+.cols2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 var(--space-4)}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-2)}
+.facts div{background:var(--color-card);padding:var(--space-3) var(--space-2);border-radius:var(--arch);text-align:center}
+.facts b{display:block;font-family:var(--font-display);font-weight:400;font-size:1.25rem;color:var(--color-velvet)}
+.facts span{font-size:.92rem;color:var(--color-muted)}
+.visit .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-4);align-items:start}
+.visit dl{margin:0;background:var(--color-card);border-radius:6px;padding:var(--space-3)}
+.visit dt{font-family:var(--font-display);color:var(--color-coral-deep);margin-top:var(--space-2);font-size:1.1rem}
+.visit dt:first-child{margin-top:0}
+.visit dd{margin:0}
+footer{padding:var(--space-4) 0 var(--space-6);font-size:.86rem;color:var(--color-muted);text-align:center}
+footer p{margin:.3rem 0}
+.bar{position:fixed;left:0;right:0;bottom:0;display:none;gap:1px;background:var(--color-rule);z-index:5}
+.bar a{flex:1;text-align:center;padding:.95rem .5rem;background:var(--color-velvet);color:var(--color-on);text-decoration:none;font-weight:500}
+.bar a:first-child{background:var(--color-coral)}
+@media (max-width:880px){
+  .top nav{display:none}
+  .hero .wrap,.carte-wrap,.visit .wrap{grid-template-columns:minmax(0,1fr)}
+  .hero .arch{order:-1;max-width:240px;margin-inline:auto;width:100%;border-width:6px}
+  .hero .wrap{gap:var(--space-3)}
+  .arches{grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-1)}
+  .arches .a{border-width:4px}
+  .carte-wrap .a{display:none}
+  .carte{padding:var(--space-3)}
+  .cols2{grid-template-columns:minmax(0,1fr)}
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .bar{display:flex}
+}
+@media (max-width:480px){.arches figcaption{font-size:.95rem}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="demo">Sample website made for Mer Fresh &amp; Full Café and Restaurant. Not live yet; nothing here is final.</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="name" href="#">Mer Fresh &amp; Full <small>CAFÉ AND RESTAURANT</small></a>
+    <nav aria-label="Sections"><a href="#room">The café</a><a href="#menu">Menu</a><a href="#visit">Find us</a></nav>
+  </div>
+</header>
+
+<section class="hero" style="padding:0">
+  <div class="wrap">
+    <div>
+      <h1>A French-style café with a Thai kitchen</h1>
+      <p>Croissants, coconut tart and brunch all day. Our owner Sunny trained in pastry in France.</p>
+      <p class="hrs">8:00 to 18:00 every day except Tuesday</p>
+      <div class="btns">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Mer+Fresh+%26+Full+Cafe+and+Restaurant+SAMUI">Directions</a>
+        <a class="btn ghost" href="tel:+66954401441">Call 095 440 1441</a>
+      </div>
+    </div>
+    <div class="arch"><img src="img/window.jpg" width="900" height="1200" alt="Mer Fresh &amp; Full's arched windows with the café name painted on the glass, coral walls and teal chairs"></div>
+  </div>
+</section>
+
+<section class="room" id="room">
+  <div class="wrap">
+    <h2>Coral walls, velvet chairs</h2>
+    <p class="lede">A cool, quiet room with good air conditioning. Stay for one coffee or the whole morning.</p>
+    <div class="arches">
+      <figure><div class="a"><img src="img/room.jpg" width="900" height="1200" alt="Teal velvet chairs and round tables against coral wall panels" loading="lazy"></div><figcaption>The room</figcaption></figure>
+      <figure><div class="a"><img src="img/brunch.jpg" width="700" height="933" alt="A brunch table with coffees, toast, sausages and pastries" loading="lazy"></div><figcaption>Brunch</figcaption></figure>
+      <figure><div class="a"><img src="img/banoffee.jpg" width="700" height="933" alt="A banoffee cake with cocoa on top" loading="lazy"></div><figcaption>Cakes</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="wrap carte-wrap">
+    <div class="a"><img src="img/tray.jpg" width="700" height="933" alt="Breakfast tray with orange juice, latte, a muffin and an omelette" loading="lazy"></div>
+    <div class="carte">
+      <h2 style="margin-bottom:var(--space-3)">La carte</h2>
+      <div class="cols2">
+        <div>
+          <h3>Pâtisserie</h3>
+          <p>Coconut tart<br>Croissant<br>Almond croissant<br>Blueberry cheesecake<br>Banoffee and other cakes</p>
+          <h3>Brunch, all day</h3>
+          <p>Scrambled eggs on toast<br>Pancakes with fruit<br>Salmon poke bowl</p>
+          <h3>Thai kitchen</h3>
+          <p>Pad thai<br>and more Thai dishes</p>
+        </div>
+        <div>
+          <h3>Coffee</h3>
+          <p>Espresso, Americano, long black<br>Cappuccino, latte, mocha<br>Caramel macchiato, dirty<br>Black orange, black coconut<br>Yuzu fresh coffee, affogato</p>
+          <h3>Matcha and cocoa</h3>
+          <p>Matcha, honey lemon, strawberry<br>Matcha cocoa<br>Cocoa, cocoa lava, mint, strawberry</p>
+          <h3>Smoothies</h3>
+          <p>Orange, coconut and more</p>
+        </div>
+      </div>
+      <p class="pick">Prices are on the menu in the café. Vegan and vegetarian options, and a kids' menu.</p>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap facts">
+    <div><b>4.6 on Google</b><span>366 reviews, Nov 2026</span></div>
+    <div><b>Cards welcome</b><span>and phone payments</span></div>
+    <div><b>Free parking</b><span>and free Wi-Fi</span></div>
+    <div><b>Dogs welcome</b><span>kids too</span></div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div>
+      <h2>Come for brunch</h2>
+      <p class="lede">Breakfast is served all day, so there's no rush. Catering and a private room are available too; just ask.</p>
+      <div class="btns">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Mer+Fresh+%26+Full+Cafe+and+Restaurant+SAMUI">Open in Google Maps</a>
+        <a class="btn ghost" href="https://www.facebook.com/merfreshfull9">Facebook</a>
+      </div>
+    </div>
+    <dl>
+      <dt>Address</dt><dd>175/5, Koh Samui, Surat Thani 84320 (H27C+44)</dd>
+      <dt>Hours</dt><dd>8:00 to 18:00. Closed on Tuesdays.</dd>
+      <dt>Phone</dt><dd>095 440 1441</dd>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Mer Fresh &amp; Full Café and Restaurant, Koh Samui.</p>
+    <p>Photos from Mer Fresh &amp; Full's own Google Maps uploads. Details from Google Maps, November 2026.</p>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Quick actions">
+  <a href="tel:+66954401441">Call</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Mer+Fresh+%26+Full+Cafe+and+Restaurant+SAMUI">Directions</a>
+  <a href="#menu">Menu</a>
+</nav>
+</body>
+</html>

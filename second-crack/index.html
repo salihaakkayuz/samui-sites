@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Second Crack Coffee &amp; Tea Bar, Chaweng</title>
+<meta name="description" content="Specialty coffee, Japanese matcha, oolong teas and highballs in Chaweng, Koh Samui. 9:30 to 18:00, closed on Thursdays.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gelasio:wght@500;600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+/* hallmark: shape "tasting flight" (split sand / forest cover from their own menu, tasting-note cards for matcha and tea, a wall of six signature drinks in their own colour panels, a dark bar band for highballs) · theme custom "sand and forest" from Second Crack's printed menu · genre crafted-calm · job: come for a slow coffee · signature: tasting notes as chips and the recommend wall */
+/* critique: notes are the menu's own words; filter coffee and two cocktails have no listed price so none shown */
+:root{
+  --color-sand:oklch(0.88 0.04 80);
+  --color-sand-2:oklch(0.93 0.025 80);
+  --color-card:oklch(0.985 0.006 80);
+  --color-forest:oklch(0.26 0.05 152);
+  --color-forest-2:oklch(0.33 0.05 152);
+  --color-peach:oklch(0.78 0.09 50);
+  --color-ink:oklch(0.24 0.03 152);
+  --color-muted:oklch(0.46 0.03 120);
+  --color-on:oklch(0.96 0.015 80);
+  --color-rule:oklch(0.24 0.03 152 / .15);
+  --font-display:"Gelasio",Georgia,serif;
+  --font-body:"DM Sans",system-ui,sans-serif;
+  --space-1:.5rem;--space-2:1rem;--space-3:1.5rem;--space-4:2.5rem;--space-5:4rem;--space-6:6rem;
+  --radius:10px;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--color-sand-2);color:var(--color-ink);font:400 1.03rem/1.6 var(--font-body)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--color-peach);outline-offset:3px}
+.wrap{width:min(1120px,100% - 2*var(--space-3));margin-inline:auto}
+.demo{font-size:.88rem;text-align:center;padding:.55rem var(--space-2);background:var(--color-forest);color:var(--color-on)}
+.cover{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:min(86vh,720px)}
+.cover .l{background:var(--color-sand);padding:var(--space-4) clamp(1rem,5vw,4rem);display:flex;flex-direction:column;justify-content:space-between;gap:var(--space-4)}
+.cover .r{background:var(--color-forest);position:relative}
+.cover .r img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.logo{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.logo svg{width:44px;height:44px}
+.logo b{font-family:var(--font-display);font-weight:600;letter-spacing:.06em;display:block;line-height:1.1}
+.logo small{font-size:.78rem;color:var(--color-muted)}
+.cover h1{font-family:var(--font-display);font-weight:500;font-size:clamp(2.3rem,4.6vw,3.8rem);line-height:1.08;margin:0 0 var(--space-2)}
+.cover p{margin:0 0 var(--space-3);color:var(--color-muted);max-width:34ch}
+.cover .hours{font-size:.95rem;color:var(--color-ink)}
+.btns{display:flex;flex-wrap:wrap;gap:var(--space-1)}
+.btn{display:inline-block;padding:.8rem 1.3rem;border-radius:999px;background:var(--color-forest);color:var(--color-on);font-weight:500;text-decoration:none;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--color-ink);box-shadow:inset 0 0 0 1.5px var(--color-ink)}
+section{padding:var(--space-5) 0}
+h2{font-family:var(--font-display);font-weight:500;font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.12;margin:0 0 var(--space-2)}
+.lede{color:var(--color-muted);max-width:50ch;margin:0 0 var(--space-4)}
+.notes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-2)}
+.note{background:var(--color-card);border-radius:var(--radius);padding:var(--space-3);display:flex;flex-direction:column;gap:var(--space-1)}
+.note h3{font-family:var(--font-display);font-weight:600;font-size:1.25rem;margin:0}
+.note .kind{font-size:.85rem;color:var(--color-muted)}
+.chips{display:flex;flex-wrap:wrap;gap:.35rem;margin:.3rem 0}
+.chips span{font-size:.85rem;padding:.2rem .65rem;border-radius:999px;background:var(--color-sand);color:var(--color-ink)}
+.note .price{margin-top:auto;font-weight:700}
+.wall{background:var(--color-sand)}
+.recs{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:var(--space-1)}
+.recs figure{margin:0}
+.recs img{border-radius:6px;width:100%}
+.recs figcaption{font-size:.9rem;margin-top:.4rem}
+.wall .pricebig{font-family:var(--font-display);font-size:1.4rem;margin:var(--space-3) 0 0}
+.counter{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:var(--space-5);align-items:start}
+.counter img{border-radius:var(--radius);aspect-ratio:4/5;object-fit:cover;width:100%}
+.list h3{font-family:var(--font-display);font-weight:600;font-size:1.15rem;margin:var(--space-3) 0 .4rem}
+.list h3:first-child{margin-top:0}
+.row{display:flex;justify-content:space-between;gap:var(--space-2);padding:.35rem 0;border-bottom:1px solid var(--color-rule)}
+.row span:last-child{font-weight:700;white-space:nowrap}
+.row small{display:block;color:var(--color-muted);font-size:.82rem}
+.duo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 var(--space-4)}
+.strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-2)}
+.strip img{border-radius:var(--radius);aspect-ratio:4/5;object-fit:cover;width:100%}
+.night{background:var(--color-forest);color:var(--color-on)}
+.night .lede{color:oklch(0.96 0.015 80 / .72)}
+.night .row{border-color:oklch(0.96 0.015 80 / .15)}
+.night .row small{color:oklch(0.96 0.015 80 / .6)}
+.night .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-5)}
+.visit .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-4);align-items:start}
+.visit dl{margin:0;background:var(--color-card);border-radius:var(--radius);padding:var(--space-3)}
+.visit dt{font-family:var(--font-display);font-weight:600;margin-top:var(--space-2)}
+.visit dt:first-child{margin-top:0}
+.visit dd{margin:0;color:var(--color-muted)}
+footer{padding:var(--space-4) 0 var(--space-6);font-size:.86rem;color:var(--color-muted);text-align:center}
+footer p{margin:.3rem 0}
+.bar{position:fixed;left:0;right:0;bottom:0;display:none;gap:1px;background:var(--color-rule);z-index:5}
+.bar a{flex:1;text-align:center;padding:.95rem .5rem;background:var(--color-forest);color:var(--color-on);text-decoration:none;font-weight:500}
+.bar a:first-child{background:var(--color-peach);color:var(--color-ink)}
+@media (max-width:900px){
+  .cover{grid-template-columns:minmax(0,1fr);min-height:0}
+  .cover .r{aspect-ratio:4/3}
+  .notes{grid-template-columns:minmax(0,1fr)}
+  .recs{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .counter,.night .wrap,.visit .wrap,.duo{grid-template-columns:minmax(0,1fr)}
+  .strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .bar{display:flex}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="demo">Sample website made for Second Crack Coffee &amp; Tea Bar. Not live yet; nothing here is final.</div>
+
+<header class="cover">
+  <div class="l">
+    <a class="logo" href="#">
+      <span><b>SECOND CRACK</b><small>coffee &amp; tea bar</small></span>
+    </a>
+    <div>
+      <h1>Slow coffee and fine tea in Chaweng</h1>
+      <p>Thai and imported beans, Japanese matcha, oolong from Fujian. Made one cup at a time.</p>
+      <div class="btns">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Second+crack+coffee+and+tea+bar+Koh+Samui">Directions</a>
+        <a class="btn ghost" href="#menu">See the menu</a>
+      </div>
+    </div>
+    <p class="hours">Open 9:30 to 18:00. Closed on Thursdays. 5.0 on Google from 188 reviews (Nov 2026).</p>
+  </div>
+  <div class="r"><img src="img/bar.jpg" width="900" height="1125" alt="The Second Crack bar with a barista at work behind the counter"></div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Taste before you choose</h2>
+    <p class="lede">Notes in our own words, as on the menu. Ask us and we'll help you pick.</p>
+    <div class="notes">
+      <div class="note"><span class="kind">Matcha</span><h3>Uji blend</h3><div class="chips"><span>well-balanced</span><span>hint of seaweed</span><span>smooth</span></div><span class="price">120</span></div>
+      <div class="note"><span class="kind">Matcha</span><h3>Yame, Fukuoka</h3><div class="chips"><span>complex</span><span>walnut</span><span>edamame</span><span>savory</span><span>velvety</span></div><span class="price">140</span></div>
+      <div class="note"><span class="kind">Hojicha</span><h3>Shizuoka, Yabukita</h3><div class="chips"><span>smoky</span><span>toasty</span><span>roasted nut</span></div><span class="price">120</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="wall">
+  <div class="wrap">
+    <h2>Our signature drinks</h2>
+    <p class="lede">Six drinks from our recommend list.</p>
+    <div class="recs">
+      <figure><img src="img/rec-esyen.jpg" width="420" height="540" alt="Es-Yen: espresso, coconut milk, coconut sugar and milk" loading="lazy"><figcaption>Es-Yen</figcaption></figure>
+      <figure><img src="img/rec-garden.jpg" width="420" height="540" alt="Garden Elixir: espresso, jasmine tea, apple juice, rose syrup" loading="lazy"><figcaption>Garden Elixir</figcaption></figure>
+      <figure><img src="img/rec-choc.jpg" width="420" height="540" alt="Choc in Mood: cocoa, milk, condensed milk, chocolate mousse" loading="lazy"><figcaption>Choc in Mood</figcaption></figure>
+      <figure><img src="img/rec-tiramissyou.jpg" width="420" height="540" alt="Tiramissyou: espresso, milk, tiramisu syrup, whipped cream" loading="lazy"><figcaption>Tiramissyou</figcaption></figure>
+      <figure><img src="img/rec-pearriness.jpg" width="420" height="540" alt="Pearriness: espresso, William pear purée, tamarind and apple juice" loading="lazy"><figcaption>Pearriness</figcaption></figure>
+      <figure><img src="img/rec-cocogato.jpg" width="420" height="540" alt="Coco-Gato: espresso over coconut ice cream" loading="lazy"><figcaption>Coco-Gato</figcaption></figure>
+    </div>
+    <p class="pricebig">120 baht each</p>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="wrap counter">
+    <img src="img/tea.jpg" width="700" height="875" alt="Oolong tea leaves opening in a white cup" loading="lazy">
+    <div class="list">
+      <h3>Coffee</h3>
+      <div class="duo">
+        <div>
+          <div class="row"><span>Espresso</span><span>90</span></div>
+          <div class="row"><span>Americano</span><span>90</span></div>
+          <div class="row"><span>Cappuccino</span><span>90</span></div>
+          <div class="row"><span>Latte</span><span>90</span></div>
+          <div class="row"><span>Piccolo</span><span>90</span></div>
+        </div>
+        <div>
+          <div class="row"><span>Flat white</span><span>90</span></div>
+          <div class="row"><span>Mocha</span><span>100</span></div>
+          <div class="row"><span>Caramel latte</span><span>100</span></div>
+          <div class="row"><span>Dirty coffee</span><span>110</span></div>
+          <div class="row"><span>V60 or AeroPress<small>Thai or imported beans, ask today's list</small></span><span></span></div>
+        </div>
+      </div>
+      <h3>Tea</h3>
+      <div class="duo">
+        <div>
+          <div class="row"><span>Tie Guan Yin<small>oolong from Anxi, Fujian</small></span><span>100</span></div>
+          <div class="row"><span>Oolong honey drop, No.12</span><span>90</span></div>
+          <div class="row"><span>Oolong Dong Ding, No.19</span><span>90</span></div>
+          <div class="row"><span>Oolong osmanthus</span><span>90</span></div>
+          <div class="row"><span>Oolong jasmine</span><span>90</span></div>
+        </div>
+        <div>
+          <div class="row"><span>Organic Assam black tea</span><span>100</span></div>
+          <div class="row"><span>Wuyi rock tea</span><span>100</span></div>
+          <div class="row"><span>Gyokuro</span><span>100</span></div>
+          <div class="row"><span>Hojicha</span><span>100</span></div>
+          <div class="row"><span>As milk tea</span><span>+20</span></div>
+        </div>
+      </div>
+      <h3>Something else</h3>
+      <div class="duo">
+        <div>
+          <div class="row"><span>Rosella strawberry soda</span><span>100</span></div>
+          <div class="row"><span>Honey lime soda</span><span>80</span></div>
+        </div>
+        <div>
+          <div class="row"><span>Thai tea</span><span>90</span></div>
+          <div class="row"><span>Coconut ice cream</span><span>80</span></div>
+          <div class="row"><span>Caramel milk</span><span>70</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap strip">
+    <img src="img/dirty.jpg" width="700" height="875" alt="Espresso poured over cold milk for a dirty coffee" loading="lazy">
+    <img src="img/matcha.jpg" width="700" height="875" alt="Matcha poured into an iced drink" loading="lazy">
+    <img src="img/latte.jpg" width="700" height="875" alt="A latte with rosetta art on a wooden table" loading="lazy">
+    <img src="img/storefront.jpg" width="900" height="1125" alt="The Second Crack shop front" loading="lazy">
+  </div>
+</section>
+
+<section class="night">
+  <div class="wrap">
+    <div>
+      <h2>And a little bar</h2>
+      <p class="lede">Coffee by day, and a highball or a coffee cocktail if you like.</p>
+      <img src="img/brew.jpg" width="1400" height="787" alt="The barista brewing coffee by hand at the long counter" loading="lazy" style="border-radius:var(--radius)">
+    </div>
+    <div class="list">
+      <h3>Highball</h3>
+      <div class="row"><span>Japanese</span><span>220</span></div>
+      <div class="row"><span>Scotch</span><span>220</span></div>
+      <div class="row"><span>American</span><span>200</span></div>
+      <div class="row"><span>Thai</span><span>180</span></div>
+      <div class="row"><span>Plum wine</span><span>180</span></div>
+      <h3>Coffee cocktails</h3>
+      <div class="row"><span>Espresso martini</span><span>290</span></div>
+      <div class="row"><span>Black Russian, White Russian<small>ask us</small></span><span></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div>
+      <h2>Come by</h2>
+      <p class="lede">A quiet spot to sit with a laptop. Free parking, and cards or phone payments are fine.</p>
+      <div class="btns">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Second+crack+coffee+and+tea+bar+Koh+Samui">Open in Google Maps</a>
+        <a class="btn ghost" href="tel:+66986914635">Call us</a>
+      </div>
+    </div>
+    <dl>
+      <dt>Address</dt><dd>171 Bo Put, Chaweng, Koh Samui 84320</dd>
+      <dt>Hours</dt><dd>9:30 to 18:00. Closed on Thursdays.</dd>
+      <dt>Phone</dt><dd>098 691 4635</dd>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Second Crack Coffee &amp; Tea Bar, Chaweng, Koh Samui.</p>
+    <p>Photos and drink pictures from Second Crack's own Google Maps uploads and menu. Prices from the same menu; details from Google Maps, November 2026.</p>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Quick actions">
+  <a href="tel:+66986914635">Call</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Second+crack+coffee+and+tea+bar+Koh+Samui">Directions</a>
+  <a href="#menu">Menu</a>
+</nav>
+</body>
+</html>

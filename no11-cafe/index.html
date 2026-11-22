@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>No.11 Cafe &amp; Bar, Lamai</title>
+<meta name="description" content="Beachfront café and bar in Lamai, Koh Samui: breakfast, Thai food and signature cocktails by the sea. Closed on Mondays.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* hallmark: shape "a day on the beach" (a giant 11, then the day told in four stops whose sky changes from morning to dusk, a price staircase for Thai dishes, a cocktail card) · theme custom "sea, sand, dusk" from No.11's own photos: pale sea, wooden balcony, orange-red cocktail at dusk · genre relaxed-bright · job: come to the beach for a meal · signature: the sky strip and the price staircase */
+/* critique: hours as on Google (9 to 18, closed Monday), asked in the offer because guests mention dinner; breakfast and western dishes have no listed price so none shown */
+:root{
+  --color-sand:oklch(0.96 0.02 85);
+  --color-card:oklch(0.995 0.004 85);
+  --color-sea:oklch(0.55 0.09 215);
+  --color-sea-deep:oklch(0.3 0.06 225);
+  --color-dusk:oklch(0.66 0.17 40);
+  --color-ink:oklch(0.25 0.03 230);
+  --color-muted:oklch(0.48 0.03 230);
+  --color-on:oklch(0.98 0.01 85);
+  --color-rule:oklch(0.25 0.03 230 / .13);
+  --sky-1:oklch(0.93 0.04 220);
+  --sky-2:oklch(0.85 0.07 220);
+  --sky-3:oklch(0.88 0.08 75);
+  --sky-4:oklch(0.72 0.14 45);
+  --font-display:"Unbounded",system-ui,sans-serif;
+  --font-body:"Manrope",system-ui,sans-serif;
+  --space-1:.5rem;--space-2:1rem;--space-3:1.5rem;--space-4:2.5rem;--space-5:4rem;--space-6:6rem;
+  --radius:18px;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--color-sand);color:var(--color-ink);font:400 1.04rem/1.6 var(--font-body)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--color-dusk);outline-offset:3px}
+.wrap{width:min(1140px,100% - 2*var(--space-3));margin-inline:auto}
+.demo{font-size:.88rem;text-align:center;padding:.55rem var(--space-2);background:var(--color-sea-deep);color:var(--color-on)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--space-4);align-items:end;padding:var(--space-4) 0 var(--space-5)}
+.big{font-family:var(--font-display);font-weight:700;font-size:clamp(7rem,22vw,17rem);line-height:.8;letter-spacing:-.06em;color:var(--color-sea);margin:0}
+.big small{font-size:.22em;letter-spacing:0;color:var(--color-ink);vertical-align:top;margin-right:.2em}
+.hero h1{font-family:var(--font-display);font-weight:500;font-size:clamp(1.5rem,2.8vw,2.2rem);line-height:1.2;margin:var(--space-3) 0 var(--space-2);max-width:20ch}
+.hero p{margin:0 0 var(--space-3);color:var(--color-muted);max-width:40ch}
+.hero figure{margin:0}
+.hero figure img{border-radius:var(--radius);aspect-ratio:4/5;object-fit:cover;width:100%}
+.btns{display:flex;flex-wrap:wrap;gap:var(--space-1)}
+.btn{display:inline-block;padding:.85rem 1.3rem;border-radius:999px;background:var(--color-sea-deep);color:var(--color-on);font-weight:700;text-decoration:none;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--color-ink);box-shadow:inset 0 0 0 1.5px var(--color-ink)}
+.day{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.stop{padding:var(--space-4) var(--space-3) var(--space-5);display:flex;flex-direction:column;gap:var(--space-2)}
+.stop:nth-child(1){background:var(--sky-1)}
+.stop:nth-child(2){background:var(--sky-2)}
+.stop:nth-child(3){background:var(--sky-3)}
+.stop:nth-child(4){background:var(--sky-4);color:var(--color-sea-deep)}
+.stop time{font-family:var(--font-display);font-weight:700;font-size:1.6rem}
+.stop h3{margin:0;font-size:1.15rem}
+.stop p{margin:0;font-size:.95rem}
+.stop img{border-radius:12px;aspect-ratio:4/5;object-fit:cover;width:100%;margin-top:auto}
+section{padding:var(--space-5) 0}
+h2{font-family:var(--font-display);font-weight:500;font-size:clamp(1.6rem,3vw,2.3rem);line-height:1.15;margin:0 0 var(--space-2)}
+.lede{color:var(--color-muted);max-width:50ch;margin:0 0 var(--space-4)}
+.stairs{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--space-1);align-items:end;margin-bottom:var(--space-4)}
+.step{background:var(--color-sea);color:var(--color-on);border-radius:12px 12px 4px 4px;padding:var(--space-2);display:flex;flex-direction:column;justify-content:flex-end}
+.step:nth-child(1){height:6rem;background:oklch(0.7 0.07 160)}
+.step:nth-child(2){height:7.5rem;background:oklch(0.62 0.08 200)}
+.step:nth-child(3){height:9rem;background:oklch(0.55 0.09 215)}
+.step:nth-child(4){height:10.5rem;background:oklch(0.45 0.08 225)}
+.step:nth-child(5){height:12rem;background:var(--color-sea-deep)}
+.step b{font-family:var(--font-display);font-size:1.4rem}
+.step span{font-size:.88rem}
+.dishes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-3)}
+.dishes h3{font-size:1rem;margin:0 0 .4rem;padding-bottom:.3rem;border-bottom:2px solid var(--color-ink)}
+.dishes ul{list-style:none;margin:0;padding:0}
+.dishes li{padding:.3rem 0;font-size:.96rem}
+.dishes li small{display:block;color:var(--color-muted);font-size:.84rem}
+.cocktails{background:var(--color-sea-deep);color:var(--color-on)}
+.cocktails .lede{color:oklch(0.98 0.01 85 / .7)}
+.ck{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:var(--space-5);align-items:start}
+.ck img{border-radius:var(--radius);aspect-ratio:4/5;object-fit:cover;width:100%}
+.ck .row{border-color:oklch(0.98 0.01 85 / .15)}
+.ck .row small{color:oklch(0.98 0.01 85 / .6)}
+.row{display:flex;justify-content:space-between;gap:var(--space-2);padding:.45rem 0;border-bottom:1px solid var(--color-rule)}
+.row span:last-child{font-weight:700;white-space:nowrap}
+.row small{display:block;color:var(--color-muted);font-size:.84rem}
+.ck h3{font-family:var(--font-display);font-weight:500;font-size:1.05rem;margin:var(--space-3) 0 .3rem;color:var(--sky-3)}
+.ck h3:first-child{margin-top:0}
+.drinks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-4)}
+.drinks h3{font-size:1rem;margin:0 0 .4rem}
+.visit .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-4);align-items:start}
+.visit dl{margin:0;background:var(--color-card);border-radius:var(--radius);padding:var(--space-3)}
+.visit dt{font-weight:700;color:var(--color-sea);margin-top:var(--space-2)}
+.visit dt:first-child{margin-top:0}
+.visit dd{margin:0}
+footer{padding:var(--space-4) 0 var(--space-6);font-size:.86rem;color:var(--color-muted);text-align:center}
+footer p{margin:.3rem 0}
+.bar{position:fixed;left:0;right:0;bottom:0;display:none;gap:1px;background:var(--color-rule);z-index:5}
+.bar a{flex:1;text-align:center;padding:.95rem .5rem;background:var(--color-sea-deep);color:var(--color-on);text-decoration:none;font-weight:700}
+.bar a:first-child{background:var(--color-dusk)}
+@media (max-width:900px){
+  .hero .wrap,.ck,.visit .wrap{grid-template-columns:minmax(0,1fr)}
+  .day{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .dishes,.drinks{grid-template-columns:minmax(0,1fr)}
+  .bar{display:flex}
+}
+@media (max-width:520px){
+  .stairs{grid-template-columns:minmax(0,1fr)}
+  .step:nth-child(n){height:auto;flex-direction:row;justify-content:space-between;align-items:baseline;border-radius:10px}
+  .day{grid-template-columns:minmax(0,1fr)}
+  .stop img{aspect-ratio:16/10}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="demo">Sample website made for No.11 Cafe &amp; Bar. Not live yet; nothing here is final.</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <p class="big"><small>No.</small>11</p>
+      <h1>Breakfast, Thai food and cocktails on Lamai beach</h1>
+      <p>Tables on the balcony, the sea right in front of you. Closed on Mondays.</p>
+      <div class="btns">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=No.11+CAFE+%26+BAR+Koh+Samui">Directions</a>
+        <a class="btn ghost" href="tel:+66639763390">Call 063 976 3390</a>
+      </div>
+    </div>
+    <figure><img src="img/night.jpg" width="1000" height="1250" alt="No.11 lit up at dusk, seen from the sand"></figure>
+  </div>
+</header>
+
+<div class="day" aria-label="A day at No.11">
+  <div class="stop"><time>9:00</time><h3>Breakfast by the sea</h3><p>English breakfast, eggs Benedict, or avocado on sourdough.</p><img src="img/breakfast.jpg" width="900" height="675" alt="Toast with eggs and bacon on a table by the sea" loading="lazy"></div>
+  <div class="stop"><time>12:00</time><h3>Thai lunch</h3><p>Pad thai, tom yum, massaman and the curries guests keep ordering.</p><p style="margin-top:auto;font-weight:700">Stir-fries and soups from 100</p></div>
+  <div class="stop"><time>15:00</time><h3>Coffee break</h3><p>A cappuccino on the balcony, or a fresh coconut and a smoothie.</p><img src="img/coffee.jpg" width="700" height="875" alt="A cappuccino next to a monstera leaf on the balcony" loading="lazy"></div>
+  <div class="stop"><time>Later</time><h3>Before the sun goes down</h3><p>Our own cocktails, made with house-infused gin and rum.</p><img src="img/cocktail.jpg" width="700" height="875" alt="A red and orange cocktail with the sea behind" loading="lazy"></div>
+</div>
+
+<section id="menu">
+  <div class="wrap">
+    <h2>Pick a dish, then your meat</h2>
+    <p class="lede">Our Thai soups and stir-fries are priced by the meat you choose, in baht. Ask us for the curry prices.</p>
+    <div class="stairs">
+      <div class="step"><span>Tofu or vegetable</span><b>100</b></div>
+      <div class="step"><span>Chicken or pork</span><b>120</b></div>
+      <div class="step"><span>Beef</span><b>140</b></div>
+      <div class="step"><span>Prawn or squid</span><b>150</b></div>
+      <div class="step"><span>Seafood</span><b>170</b></div>
+    </div>
+    <div class="dishes">
+      <div><h3>Soup and curry</h3><ul><li>Tom yum</li><li>Tom kha</li><li>Massaman curry<small>potato, carrot, peanut, crispy shallot</small></li><li>Red curry</li><li>Panang curry</li><li>Green curry<small>aubergine, broccoli, sweet basil</small></li></ul></div>
+      <div><h3>Stir-fried</h3><ul><li>Cashew nut</li><li>Oyster sauce</li><li>Garlic and pepper</li><li>Pad kra prow<small>chilli, garlic, basil</small></li><li>Sweet and sour</li></ul></div>
+      <div><h3>Also on the menu</h3><ul><li>Pad thai and pad see ew</li><li>Calamari with tamarind sauce</li><li>Thai chicken wings</li><li>Crispy spring rolls</li><li>Som tam with prawn</li><li>Spaghetti, pizza, burgers and sandwiches</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="cocktails">
+  <div class="wrap ck">
+    <img src="img/cocktail.jpg" width="700" height="875" alt="A No.11 signature cocktail at dusk" loading="lazy">
+    <div>
+      <h2>No.11 cocktails</h2>
+      <p class="lede">Seven of our own, 210 baht each. Classics from 140.</p>
+      <h3>Signature</h3>
+      <div class="row"><span>Afternoon Kisses<small>beetroot rum, Aperol, prosecco, pomelo</small></span><span>210</span></div>
+      <div class="row"><span>Into the Galaxy<small>butterfly pea rum, passion fruit, vodka</small></span><span>210</span></div>
+      <div class="row"><span>The Devil Whispered<small>lemongrass gin, elderflower, Thai chilli</small></span><span>210</span></div>
+      <div class="row"><span>Forbidden Forest<small>wild cherry, mint, cucumber gin</small></span><span>210</span></div>
+      <div class="row"><span>No.11<small>kaffir lime gin, pink gin, hibiscus gin, elderflower</small></span><span>210</span></div>
+      <div class="row"><span>Under an Endless Sky<small>vodka, blue butterfly tea, umeshu, peach</small></span><span>210</span></div>
+      <div class="row"><span>Before the Sun Down<small>galangal gin, hibiscus gin, elderflower, mango</small></span><span>210</span></div>
+      <h3>Classic</h3>
+      <div class="row"><span>Daiquiri, margarita, mojito, gimlet</span><span>140</span></div>
+      <div class="row"><span>Martini, Aperol spritz, negroni, old fashioned, espresso or lychee martini</span><span>180</span></div>
+      <div class="row"><span>Wine by the glass, Chile</span><span>150</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap drinks">
+    <div>
+      <h3>Coffee</h3>
+      <div class="row"><span>Espresso</span><span>60</span></div>
+      <div class="row"><span>Americano</span><span>70</span></div>
+      <div class="row"><span>Cappuccino, flat white, latte</span><span>80</span></div>
+      <div class="row"><span>Mocha</span><span>90</span></div>
+      <div class="row"><span>Oat, almond or coconut milk</span><span>+10</span></div>
+    </div>
+    <div>
+      <h3>Juice and smoothies</h3>
+      <div class="row"><span>Fresh coconut</span><span>60</span></div>
+      <div class="row"><span>Watermelon, pineapple, mango, passion fruit juice</span><span>70</span></div>
+      <div class="row"><span>Smoothie, one fruit</span><span>70</span></div>
+      <div class="row"><span>Mixed berries</span><span>90</span></div>
+      <div class="row"><span>Mix 2 to 5 fruits</span><span>100 – 160</span></div>
+    </div>
+    <div>
+      <h3>Tea and the rest</h3>
+      <div class="row"><span>Tea, hot chocolate, Thai milk tea</span><span>70</span></div>
+      <div class="row"><span>Matcha latte, hot / iced</span><span>80 / 90</span></div>
+      <div class="row"><span>Mocktails: butterfly pea, passion fruit, hibiscus</span><span>80</span></div>
+      <div class="row"><span>Beer: Leo</span><span>70</span></div>
+      <div class="row"><span>Singha, Chang, Heineken 0%</span><span>80</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div>
+      <h2>Find us on the beach</h2>
+      <p class="lede">Free parking and Wi-Fi. Cards welcome. Everything can be packed to take away.</p>
+      <div class="btns">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=No.11+CAFE+%26+BAR+Koh+Samui">Open in Google Maps</a>
+        <a class="btn ghost" href="tel:+66639763390">Call us</a>
+      </div>
+    </div>
+    <dl>
+      <dt>Address</dt><dd>125/17 Maret, Lamai, Koh Samui 84310</dd>
+      <dt>Hours</dt><dd>Tuesday to Sunday, 9:00 to 18:00. Closed on Mondays.</dd>
+      <dt>Phone</dt><dd>063 976 3390</dd>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>No.11 Cafe &amp; Bar, Lamai, Koh Samui.</p>
+    <p>Photos from No.11's own Google Maps uploads. Prices from the owner's menu on Google Maps; details from Google Maps, November 2026.</p>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Quick actions">
+  <a href="tel:+66639763390">Call</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=No.11+CAFE+%26+BAR+Koh+Samui">Directions</a>
+  <a href="#menu">Menu</a>
+</nav>
+</body>
+</html>

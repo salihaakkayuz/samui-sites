@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Isan Jimjoom จิ้มจุ่มพนมรุ้ง, Lamai</title>
+<meta name="description" content="Family restaurant for Isan and Thai food in Lamai, Koh Samui. Every day 10:00 to 22:00.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@400;500;600&family=Anuphan:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* hallmark: shape "order pad on a checked cloth" (yellow and black gingham from their own tablecloths, the menu written like an order pad, a spice dial, three steps for jim joom) · theme custom "gingham and leaf" from Isan Jimjoom's tablecloth, thatched hut and green sign · genre warm-homely · job: come for dinner and try Isan dishes · signature: the gingham and the order pad */
+/* critique: prices only where the owner listed them on Google; Isan and Thai mains have no price listed so none shown; guest faces not used */
+:root{
+  --color-paper:oklch(0.98 0.01 95);
+  --color-pad:oklch(0.995 0.01 100);
+  --color-yellow:oklch(0.87 0.16 95);
+  --color-black:oklch(0.2 0.01 90);
+  --color-leaf:oklch(0.55 0.13 145);
+  --color-chili:oklch(0.58 0.2 30);
+  --color-ink:oklch(0.22 0.02 90);
+  --color-muted:oklch(0.47 0.02 90);
+  --color-line:oklch(0.7 0.06 240 / .35);
+  --color-on:oklch(0.98 0.01 95);
+  --color-rule:oklch(0.22 0.02 90 / .14);
+  --font-display:"Mitr",system-ui,sans-serif;
+  --font-body:"Anuphan",system-ui,sans-serif;
+  --space-1:.5rem;--space-2:1rem;--space-3:1.5rem;--space-4:2.5rem;--space-5:4rem;--space-6:6rem;
+  --radius:12px;
+  --gingham:linear-gradient(90deg,oklch(0.2 0.01 90 / .5) 50%,transparent 50%) 0 0/28px 28px,linear-gradient(oklch(0.2 0.01 90 / .5) 50%,transparent 50%) 0 0/28px 28px,var(--color-yellow);
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--color-paper);color:var(--color-ink);font:400 1.05rem/1.65 var(--font-body)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--color-chili);outline-offset:3px}
+.wrap{width:min(1120px,100% - 2*var(--space-3));margin-inline:auto}
+.demo{font-size:.88rem;text-align:center;padding:.55rem var(--space-2);background:var(--color-black);color:var(--color-on)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:var(--space-2);padding:var(--space-2) 0}
+.name{font-family:var(--font-display);font-weight:600;font-size:1.3rem;text-decoration:none;line-height:1.2}
+.name small{display:block;font-weight:400;font-size:.9rem;color:var(--color-leaf)}
+.top nav{display:flex;gap:var(--space-3);font-weight:500}
+.top nav a{text-decoration:none}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--space-4);align-items:center;padding:var(--space-3) 0 var(--space-5)}
+.hero h1{font-family:var(--font-display);font-weight:600;font-size:clamp(2.3rem,4.8vw,3.8rem);line-height:1.08;margin:0 0 var(--space-2)}
+.hero p{margin:0 0 var(--space-3);color:var(--color-muted);max-width:36ch}
+.hero .open{font-weight:600;color:var(--color-ink)}
+.hero img{border-radius:var(--radius);aspect-ratio:16/10;object-fit:cover;width:100%}
+.btns{display:flex;flex-wrap:wrap;gap:var(--space-1)}
+.btn{display:inline-block;padding:.85rem 1.3rem;border-radius:999px;background:var(--color-black);color:var(--color-on);font-weight:600;text-decoration:none;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:var(--color-yellow);color:var(--color-ink)}
+.cloth{background:var(--gingham)}
+.cloth .wrap{padding:var(--space-5) 0}
+.plates{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-3)}
+.plates figure{margin:0;background:var(--color-pad);padding:.6rem .6rem .8rem;border-radius:6px;box-shadow:0 10px 24px -14px oklch(0.2 0.01 90 / .6)}
+.plates figure:nth-child(odd){transform:rotate(-1.5deg)}
+.plates figure:nth-child(even){transform:rotate(1.2deg)}
+.plates img{aspect-ratio:4/5;object-fit:cover;width:100%;border-radius:3px}
+.plates figcaption{font-family:var(--font-display);text-align:center;margin-top:.5rem}
+section{padding:var(--space-5) 0}
+h2{font-family:var(--font-display);font-weight:600;font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.12;margin:0 0 var(--space-2)}
+.lede{color:var(--color-muted);max-width:50ch;margin:0 0 var(--space-4)}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-3);counter-reset:s}
+.steps li{list-style:none;border-top:4px solid var(--color-black);padding-top:var(--space-2)}
+.steps li::before{counter-increment:s;content:counter(s);font-family:var(--font-display);font-weight:600;font-size:2.4rem;line-height:1;color:var(--color-leaf);display:block;margin-bottom:.4rem}
+.steps h3{font-family:var(--font-display);font-weight:500;margin:0 0 .3rem;font-size:1.2rem}
+.steps p{margin:0;color:var(--color-muted)}
+.steps ol{padding:0;margin:0;display:contents}
+.spice{display:flex;flex-wrap:wrap;gap:var(--space-1);margin-top:var(--space-4);align-items:center}
+.spice b{font-family:var(--font-display);font-weight:500;margin-right:var(--space-1)}
+.spice span{padding:.45rem 1rem;border-radius:999px;border:1.5px solid var(--color-chili);font-weight:500}
+.spice span:nth-child(3){background:oklch(0.58 0.2 30 / .15)}
+.spice span:nth-child(4){background:var(--color-chili);color:var(--color-on)}
+.pad{background:var(--color-pad);border-radius:6px;padding:var(--space-4) var(--space-4) var(--space-4) calc(var(--space-4) + 1.5rem);position:relative;box-shadow:0 1px 0 var(--color-rule),0 20px 40px -30px oklch(0.2 0.01 90 / .5);background-image:repeating-linear-gradient(transparent 0 2.3rem,var(--color-line) 2.3rem calc(2.3rem + 1px));background-position:0 1.6rem}
+.pad::before{content:"";position:absolute;left:var(--space-4);top:0;bottom:0;width:1.5px;background:oklch(0.58 0.2 30 / .45)}
+.pad .cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 var(--space-5)}
+.pad h3{font-family:var(--font-display);font-weight:600;font-size:1.15rem;margin:0;line-height:2.3rem;color:var(--color-leaf)}
+.pad .row{display:flex;justify-content:space-between;gap:var(--space-2);line-height:2.3rem;min-height:2.3rem}
+.pad .row span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pad .row span:last-child{font-weight:600;white-space:nowrap}
+.pad .gap{height:2.3rem}
+.pad .plain{line-height:2.3rem;margin:0}
+.note{font-size:.92rem;color:var(--color-muted);margin-top:var(--space-3)}
+.hut{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--space-5);align-items:center}
+.hut img{border-radius:var(--radius);aspect-ratio:4/5;object-fit:cover;width:100%}
+.hut ul{padding-left:1.1rem;margin:0}
+.hut li{margin:.3rem 0}
+.visit{background:var(--color-black);color:var(--color-on)}
+.visit .lede{color:oklch(0.98 0.01 95 / .75)}
+.visit .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-4)}
+.visit dl{margin:0}
+.visit dt{font-family:var(--font-display);color:var(--color-yellow);margin-top:var(--space-2)}
+.visit dt:first-child{margin-top:0}
+.visit dd{margin:0}
+.visit .btn{background:var(--color-yellow);color:var(--color-ink)}
+.visit .btn.ghost{background:transparent;color:var(--color-on);box-shadow:inset 0 0 0 1.5px var(--color-on)}
+.edge{height:28px;background:var(--gingham)}
+footer{padding:var(--space-4) 0 var(--space-6);font-size:.86rem;color:var(--color-muted);text-align:center}
+footer p{margin:.3rem 0}
+.bar{position:fixed;left:0;right:0;bottom:0;display:none;gap:1px;background:var(--color-rule);z-index:5}
+.bar a{flex:1;text-align:center;padding:.95rem .5rem;background:var(--color-black);color:var(--color-on);text-decoration:none;font-weight:600}
+.bar a:first-child{background:var(--color-yellow);color:var(--color-ink)}
+@media (max-width:880px){
+  .top nav{display:none}
+  .hero .wrap,.hut,.visit .wrap{grid-template-columns:minmax(0,1fr)}
+  .hero img{order:-1}
+  .plates{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:minmax(0,1fr)}
+  .pad{padding:var(--space-3) var(--space-2) var(--space-3) calc(var(--space-2) + 1.2rem)}
+  .pad::before{left:var(--space-2)}
+  .pad .cols{grid-template-columns:minmax(0,1fr)}
+  .bar{display:flex}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.plates figure:nth-child(n){transform:none}}
+</style>
+</head>
+<body>
+<div class="demo">Sample website made for Isan Jimjoom. Not live yet; nothing here is final.</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="name" href="#">Isan Jimjoom <small>จิ้มจุ่มพนมรุ้ง</small></a>
+    <nav aria-label="Sections"><a href="#jimjoom">Jim joom</a><a href="#menu">Menu</a><a href="#visit">Find us</a></nav>
+  </div>
+</header>
+
+<section class="hero" style="padding:0">
+  <div class="wrap">
+    <div>
+      <h1>Home-style Isan food in Lamai</h1>
+      <p>Grilled pork neck, som tam and jim joom hot pot, made as spicy as you like.</p>
+      <p class="open">Open every day, 10:00 to 22:00</p>
+      <div class="btns">
+        <a class="btn" href="tel:+66840613985">Call 084 061 3985</a>
+        <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Isan+Jimjoom+Lamai+Koh+Samui">Directions</a>
+      </div>
+    </div>
+    <img src="img/hut.jpg" width="1400" height="787" alt="Isan Jimjoom: a thatched open-air restaurant with a green sign, under palm trees">
+  </div>
+</section>
+
+<div class="cloth">
+  <div class="wrap">
+    <div class="plates">
+      <figure><img src="img/padthai.jpg" width="700" height="875" alt="Pad thai with shrimp on a checked tablecloth" loading="lazy"><figcaption>Pad thai</figcaption></figure>
+      <figure><img src="img/krapao.jpg" width="700" height="875" alt="Pad kra pao with fried egg and cucumber" loading="lazy"><figcaption>Kra pao with egg</figcaption></figure>
+      <figure><img src="img/satay.jpg" width="700" height="875" alt="Chicken satay with peanut sauce on a flowered plate" loading="lazy"><figcaption>Chicken satay</figcaption></figure>
+      <figure><img src="img/fish.jpg" width="700" height="875" alt="Whole fried fish with herbs and chilli sauce" loading="lazy"><figcaption>Whole fried fish</figcaption></figure>
+    </div>
+  </div>
+</div>
+
+<section id="jimjoom">
+  <div class="wrap">
+    <h2>New to jim joom?</h2>
+    <p class="lede">It's the Isan hot pot in our name. This is how it usually goes; ask us and we'll show you.</p>
+    <ol class="steps">
+      <li><h3>We bring the pot</h3><p>A clay pot of hot herb broth, set on a little burner on your table.</p></li>
+      <li><h3>You dip</h3><p>Meat, vegetables and noodles go into the broth until they're cooked.</p></li>
+      <li><h3>Dip again</h3><p>Into the spicy sauce, then straight into your mouth. Share it with friends.</p></li>
+    </ol>
+    <div class="spice" aria-label="Spice levels">
+      <b>Tell us how hot:</b>
+      <span>Not spicy</span><span>A little</span><span>Medium</span><span>Thai spicy</span>
+    </div>
+  </div>
+</section>
+
+<section id="menu" style="padding-top:0">
+  <div class="wrap">
+    <h2>Our menu</h2>
+    <p class="lede">Prices in baht, as listed by us on Google Maps. Dishes without a price: just ask, they're on the table menu.</p>
+    <div class="pad">
+      <div class="cols">
+        <div>
+          <h3>Isan dishes</h3>
+          <div class="row"><span>Jim joom, Isan hot pot</span><span></span></div>
+          <div class="row"><span>Grilled pork neck, kor moo yang</span><span></span></div>
+          <div class="row"><span>Grilled chicken, gai yang</span><span></span></div>
+          <div class="row"><span>Som tam Thai</span><span></span></div>
+          <div class="row"><span>Som tam with fermented fish</span><span></span></div>
+          <div class="row"><span>Som tam with blue crab</span><span></span></div>
+          <div class="row"><span>Laab, spicy minced salad</span><span></span></div>
+          <div class="row"><span>Fried pork ribs</span><span></span></div>
+          <div class="row"><span>Spicy pork rib soup, tom saep</span><span></span></div>
+          <div class="row"><span>Dill soup, gaeng om</span><span></span></div>
+          <div class="row"><span>Sticky rice</span><span>20</span></div>
+          <div class="gap"></div>
+          <h3>Grill</h3>
+          <div class="row"><span>Grilled prawns</span><span>300</span></div>
+          <div class="row"><span>Grilled squid</span><span>300</span></div>
+          <div class="row"><span>Grilled fish</span><span>300</span></div>
+          <div class="row"><span>Pork spareribs</span><span>300</span></div>
+          <div class="gap"></div>
+          <h3>Whole fish</h3>
+          <div class="row"><span>Steamed with lemon</span><span>350</span></div>
+          <div class="row"><span>Fried, with chilli sauce</span><span>350</span></div>
+          <div class="row"><span>Fried, with garlic</span><span>350</span></div>
+          <div class="row"><span>Sweet and sour</span><span>350</span></div>
+          <div class="row"><span>Steamed squid with lemon</span><span>350</span></div>
+        </div>
+        <div>
+          <h3>Thai favourites</h3>
+          <div class="row"><span>Pad thai</span><span></span></div>
+          <div class="row"><span>Green, red, yellow or massaman curry</span><span></span></div>
+          <div class="row"><span>Tom yum kung</span><span></span></div>
+          <div class="row"><span>Tom kha kai</span><span></span></div>
+          <div class="row"><span>Fried rice, pineapple fried rice</span><span></span></div>
+          <div class="gap"></div>
+          <h3>Small plates</h3>
+          <div class="row"><span>Spring rolls</span><span>80</span></div>
+          <div class="row"><span>Fish cakes</span><span>80</span></div>
+          <div class="row"><span>Vegetable tempura</span><span>80</span></div>
+          <div class="row"><span>Chicken satay</span><span>100</span></div>
+          <div class="row"><span>Crispy shrimp or calamari</span><span>120</span></div>
+          <div class="row"><span>Shrimp cakes</span><span>120</span></div>
+          <div class="row"><span>Fish and chips</span><span>150</span></div>
+          <div class="gap"></div>
+          <h3>Sweet and cold</h3>
+          <div class="row"><span>Banana in coconut milk</span><span>60</span></div>
+          <div class="row"><span>Thai coconut ice cream</span><span>60</span></div>
+          <div class="row"><span>Mango sticky rice</span><span>100</span></div>
+          <div class="row"><span>Fruit shake</span><span>50</span></div>
+          <div class="row"><span>Fresh coconut</span><span>50</span></div>
+          <div class="row"><span>Chang, Leo, Singha</span><span>70</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="note">Vegan or vegetarian? Many dishes can be made with tofu. Ask us.</p>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap hut">
+    <img src="img/hut2.jpg" width="800" height="1000" alt="The thatched hut of Isan Jimjoom by day, with plants and palm trees" loading="lazy">
+    <div>
+      <h2>A family place</h2>
+      <p class="lede">We'll explain the menu, help you choose, and cook it the way you like.</p>
+      <ul>
+        <li>Good for kids and groups</li>
+        <li>Dogs welcome, inside too</li>
+        <li>Reservations, takeaway and delivery</li>
+        <li>Free parking</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="edge" aria-hidden="true"></div>
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div>
+      <h2>Come and eat with us</h2>
+      <p class="lede">On Thawi Ratchaphakdi Road in Maret, Lamai. Look for the thatched roof.</p>
+      <div class="btns">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Isan+Jimjoom+Lamai+Koh+Samui">Open in Google Maps</a>
+        <a class="btn ghost" href="tel:+66840613985">Call us</a>
+      </div>
+    </div>
+    <dl>
+      <dt>Address</dt><dd>Thawi Ratchaphakdi Rd, Maret, Lamai, Koh Samui 84310 (F23Q+X6)</dd>
+      <dt>Hours</dt><dd>Every day, 10:00 to 22:00</dd>
+      <dt>Phone</dt><dd>084 061 3985</dd>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Isan Jimjoom จิ้มจุ่มพนมรุ้ง, Lamai, Koh Samui.</p>
+    <p>Photos from Isan Jimjoom's own Google Maps uploads. Prices from the owner's menu on Google Maps; details from Google Maps, November 2026.</p>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Quick actions">
+  <a href="tel:+66840613985">Call</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Isan+Jimjoom+Lamai+Koh+Samui">Directions</a>
+  <a href="#menu">Menu</a>
+</nav>
+</body>
+</html>
