@@ -9,8 +9,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js")</script>
 <style>
-/* hallmark: shape "a day on the beach" (a giant 11, then the day told in four stops whose sky changes from morning to dusk, a price staircase for Thai dishes, a cocktail card) · theme custom "sea, sand, dusk" from No.11's own photos: pale sea, wooden balcony, orange-red cocktail at dusk · genre relaxed-bright · job: come to the beach for a meal · signature: the sky strip and the price staircase */
+/* hallmark: shape "a day on the beach" (dynamic: a sun crosses the sky over the sea above the day strip as you scroll; price stairs rise and count up) (a giant 11, then the day told in four stops whose sky changes from morning to dusk, a price staircase for Thai dishes, a cocktail card) · theme custom "sea, sand, dusk" from No.11's own photos: pale sea, wooden balcony, orange-red cocktail at dusk · genre relaxed-bright · job: come to the beach for a meal · signature: the sky strip and the price staircase */
 /* critique: hours as on Google (9 to 18, closed Monday), asked in the offer because guests mention dinner; breakfast and western dishes have no listed price so none shown */
 :root{
   --color-sand:oklch(0.96 0.02 85);
@@ -113,6 +114,13 @@ footer p{margin:.3rem 0}
   .stop img{aspect-ratio:16/10}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+/* dynamic: a sun crosses the sky above the day strip as you scroll, from morning to dusk over the sea; the price stairs rise and count up */
+.skyline{position:relative;height:clamp(70px,9vw,110px);background:linear-gradient(90deg,var(--sky-1),var(--sky-2) 35%,var(--sky-3) 65%,var(--sky-4));overflow:hidden}
+.skyline::after{content:"";position:absolute;left:0;right:0;bottom:0;height:22%;background:linear-gradient(90deg,oklch(0.62 0.08 215),oklch(0.5 0.09 225) 60%,oklch(0.45 0.08 240));opacity:.9}
+.sun{position:absolute;width:clamp(34px,4vw,52px);aspect-ratio:1;border-radius:50%;left:var(--sx,6%);top:var(--sy,70%);transform:translate(-50%,-50%);background:var(--sun,oklch(0.93 0.13 95));box-shadow:0 0 30px 10px var(--glow,oklch(0.93 0.13 95 / .45));z-index:0}
+.js .step{transform:scaleY(0);transform-origin:bottom;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.js .stairs.in .step{transform:none}
+@media (prefers-reduced-motion:reduce){.js .step{transform:none;transition:none}}
 </style>
 </head>
 <body>
@@ -133,6 +141,7 @@ footer p{margin:.3rem 0}
   </div>
 </header>
 
+<div class="skyline" aria-hidden="true"><span class="sun"></span></div>
 <div class="day" aria-label="A day at No.11">
   <div class="stop"><time>9:00</time><h3>Breakfast by the sea</h3><p>English breakfast, eggs Benedict, or avocado on sourdough.</p><img src="img/breakfast.jpg" width="900" height="675" alt="Toast with eggs and bacon on a table by the sea" loading="lazy"></div>
   <div class="stop"><time>12:00</time><h3>Thai lunch</h3><p>Pad thai, tom yum, massaman and the curries guests keep ordering.</p><p style="margin-top:auto;font-weight:700">Stir-fries and soups from 100</p></div>
@@ -240,5 +249,35 @@ footer p{margin:.3rem 0}
   <a href="https://www.google.com/maps/search/?api=1&query=No.11+CAFE+%26+BAR+Koh+Samui">Directions</a>
   <a href="#menu">Menu</a>
 </nav>
+<script>
+(function(){
+  var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var sky=document.querySelector('.skyline'),sun=sky&&sky.querySelector('.sun'),day=document.querySelector('.day');
+  function mix(a,b,t){return a.map(function(v,i){return v+(b[i]-v)*t})}
+  function placeSun(p){
+    var x=6+p*88,y=78-Math.sin(Math.PI*Math.min(1,p*1.08))*58+(p>0.85?(p-0.85)*120:0);
+    var c=p<0.6?mix([0.95,0.12,98],[0.9,0.15,85],p/0.6):mix([0.9,0.15,85],[0.7,0.19,40],(p-0.6)/0.4);
+    var col='oklch('+c[0].toFixed(3)+' '+c[1].toFixed(3)+' '+c[2].toFixed(1)+')';
+    sun.style.setProperty('--sx',x.toFixed(2)+'%');sun.style.setProperty('--sy',y.toFixed(2)+'%');
+    sun.style.setProperty('--sun',col);sun.style.setProperty('--glow','oklch('+c[0].toFixed(3)+' '+c[1].toFixed(3)+' '+c[2].toFixed(1)+' / .45)');
+  }
+  if(sky){
+    if(rm){placeSun(0.5)}else{
+      var t=false;
+      var draw=function(){t=false;var r=sky.getBoundingClientRect(),d=day.getBoundingClientRect(),vh=window.innerHeight;
+        var p=Math.max(0,Math.min(1,(vh*0.85-r.top)/(vh*0.85+d.height*0.6)));placeSun(p)};
+      window.addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(draw)}},{passive:true});draw();
+    }
+  }
+  var st=document.querySelector('.stairs');if(!st)return;
+  var nums=[].slice.call(st.querySelectorAll('.step b'));
+  function count(){nums.forEach(function(b,i){var end=+b.textContent,t0=null;b.setAttribute('aria-label',end);
+    function f(ts){if(!t0)t0=ts+i*120;var k=Math.max(0,Math.min(1,(ts-t0)/700));b.textContent=Math.round(end*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(f)}requestAnimationFrame(f)})}
+  if(rm||!('IntersectionObserver' in window)){st.classList.add('in');return}
+  [].forEach.call(st.querySelectorAll('.step'),function(s,i){s.style.transitionDelay=i*0.12+'s'});
+  var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){st.classList.add('in');count();io.disconnect()}},{threshold:.4});
+  io.observe(st);
+})();
+</script>
 </body>
 </html>

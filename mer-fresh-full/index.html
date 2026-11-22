@@ -9,8 +9,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js")</script>
 <style>
-/* hallmark: shape "arched windows" (every photo set in the arch of the café's own windows, a row of three arches like the dining room, menu as a carte on a coral panel) · theme custom "velvet and coral" from Mer Fresh & Full's teal velvet chairs and coral wall panels · genre salon-chic · job: come for brunch or cake · signature: the arches */
+/* hallmark: shape "arched windows" (dynamic: light sweeps through the window; arches open from the sill as you reach them with slow parallax; the carte fills in) (every photo set in the arch of the café's own windows, a row of three arches like the dining room, menu as a carte on a coral panel) · theme custom "velvet and coral" from Mer Fresh & Full's teal velvet chairs and coral wall panels · genre salon-chic · job: come for brunch or cake · signature: the arches */
 /* critique: no prices, because the only menu photo is from January 2024 and guests mention a new menu; the eggs benedict, croissant and bowl images look like stock, so only the café's real photos are used */
 :root{
   --color-velvet:oklch(0.36 0.06 190);
@@ -99,6 +100,18 @@ footer p{margin:.3rem 0}
 }
 @media (max-width:480px){.arches figcaption{font-size:.95rem}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+/* dynamic: morning light sweeps through the arched window; every arch opens from the sill up as you reach it, with a slow parallax inside; the carte fills in line by line */
+.hero .arch{position:relative}
+.hero .arch::after{content:"";position:absolute;inset:0;border-radius:var(--arch);background:linear-gradient(115deg,transparent 30%,oklch(1 0.02 80 / .45) 45%,oklch(1 0.02 80 / .1) 55%,transparent 70%);background-size:250% 100%;background-position:110% 0;pointer-events:none;mix-blend-mode:soft-light}
+.js .hero .arch::after{animation:sweep 2.6s ease-in-out .4s both}
+@keyframes sweep{from{background-position:110% 0}to{background-position:-60% 0}}
+.a{position:relative}
+.a img{transform:translateY(var(--py,0px)) scale(1.12);will-change:transform}
+.js .a img{clip-path:inset(100% 0 0 0);transition:clip-path 1.2s cubic-bezier(.2,.75,.2,1)}
+.js .a.in img{clip-path:inset(0 0 0 0)}
+.js .carte h3,.js .carte p{opacity:0;transform:translateY(8px);transition:opacity .5s,transform .5s}
+.js .carte.in h3,.js .carte.in p{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .hero .arch::after{animation:none}.a img{transform:none}.js .a img{clip-path:none;transition:none}.js .carte h3,.js .carte p{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
@@ -205,5 +218,19 @@ footer p{margin:.3rem 0}
   <a href="https://www.google.com/maps/search/?api=1&query=Mer+Fresh+%26+Full+Cafe+and+Restaurant+SAMUI">Directions</a>
   <a href="#menu">Menu</a>
 </nav>
+<script>
+(function(){
+  var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var arches=[].slice.call(document.querySelectorAll('.a')),carte=document.querySelector('.carte');
+  if(rm||!('IntersectionObserver' in window)){arches.forEach(function(a){a.classList.add('in')});carte&&carte.classList.add('in');return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var i=arches.indexOf(e.target);e.target.querySelector('img').style.transitionDelay=((i%3)*0.15)+'s';e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.25});
+  arches.forEach(function(a){io.observe(a)});
+  if(carte){var items=carte.querySelectorAll('h3,p');[].forEach.call(items,function(el,i){el.style.transitionDelay=(i*0.06)+'s'});
+    var io2=new IntersectionObserver(function(es){if(es[0].isIntersecting){carte.classList.add('in');io2.disconnect()}},{threshold:.2});io2.observe(carte)}
+  var t=false;
+  function par(){t=false;var vh=window.innerHeight;arches.forEach(function(a){var r=a.getBoundingClientRect();if(r.bottom<0||r.top>vh)return;var k=(r.top+r.height/2-vh/2)/vh;a.querySelector('img').style.setProperty('--py',(k*-28).toFixed(1)+'px')})}
+  window.addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(par)}},{passive:true});par();
+})();
+</script>
 </body>
 </html>

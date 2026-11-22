@@ -9,8 +9,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js")</script>
 <style>
-/* hallmark: shape "menu book" (contents page, numbered chapters, dotted price leaders) · theme custom "black, gold, red" from Wok & Pan's own badge and black menu pages · genre bold-editorial · job: walk in tonight · signature: the English / French switch, like their printed menu */
+/* hallmark: shape "menu book" (dynamic: chapters turn in like pages; the watermelon on the house gets three bites as you scroll) (contents page, numbered chapters, dotted price leaders) · theme custom "black, gold, red" from Wok & Pan's own badge and black menu pages · genre bold-editorial · job: walk in tonight · signature: the English / French switch, like their printed menu */
 /* critique: prices only from the owner's own menu PDF; the PDF's food pictures look like stock so none are used; best-seller tags are the menu's own */
 :root{
   --color-black:oklch(0.16 0.005 60);
@@ -104,6 +105,16 @@ footer p{margin:.3rem 0}
   .bar{display:flex}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+/* dynamic: chapters turn in like menu pages; the free watermelon gets eaten as you scroll */
+.js .chapter{transform:perspective(1400px) rotateY(-62deg);transform-origin:left center;opacity:0;transition:transform .9s cubic-bezier(.2,.7,.2,1),opacity .7s}
+.js .chapter.in{transform:none;opacity:1}
+.melon{background:var(--color-yellow);color:var(--color-black)}
+.melon .wrap{display:flex;align-items:center;justify-content:center;gap:var(--space-4)}
+.melon p{text-align:left}
+.melon svg{width:clamp(130px,18vw,210px);height:auto;flex:none;overflow:visible}
+.melon .bite{transform-box:fill-box;transform-origin:center;transform:scale(var(--s,0))}
+@media (max-width:860px){.melon .wrap{flex-direction:column;gap:var(--space-2)}.melon p{text-align:center}}
+@media (prefers-reduced-motion:reduce){.js .chapter{transform:none;opacity:1;transition:none}}
 </style>
 </head>
 <body>
@@ -250,6 +261,13 @@ footer p{margin:.3rem 0}
 
 <div class="melon">
   <div class="wrap">
+    <svg viewBox="0 0 200 104" aria-hidden="true">
+      <path d="M0 4 A100 100 0 0 0 200 4 Z" fill="oklch(0.42 0.12 150)"/>
+      <path d="M8 4 A92 92 0 0 0 192 4 Z" fill="oklch(0.9 0.08 130)"/>
+      <path d="M14 4 A86 86 0 0 0 186 4 Z" fill="oklch(0.64 0.21 22)"/>
+      <g fill="oklch(0.2 0.01 60)"><ellipse cx="60" cy="30" rx="3" ry="5" transform="rotate(-25 60 30)"/><ellipse cx="100" cy="45" rx="3" ry="5"/><ellipse cx="140" cy="30" rx="3" ry="5" transform="rotate(25 140 30)"/><ellipse cx="80" cy="62" rx="3" ry="5" transform="rotate(-12 80 62)"/><ellipse cx="122" cy="62" rx="3" ry="5" transform="rotate(12 122 62)"/><ellipse cx="100" cy="20" rx="3" ry="5"/></g>
+      <g fill="var(--color-yellow)"><circle class="bite b1" cx="40" cy="0" r="27"/><circle class="bite b2" cx="100" cy="-2" r="31"/><circle class="bite b3" cx="160" cy="0" r="27"/></g>
+    </svg>
     <p><span class="en">After your meal, the watermelon is on us</span><span class="fr">Après le repas, la pastèque est offerte</span><small><span class="en">A family habit our guests keep mentioning.</span><span class="fr">Une habitude de famille dont nos clients parlent souvent.</span></small></p>
   </div>
 </div>
@@ -304,6 +322,23 @@ footer p{margin:.3rem 0}
   btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.lang)})});
   var saved=null;try{saved=localStorage.getItem('wokpan-lang')}catch(e){}
   if(saved)set(saved);
+})();
+</script>
+<script>
+(function(){
+  var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var ch=[].slice.call(document.querySelectorAll('.chapter'));
+  if(rm||!('IntersectionObserver' in window)){ch.forEach(function(c){c.classList.add('in')})}
+  else{var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var i=ch.indexOf(e.target);e.target.style.transitionDelay=(i%2)*0.15+'s';e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -8% 0px'});ch.forEach(function(c){io.observe(c)})}
+  var band=document.querySelector('.melon');if(!band)return;
+  var bites=band.querySelectorAll('.bite');
+  if(rm){bites.forEach(function(b){b.style.setProperty('--s',1)});return}
+  var t=false;
+  function draw(){t=false;var r=band.getBoundingClientRect(),vh=window.innerHeight;
+    var p=Math.max(0,Math.min(1,(vh-r.top)/(vh*0.75+r.height)));
+    bites.forEach(function(b,i){var k=Math.max(0,Math.min(1,(p-0.25-i*0.18)/0.12));b.style.setProperty('--s',k.toFixed(3))});}
+  function on(){if(!t){t=true;requestAnimationFrame(draw)}}
+  window.addEventListener('scroll',on,{passive:true});window.addEventListener('resize',on);draw();
 })();
 </script>
 </body>

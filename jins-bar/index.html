@@ -9,8 +9,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:wght@400;700&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js")</script>
 <style>
-/* hallmark: shape "garden at dusk" (full photo, the white logo card set on it like the sign, plates hung in a row like lanterns) · theme custom "leaf and lamp" from the veranda at night: deep leaf green, warm bulb yellow, Jin's own black-on-white logo · genre quiet-evening · job: come for dinner · signature: the white logo card and the printed favourites card */
+/* hallmark: shape "garden at dusk" (dynamic: string lights switch on as you scroll into the evening; hanging plates sway with the scroll) (full photo, the white logo card set on it like the sign, plates hung in a row like lanterns) · theme custom "leaf and lamp" from the veranda at night: deep leaf green, warm bulb yellow, Jin's own black-on-white logo · genre quiet-evening · job: come for dinner · signature: the white logo card and the printed favourites card */
 /* critique: no prices (none verified); dishes named only from guests' reviews and Jin's own photos; the poster-style images on their page are not used */
 :root{
   --color-leaf:oklch(0.26 0.04 150);
@@ -101,12 +102,23 @@ footer p{margin:.3rem 0}
   .bar{display:flex}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+/* dynamic: garden string lights switch on one by one as you scroll into the evening; plates hang and sway with the scroll */
+.lights{position:absolute;left:0;right:0;top:0;height:clamp(70px,12vw,130px);z-index:1;pointer-events:none}
+.lights svg{position:absolute;inset:0;width:100%;height:100%}
+.lights path{fill:none;stroke:oklch(0.15 0.02 150 / .85);stroke-width:1.5;vector-effect:non-scaling-stroke}
+.bulb{position:absolute;width:13px;height:18px;margin:-2px 0 0 -6.5px;border-radius:50% 50% 45% 45%;background:oklch(0.55 0.03 80);transition:background-color .35s,box-shadow .35s}
+.bulb::before{content:"";position:absolute;left:3px;top:-4px;width:5px;height:5px;background:oklch(0.15 0.02 150);border-radius:1px}
+.bulb.on{background:var(--color-lamp);box-shadow:0 0 10px 3px oklch(0.85 0.12 80 / .75),0 0 28px 8px oklch(0.85 0.12 80 / .3)}
+.hero::after{opacity:var(--dusk,1)}
+.lanterns figure{transform-origin:50% 0;transform:rotate(var(--a,0deg));will-change:transform}
+@media (prefers-reduced-motion:reduce){.bulb{transition:none}.lanterns figure{transform:none}}
 </style>
 </head>
 <body>
 <div class="demo">Sample website made for Jin's bar &amp; restaurant. Not live yet; nothing here is final.</div>
 
 <header class="hero">
+  <div class="lights" aria-hidden="true"><svg viewBox="0 0 1000 120" preserveAspectRatio="none"><path d="M-10 18 Q250 118 500 34 Q750 118 1010 18"/></svg></div>
   <img src="img/exterior.jpg" width="1400" height="786" alt="Jin's at dusk: a long veranda with warm lights, framed by trees and tropical plants">
   <div class="logo-card">
     <p class="mark">Jin's</p>
@@ -205,5 +217,41 @@ footer p{margin:.3rem 0}
   <a href="https://www.google.com/maps/search/?api=1&query=Jin%27s+bar+and+restaurant+Mae+Nam+Koh+Samui">Directions</a>
   <a href="#menu">Menu</a>
 </nav>
+<script>
+(function(){
+  var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var box=document.querySelector('.lights'),hero=document.querySelector('.hero');
+  if(box){
+    var path=box.querySelector('path'),L=path.getTotalLength(),n=window.innerWidth<700?11:19,bulbs=[];
+    for(var i=0;i<n;i++){var pt=path.getPointAtLength(L*(i+.5)/n),b=document.createElement('span');b.className='bulb';b.style.left=(pt.x/10)+'%';b.style.top=(pt.y/120*100)+'%';box.appendChild(b);bulbs.push(b)}
+    if(rm){bulbs.forEach(function(b){b.classList.add('on')})}
+  }
+  var figs=[].slice.call(document.querySelectorAll('.lanterns figure')),ang=figs.map(function(){return 0}),vel=figs.map(function(){return 0});
+  var lastY=window.scrollY,ticking=false,anim=false;
+  function lights(){
+    if(!box||rm)return;
+    var h=hero.offsetHeight,p=Math.max(0,Math.min(1,window.scrollY/(h*0.55)));
+    var lit=Math.round(2+p*(bulbs.length-2));
+    bulbs.forEach(function(b,i){b.classList.toggle('on',i<lit)});
+    hero.style.setProperty('--dusk',(0.85+p*0.6).toFixed(3));
+  }
+  function sway(){
+    var y=window.scrollY,v=y-lastY;lastY=y;var moving=false;
+    figs.forEach(function(f,i){
+      var force=Math.max(-14,Math.min(14,v))*(0.06+0.02*(i%2));
+      vel[i]+=force-ang[i]*0.06;vel[i]*=0.9;ang[i]+=vel[i];
+      ang[i]=Math.max(-5,Math.min(5,ang[i]));
+      if(Math.abs(ang[i])>0.02||Math.abs(vel[i])>0.02)moving=true;
+      f.style.setProperty('--a',ang[i].toFixed(2)+'deg');
+    });
+    if(moving){requestAnimationFrame(sway)}else{anim=false;figs.forEach(function(f){f.style.setProperty('--a','0deg')})}
+  }
+  function on(){
+    if(!ticking){ticking=true;requestAnimationFrame(function(){ticking=false;lights()})}
+    if(!rm&&!anim){anim=true;requestAnimationFrame(sway)}
+  }
+  window.addEventListener('scroll',on,{passive:true});lights();
+})();
+</script>
 </body>
 </html>

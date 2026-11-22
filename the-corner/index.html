@@ -9,8 +9,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Figtree:wght@400;500;700;800&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js")</script>
 <style>
-/* hallmark: shape "street corner" (photos fold around the text in an L, menu split into two kitchens facing each other) · theme custom "green sign, red cloth" from The Corner's own sign board and tablecloths · genre warm-casual · job: walk in for dinner · signature: the two-kitchen menu, Thai on one side, pizza and pasta on the other */
+/* hallmark: shape "street corner" (dynamic: sign lights up letter by letter; the two kitchens slide in and meet at the dashed spine) (photos fold around the text in an L, menu split into two kitchens facing each other) · theme custom "green sign, red cloth" from The Corner's own sign board and tablecloths · genre warm-casual · job: walk in for dinner · signature: the two-kitchen menu, Thai on one side, pizza and pasta on the other */
 /* critique: no prices on the page, because the photographed boards were unreadable; the red is the tablecloth red, the green is the sign; script only for the name, like the sign */
 :root{
   --color-paper:oklch(0.985 0.004 150);
@@ -109,6 +110,18 @@ footer p{margin:.3rem 0}
   .bar{display:flex}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+/* dynamic: the sign lights up letter by letter like the lit sign at night; the two kitchens slide in and meet at the corner */
+.logo b .l{display:inline-block;white-space:pre}
+.js .logo b .l{opacity:.18;transition:opacity .08s,text-shadow .3s}
+.js .logo b .l.on{opacity:1;text-shadow:0 0 6px oklch(0.6 0.22 25 / .55)}
+.js .logo b.lit .l{text-shadow:0 0 4px oklch(0.6 0.22 25 / .35)}
+.js .kitchens .kitchen{opacity:0;transform:translateX(-70px);transition:transform 1s cubic-bezier(.2,.7,.2,1),opacity .8s}
+.js .kitchens .kitchen.right{transform:translateX(70px)}
+.js .kitchens .spine{transform:scaleY(0);transform-origin:top;transition:transform 1.1s .35s cubic-bezier(.2,.7,.2,1)}
+.js .kitchens.in .kitchen{opacity:1;transform:none}
+.js .kitchens.in .spine{transform:none}
+@media (max-width:860px){.js .kitchens .kitchen{transform:translateY(40px)}.js .kitchens .kitchen.right{transform:translateY(40px);transition-delay:.25s}.js .kitchens .spine{transform:scaleX(0);transform-origin:left}}
+@media (prefers-reduced-motion:reduce){.js .logo b .l{opacity:1;transition:none}.js .kitchens .kitchen,.js .kitchens .spine{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
@@ -116,7 +129,7 @@ footer p{margin:.3rem 0}
 
 <header class="sign">
   <div class="wrap">
-    <a class="logo" href="#"><b>The Corner Samui</b><span>ร้านมุมสมุย</span></a>
+    <a class="logo" href="#" aria-label="The Corner Samui"><b aria-hidden="true"><span class="l">T</span><span class="l">h</span><span class="l">e</span><span class="l"> </span><span class="l">C</span><span class="l">o</span><span class="l">r</span><span class="l">n</span><span class="l">e</span><span class="l">r</span><span class="l"> </span><span class="l">S</span><span class="l">a</span><span class="l">m</span><span class="l">u</span><span class="l">i</span></b><span>ร้านมุมสมุย</span></a>
     <nav aria-label="Sections"><a href="#menu">Menu</a><a href="#visit">Find us</a></nav>
   </div>
 </header>
@@ -250,5 +263,25 @@ footer p{margin:.3rem 0}
   <a href="https://www.google.com/maps/search/?api=1&query=The+Corner+Samui+restaurant+Chaweng+Noi">Directions</a>
   <a href="#menu">Menu</a>
 </nav>
+<script>
+(function(){
+  var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var b=document.querySelector('.logo b'),ls=b?[].slice.call(b.querySelectorAll('.l')):[];
+  if(rm){ls.forEach(function(l){l.classList.add('on')});if(b)b.classList.add('lit')}
+  else{
+    var order=ls.map(function(_,i){return i}).sort(function(){return Math.random()-.5});
+    order.forEach(function(i,k){
+      var l=ls[i],t=250+k*70+Math.random()*120;
+      setTimeout(function(){l.classList.add('on')},t);
+      if(Math.random()<.35){setTimeout(function(){l.classList.remove('on')},t+90);setTimeout(function(){l.classList.add('on')},t+170)}
+    });
+    setTimeout(function(){b.classList.add('lit')},250+ls.length*70+500);
+  }
+  var k=document.querySelector('.kitchens');if(!k)return;
+  if(rm||!('IntersectionObserver' in window)){k.classList.add('in');return}
+  var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){k.classList.add('in');io.disconnect()}},{threshold:.12});
+  io.observe(k);
+})();
+</script>
 </body>
 </html>
