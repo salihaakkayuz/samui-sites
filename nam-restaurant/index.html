@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Nam Restaurant, Mae Nam</title>
+<meta name="description" content="Family-run Thai restaurant under a thatched roof in Mae Nam, Koh Samui. Every day 11:00 to 22:30. Cash only.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* hallmark: shape "day and night" (two photos side by side, 11:00 and 22:30, then a picture menu and a folding full menu) · theme custom "thatch and marble" from Nam's straw roof, bamboo posts and the white plates on dark marble · genre warm-utility · job: choose a dish and come by · signature: the day / night opening pair and the folding menu with every price */
+/* critique: dishes with several meat choices show "from"; the owner's own price list on Google is the only source; no review quotes */
+:root{
+  --color-paper:oklch(0.97 0.012 85);
+  --color-card:oklch(0.995 0.004 85);
+  --color-straw:oklch(0.8 0.1 78);
+  --color-straw-deep:oklch(0.6 0.1 65);
+  --color-bamboo:oklch(0.42 0.07 135);
+  --color-marble:oklch(0.22 0.01 250);
+  --color-ink:oklch(0.24 0.02 60);
+  --color-muted:oklch(0.47 0.02 60);
+  --color-on:oklch(0.98 0.008 85);
+  --color-rule:oklch(0.24 0.02 60 / .13);
+  --font-display:"Young Serif",Georgia,serif;
+  --font-body:"Work Sans",system-ui,sans-serif;
+  --space-1:.5rem;--space-2:1rem;--space-3:1.5rem;--space-4:2.5rem;--space-5:4rem;--space-6:6rem;
+  --radius:12px;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--color-paper);color:var(--color-ink);font:400 1.05rem/1.6 var(--font-body)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+a:focus-visible,summary:focus-visible{outline:3px solid var(--color-bamboo);outline-offset:3px}
+.wrap{width:min(1120px,100% - 2*var(--space-3));margin-inline:auto}
+.demo{font-size:.88rem;text-align:center;padding:.55rem var(--space-2);background:var(--color-bamboo);color:var(--color-on)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:var(--space-2);padding:var(--space-2) 0}
+.name{font-family:var(--font-display);font-size:1.5rem;text-decoration:none}
+.top nav{display:flex;gap:var(--space-3);font-weight:500}
+.top nav a{text-decoration:none}
+.top nav a:hover{text-decoration:underline;text-underline-offset:4px}
+.fringe{height:18px;background:repeating-linear-gradient(100deg,var(--color-straw) 0 3px,var(--color-straw-deep) 3px 4px,var(--color-straw) 4px 7px);-webkit-mask:linear-gradient(#000 55%,transparent);mask:linear-gradient(#000 55%,transparent)}
+.intro{text-align:center;padding:var(--space-4) 0 var(--space-3)}
+.intro h1{font-family:var(--font-display);font-weight:400;font-size:clamp(2.2rem,5vw,3.8rem);line-height:1.08;margin:0 auto var(--space-2);max-width:18ch}
+.intro p{margin:0 auto var(--space-3);color:var(--color-muted);max-width:44ch}
+.btns{display:flex;flex-wrap:wrap;gap:var(--space-1);justify-content:center}
+.btn{display:inline-block;padding:.85rem 1.3rem;border-radius:999px;background:var(--color-bamboo);color:var(--color-on);font-weight:600;text-decoration:none;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--color-ink);box-shadow:inset 0 0 0 1.5px var(--color-ink)}
+.daynight{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-2);padding-bottom:var(--space-4)}
+.daynight figure{margin:0;position:relative}
+.daynight img{border-radius:var(--radius);aspect-ratio:4/3;object-fit:cover;width:100%}
+.daynight figcaption{position:absolute;left:var(--space-2);bottom:var(--space-2);background:var(--color-card);color:var(--color-ink);border-radius:999px;padding:.35rem .9rem;font-weight:600;font-size:.95rem}
+.daynight figure:last-child figcaption{background:var(--color-marble);color:var(--color-on)}
+.facts{border-block:1px solid var(--color-rule)}
+.facts ul{list-style:none;margin:0;padding:var(--space-3) 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-2)}
+.facts b{display:block;font-family:var(--font-display);font-weight:400;font-size:1.2rem}
+.facts span{color:var(--color-muted);font-size:.93rem}
+section{padding:var(--space-5) 0}
+h2{font-family:var(--font-display);font-weight:400;font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.12;margin:0 0 var(--space-2)}
+.lede{max-width:50ch;color:var(--color-muted);margin:0 0 var(--space-4)}
+.pictures{background:var(--color-marble);color:var(--color-on)}
+.pictures .lede{color:oklch(0.98 0.008 85 / .72)}
+.pics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-3) var(--space-2)}
+.pics figure{margin:0}
+.pics img{border-radius:var(--radius);aspect-ratio:1;object-fit:cover;width:100%}
+.pics figcaption{display:flex;justify-content:space-between;gap:.5rem;margin-top:.55rem;font-size:.95rem}
+.pics figcaption b{font-weight:600;color:var(--color-straw);white-space:nowrap}
+.menu details{border-top:1px solid var(--color-rule)}
+.menu details:last-of-type{border-bottom:1px solid var(--color-rule)}
+.menu summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:baseline;gap:var(--space-2);padding:var(--space-2) 0;font-family:var(--font-display);font-size:1.35rem}
+.menu summary::-webkit-details-marker{display:none}
+.menu summary span{font-family:var(--font-body);font-size:.9rem;color:var(--color-muted)}
+.menu summary::after{content:"+";font-family:var(--font-body);font-size:1.4rem;color:var(--color-bamboo);margin-left:var(--space-2)}
+.menu details[open] summary::after{content:"–"}
+.list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 var(--space-5);padding-bottom:var(--space-3)}
+.row{display:flex;justify-content:space-between;gap:var(--space-2);padding:.45rem 0;border-bottom:1px dashed var(--color-rule)}
+.row span:last-child{font-weight:600;white-space:nowrap}
+.row small{display:block;color:var(--color-muted);font-size:.85rem}
+.menu .key{color:var(--color-muted);font-size:.95rem;margin:var(--space-3) 0 0}
+.veranda{padding:0}
+.veranda img{width:100%;aspect-ratio:21/8;object-fit:cover}
+.visit .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:var(--space-4);align-items:start}
+.visit .btns{justify-content:flex-start}
+.visit dl{margin:0;background:var(--color-card);border-radius:var(--radius);padding:var(--space-3);box-shadow:0 0 0 1px var(--color-rule)}
+.visit dt{font-weight:600;color:var(--color-bamboo);margin-top:var(--space-2)}
+.visit dt:first-child{margin-top:0}
+.visit dd{margin:0}
+footer{padding:var(--space-4) 0 var(--space-6);font-size:.88rem;color:var(--color-muted);text-align:center}
+footer p{margin:.3rem 0}
+.bar{position:fixed;left:0;right:0;bottom:0;display:none;gap:1px;background:var(--color-rule);z-index:5}
+.bar a{flex:1;text-align:center;padding:.95rem .5rem;background:var(--color-marble);color:var(--color-on);text-decoration:none;font-weight:600}
+.bar a:first-child{background:var(--color-bamboo)}
+@media (max-width:860px){
+  .top nav{display:none}
+  .facts ul{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pics{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .list,.visit .wrap{grid-template-columns:minmax(0,1fr)}
+  .veranda img{aspect-ratio:16/9}
+  .bar{display:flex}
+}
+@media (max-width:520px){.daynight{grid-template-columns:minmax(0,1fr)}.daynight figure:first-child img{aspect-ratio:16/9}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="demo">Sample website made for Nam Restaurant. Not live yet; nothing here is final.</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="name" href="#">Nam Restaurant</a>
+    <nav aria-label="Sections"><a href="#pictures">Dishes</a><a href="#menu">Full menu</a><a href="#visit">Find us</a></nav>
+  </div>
+</header>
+<div class="fringe" aria-hidden="true"></div>
+
+<div class="wrap intro">
+  <h1>Family Thai cooking under a thatched roof</h1>
+  <p>In Mae Nam, open every day from 11:00 to 22:30.</p>
+  <div class="btns">
+    <a class="btn" href="tel:+66929596178">Call 092 959 6178</a>
+    <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Nam+Restaurants+Mae+Nam+Koh+Samui">Directions</a>
+  </div>
+</div>
+
+<div class="wrap daynight">
+  <figure><img src="img/day.jpg" width="1000" height="750" alt="Nam Restaurant by day: thatched roof and plants by the road"><figcaption>From 11:00</figcaption></figure>
+  <figure><img src="img/night.jpg" width="1000" height="750" alt="Nam Restaurant at night with warm lights and scooters out front"><figcaption>Until 22:30</figcaption></figure>
+</div>
+
+<div class="facts">
+  <div class="wrap">
+    <ul>
+      <li><b>4.8 on Google</b><span>354 reviews, Nov 2026</span></li>
+      <li><b>Cash only</b><span>free parking</span></li>
+      <li><b>Kids welcome</b><span>kids' menu and high chairs</span></li>
+      <li><b>Book a table</b><span>dogs welcome too</span></li>
+    </ul>
+  </div>
+</div>
+
+<section class="pictures" id="pictures">
+  <div class="wrap">
+    <h2>Pick by picture</h2>
+    <p class="lede">Our own photos of our own plates. Prices in baht; "from" means the price for pork or chicken.</p>
+    <div class="pics">
+      <figure><img src="img/padthai.jpg" width="600" height="600" alt="Pad thai with shrimp, bean sprouts and lime" loading="lazy"><figcaption>Pad thai <b>from 120</b></figcaption></figure>
+      <figure><img src="img/greencurry.jpg" width="600" height="600" alt="Green curry with red chilli strips" loading="lazy"><figcaption>Green curry <b>from 150</b></figcaption></figure>
+      <figure><img src="img/papaya.jpg" width="600" height="600" alt="Papaya salad with tomato and peanuts" loading="lazy"><figcaption>Papaya salad <b>from 60</b></figcaption></figure>
+      <figure><img src="img/friedrice.jpg" width="600" height="600" alt="Shrimp fried rice with lime and cucumber" loading="lazy"><figcaption>Fried rice <b>from 100</b></figcaption></figure>
+      <figure><img src="img/fish.jpg" width="600" height="600" alt="Whole fried sea bass on lettuce with tomato" loading="lazy"><figcaption>Sea bass</figcaption></figure>
+      <figure><img src="img/laap.jpg" width="600" height="600" alt="Laap, spicy minced salad, with rice and cucumber" loading="lazy"><figcaption>Laap <b>from 120</b></figcaption></figure>
+      <figure><img src="img/springrolls.jpg" width="600" height="600" alt="Four fried vegetable spring rolls" loading="lazy"><figcaption>Spring rolls <b>100</b></figcaption></figure>
+      <figure><img src="img/vegshrimp.jpg" width="600" height="600" alt="Stir-fried vegetables with shrimp and broccoli" loading="lazy"><figcaption>Stir-fried vegetables <b>from 100</b></figcaption></figure>
+      <figure><img src="img/friedchicken.jpg" width="600" height="600" alt="Fried chicken with two fried eggs" loading="lazy"><figcaption>Fried chicken and eggs <b>180</b></figcaption></figure>
+      <figure><img src="img/garlicbread.jpg" width="600" height="600" alt="Garlic bread with herbs" loading="lazy"><figcaption>Garlic bread <b>80</b></figcaption></figure>
+      <figure><img src="img/mango.jpg" width="600" height="600" alt="Mango sticky rice with coconut cream" loading="lazy"><figcaption>Mango sticky rice <b>120</b></figcaption></figure>
+      <figure><img src="img/watermelon.jpg" width="600" height="600" alt="Fresh watermelon slices on a blue and white plate" loading="lazy"><figcaption>Fresh watermelon</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="menu" id="menu">
+  <div class="wrap">
+    <h2>The full menu</h2>
+    <p class="lede">Tap a section to open it. Prices in baht from our own menu on Google Maps.</p>
+
+    <details open>
+      <summary>Rice, noodles and basil <span>100 – 200</span></summary>
+      <div class="list">
+        <div>
+          <div class="row"><span>Fried rice, vegetable</span><span>100</span></div>
+          <div class="row"><span>Fried rice, pork or chicken</span><span>120</span></div>
+          <div class="row"><span>Fried rice, shrimp or squid</span><span>150</span></div>
+          <div class="row"><span>Pineapple fried rice</span><span>160</span></div>
+          <div class="row"><span>Fried rice, seafood</span><span>190</span></div>
+          <div class="row"><span>Rice soup, pork or chicken</span><span>120</span></div>
+          <div class="row"><span>Rice soup, shrimp or squid</span><span>150</span></div>
+          <div class="row"><span>Rice soup, seafood</span><span>190</span></div>
+        </div>
+        <div>
+          <div class="row"><span>Pad thai, pork or chicken</span><span>120</span></div>
+          <div class="row"><span>Pad thai, shrimp or squid</span><span>150</span></div>
+          <div class="row"><span>Pad thai, seafood</span><span>190</span></div>
+          <div class="row"><span>Basil with rice, pork or chicken</span><span>100</span></div>
+          <div class="row"><span>Basil with rice, shrimp or squid</span><span>150</span></div>
+          <div class="row"><span>Basil with rice, crispy pork</span><span>180</span></div>
+          <div class="row"><span>Basil with rice, seafood or beef</span><span>200</span></div>
+          <div class="row"><span>Stir-fried noodles in white soy sauce<small>more choices</small></span><span>from 120</span></div>
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary>Curry and soup <span>from 150</span></summary>
+      <div class="list">
+        <div>
+          <div class="row"><span>Green curry</span><span>from 150</span></div>
+          <div class="row"><span>Red curry</span><span>from 150</span></div>
+          <div class="row"><span>Massaman curry</span><span>from 150</span></div>
+          <div class="row"><span>Panang curry</span><span>from 150</span></div>
+        </div>
+        <div>
+          <div class="row"><span>Tom yum</span><span>from 150</span></div>
+          <div class="row"><span>Tom kha, galangal coconut soup</span><span>from 150</span></div>
+          <div class="row"><span>Thai mild soup</span><span>from 120</span></div>
+          <div class="row"><span>Sukiyaki</span><span>from 120</span></div>
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary>Stir-fries and fish <span>from 80</span></summary>
+      <div class="list">
+        <div>
+          <div class="row"><span>Morning glory</span><span>from 80</span></div>
+          <div class="row"><span>Mixed vegetables</span><span>from 100</span></div>
+          <div class="row"><span>Broccoli</span><span>from 120</span></div>
+          <div class="row"><span>Sweet and sour</span><span>from 150</span></div>
+          <div class="row"><span>Pad kee mao</span><span>from 150</span></div>
+          <div class="row"><span>Fried garlic</span><span>from 150</span></div>
+          <div class="row"><span>Chilli paste</span><span>from 150</span></div>
+        </div>
+        <div>
+          <div class="row"><span>Crispy pork with kale</span><span>170</span></div>
+          <div class="row"><span>Crispy pork with salt and chilli</span><span>170</span></div>
+          <div class="row"><span>Chicken with cashew nuts</span><span>190</span></div>
+          <div class="row"><span>Shrimp with tamarind sauce</span><span>220</span></div>
+          <div class="row"><span>Angus beef with oyster sauce</span><span>300</span></div>
+          <div class="row"><span>Steamed sea bass with lemon</span><span>399</span></div>
+          <div class="row"><span>Fried sea bass: sweet and sour, garlic, or fish sauce<small>ask for today's price</small></span><span>—</span></div>
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary>Salads <span>from 60</span></summary>
+      <div class="list">
+        <div>
+          <div class="row"><span>Papaya salad, original</span><span>60</span></div>
+          <div class="row"><span>Papaya salad, fried</span><span>120</span></div>
+          <div class="row"><span>Papaya salad, shrimp</span><span>150</span></div>
+          <div class="row"><span>Laap, spicy minced salad</span><span>from 120</span></div>
+        </div>
+        <div>
+          <div class="row"><span>Glass noodle spicy salad</span><span>from 120</span></div>
+          <div class="row"><span>Fried egg spicy salad</span><span>from 150</span></div>
+          <div class="row"><span>Boiled egg salad</span><span>150</span></div>
+          <div class="row"><span>Vegetable salad</span><span>120</span></div>
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary>Snacks and Western <span>80 – 190</span></summary>
+      <div class="list">
+        <div>
+          <div class="row"><span>Garlic bread</span><span>80</span></div>
+          <div class="row"><span>French fries</span><span>80</span></div>
+          <div class="row"><span>Fried tofu with sweet sauce</span><span>80</span></div>
+          <div class="row"><span>Vegetable spring rolls</span><span>100</span></div>
+          <div class="row"><span>Thai omelette</span><span>from 100</span></div>
+          <div class="row"><span>Chicken wings</span><span>120</span></div>
+          <div class="row"><span>Chicken satay</span><span>150</span></div>
+          <div class="row"><span>Ham and cheese spring rolls</span><span>150</span></div>
+        </div>
+        <div>
+          <div class="row"><span>Spaghetti carbonara</span><span>150</span></div>
+          <div class="row"><span>Spaghetti carbonara with bacon or ham</span><span>180</span></div>
+          <div class="row"><span>Spaghetti with tomato sauce and chicken</span><span>150</span></div>
+          <div class="row"><span>Macaroni, chicken or sausage</span><span>150</span></div>
+          <div class="row"><span>Fried chicken and fried eggs</span><span>180</span></div>
+          <div class="row"><span>Chicken steak</span><span>190</span></div>
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary>Sweets <span>89 – 129</span></summary>
+      <div class="list">
+        <div>
+          <div class="row"><span>Fried bananas</span><span>89</span></div>
+          <div class="row"><span>Pancake with banana</span><span>99</span></div>
+          <div class="row"><span>Pancake with banana and ice cream</span><span>129</span></div>
+        </div>
+        <div>
+          <div class="row"><span>Mango sticky rice</span><span>120</span></div>
+          <div class="row"><span>Mixed fruit: watermelon, pineapple, mango</span><span>120</span></div>
+        </div>
+      </div>
+    </details>
+
+    <details>
+      <summary>Drinks <span>20 – 150</span></summary>
+      <div class="list">
+        <div>
+          <div class="row"><span>Espresso</span><span>50</span></div>
+          <div class="row"><span>Americano, cappuccino, latte</span><span>65</span></div>
+          <div class="row"><span>Mocha</span><span>75</span></div>
+          <div class="row"><span>Thai tea, green tea, cocoa, lemon iced tea</span><span>80</span></div>
+          <div class="row"><span>Fresh fruit shake: mango, watermelon, passion fruit and more</span><span>80</span></div>
+          <div class="row"><span>Coconut shake</span><span>100</span></div>
+          <div class="row"><span>Fresh coconut, lemon or watermelon juice</span><span>80</span></div>
+        </div>
+        <div>
+          <div class="row"><span>Water</span><span>20</span></div>
+          <div class="row"><span>Soft drinks and soda</span><span>30</span></div>
+          <div class="row"><span>Small beer: Leo, Chang</span><span>70</span></div>
+          <div class="row"><span>Small beer: Singha, San Miguel</span><span>90</span></div>
+          <div class="row"><span>Large beer: Leo, Chang</span><span>120</span></div>
+          <div class="row"><span>Large beer: Singha</span><span>140</span></div>
+          <div class="row"><span>Wine, red or white, 250 ml</span><span>150</span></div>
+        </div>
+      </div>
+    </details>
+    <p class="key">"From" is the pork or chicken price; shrimp, squid, seafood and beef cost a little more.</p>
+  </div>
+</section>
+
+<section class="veranda">
+  <img src="img/veranda.jpg" width="1400" height="787" alt="The bamboo veranda with wooden tables under the thatched roof" loading="lazy">
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div>
+      <h2>Come and eat with us</h2>
+      <p class="lede">We're a family restaurant in Mae Nam. Celebrating something? Call us beforehand and tell us what you'd like.</p>
+      <div class="btns">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Nam+Restaurants+Mae+Nam+Koh+Samui">Open in Google Maps</a>
+        <a class="btn ghost" href="tel:+66929596178">Call us</a>
+      </div>
+    </div>
+    <dl>
+      <dt>Address</dt><dd>28/5 Mae Nam, Koh Samui, Surat Thani 84330</dd>
+      <dt>Hours</dt><dd>Every day, 11:00 to 22:30</dd>
+      <dt>Phone</dt><dd>092 959 6178</dd>
+      <dt>Payment</dt><dd>Cash only</dd>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Nam Restaurant, Mae Nam, Koh Samui.</p>
+    <p>Photos from Nam's own Google Maps uploads. Prices from the owner's menu on Google Maps; details from Google Maps, November 2026.</p>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Quick actions">
+  <a href="tel:+66929596178">Call</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Nam+Restaurants+Mae+Nam+Koh+Samui">Directions</a>
+  <a href="#menu">Menu</a>
+</nav>
+</body>
+</html>
