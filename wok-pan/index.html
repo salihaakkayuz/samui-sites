@@ -123,9 +123,10 @@ footer p{margin:.3rem 0}
 <header class="top">
   <div class="wrap">
     <nav aria-label="Sections"><a href="#menu"><span class="en">Menu</span><span class="fr">Carte</span></a><a href="#visit"><span class="en">Find us</span><span class="fr">Nous trouver</span></a></nav>
-    <div class="lang" role="group" aria-label="Language">
+    <div class="lang" role="group" aria-label="Language" data-i18n-host data-no-i18n>
       <button type="button" data-lang="en" aria-pressed="true">EN</button>
       <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+      <button type="button" data-lang="th" aria-pressed="false" lang="th">ไทย</button>
     </div>
   </div>
 </header>
@@ -315,13 +316,18 @@ footer p{margin:.3rem 0}
 (function(){
   var root=document.documentElement,btns=document.querySelectorAll('.lang button');
   function set(l){
-    root.classList.toggle('is-fr',l==='fr');root.lang=l;
+    root.classList.toggle('is-fr',l==='fr');
     btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.lang===l?'true':'false')});
+    if(window.samuiI18n)window.samuiI18n.apply(l==='th'?'th':'en');
+    root.lang=l;
     try{localStorage.setItem('wokpan-lang',l)}catch(e){}
   }
   btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.lang)})});
-  var saved=null;try{saved=localStorage.getItem('wokpan-lang')}catch(e){}
-  if(saved)set(saved);
+  document.addEventListener('DOMContentLoaded',function(){setTimeout(function(){
+    var saved=null;try{saved=localStorage.getItem('wokpan-lang')}catch(e){}
+    if(!saved)saved=(window.samuiI18n&&window.samuiI18n.lang==='th')?'th':'en';
+    set(saved);
+  },0)});
 })();
 </script>
 <script>
@@ -341,5 +347,7 @@ footer p{margin:.3rem 0}
   window.addEventListener('scroll',on,{passive:true});window.addEventListener('resize',on);draw();
 })();
 </script>
+<script src="th.js"></script>
+<script src="../i18n.js"></script>
 </body>
 </html>
