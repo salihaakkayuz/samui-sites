@@ -41,9 +41,9 @@ a:focus-visible{outline:2px solid var(--color-matcha);outline-offset:3px}
 .top nav a{text-decoration:none;color:var(--color-muted)}
 .top nav a:hover{color:var(--color-ink)}
 /* pour: scroll turns the espresso into a latte */
-.pour{position:relative;height:260vh}
+section.pour{position:relative;height:260vh;padding:0}
 .stage{position:sticky;top:0;height:100vh;height:100svh;display:flex;align-items:center;overflow:hidden}
-.stage .wrap{display:grid;grid-template-columns:auto minmax(0,5fr) minmax(0,6fr);gap:var(--space-4);align-items:center}
+.stage .wrap{display:grid;grid-template-columns:auto minmax(0,5fr) minmax(0,7fr);gap:var(--space-4);align-items:center}
 .vertical{writing-mode:vertical-rl;font-family:var(--font-display);font-weight:700;font-size:clamp(2.6rem,6vw,4.4rem);letter-spacing:.35em;line-height:1;color:var(--color-sumi);border-left:1px solid var(--color-rule);padding-left:var(--space-2)}
 .pour h1{font-family:var(--font-display);font-weight:500;font-size:clamp(2rem,4vw,3.1rem);line-height:1.25;margin:0 0 var(--space-2)}
 .pour p{margin:0 0 var(--space-3);color:var(--color-muted);max-width:34ch}
@@ -53,10 +53,10 @@ a:focus-visible{outline:2px solid var(--color-matcha);outline-offset:3px}
 .steps li{display:grid;grid-template-columns:2.2rem minmax(0,1fr);padding:.55rem 0;border-bottom:1px solid var(--color-rule);opacity:.35;transition:opacity .4s}
 .steps li.on{opacity:1}
 .steps li span{font-family:var(--font-display);font-weight:700;color:var(--color-matcha)}
-.cup{position:relative;margin:0;width:100%;max-width:520px;justify-self:center;aspect-ratio:618/773;max-height:84svh;overflow:hidden}
-.layers{position:absolute;inset:0;transform:scale(var(--z,1.12));transform-origin:46% 45%;will-change:transform}
+.cup{position:relative;margin:0;width:100%;justify-self:stretch;aspect-ratio:840/708;overflow:hidden}
+.layers{position:absolute;inset:0;transform:scale(var(--z,1.12));transform-origin:46% 33%;will-change:transform}
 .layers img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.layers .milk{filter:blur(var(--b,0px));-webkit-mask-image:radial-gradient(ellipse calc(var(--r,0)*30%) calc(var(--r,0)*16%) at 46% 44.6%,#000 60%,transparent 100%);mask-image:radial-gradient(ellipse calc(var(--r,0)*30%) calc(var(--r,0)*16%) at 46% 44.6%,#000 60%,transparent 100%)}
+.layers .milk{filter:blur(var(--b,0px));-webkit-mask-image:radial-gradient(ellipse calc(var(--r,0)*33%) calc(var(--r,0)*26%) at 46.3% 33.3%,#000 60%,transparent 100%);mask-image:radial-gradient(ellipse calc(var(--r,0)*33%) calc(var(--r,0)*26%) at 46.3% 33.3%,#000 60%,transparent 100%)}
 .layers svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .stream{fill:none;stroke:var(--color-milk);stroke-linecap:round;stroke-dasharray:1 1;stroke-dashoffset:var(--o,1);stroke-width:var(--w,0);opacity:var(--so,0)}
 .hint{position:absolute;left:50%;bottom:var(--space-3);transform:translateX(-50%);font-size:.82rem;letter-spacing:.2em;color:var(--color-muted);opacity:var(--h,1)}
@@ -114,21 +114,22 @@ footer p{margin:.3rem 0}
 .bar a:first-child{background:var(--color-matcha);color:var(--color-sumi)}
 @media (max-width:880px){
   .top nav{display:none}
-  .pour{height:230vh}
-  .stage{align-items:flex-start;padding-top:var(--space-2)}
-  .stage .wrap{grid-template-columns:minmax(0,1fr);gap:var(--space-2)}
-  .vertical,.pour .lead,.pour .btns,.hint{display:none}
-  .cup{order:-1;max-height:46svh;width:auto;height:46svh}
-  .pour h1{font-size:1.7rem;margin-bottom:.4rem}
+  section.pour{height:230vh}
+  .stage{align-items:flex-start;padding:var(--space-2) 0 3.5rem}
+  .stage .wrap{grid-template-columns:minmax(0,1fr);gap:var(--space-3)}
+  .vertical,.pour .btns,.hint{display:none}
+  .cup{order:-1;width:100%}
+  .pour h1{font-size:1.75rem;margin-bottom:.5rem}
+  .pour .lead{margin-bottom:.5rem}
   .pour .meta{margin-bottom:0}
-  .steps{margin-top:var(--space-2)}
+  .steps{margin-top:var(--space-3)}
   .floors,.farm,.visit .wrap{grid-template-columns:minmax(0,1fr)}
   .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
   .menu-grid{grid-template-columns:minmax(0,1fr)}
   .bar{display:flex}
 }
 @media (max-width:480px){.cards{grid-template-columns:minmax(0,1fr)}.shelf .photos{grid-template-columns:repeat(2,minmax(0,1fr))}.shelf .photos img:last-child{display:none}}
-@media (prefers-reduced-motion:reduce){*{transition:none!important}.pour{height:auto}.stage{position:static;height:auto;padding:var(--space-4) 0}.layers{transform:none}.layers .milk{filter:none;-webkit-mask-image:none;mask-image:none}.layers svg,.hint{display:none}.steps li{opacity:1}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}section.pour{height:auto}.stage{position:static;height:auto;padding:var(--space-4) 0}.layers{transform:none}.layers .milk{filter:none;-webkit-mask-image:none;mask-image:none}.layers svg,.hint{display:none}.steps li{opacity:1}}
 </style>
 </head>
 <body>
@@ -161,9 +162,9 @@ footer p{margin:.3rem 0}
       </div>
       <figure class="cup">
         <div class="layers">
-          <img src="img/espresso.jpg" width="618" height="773" alt="">
-          <img class="milk" src="img/latte.jpg" width="618" height="773" alt="A latte with heart latte art in a blue-glazed ceramic cup on a wooden table">
-          <svg viewBox="0 0 618 773" aria-hidden="true"><path class="stream" pathLength="1" d="M302 -40 C 301 90, 294 210, 290 334"/></svg>
+          <img src="img/espresso-cup.jpg" width="840" height="708" alt="">
+          <img class="milk" src="img/latte-cup.jpg" width="840" height="708" alt="A latte with heart latte art in a blue-glazed ceramic cup on a wooden table">
+          <svg viewBox="0 0 840 708" aria-hidden="true"><path class="stream" pathLength="1" d="M414 -60 C 413 50, 403 140, 398 216"/></svg>
         </div>
       </figure>
     </div>
