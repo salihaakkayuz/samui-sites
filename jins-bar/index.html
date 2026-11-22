@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Jin's bar &amp; restaurant, Mae Nam</title>
+<meta name="description" content="Family-run Thai restaurant and bar on a garden veranda near Adarin Beach, Mae Nam, Koh Samui. Every day 12:00 to 22:00.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:wght@400;700&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* hallmark: shape "garden at dusk" (full photo, the white logo card set on it like the sign, plates hung in a row like lanterns) · theme custom "leaf and lamp" from the veranda at night: deep leaf green, warm bulb yellow, Jin's own black-on-white logo · genre quiet-evening · job: come for dinner · signature: the white logo card and the printed favourites card */
+/* critique: no prices (none verified); dishes named only from guests' reviews and Jin's own photos; the poster-style images on their page are not used */
+:root{
+  --color-leaf:oklch(0.26 0.04 150);
+  --color-leaf-2:oklch(0.32 0.045 150);
+  --color-moss:oklch(0.48 0.07 140);
+  --color-lamp:oklch(0.85 0.12 80);
+  --color-card:oklch(0.99 0.003 100);
+  --color-ink:oklch(0.18 0.01 150);
+  --color-muted:oklch(0.45 0.02 150);
+  --color-on:oklch(0.96 0.01 100);
+  --color-on-muted:oklch(0.96 0.01 100 / .74);
+  --color-rule:oklch(0.96 0.01 100 / .18);
+  --font-logo:"Libre Caslon Display",Georgia,serif;
+  --font-display:"Libre Caslon Text",Georgia,serif;
+  --font-body:"Karla",system-ui,sans-serif;
+  --space-1:.5rem;--space-2:1rem;--space-3:1.5rem;--space-4:2.5rem;--space-5:4rem;--space-6:6rem;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--color-leaf);color:var(--color-on);font:400 1.06rem/1.65 var(--font-body)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--color-lamp);outline-offset:3px}
+.wrap{width:min(1080px,100% - 2*var(--space-3));margin-inline:auto}
+.demo{font-size:.88rem;text-align:center;padding:.55rem var(--space-2);background:var(--color-lamp);color:var(--color-ink)}
+.hero{position:relative;min-height:min(88vh,760px);display:grid;place-items:center;padding:var(--space-5) var(--space-2)}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:40% 70%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(oklch(0.18 0.03 150 / .15),oklch(0.18 0.03 150 / .55))}
+.logo-card{position:relative;z-index:1;background:var(--color-card);color:var(--color-ink);text-align:center;padding:var(--space-4) var(--space-4) var(--space-3);max-width:30rem;width:100%;box-shadow:0 30px 60px -30px oklch(0.1 0.02 150 / .6)}
+.logo-card .mark{font-family:var(--font-logo);font-size:clamp(3.2rem,8vw,4.6rem);line-height:.95;margin:0}
+.logo-card .sub{font-family:var(--font-display);font-size:1.15rem;margin:.2rem 0 0}
+.logo-card .place{font-family:var(--font-display);font-size:.95rem;color:var(--color-muted);margin:0 0 var(--space-3)}
+.logo-card h1{font-family:var(--font-body);font-weight:500;font-size:1.15rem;line-height:1.45;margin:0 0 var(--space-3);padding-top:var(--space-2);border-top:1px solid oklch(0.18 0.01 150 / .15)}
+.btns{display:flex;flex-wrap:wrap;gap:var(--space-1);justify-content:center}
+.btn{display:inline-block;padding:.8rem 1.3rem;background:var(--color-leaf);color:var(--color-on);font-weight:700;text-decoration:none;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--color-ink);box-shadow:inset 0 0 0 1.5px var(--color-ink)}
+.hours{border-bottom:1px solid var(--color-rule)}
+.hours .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--space-2);padding:var(--space-3) 0}
+.hours p{margin:0}
+.hours b{color:var(--color-lamp);font-weight:700}
+section{padding:var(--space-5) 0}
+h2{font-family:var(--font-display);font-weight:400;font-size:clamp(1.9rem,3.6vw,2.7rem);line-height:1.12;margin:0 0 var(--space-2)}
+.lede{color:var(--color-on-muted);max-width:48ch;margin:0 0 var(--space-4)}
+.lanterns{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-3);align-items:start}
+.lanterns figure{margin:0;position:relative;padding-top:var(--space-4)}
+.lanterns figure::before{content:"";position:absolute;top:0;left:50%;width:1px;height:var(--space-4);background:var(--color-lamp);opacity:.6}
+.lanterns figure:nth-child(2){margin-top:var(--space-4)}
+.lanterns figure:nth-child(4){margin-top:var(--space-3)}
+.lanterns img{aspect-ratio:3/4;object-fit:cover;width:100%}
+.lanterns figcaption{font-family:var(--font-display);text-align:center;margin-top:.6rem}
+.room{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:var(--space-5);align-items:center}
+.room img{width:100%}
+.know{list-style:none;margin:0;padding:0}
+.know li{padding:var(--space-2) 0;border-top:1px solid var(--color-rule)}
+.know b{display:block;font-family:var(--font-display);font-weight:400;font-size:1.2rem;color:var(--color-lamp)}
+.know span{color:var(--color-on-muted)}
+.printed{background:var(--color-leaf-2)}
+.menu-card{background:var(--color-card);color:var(--color-ink);max-width:38rem;margin:0 auto;padding:var(--space-4);text-align:center}
+.menu-card h2{margin-bottom:.3rem}
+.menu-card .from{color:var(--color-muted);margin:0 0 var(--space-3);font-size:.95rem}
+.menu-card ul{list-style:none;margin:0 0 var(--space-3);padding:0;font-family:var(--font-display);font-size:1.15rem}
+.menu-card li{padding:.45rem 0}
+.menu-card li+li{border-top:1px solid oklch(0.18 0.01 150 / .1)}
+.menu-card h3{font-family:var(--font-body);font-size:.95rem;font-weight:700;color:var(--color-moss);margin:var(--space-3) 0 .4rem}
+.menu-card p{margin:0}
+.menu-card .bar-list{color:var(--color-muted)}
+.visit .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-4);align-items:start}
+.visit dl{margin:0}
+.visit dt{font-family:var(--font-display);color:var(--color-lamp);margin-top:var(--space-2)}
+.visit dt:first-child{margin-top:0}
+.visit dd{margin:0;color:var(--color-on-muted)}
+.visit .btns{justify-content:flex-start}
+.visit .btn{background:var(--color-lamp);color:var(--color-ink)}
+.visit .btn.ghost{background:transparent;color:var(--color-on);box-shadow:inset 0 0 0 1.5px var(--color-on)}
+footer{padding:var(--space-4) 0 var(--space-6);font-size:.88rem;color:var(--color-on-muted);text-align:center;border-top:1px solid var(--color-rule)}
+footer p{margin:.3rem 0}
+.bar{position:fixed;left:0;right:0;bottom:0;display:none;gap:1px;background:var(--color-rule);z-index:5}
+.bar a{flex:1;text-align:center;padding:.95rem .5rem;background:var(--color-leaf-2);color:var(--color-on);text-decoration:none;font-weight:700}
+.bar a:first-child{background:var(--color-lamp);color:var(--color-ink)}
+@media (max-width:860px){
+  .lanterns{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .lanterns figure:nth-child(n){margin-top:0}
+  .lanterns figure:nth-child(even){margin-top:var(--space-3)}
+  .room,.visit .wrap{grid-template-columns:minmax(0,1fr)}
+  .logo-card{padding:var(--space-3) var(--space-2)}
+  .menu-card{padding:var(--space-3) var(--space-2)}
+  .bar{display:flex}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="demo">Sample website made for Jin's bar &amp; restaurant. Not live yet; nothing here is final.</div>
+
+<header class="hero">
+  <img src="img/exterior.jpg" width="1400" height="786" alt="Jin's at dusk: a long veranda with warm lights, framed by trees and tropical plants">
+  <div class="logo-card">
+    <p class="mark">Jin's</p>
+    <p class="sub">bar &amp; restaurant</p>
+    <p class="place">Koh Samui</p>
+    <h1>Thai dinner in the garden, a short walk from Mae Nam beach.</h1>
+    <div class="btns">
+      <a class="btn" href="tel:+66952965205">Call 095 296 5205</a>
+      <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Jin%27s+bar+and+restaurant+Mae+Nam+Koh+Samui">Directions</a>
+    </div>
+  </div>
+</header>
+
+<div class="hours">
+  <div class="wrap">
+    <p><b>Every day</b> 12:00 to 22:00</p>
+    <p>Near Adarin Beach, Mae Nam</p>
+    <p>4.7 on Google Maps, 402 reviews (Nov 2026)</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <h2>Plates from our kitchen</h2>
+    <p class="lede">Cooked fresh and served on the veranda, with an orchid on the side.</p>
+    <div class="lanterns">
+      <figure><img src="img/larb.jpg" width="600" height="799" alt="Larb, minced meat salad with herbs, on a white plate" loading="lazy"><figcaption>Larb</figcaption></figure>
+      <figure><img src="img/seafoodsalad.jpg" width="600" height="799" alt="Spicy seafood salad with squid and mussels" loading="lazy"><figcaption>Seafood salad</figcaption></figure>
+      <figure><img src="img/friedshrimp.jpg" width="800" height="600" alt="Crispy fried shrimp with sweet chilli sauce" loading="lazy"><figcaption>Crispy shrimp</figcaption></figure>
+      <figure><img src="img/cashew.jpg" width="600" height="800" alt="Chicken with cashew nuts and vegetables, rice behind" loading="lazy"><figcaption>Cashew chicken</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap room">
+    <img src="img/interior.jpg" width="900" height="675" alt="The covered veranda with dark wooden tables and string lights" loading="lazy">
+    <div>
+      <h2>Good to know</h2>
+      <ul class="know">
+        <li><b>Covered veranda</b><span>Covered seating, with plants all around.</span></li>
+        <li><b>Mosquito spray on the table</b><span>So you can stay for one more drink.</span></li>
+        <li><b>A family place</b><span>Ask us about laundry, taxis and cooking classes.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="printed" id="menu">
+  <div class="wrap">
+    <div class="menu-card">
+      <h2>What guests come back for</h2>
+      <p class="from">Taken from our reviews. The full menu is at the table.</p>
+      <ul>
+        <li>Steamed fish</li>
+        <li>Grilled fish</li>
+        <li>Tom kha goong</li>
+        <li>Pork ribs with garlic</li>
+        <li>Pad thai</li>
+        <li>Roti with ice cream</li>
+        <li>Fresh fruit shakes</li>
+      </ul>
+      <h3>At the bar</h3>
+      <p class="bar-list">Cocktails, beer, wine, Thai whisky, Italian soda and fresh juices.</p>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div>
+      <h2>Come by tonight</h2>
+      <p class="lede">We're in Mae Nam, close to Adarin Beach. Message us on Facebook or give us a call.</p>
+      <div class="btns">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Jin%27s+bar+and+restaurant+Mae+Nam+Koh+Samui">Open in Google Maps</a>
+        <a class="btn ghost" href="https://www.facebook.com/jinbarandrestaurant">Facebook</a>
+      </div>
+    </div>
+    <dl>
+      <dt>Address</dt><dd>3 Mae Nam, near Adarin Beach, Koh Samui</dd>
+      <dt>Hours</dt><dd>Every day, 12:00 to 22:00</dd>
+      <dt>Phone</dt><dd>095 296 5205</dd>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Jin's bar &amp; restaurant, Mae Nam, Koh Samui.</p>
+    <p>Photos from Jin's own Facebook page and Google Maps uploads. Details from Google Maps and Facebook, November 2026.</p>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Quick actions">
+  <a href="tel:+66952965205">Call</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Jin%27s+bar+and+restaurant+Mae+Nam+Koh+Samui">Directions</a>
+  <a href="#menu">Menu</a>
+</nav>
+</body>
+</html>

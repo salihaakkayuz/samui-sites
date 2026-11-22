@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Love Thai Food by J&amp;K, near Samui Airport</title>
+<meta name="description" content="Home-style Thai cooking a short walk from Samui airport. 50/2 Sanam Bin Road, Bo Put. Closed Thursdays.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* hallmark: shape "departures board" (hours shown like a flight board, menu as a protein grid) · theme custom "chalk and curry" from the black chalk sign at the door and the green curry · genre playful-utility · job: eat before the flight · signature: the departures board and the chicken / pork / shrimp grid */
+/* critique: no plane icons or fake flight numbers; the board only carries real hours; prices only from the May 2026 menu */
+:root{
+  --color-night:oklch(0.2 0.02 160);
+  --color-night-2:oklch(0.26 0.025 160);
+  --color-paper:oklch(0.97 0.012 110);
+  --color-card:oklch(0.995 0.004 110);
+  --color-ink:oklch(0.22 0.02 160);
+  --color-muted:oklch(0.45 0.02 160);
+  --color-curry:oklch(0.82 0.15 115);
+  --color-amber:oklch(0.83 0.14 75);
+  --color-red:oklch(0.62 0.19 28);
+  --color-on:oklch(0.97 0.01 110);
+  --color-rule:oklch(0.22 0.02 160 / .14);
+  --font-display:"Bricolage Grotesque",system-ui,sans-serif;
+  --font-body:"Bricolage Grotesque",system-ui,sans-serif;
+  --font-mono:"JetBrains Mono",ui-monospace,monospace;
+  --space-1:.5rem;--space-2:1rem;--space-3:1.5rem;--space-4:2.5rem;--space-5:4rem;--space-6:6rem;
+  --radius:14px;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--color-paper);color:var(--color-ink);font:400 1.06rem/1.6 var(--font-body)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--color-amber);outline-offset:3px}
+.wrap{width:min(1120px,100% - 2*var(--space-3));margin-inline:auto}
+.demo{font-size:.88rem;text-align:center;padding:.55rem var(--space-2);background:var(--color-curry);color:var(--color-ink)}
+header.top{background:var(--color-night);color:var(--color-on)}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;gap:var(--space-2);padding:var(--space-2) 0}
+.name{font-family:var(--font-display);font-weight:800;font-size:1.25rem;text-decoration:none}
+.name small{display:block;font-weight:400;font-size:.8rem;color:var(--color-curry)}
+.top nav{display:flex;gap:var(--space-3);font-size:.95rem}
+.top nav a{text-decoration:none;opacity:.85}
+.top nav a:hover{opacity:1}
+.hero{background:var(--color-night);color:var(--color-on);padding-bottom:var(--space-5)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--space-4);align-items:center;padding-top:var(--space-4)}
+.hero h1{font-family:var(--font-display);font-weight:800;font-size:clamp(2.4rem,5.2vw,4.2rem);line-height:1.02;margin:0 0 var(--space-2);letter-spacing:-.02em}
+.hero p{margin:0 0 var(--space-3);max-width:32ch;color:oklch(0.97 0.01 110 / .82)}
+.hero .walk{font-family:var(--font-mono);font-size:.9rem;color:var(--color-amber);margin-bottom:var(--space-3)}
+.hero figure{margin:0;border-radius:var(--radius);overflow:hidden}
+.btns{display:flex;flex-wrap:wrap;gap:var(--space-1)}
+.btn{display:inline-block;padding:.85rem 1.3rem;border-radius:999px;background:var(--color-curry);color:var(--color-ink);font-weight:600;text-decoration:none;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:inherit;box-shadow:inset 0 0 0 1.5px currentColor}
+section{padding:var(--space-5) 0}
+h2{font-family:var(--font-display);font-weight:800;font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.1;margin:0 0 var(--space-2);letter-spacing:-.01em}
+.lede{max-width:46ch;color:var(--color-muted);margin:0 0 var(--space-4)}
+/* board */
+.board{background:var(--color-night-2);color:var(--color-amber);border-radius:var(--radius);padding:var(--space-3);font-family:var(--font-mono)}
+.board .head,.board .row{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1.6fr) minmax(0,1fr);gap:var(--space-2);padding:.7rem .4rem;border-bottom:1px dashed oklch(0.83 0.14 75 / .25)}
+.board .head{color:oklch(0.97 0.01 110 / .6);font-size:.8rem}
+.board .row:last-child{border-bottom:0}
+.board .closed{color:var(--color-red)}
+.board .st{text-align:right}
+.board-note{font-size:.92rem;color:var(--color-muted);margin-top:var(--space-2)}
+.split{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:var(--space-5);align-items:start}
+.airport{border-left:3px solid var(--color-curry);padding-left:var(--space-3)}
+.airport p{margin:0 0 var(--space-2)}
+/* plates */
+.plates{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--space-2)}
+.plates figure{margin:0}
+.plates img{border-radius:50%;aspect-ratio:1;object-fit:cover}
+.plates figcaption{text-align:center;font-size:.92rem;margin-top:.6rem}
+/* grid menu */
+.menu{background:var(--color-card);border-radius:var(--radius);padding:var(--space-3);box-shadow:0 1px 0 var(--color-rule)}
+table{width:100%;border-collapse:collapse}
+th,td{padding:.7rem .5rem;text-align:left;border-bottom:1px solid var(--color-rule)}
+thead th{font-family:var(--font-mono);font-weight:600;font-size:.8rem;color:var(--color-muted)}
+td.p,th.p{text-align:right;font-family:var(--font-mono);white-space:nowrap}
+tbody tr:hover{background:oklch(0.82 0.15 115 / .12)}
+.menu h3{font-family:var(--font-display);font-size:1.2rem;margin:var(--space-3) 0 var(--space-1)}
+.menu h3:first-child{margin-top:0}
+.single{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 var(--space-4)}
+.single div{display:flex;justify-content:space-between;gap:var(--space-2);padding:.6rem 0;border-bottom:1px solid var(--color-rule)}
+.single span:last-child{font-family:var(--font-mono)}
+.fine{font-size:.9rem;color:var(--color-muted);margin-top:var(--space-2)}
+.extras{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-3)}
+.extras div{border-top:3px solid var(--color-ink);padding-top:var(--space-2)}
+.extras h3{font-family:var(--font-display);margin:0 0 .3rem;font-size:1.15rem}
+.extras p{margin:0;color:var(--color-muted)}
+.visit{background:var(--color-night);color:var(--color-on)}
+.visit .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-4);align-items:center}
+.visit p{color:oklch(0.97 0.01 110 / .82)}
+.visit dl{font-family:var(--font-mono);font-size:.95rem;margin:0}
+.visit dt{color:var(--color-amber);margin-top:var(--space-2)}
+.visit dd{margin:0}
+footer{padding:var(--space-4) 0 var(--space-6);font-size:.88rem;color:var(--color-muted);text-align:center}
+footer p{margin:.3rem 0}
+.bar{position:fixed;left:0;right:0;bottom:0;display:none;gap:1px;background:var(--color-rule);z-index:5}
+.bar a{flex:1;text-align:center;padding:.95rem .5rem;background:var(--color-night);color:var(--color-on);text-decoration:none;font-weight:600}
+.bar a:first-child{background:var(--color-curry);color:var(--color-ink)}
+@media (max-width:860px){
+  .top nav{display:none}
+  .hero .wrap,.split,.visit .wrap{grid-template-columns:minmax(0,1fr)}
+  .hero figure{order:-1}
+  .plates{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .plates figure:nth-child(n+4){display:none}
+  .single,.extras{grid-template-columns:minmax(0,1fr)}
+  .board .head,.board .row{grid-template-columns:minmax(0,1fr) minmax(0,1.4fr) minmax(0,.9fr);font-size:.85rem}
+  .bar{display:flex}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="demo">Sample website made for Love Thai Food by J&amp;K. Not live yet; nothing here is final.</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="name" href="#">Love Thai Food <small>by J&amp;K · Samui</small></a>
+    <nav aria-label="Sections"><a href="#hours">Hours</a><a href="#menu">Menu</a><a href="#visit">Find us</a></nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Real Thai lunch before your flight</h1>
+      <p>Jeab cooks every plate to order in her small kitchen on the airport road.</p>
+      <div class="walk">Samui airport: about 5 to 10 minutes on foot</div>
+      <div class="btns">
+        <a class="btn" href="https://wa.me/66892915900">WhatsApp us</a>
+        <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Love+Thai+Food+by+J%26K+Samui">Directions</a>
+      </div>
+    </div>
+    <figure><img src="img/storefront.jpg" width="1400" height="787" alt="The Love Thai Food chalk sign and garden seating at night"></figure>
+  </div>
+</section>
+
+<section id="hours">
+  <div class="wrap split">
+    <div>
+      <h2>Opening times</h2>
+      <div class="board" role="table" aria-label="Opening times">
+        <div class="head" role="row"><span role="columnheader">Day</span><span role="columnheader">Kitchen</span><span class="st" role="columnheader">Status</span></div>
+        <div class="row" role="row"><span role="cell">Sunday</span><span role="cell">11:30 – 20:30</span><span class="st" role="cell">Open</span></div>
+        <div class="row" role="row"><span role="cell">Monday</span><span role="cell">11:30 – 20:30</span><span class="st" role="cell">Open</span></div>
+        <div class="row" role="row"><span role="cell">Tuesday</span><span role="cell">11:30 – 20:30</span><span class="st" role="cell">Open</span></div>
+        <div class="row" role="row"><span role="cell">Wednesday</span><span role="cell">11:30 – 20:30</span><span class="st" role="cell">Open</span></div>
+        <div class="row closed" role="row"><span role="cell">Thursday</span><span role="cell">—</span><span class="st" role="cell">Closed</span></div>
+        <div class="row" role="row"><span role="cell">Friday</span><span role="cell">12:00 – 20:30</span><span class="st" role="cell">Open</span></div>
+        <div class="row" role="row"><span role="cell">Saturday</span><span role="cell">11:30 – 20:30</span><span class="st" role="cell">Open</span></div>
+      </div>
+      <p class="board-note">Hours as listed on Google Maps, November 2026.</p>
+    </div>
+    <div class="airport">
+      <h2>Flying out today?</h2>
+      <p>Lots of guests stop here for a proper meal before their flight, instead of an airport sandwich. Short on time? Send us a WhatsApp before you come.</p>
+      <p>Takeaway is fine too, if you'd like to eat at the gate.</p>
+      <p>4.9 on Google Maps from 440 reviews (November 2026).</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>From Jeab's kitchen</h2>
+    <p class="lede">Green curry is the dish our guests mention most. The spaghetti green curry comes a close second.</p>
+    <div class="plates">
+      <figure><img src="img/greencurry.jpg" width="700" height="700" alt="Green curry with shrimp and Thai basil" loading="lazy"><figcaption>Green curry</figcaption></figure>
+      <figure><img src="img/drunkennoodle.jpg" width="700" height="700" alt="Stir-fried noodles with shrimp and vegetables" loading="lazy"><figcaption>Noodles with shrimp</figcaption></figure>
+      <figure><img src="img/basilshrimp.jpg" width="700" height="700" alt="Shrimp stir-fried with basil and chilli, rice on the side" loading="lazy"><figcaption>Basil shrimp</figcaption></figure>
+      <figure><img src="img/friedrice.jpg" width="700" height="700" alt="Shrimp fried rice with lime and cucumber" loading="lazy"><figcaption>Fried rice</figcaption></figure>
+      <figure><img src="img/mango.jpg" width="700" height="700" alt="Mango sticky rice with coconut cream" loading="lazy"><figcaption>Mango sticky rice</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="wrap">
+    <h2>Pick your dish, then your protein</h2>
+    <p class="lede">Prices in baht, from our May 2026 menu.</p>
+    <div class="menu">
+      <table>
+        <thead><tr><th scope="col">Dish</th><th class="p" scope="col">Chicken</th><th class="p" scope="col">Pork</th><th class="p" scope="col">Shrimp</th></tr></thead>
+        <tbody>
+          <tr><td>Fried rice</td><td class="p">110</td><td class="p">120</td><td class="p">130</td></tr>
+          <tr><td>Pineapple fried rice</td><td class="p">120</td><td class="p">130</td><td class="p">140</td></tr>
+          <tr><td>Pad thai</td><td class="p">120</td><td class="p">130</td><td class="p">140</td></tr>
+          <tr><td>Big noodle (pad see ew)</td><td class="p">120</td><td class="p">130</td><td class="p">140</td></tr>
+          <tr><td>Yellow noodle</td><td class="p">120</td><td class="p">130</td><td class="p">140</td></tr>
+          <tr><td>Spaghetti green curry</td><td class="p">120</td><td class="p">130</td><td class="p">140</td></tr>
+          <tr><td>Spaghetti panang</td><td class="p">120</td><td class="p">130</td><td class="p">140</td></tr>
+          <tr><td>Spaghetti pad khi mao</td><td class="p">120</td><td class="p">130</td><td class="p">140</td></tr>
+          <tr><td>Holy basil stir-fry</td><td class="p">110</td><td class="p">120</td><td class="p">130</td></tr>
+          <tr><td>Garlic and pepper</td><td class="p">110</td><td class="p">120</td><td class="p">130</td></tr>
+          <tr><td>Teriyaki or black pepper</td><td class="p">110</td><td class="p">120</td><td class="p">130</td></tr>
+          <tr><td>Stir-fry with vegetables</td><td class="p">100</td><td class="p">110</td><td class="p">120</td></tr>
+        </tbody>
+      </table>
+      <h3>One price</h3>
+      <div class="single">
+        <div><span>Breakfast set: toast, two eggs, juice, tea or coffee</span><span>130</span></div>
+        <div><span>Crispy chicken with cashew nuts</span><span>150</span></div>
+        <div><span>Mixed vegetables</span><span>90</span></div>
+        <div><span>Morning glory</span><span>80</span></div>
+      </div>
+      <p class="fine">Curries, soups and desserts are on the menu too; ask us for today's prices. Vegetarian and vegan options available.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Ask Jeab about</h2>
+    <div class="extras">
+      <div><h3>Cooking class</h3><p>Learn a few dishes in her kitchen. Message us for days and details.</p></div>
+      <div><h3>Private chef</h3><p>Thai cooking where you're staying. Message us for details.</p></div>
+      <div><h3>Wilawan Home guests</h3><p>15% off your bill, no minimum.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div>
+      <h2>Find us</h2>
+      <p>On the airport road, near SK Hometel. Free Wi-Fi, takeaway and delivery.</p>
+      <div class="btns">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Love+Thai+Food+by+J%26K+Samui">Open in Google Maps</a>
+        <a class="btn ghost" href="tel:+66892915900">Call 089 291 5900</a>
+      </div>
+    </div>
+    <dl>
+      <dt>Address</dt><dd>50/2 Sanam Bin Road, Bo Put, Koh Samui</dd>
+      <dt>WhatsApp and LINE</dt><dd>089 291 5900</dd>
+      <dt>Closed</dt><dd>Thursdays</dd>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Love Thai Food by J&amp;K, Bo Put, Koh Samui.</p>
+    <p>Photos from Love Thai Food's own Google Maps uploads. Details and prices from Google Maps and the May 2026 menu.</p>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Quick actions">
+  <a href="https://wa.me/66892915900">WhatsApp</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Love+Thai+Food+by+J%26K+Samui">Directions</a>
+  <a href="#menu">Menu</a>
+</nav>
+</body>
+</html>

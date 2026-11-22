@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Wok &amp; Pan Thai Food, Chaweng</title>
+<meta name="description" content="Family-run Thai kitchen in a quiet side street in central Chaweng, Koh Samui. Every day 10:00 to 23:45. Cash only.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* hallmark: shape "menu book" (contents page, numbered chapters, dotted price leaders) · theme custom "black, gold, red" from Wok & Pan's own badge and black menu pages · genre bold-editorial · job: walk in tonight · signature: the English / French switch, like their printed menu */
+/* critique: prices only from the owner's own menu PDF; the PDF's food pictures look like stock so none are used; best-seller tags are the menu's own */
+:root{
+  --color-black:oklch(0.16 0.005 60);
+  --color-black-2:oklch(0.22 0.008 60);
+  --color-ink:oklch(0.95 0.01 85);
+  --color-muted:oklch(0.95 0.01 85 / .66);
+  --color-gold:oklch(0.8 0.13 85);
+  --color-yellow:oklch(0.88 0.17 95);
+  --color-red:oklch(0.58 0.21 27);
+  --color-rule:oklch(0.8 0.13 85 / .28);
+  --font-display:"Anton",Impact,sans-serif;
+  --font-body:"Archivo",system-ui,sans-serif;
+  --space-1:.5rem;--space-2:1rem;--space-3:1.5rem;--space-4:2.5rem;--space-5:4rem;--space-6:6rem;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--color-black);color:var(--color-ink);font:400 1.04rem/1.6 var(--font-body)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--color-yellow);outline-offset:3px}
+.wrap{width:min(1100px,100% - 2*var(--space-3));margin-inline:auto}
+.fr{display:none}
+html.is-fr .fr{display:revert}
+html.is-fr .en{display:none}
+.demo{font-size:.88rem;text-align:center;padding:.55rem var(--space-2);background:var(--color-red);color:var(--color-ink)}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;padding:var(--space-2) 0;gap:var(--space-2)}
+.top nav{display:flex;gap:var(--space-3);font-size:.95rem}
+.top nav a{text-decoration:none;color:var(--color-muted)}
+.top nav a:hover{color:var(--color-ink)}
+.lang{display:flex;border:1px solid var(--color-gold);border-radius:999px;overflow:hidden}
+.lang button{font:600 .85rem var(--font-body);background:none;color:var(--color-gold);border:0;padding:.45rem .9rem;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--color-gold);color:var(--color-black)}
+.cover{text-align:center;padding:var(--space-3) 0 var(--space-4)}
+.badge{width:clamp(150px,20vw,210px);margin:0 auto var(--space-3);border-radius:50%}
+.cover h1{font-family:var(--font-display);font-weight:400;text-transform:uppercase;font-size:clamp(2.4rem,6vw,4.6rem);line-height:1;margin:0 auto var(--space-2);max-width:16ch;color:var(--color-yellow)}
+.cover p{max-width:44ch;margin:0 auto var(--space-3);color:var(--color-muted)}
+.btns{display:flex;flex-wrap:wrap;gap:var(--space-1);justify-content:center}
+.btn{display:inline-block;padding:.85rem 1.4rem;background:var(--color-red);color:var(--color-ink);font-weight:700;text-decoration:none;border-radius:4px;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;box-shadow:inset 0 0 0 1.5px var(--color-gold);color:var(--color-gold)}
+.street img{width:100%;aspect-ratio:21/8;object-fit:cover}
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid var(--color-rule)}
+.facts div{padding:var(--space-3) var(--space-2);border-right:1px solid var(--color-rule)}
+.facts div:last-child{border-right:0}
+.facts b{display:block;font-family:var(--font-display);font-weight:400;font-size:1.5rem;color:var(--color-gold);text-transform:uppercase}
+.facts span{color:var(--color-muted);font-size:.95rem}
+section{padding:var(--space-5) 0}
+h2{font-family:var(--font-display);font-weight:400;text-transform:uppercase;font-size:clamp(2rem,4vw,3rem);line-height:1.05;margin:0 0 var(--space-3);color:var(--color-yellow)}
+.contents ol{list-style:none;margin:0;padding:0;columns:3;column-gap:var(--space-4)}
+.contents li{break-inside:avoid;border-top:1px solid var(--color-rule)}
+.contents a{display:flex;gap:var(--space-2);padding:.7rem 0;text-decoration:none}
+.contents a:hover .t{color:var(--color-yellow)}
+.contents .n{font-family:var(--font-display);color:var(--color-red);min-width:2ch}
+.chapters{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-5) var(--space-5)}
+.chapter h3{display:flex;align-items:baseline;gap:var(--space-2);font-family:var(--font-display);font-weight:400;text-transform:uppercase;font-size:1.7rem;margin:0 0 var(--space-2);color:var(--color-ink);border-bottom:2px solid var(--color-red);padding-bottom:.4rem}
+.chapter h3 .n{color:var(--color-red);font-size:1.1rem}
+.chapter .key{font-size:.85rem;color:var(--color-muted);margin:-.4rem 0 var(--space-1)}
+.item{display:flex;align-items:baseline;gap:.6rem;padding:.45rem 0}
+.item .d{flex:0 1 auto}
+.item .dots{flex:1 1 auto;border-bottom:1px dotted var(--color-rule);transform:translateY(-4px);min-width:1.5rem}
+.item .p{font-weight:700;color:var(--color-gold);white-space:nowrap}
+.best{display:inline-block;font-size:.72rem;font-weight:700;background:var(--color-yellow);color:var(--color-black);padding:.05rem .4rem;border-radius:3px;margin-left:.4rem;vertical-align:middle}
+.melon{background:var(--color-red);text-align:center;padding:var(--space-4) 0}
+.melon p{font-family:var(--font-display);text-transform:uppercase;font-size:clamp(1.6rem,3.4vw,2.6rem);line-height:1.1;margin:0 auto;max-width:24ch}
+.melon small{display:block;font-family:var(--font-body);text-transform:none;font-size:1rem;margin-top:.6rem;opacity:.85}
+.pics{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1.2fr) minmax(0,1fr);gap:var(--space-2);align-items:stretch}
+.pics figure{margin:0}
+.pics img{width:100%;height:100%;object-fit:cover;border-radius:4px}
+.pics figcaption{font-size:.88rem;color:var(--color-muted);margin-top:.4rem}
+.visit .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-4)}
+.visit dl{margin:0}
+.visit dt{font-family:var(--font-display);text-transform:uppercase;color:var(--color-gold);margin-top:var(--space-2)}
+.visit dd{margin:0}
+.visit p{color:var(--color-muted)}
+.visit .btns{justify-content:flex-start}
+footer{padding:var(--space-4) 0 var(--space-6);font-size:.88rem;color:var(--color-muted);text-align:center;border-top:1px solid var(--color-rule)}
+footer p{margin:.3rem 0}
+.bar{position:fixed;left:0;right:0;bottom:0;display:none;gap:1px;background:var(--color-rule);z-index:5}
+.bar a{flex:1;text-align:center;padding:.95rem .5rem;background:var(--color-black-2);color:var(--color-ink);text-decoration:none;font-weight:700}
+.bar a:first-child{background:var(--color-red)}
+@media (max-width:860px){
+  .top nav{display:none}
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .facts div:nth-child(2){border-right:0}
+  .facts div:nth-child(-n+2){border-bottom:1px solid var(--color-rule)}
+  .contents ol{columns:1}
+  .chapters,.visit .wrap{grid-template-columns:minmax(0,1fr)}
+  .pics{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .pics figure:first-child{grid-column:1/-1}
+  .street img{aspect-ratio:16/9}
+  .bar{display:flex}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="demo"><span class="en">Sample website made for Wok &amp; Pan. Not live yet; nothing here is final.</span><span class="fr">Exemple de site fait pour Wok &amp; Pan. Pas encore en ligne ; rien n'est définitif.</span></div>
+
+<header class="top">
+  <div class="wrap">
+    <nav aria-label="Sections"><a href="#menu"><span class="en">Menu</span><span class="fr">Carte</span></a><a href="#visit"><span class="en">Find us</span><span class="fr">Nous trouver</span></a></nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+    </div>
+  </div>
+</header>
+
+<div class="cover">
+  <div class="wrap">
+    <img class="badge" src="img/logo.jpg" width="500" height="500" alt="Wok &amp; Pan Thai Food badge: real Thai flavors">
+    <h1><span class="en">Breakfast to midnight, one family kitchen</span><span class="fr">Du petit-déjeuner à minuit, une cuisine de famille</span></h1>
+    <p><span class="en">Mum, dad and their four grown-up children cook and serve every day, in a quiet street off central Chaweng.</span><span class="fr">Papa, maman et leurs quatre enfants cuisinent et servent tous les jours, dans une rue calme du centre de Chaweng.</span></p>
+    <div class="btns">
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Wok+%26+Pan+Koh+Samui"><span class="en">Directions</span><span class="fr">Itinéraire</span></a>
+      <a class="btn ghost" href="#menu"><span class="en">Read the menu</span><span class="fr">Voir la carte</span></a>
+    </div>
+  </div>
+</div>
+
+<div class="street"><img src="img/storefront.jpg" width="1400" height="787" alt="Wok &amp; Pan's tables along the small side street in Chaweng"></div>
+
+<div class="wrap facts">
+  <div><b>10:00–23:45</b><span class="en">every day</span><span class="fr">tous les jours</span></div>
+  <div><b><span class="en">Cash</span><span class="fr">Espèces</span></b><span class="en">only, please</span><span class="fr">uniquement</span></div>
+  <div><b>4.9</b><span class="en">Google Maps, 619 reviews (Nov 2026)</span><span class="fr">Google Maps, 619 avis (nov. 2026)</span></div>
+  <div><b>080 471 4230</b><span class="en">call or book a table</span><span class="fr">appeler ou réserver</span></div>
+</div>
+
+<section class="contents" id="menu">
+  <div class="wrap">
+    <h2><span class="en">The menu</span><span class="fr">La carte</span></h2>
+    <ol>
+      <li><a href="#c1"><span class="n">01</span><span class="t"><span class="en">Breakfast</span><span class="fr">Petit-déjeuner</span></span></a></li>
+      <li><a href="#c2"><span class="n">02</span><span class="t"><span class="en">Starters</span><span class="fr">Entrées</span></span></a></li>
+      <li><a href="#c3"><span class="n">03</span><span class="t"><span class="en">Curry and soup</span><span class="fr">Currys et soupes</span></span></a></li>
+      <li><a href="#c4"><span class="n">04</span><span class="t"><span class="en">Thai salads</span><span class="fr">Salades thaïes</span></span></a></li>
+      <li><a href="#c5"><span class="n">05</span><span class="t"><span class="en">From the wok</span><span class="fr">Au wok</span></span></a></li>
+      <li><a href="#c6"><span class="n">06</span><span class="t"><span class="en">Fish and meat</span><span class="fr">Poissons et viandes</span></span></a></li>
+      <li><a href="#c7"><span class="n">07</span><span class="t"><span class="en">Thai-Italian pasta</span><span class="fr">Pâtes thaï-italiennes</span></span></a></li>
+      <li><a href="#c8"><span class="n">08</span><span class="t"><span class="en">Desserts</span><span class="fr">Desserts</span></span></a></li>
+      <li><a href="#c9"><span class="n">09</span><span class="t"><span class="en">Drinks</span><span class="fr">Boissons</span></span></a></li>
+    </ol>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap chapters">
+    <div class="chapter" id="c1">
+      <h3><span class="n">01</span><span class="en">Breakfast</span><span class="fr">Petit-déjeuner</span></h3>
+      <div class="item"><span class="d">Croissant</span><span class="dots"></span><span class="p">80</span></div>
+      <div class="item"><span class="d"><span class="en">Coffee and croissant</span><span class="fr">Café et croissant</span></span><span class="dots"></span><span class="p">120</span></div>
+      <div class="item"><span class="d"><span class="en">Thai breakfast</span><span class="fr">Petit-déjeuner thaï</span></span><span class="dots"></span><span class="p">180</span></div>
+      <div class="item"><span class="d"><span class="en">French breakfast</span><span class="fr">Petit-déjeuner français</span></span><span class="dots"></span><span class="p">200</span></div>
+      <div class="item"><span class="d"><span class="en">Eggs and bacon</span><span class="fr">Œufs et bacon</span></span><span class="dots"></span><span class="p">200</span></div>
+      <div class="item"><span class="d"><span class="en">Vegetarian breakfast</span><span class="fr">Petit-déjeuner végétarien</span></span><span class="dots"></span><span class="p">200</span></div>
+      <div class="item"><span class="d"><span class="en">Bacon and sausage</span><span class="fr">Bacon et saucisse</span></span><span class="dots"></span><span class="p">220</span></div>
+      <div class="item"><span class="d">Maxi</span><span class="dots"></span><span class="p">260</span></div>
+    </div>
+    <div class="chapter" id="c2">
+      <h3><span class="n">02</span><span class="en">Starters</span><span class="fr">Entrées</span></h3>
+      <div class="item"><span class="d"><span class="en">Spring rolls</span><span class="fr">Rouleaux de printemps</span><span class="best">Best seller</span></span><span class="dots"></span><span class="p">100</span></div>
+      <div class="item"><span class="d">Gyoza</span><span class="dots"></span><span class="p">100</span></div>
+      <div class="item"><span class="d"><span class="en">Thai omelette with basil</span><span class="fr">Omelette thaïe au basilic</span></span><span class="dots"></span><span class="p">120</span></div>
+      <div class="item"><span class="d">Bruschetta</span><span class="dots"></span><span class="p">120</span></div>
+      <div class="item"><span class="d"><span class="en">Calamari tempura</span><span class="fr">Calamars tempura</span></span><span class="dots"></span><span class="p">150</span></div>
+      <div class="item"><span class="d"><span class="en">Chicken wings</span><span class="fr">Ailes de poulet</span></span><span class="dots"></span><span class="p">150</span></div>
+      <div class="item"><span class="d"><span class="en">Chicken satay</span><span class="fr">Satay de poulet</span></span><span class="dots"></span><span class="p">150</span></div>
+      <div class="item"><span class="d"><span class="en">Prawn tempura</span><span class="fr">Crevettes tempura</span></span><span class="dots"></span><span class="p">180</span></div>
+    </div>
+    <div class="chapter" id="c3">
+      <h3><span class="n">03</span><span class="en">Curry and soup</span><span class="fr">Currys et soupes</span></h3>
+      <p class="key"><span class="en">Chicken / seafood</span><span class="fr">Poulet / fruits de mer</span></p>
+      <div class="item"><span class="d"><span class="en">Panang curry</span><span class="fr">Curry panang</span></span><span class="dots"></span><span class="p">120 / 150</span></div>
+      <div class="item"><span class="d"><span class="en">Massaman curry</span><span class="fr">Curry massaman</span></span><span class="dots"></span><span class="p">120 / 150</span></div>
+      <div class="item"><span class="d"><span class="en">Yellow curry</span><span class="fr">Curry jaune</span></span><span class="dots"></span><span class="p">120 / 150</span></div>
+      <div class="item"><span class="d"><span class="en">Green curry</span><span class="fr">Curry vert</span></span><span class="dots"></span><span class="p">120 / 150</span></div>
+      <div class="item"><span class="d">Tom kha</span><span class="dots"></span><span class="p">120 / 150</span></div>
+      <div class="item"><span class="d">Tom yam</span><span class="dots"></span><span class="p">120 / 150</span></div>
+      <div class="item"><span class="d"><span class="en">Thai curry with sea bass</span><span class="fr">Curry thaï au bar</span></span><span class="dots"></span><span class="p">250</span></div>
+    </div>
+    <div class="chapter" id="c4">
+      <h3><span class="n">04</span><span class="en">Thai salads</span><span class="fr">Salades thaïes</span></h3>
+      <div class="item"><span class="d"><span class="en">Papaya salad</span><span class="fr">Salade de papaye</span><span class="best">Best seller</span></span><span class="dots"></span><span class="p">90</span></div>
+      <div class="item"><span class="d"><span class="en">Larb, chicken or pork</span><span class="fr">Larb, poulet ou porc</span></span><span class="dots"></span><span class="p">150</span></div>
+      <div class="item"><span class="d"><span class="en">Larb, duck</span><span class="fr">Larb, canard</span></span><span class="dots"></span><span class="p">150</span></div>
+      <div class="item"><span class="d"><span class="en">Larb, beef</span><span class="fr">Larb, bœuf</span></span><span class="dots"></span><span class="p">180</span></div>
+      <div class="item"><span class="d"><span class="en">Seafood salad</span><span class="fr">Salade de fruits de mer</span></span><span class="dots"></span><span class="p">180</span></div>
+      <div class="item"><span class="d"><span class="en">Fresh red tuna and avocado</span><span class="fr">Thon rouge frais et avocat</span></span><span class="dots"></span><span class="p">180</span></div>
+    </div>
+    <div class="chapter" id="c5">
+      <h3><span class="n">05</span><span class="en">From the wok</span><span class="fr">Au wok</span></h3>
+      <p class="key"><span class="en">Chicken or pork / prawn or seafood</span><span class="fr">Poulet ou porc / crevettes ou fruits de mer</span></p>
+      <div class="item"><span class="d">Pad thai</span><span class="dots"></span><span class="p">120 / 150</span></div>
+      <div class="item"><span class="d">Pad see ew</span><span class="dots"></span><span class="p">120 / 150</span></div>
+      <div class="item"><span class="d"><span class="en">Fried rice</span><span class="fr">Riz sauté</span></span><span class="dots"></span><span class="p">120 / 150</span></div>
+      <div class="item"><span class="d"><span class="en">Pineapple fried rice</span><span class="fr">Riz sauté à l'ananas</span></span><span class="dots"></span><span class="p">160 / 190</span></div>
+      <div class="item"><span class="d"><span class="en">Mango fried rice</span><span class="fr">Riz sauté à la mangue</span></span><span class="dots"></span><span class="p">160 / 190</span></div>
+      <div class="item"><span class="d"><span class="en">Sweet and sour</span><span class="fr">Aigre-doux</span></span><span class="dots"></span><span class="p">150 / 180</span></div>
+      <div class="item"><span class="d"><span class="en">Garlic and pepper</span><span class="fr">Ail et poivre</span></span><span class="dots"></span><span class="p">150</span></div>
+      <div class="item"><span class="d"><span class="en">Cashew chicken</span><span class="fr">Poulet aux noix de cajou</span><span class="best">Best seller</span></span><span class="dots"></span><span class="p">150</span></div>
+      <div class="item"><span class="d"><span class="en">Prawns with tamarind</span><span class="fr">Crevettes au tamarin</span><span class="best">Best seller</span></span><span class="dots"></span><span class="p">280</span></div>
+    </div>
+    <div class="chapter" id="c6">
+      <h3><span class="n">06</span><span class="en">Fish and meat</span><span class="fr">Poissons et viandes</span></h3>
+      <div class="item"><span class="d"><span class="en">Grilled chicken with tamarind</span><span class="fr">Poulet grillé au tamarin</span><span class="best">Best seller</span></span><span class="dots"></span><span class="p">220</span></div>
+      <div class="item"><span class="d"><span class="en">Sea bass</span><span class="fr">Bar</span></span><span class="dots"></span><span class="p">300</span></div>
+      <div class="item"><span class="d"><span class="en">Grilled duck breast</span><span class="fr">Magret de canard grillé</span></span><span class="dots"></span><span class="p">300</span></div>
+      <div class="item"><span class="d"><span class="en">Whole fish: barbecue, steamed with lemon, or fried with garlic</span><span class="fr">Poisson entier : grillé, vapeur au citron ou frit à l'ail</span></span><span class="dots"></span><span class="p">350</span></div>
+      <div class="item"><span class="d"><span class="en">Grilled salmon, mango and avocado</span><span class="fr">Saumon grillé, mangue et avocat</span></span><span class="dots"></span><span class="p">350</span></div>
+      <div class="item"><span class="d"><span class="en">Tuna steak</span><span class="fr">Steak de thon</span></span><span class="dots"></span><span class="p">350</span></div>
+    </div>
+    <div class="chapter" id="c7">
+      <h3><span class="n">07</span><span class="en">Thai-Italian pasta</span><span class="fr">Pâtes thaï-italiennes</span></h3>
+      <div class="item"><span class="d"><span class="en">Chicken with garlic</span><span class="fr">Poulet à l'ail</span></span><span class="dots"></span><span class="p">200</span></div>
+      <div class="item"><span class="d">Pad kra pao</span><span class="dots"></span><span class="p">200</span></div>
+      <div class="item"><span class="d"><span class="en">Cashew chicken</span><span class="fr">Poulet aux noix de cajou</span></span><span class="dots"></span><span class="p">200</span></div>
+      <div class="item"><span class="d"><span class="en">Tamarind</span><span class="fr">Tamarin</span></span><span class="dots"></span><span class="p">200</span></div>
+      <div class="item"><span class="d">Carbonara</span><span class="dots"></span><span class="p">200</span></div>
+      <div class="item"><span class="d"><span class="en">Bolognese</span><span class="fr">Bolognaise</span></span><span class="dots"></span><span class="p">200</span></div>
+    </div>
+    <div class="chapter" id="c8">
+      <h3><span class="n">08</span><span class="en">Desserts</span><span class="fr">Desserts</span></h3>
+      <div class="item"><span class="d"><span class="en">Banana chocolate pancake</span><span class="fr">Crêpe banane chocolat</span></span><span class="dots"></span><span class="p">100</span></div>
+      <div class="item"><span class="d"><span class="en">Mango sticky rice</span><span class="fr">Riz gluant à la mangue</span><span class="best">Best seller</span></span><span class="dots"></span><span class="p">120</span></div>
+      <div class="item"><span class="d"><span class="en">Mango sticky rice with ice cream</span><span class="fr">Riz gluant mangue et glace</span></span><span class="dots"></span><span class="p">150</span></div>
+      <div class="item"><span class="d"><span class="en">Fruit plate</span><span class="fr">Assiette de fruits</span></span><span class="dots"></span><span class="p">150</span></div>
+    </div>
+    <div class="chapter" id="c9">
+      <h3><span class="n">09</span><span class="en">Drinks</span><span class="fr">Boissons</span></h3>
+      <div class="item"><span class="d"><span class="en">Thai iced tea or coffee</span><span class="fr">Thé ou café glacé thaï</span></span><span class="dots"></span><span class="p">80</span></div>
+      <div class="item"><span class="d"><span class="en">Cocktails: mai tai, mojito, piña colada and more</span><span class="fr">Cocktails : mai tai, mojito, piña colada et plus</span></span><span class="dots"></span><span class="p">150</span></div>
+      <p class="key" style="margin-top:var(--space-2)"><span class="en">Prices in baht, from our own menu. Burgers, wraps, sandwiches and croissants are on the full menu at the restaurant.</span><span class="fr">Prix en bahts, d'après notre carte. Burgers, wraps, sandwichs et croissants sur la carte complète au restaurant.</span></p>
+    </div>
+  </div>
+</section>
+
+<div class="melon">
+  <div class="wrap">
+    <p><span class="en">After your meal, the watermelon is on us</span><span class="fr">Après le repas, la pastèque est offerte</span><small><span class="en">A family habit our guests keep mentioning.</span><span class="fr">Une habitude de famille dont nos clients parlent souvent.</span></small></p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap pics">
+    <figure><img src="img/interior.jpg" width="900" height="675" alt="Inside Wok &amp; Pan: wooden tables and a chalkboard" loading="lazy"><figcaption><span class="en">Inside</span><span class="fr">La salle</span></figcaption></figure>
+    <figure><img src="img/wrap.jpg" width="640" height="640" alt="A wrap cut in half with an orchid on the plate" loading="lazy"><figcaption><span class="en">Wrap</span><span class="fr">Wrap</span></figcaption></figure>
+    <figure><img src="img/outside.jpg" width="700" height="933" alt="The terrace and lanterns on the side street" loading="lazy"><figcaption><span class="en">Our street</span><span class="fr">Notre rue</span></figcaption></figure>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div>
+      <h2><span class="en">Find us</span><span class="fr">Nous trouver</span></h2>
+      <p><span class="en">In a small side street in central Chaweng, away from the busy main road.</span><span class="fr">Dans une petite rue du centre de Chaweng, à l'écart de la route principale.</span></p>
+      <div class="btns">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Wok+%26+Pan+Koh+Samui"><span class="en">Open in Google Maps</span><span class="fr">Ouvrir Google Maps</span></a>
+        <a class="btn ghost" href="tel:+66804714230">080 471 4230</a>
+      </div>
+    </div>
+    <dl>
+      <dt><span class="en">Address</span><span class="fr">Adresse</span></dt><dd>1/97 Bo Put, Chaweng, Koh Samui</dd>
+      <dt><span class="en">Hours</span><span class="fr">Horaires</span></dt><dd><span class="en">Every day, 10:00 to 23:45</span><span class="fr">Tous les jours, 10h00 à 23h45</span></dd>
+      <dt><span class="en">Payment</span><span class="fr">Paiement</span></dt><dd><span class="en">Cash only</span><span class="fr">Espèces uniquement</span></dd>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Wok &amp; Pan Thai Food, Chaweng, Koh Samui.</p>
+    <p><span class="en">Badge and photos from Wok &amp; Pan's own Google Maps uploads. Prices from the owner's menu; details from Google Maps, November 2026.</span><span class="fr">Logo et photos publiés par Wok &amp; Pan sur Google Maps. Prix d'après la carte du restaurant ; infos Google Maps, novembre 2026.</span></p>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Quick actions">
+  <a href="tel:+66804714230"><span class="en">Call</span><span class="fr">Appeler</span></a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Wok+%26+Pan+Koh+Samui"><span class="en">Directions</span><span class="fr">Itinéraire</span></a>
+  <a href="#menu"><span class="en">Menu</span><span class="fr">Carte</span></a>
+</nav>
+
+<script>
+(function(){
+  var root=document.documentElement,btns=document.querySelectorAll('.lang button');
+  function set(l){
+    root.classList.toggle('is-fr',l==='fr');root.lang=l;
+    btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.lang===l?'true':'false')});
+    try{localStorage.setItem('wokpan-lang',l)}catch(e){}
+  }
+  btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.lang)})});
+  var saved=null;try{saved=localStorage.getItem('wokpan-lang')}catch(e){}
+  if(saved)set(saved);
+})();
+</script>
+</body>
+</html>

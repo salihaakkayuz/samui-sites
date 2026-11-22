@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>The Corner Samui ร้านมุมสมุย, Chaweng Noi</title>
+<meta name="description" content="Family-run Thai, seafood, pizza and pasta on Soi Sawasdee, Chaweng Noi, Koh Samui. Open every day 10:00 to 22:00. Cards accepted.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Figtree:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+/* hallmark: shape "street corner" (photos fold around the text in an L, menu split into two kitchens facing each other) · theme custom "green sign, red cloth" from The Corner's own sign board and tablecloths · genre warm-casual · job: walk in for dinner · signature: the two-kitchen menu, Thai on one side, pizza and pasta on the other */
+/* critique: no prices on the page, because the photographed boards were unreadable; the red is the tablecloth red, the green is the sign; script only for the name, like the sign */
+:root{
+  --color-paper:oklch(0.985 0.004 150);
+  --color-card:oklch(1 0 0);
+  --color-ink:oklch(0.24 0.03 150);
+  --color-muted:oklch(0.46 0.03 150);
+  --color-green:oklch(0.6 0.15 152);
+  --color-green-deep:oklch(0.36 0.09 152);
+  --color-red:oklch(0.55 0.21 25);
+  --color-red-soft:oklch(0.94 0.035 25);
+  --color-on:oklch(0.99 0.004 150);
+  --color-rule:oklch(0.24 0.03 150 / .13);
+  --font-script:"Kaushan Script",cursive;
+  --font-display:"Figtree",system-ui,sans-serif;
+  --font-body:"Figtree",system-ui,sans-serif;
+  --space-1:.5rem;--space-2:1rem;--space-3:1.5rem;--space-4:2.5rem;--space-5:4rem;--space-6:6rem;
+  --radius:10px;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--color-paper);color:var(--color-ink);font:400 1.05rem/1.6 var(--font-body)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--color-red);outline-offset:3px}
+.wrap{width:min(1140px,100% - 2*var(--space-3));margin-inline:auto}
+.demo{font-size:.88rem;text-align:center;padding:.55rem var(--space-2);background:var(--color-green-deep);color:var(--color-on)}
+.sign{background:var(--color-green);color:var(--color-on)}
+.sign .wrap{display:flex;align-items:center;justify-content:space-between;gap:var(--space-2);padding:var(--space-2) 0}
+.logo{text-decoration:none;display:flex;align-items:baseline;gap:.7rem;flex-wrap:wrap}
+.logo b{font-family:var(--font-script);font-weight:400;font-size:1.9rem;color:var(--color-red);background:var(--color-on);padding:.05rem .7rem .2rem;border-radius:6px;line-height:1.2}
+.logo span{font-size:.95rem}
+.sign nav{display:flex;gap:var(--space-3);font-weight:500}
+.sign nav a{text-decoration:none}
+.sign nav a:hover{text-decoration:underline;text-underline-offset:4px}
+/* L-shaped corner grid */
+.corner{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:auto auto;gap:var(--space-2);padding:var(--space-3) 0 var(--space-5)}
+.corner .text{grid-column:1/3;grid-row:2;align-self:center;padding:var(--space-2) var(--space-4) var(--space-2) 0}
+.corner .a{grid-column:1/3;grid-row:1}
+.corner .b{grid-column:3;grid-row:1/3}
+.corner img{width:100%;height:100%;object-fit:cover;border-radius:var(--radius)}
+.corner .a img{aspect-ratio:16/6.2;object-position:50% 45%}
+.corner h1{font-family:var(--font-display);font-weight:800;font-size:clamp(2.3rem,4.8vw,3.9rem);line-height:1.04;letter-spacing:-.02em;margin:0 0 var(--space-2)}
+.corner p{margin:0 0 var(--space-3);color:var(--color-muted);max-width:44ch}
+.btns{display:flex;flex-wrap:wrap;gap:var(--space-1)}
+.btn{display:inline-block;padding:.85rem 1.3rem;border-radius:var(--radius);background:var(--color-red);color:var(--color-on);font-weight:700;text-decoration:none;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--color-ink);box-shadow:inset 0 0 0 1.5px var(--color-ink)}
+.cloth{background:var(--color-red);color:var(--color-on)}
+.cloth ul{list-style:none;margin:0;padding:var(--space-3) 0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-2)}
+.cloth li b{display:block;font-size:1.2rem}
+.cloth li span{opacity:.85;font-size:.95rem}
+section{padding:var(--space-5) 0}
+h2{font-family:var(--font-display);font-weight:800;font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.1;margin:0 0 var(--space-2);letter-spacing:-.01em}
+.lede{color:var(--color-muted);max-width:52ch;margin:0 0 var(--space-4)}
+.kitchens{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:var(--space-4);align-items:start}
+.kitchens .spine{width:3px;align-self:stretch;background:repeating-linear-gradient(var(--color-green) 0 14px,transparent 14px 22px)}
+.kitchen h3{font-family:var(--font-script);font-weight:400;font-size:2.1rem;color:var(--color-red);margin:0 0 var(--space-2)}
+.kitchen figure{margin:0 0 var(--space-3)}
+.kitchen figure img{border-radius:var(--radius);aspect-ratio:4/3;object-fit:cover}
+.kitchen h4{font-size:.95rem;font-weight:700;color:var(--color-green-deep);margin:var(--space-3) 0 .3rem}
+.kitchen ul{list-style:none;margin:0;padding:0}
+.kitchen li{padding:.5rem 0;border-bottom:1px solid var(--color-rule)}
+.kitchen li small{display:block;color:var(--color-muted);font-size:.88rem}
+.right{text-align:right}
+.note{margin-top:var(--space-4);padding:var(--space-2) var(--space-3);background:var(--color-red-soft);border-radius:var(--radius);font-size:.95rem}
+.sweet{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1fr);gap:var(--space-3)}
+.sweet figure{margin:0}
+.sweet img{border-radius:var(--radius);aspect-ratio:4/3;object-fit:cover}
+.sweet figcaption{margin-top:.5rem;font-weight:500}
+.sweet .txt{background:var(--color-green);color:var(--color-on);border-radius:var(--radius);padding:var(--space-3)}
+.sweet .txt h3{margin:0 0 var(--space-1);font-size:1.3rem}
+.sweet .txt p{margin:0 0 var(--space-1)}
+.room img{width:100%;border-radius:var(--radius);aspect-ratio:21/9;object-fit:cover}
+.visit .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:var(--space-4);align-items:start}
+.visit dl{margin:0;background:var(--color-card);border-radius:var(--radius);padding:var(--space-3);box-shadow:0 0 0 1px var(--color-rule)}
+.visit dt{font-weight:700;color:var(--color-green-deep);margin-top:var(--space-2)}
+.visit dt:first-child{margin-top:0}
+.visit dd{margin:0}
+footer{padding:var(--space-4) 0 var(--space-6);font-size:.88rem;color:var(--color-muted);text-align:center}
+footer p{margin:.3rem 0}
+.bar{position:fixed;left:0;right:0;bottom:0;display:none;gap:1px;background:var(--color-rule);z-index:5}
+.bar a{flex:1;text-align:center;padding:.95rem .5rem;background:var(--color-green-deep);color:var(--color-on);text-decoration:none;font-weight:700}
+.bar a:first-child{background:var(--color-red)}
+@media (max-width:860px){
+  .sign nav{display:none}
+  .corner{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .corner .a{grid-column:1/-1;grid-row:1}
+  .corner .b{grid-column:1/-1;grid-row:3}
+  .corner .b img{aspect-ratio:4/3}
+  .corner .text{grid-column:1/-1;grid-row:2;padding:var(--space-2) 0}
+  .cloth ul{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .kitchens{grid-template-columns:minmax(0,1fr)}
+  .kitchens .spine{width:100%;height:3px;background:repeating-linear-gradient(90deg,var(--color-green) 0 14px,transparent 14px 22px)}
+  .right{text-align:left}
+  .sweet,.visit .wrap{grid-template-columns:minmax(0,1fr)}
+  .bar{display:flex}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="demo">Sample website made for The Corner Samui. Not live yet; nothing here is final.</div>
+
+<header class="sign">
+  <div class="wrap">
+    <a class="logo" href="#"><b>The Corner Samui</b><span>ร้านมุมสมุย</span></a>
+    <nav aria-label="Sections"><a href="#menu">Menu</a><a href="#visit">Find us</a></nav>
+  </div>
+</header>
+
+<div class="wrap corner">
+  <div class="a"><img src="img/storefront.jpg" width="1200" height="900" alt="The Corner at night: green sign, lights and plants at the entrance"></div>
+  <div class="b"><img src="img/padthai.jpg" width="800" height="600" alt="Pad thai with shrimp, lime and peanuts on a black plate"></div>
+  <div class="text">
+    <h1>Thai, seafood and pizza on one corner</h1>
+    <p>A family kitchen on Soi Sawasdee, Chaweng Noi. Open every day from 10:00 to 22:00.</p>
+    <div class="btns">
+      <a class="btn" href="tel:+66805332901">Call 080 533 2901</a>
+      <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=The+Corner+Samui+restaurant+Chaweng+Noi">Directions</a>
+    </div>
+  </div>
+</div>
+
+<div class="cloth">
+  <div class="wrap">
+    <ul>
+      <li><b>10:00–22:00</b><span>every day</span></li>
+      <li><b>Cards welcome</b><span>cash too</span></li>
+      <li><b>4.8 on Google</b><span>436 reviews, Nov 2026</span></li>
+      <li><b>Takeaway</b><span>and delivery</span></li>
+    </ul>
+  </div>
+</div>
+
+<section id="menu">
+  <div class="wrap">
+    <h2>Two kitchens, one table</h2>
+    <p class="lede">Order a curry and a pizza for the same table. Vegetarian dishes on both sides.</p>
+    <div class="kitchens">
+      <div class="kitchen">
+        <h3>Thai side</h3>
+        <figure><img src="img/tomkha.jpg" width="800" height="600" alt="Tom kha soup with chilli and basil in a striped bowl" loading="lazy"></figure>
+        <h4>Guests' favourites</h4>
+        <ul>
+          <li>Pad thai<small>also wrapped in an omelette</small></li>
+          <li>Panang curry</li>
+          <li>Green curry with shrimp</li>
+          <li>Massaman curry</li>
+          <li>Shrimp coconut soup (tom kha)</li>
+          <li>Chicken with cashew nuts</li>
+          <li>Spicy mango salad</li>
+          <li>Spring rolls</li>
+        </ul>
+        <h4>From the wok</h4>
+        <ul>
+          <li>Pineapple fried rice</li>
+          <li>Pad kee mao</li>
+          <li>Morning glory</li>
+          <li>Chicken with eggplant</li>
+          <li>Squid stir-fry</li>
+        </ul>
+      </div>
+      <div class="spine" aria-hidden="true"></div>
+      <div class="kitchen right">
+        <h3>Western side</h3>
+        <figure><img src="img/pizza.jpg" width="800" height="600" alt="Pizza with salami on a wooden board" loading="lazy"></figure>
+        <h4>Pizza and pasta</h4>
+        <ul>
+          <li>Pizza</li>
+          <li>Spaghetti</li>
+          <li>Pasta</li>
+        </ul>
+        <h4>Steak and seafood</h4>
+        <ul>
+          <li>Steak</li>
+          <li>Seafood offer</li>
+        </ul>
+        <h4>Mornings</h4>
+        <ul>
+          <li>Special Corner breakfast</li>
+          <li>American breakfast</li>
+        </ul>
+        <h4>Light</h4>
+        <ul>
+          <li>Salads</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note">This is a short version of our menu. Prices are on the full menu at the restaurant, or ask us on the phone.</p>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap sweet">
+    <div class="txt">
+      <h3>Save room</h3>
+      <p>Deep fried ice cream and mango sticky rice.</p>
+      <p>Or a fresh coconut, served with an orchid.</p>
+    </div>
+    <figure><img src="img/salad.jpg" width="800" height="600" alt="Green salad with chicken" loading="lazy"><figcaption>Salad</figcaption></figure>
+    <figure><img src="img/squid.jpg" width="800" height="600" alt="Stir-fried squid with chilli and basil" loading="lazy"><figcaption>Squid with chilli and basil</figcaption></figure>
+  </div>
+</section>
+
+<section class="room" style="padding-top:0">
+  <div class="wrap"><img src="img/interior.jpg" width="1400" height="787" alt="Long tables with red tablecloths inside The Corner" loading="lazy"></div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div>
+      <h2>Find the corner</h2>
+      <p class="lede">On Soi Sawasdee, between Chaweng Noi and Chaweng. Look for the green sign. Cocktails and a happy hour at the bar.</p>
+      <div class="btns">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=The+Corner+Samui+restaurant+Chaweng+Noi">Open in Google Maps</a>
+        <a class="btn ghost" href="tel:+66805332901">Call us</a>
+      </div>
+    </div>
+    <dl>
+      <dt>Address</dt><dd>94/40 Moo 3, Soi Sawasdee, Chaweng Noi, Bo Put, Koh Samui</dd>
+      <dt>Hours</dt><dd>Every day, 10:00 to 22:00</dd>
+      <dt>Phone</dt><dd>080 533 2901</dd>
+      <dt>Payment</dt><dd>Cash and cards</dd>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>The Corner Samui ร้านมุมสมุย, Chaweng Noi, Koh Samui.</p>
+    <p>Photos from The Corner's own Google Maps uploads. Details from Google Maps, November 2026.</p>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Quick actions">
+  <a href="tel:+66805332901">Call</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=The+Corner+Samui+restaurant+Chaweng+Noi">Directions</a>
+  <a href="#menu">Menu</a>
+</nav>
+</body>
+</html>

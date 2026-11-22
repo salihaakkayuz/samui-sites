@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Mālie Eatery Samui, Mae Nam</title>
+<meta name="description" content="Small all-day eatery in Mae Nam, Koh Samui: Thai one-plate dishes, curries, spaghetti and coffee. 10:00 to 22:00, closed Tuesdays. Cash only.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap" rel="stylesheet">
+<style>
+/* hallmark: shape "yellow awning over a tiled table" (scalloped awning edge, menu laid out as tiles on a teal tile ground) · theme custom "awning and tile" from Mālie's own shop front: yellow awning, teal frames and tiled tables, teal logo · genre cheerful-neighbourhood · job: drop in for lunch or coffee · signature: the scalloped awning edge and the tile-wall menu */
+/* critique: prices only from the November 2025 menu photo (the older orange menu is ignored); the painted "It's beautiful day" is quoted as it is on their wall */
+:root{
+  --color-awning:oklch(0.87 0.15 92);
+  --color-awning-deep:oklch(0.78 0.15 85);
+  --color-teal:oklch(0.64 0.11 210);
+  --color-teal-deep:oklch(0.42 0.08 215);
+  --color-teal-pale:oklch(0.93 0.03 210);
+  --color-paper:oklch(0.985 0.006 95);
+  --color-card:oklch(1 0 0);
+  --color-ink:oklch(0.25 0.03 230);
+  --color-muted:oklch(0.47 0.03 230);
+  --color-on:oklch(0.99 0.004 95);
+  --color-rule:oklch(0.25 0.03 230 / .12);
+  --font-display:"Fredoka",system-ui,sans-serif;
+  --font-body:"Nunito Sans",system-ui,sans-serif;
+  --space-1:.5rem;--space-2:1rem;--space-3:1.5rem;--space-4:2.5rem;--space-5:4rem;--space-6:6rem;
+  --radius:16px;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--color-paper);color:var(--color-ink);font:400 1.05rem/1.6 var(--font-body)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--color-teal-deep);outline-offset:3px}
+.wrap{width:min(1120px,100% - 2*var(--space-3));margin-inline:auto}
+.demo{font-size:.88rem;text-align:center;padding:.55rem var(--space-2);background:var(--color-teal-deep);color:var(--color-on)}
+.awning{background:var(--color-awning);position:relative;padding-bottom:6px}
+.awning::after{content:"";position:absolute;left:0;right:0;bottom:-15px;height:16px;background:radial-gradient(circle at 12px 0,var(--color-awning) 11px,transparent 12px) 0 0/24px 16px repeat-x}
+.awning .wrap{display:flex;justify-content:space-between;align-items:center;gap:var(--space-2);padding:var(--space-2) 0}
+.logo{text-decoration:none;line-height:1}
+.logo b{display:block;font-family:var(--font-display);font-weight:600;font-size:2.1rem;color:var(--color-teal-deep)}
+.logo span{font-size:.78rem;letter-spacing:.18em;color:var(--color-ink)}
+.awning nav{display:flex;gap:var(--space-3);font-weight:600}
+.awning nav a{text-decoration:none}
+.awning nav a:hover{text-decoration:underline;text-underline-offset:4px}
+.hero{padding:var(--space-5) 0 var(--space-5)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:var(--space-4);align-items:center}
+.hero h1{font-family:var(--font-display);font-weight:600;font-size:clamp(2.4rem,5vw,4rem);line-height:1.05;margin:0 0 var(--space-2);color:var(--color-teal-deep)}
+.hero p{margin:0 0 var(--space-3);color:var(--color-muted);max-width:38ch}
+.hero figure{margin:0}
+.hero figure img{border-radius:var(--radius)}
+.hero figcaption{font-size:.9rem;color:var(--color-muted);margin-top:.5rem}
+.btns{display:flex;flex-wrap:wrap;gap:var(--space-1)}
+.btn{display:inline-block;padding:.85rem 1.3rem;border-radius:999px;background:var(--color-teal-deep);color:var(--color-on);font-weight:700;text-decoration:none;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:var(--color-awning);color:var(--color-ink)}
+.hero .wrap.today{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-2);margin-top:var(--space-4)}
+.today div{background:var(--color-card);border-radius:var(--radius);padding:var(--space-2);box-shadow:0 0 0 1px var(--color-rule)}
+.today b{display:block;font-family:var(--font-display);font-weight:600;font-size:1.2rem;color:var(--color-teal-deep)}
+.today span{font-size:.92rem;color:var(--color-muted)}
+.tiles-ground{background-color:var(--color-teal);background-image:linear-gradient(oklch(1 0 0 / .14) 1px,transparent 1px),linear-gradient(90deg,oklch(1 0 0 / .14) 1px,transparent 1px);background-size:36px 36px;padding:var(--space-5) 0}
+.tiles-ground h2{color:var(--color-on)}
+.tiles-ground .lede{color:oklch(0.99 0.004 95 / .85)}
+h2{font-family:var(--font-display);font-weight:600;font-size:clamp(1.9rem,3.6vw,2.7rem);line-height:1.1;margin:0 0 var(--space-2)}
+.lede{max-width:50ch;color:var(--color-muted);margin:0 0 var(--space-4)}
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-2);align-items:start}
+.tile{background:var(--color-card);border-radius:var(--radius);padding:var(--space-3)}
+.tile h3{font-family:var(--font-display);font-weight:600;font-size:1.35rem;color:var(--color-teal-deep);margin:0 0 .2rem}
+.tile .th{display:block;font-size:.9rem;color:var(--color-muted);margin-bottom:var(--space-1)}
+.tile .key{font-size:.85rem;color:var(--color-muted);margin:0 0 .4rem}
+.row{display:flex;justify-content:space-between;gap:var(--space-2);padding:.42rem 0;border-bottom:1px dashed var(--color-rule)}
+.row:last-child{border-bottom:0}
+.row span:last-child{font-weight:700;white-space:nowrap}
+.tile.photo{padding:0;overflow:hidden}
+.tile.photo img{aspect-ratio:1;object-fit:cover;width:100%}
+.tile.photo p{margin:0;padding:.7rem var(--space-2);font-weight:600}
+.tile.coffee{background:var(--color-awning)}
+.tile.coffee h3{color:var(--color-ink)}
+.tile.coffee .th,.tile.coffee .key{color:oklch(0.25 0.03 230 / .7)}
+.menu-note{margin-top:var(--space-3);color:oklch(0.99 0.004 95 / .85);font-size:.95rem}
+section{padding:var(--space-5) 0}
+.words{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-3)}
+.words figure{margin:0}
+.words img{border-radius:var(--radius);aspect-ratio:1;object-fit:cover;width:100%}
+.words figcaption{font-family:var(--font-display);font-weight:500;margin-top:.5rem}
+.visit .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-4);align-items:start}
+.visit dl{margin:0;background:var(--color-card);border-radius:var(--radius);padding:var(--space-3);box-shadow:0 0 0 1px var(--color-rule)}
+.visit dt{font-family:var(--font-display);font-weight:600;color:var(--color-teal-deep);margin-top:var(--space-2)}
+.visit dt:first-child{margin-top:0}
+.visit dd{margin:0}
+footer{background:var(--color-awning);padding:var(--space-4) 0 var(--space-6);font-size:.88rem;text-align:center}
+footer p{margin:.3rem 0}
+.bar{position:fixed;left:0;right:0;bottom:0;display:none;gap:1px;background:var(--color-rule);z-index:5}
+.bar a{flex:1;text-align:center;padding:.95rem .5rem;background:var(--color-teal-deep);color:var(--color-on);text-decoration:none;font-weight:700}
+.bar a:first-child{background:var(--color-awning);color:var(--color-ink)}
+@media (max-width:900px){
+  .awning nav{display:none}
+  .hero .wrap,.visit .wrap{grid-template-columns:minmax(0,1fr)}
+  .hero figure{order:-1}
+  .hero .wrap.today{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .words{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:600px){
+  .tiles{grid-template-columns:minmax(0,1fr)}
+  .bar{display:flex}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="demo">Sample website made for Mālie Eatery Samui. Not live yet; nothing here is final.</div>
+
+<header class="awning">
+  <div class="wrap">
+    <a class="logo" href="#"><b>Mālie</b><span>EATERY SAMUI</span></a>
+    <nav aria-label="Sections"><a href="#menu">Menu</a><a href="#visit">Find us</a></nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Coffee, curry and carbonara in Mae Nam</h1>
+      <p>A small all-day eatery under a yellow awning. Simple dishes, cooked with care.</p>
+      <div class="btns">
+        <a class="btn" href="tel:+66953584852">Call 095 358 4852</a>
+        <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=MALIE+EATERY+SAMUI+Mae+Nam">Directions</a>
+      </div>
+    </div>
+    <figure>
+      <img src="img/storefront.jpg" width="1400" height="875" alt="Mālie's shop front: yellow awning, teal frames, plants and a bench out front">
+      <figcaption>Painted on our wall: "It's beautiful day".</figcaption>
+    </figure>
+  </div>
+  <div class="wrap today">
+    <div><b>10:00–22:00</b><span>closed on Tuesdays</span></div>
+    <div><b>4.9 on Google</b><span>234 reviews, Nov 2026</span></div>
+    <div><b>Cash only</b><span>free parking</span></div>
+    <div><b>Dogs welcome</b><span>inside and out</span></div>
+  </div>
+</section>
+
+<section class="tiles-ground" id="menu">
+  <div class="wrap">
+    <h2>The menu</h2>
+    <p class="lede">Prices in baht, from our November 2025 menu.</p>
+    <div class="tiles">
+      <div class="tile">
+        <h3>One dish</h3><span class="th">อาหารจานเดียว</span>
+        <div class="row"><span>Pad thai, tofu, pork or chicken</span><span>80</span></div>
+        <div class="row"><span>Pad thai, shrimp</span><span>150</span></div>
+        <div class="row"><span>Chili basil pork or chicken on rice</span><span>80</span></div>
+        <div class="row"><span>Garlic pork or chicken on rice</span><span>90</span></div>
+        <div class="row"><span>Black pepper pork or chicken on rice</span><span>90</span></div>
+        <div class="row"><span>Chicken cashew nut on rice</span><span>90</span></div>
+        <div class="row"><span>Fried rice, vegetable, pork or chicken</span><span>80</span></div>
+        <div class="row"><span>Fried rice, chili paste with clams</span><span>80</span></div>
+        <div class="row"><span>Stir-fried morning glory</span><span>80</span></div>
+        <div class="row"><span>Pan-fried egg with topping</span><span>95</span></div>
+        <div class="row"><span>Teriyaki chicken on rice</span><span>120</span></div>
+        <div class="row"><span>Roasted chicken on rice</span><span>120</span></div>
+        <div class="row"><span>Hamburger, Australian beef</span><span>250</span></div>
+      </div>
+      <div class="tile photo"><img src="img/basil.jpg" width="700" height="700" alt="Chili basil stir-fry with rice and cucumber, next to the menu" loading="lazy"><p>Chili basil on rice</p></div>
+      <div class="tile">
+        <h3>Soup and curry</h3><span class="th">แกง</span>
+        <div class="row"><span>Tom kha chicken</span><span>150</span></div>
+        <div class="row"><span>Panang chicken or pork</span><span>150</span></div>
+        <div class="row"><span>Green curry chicken or pork</span><span>150</span></div>
+        <div class="row"><span>Massaman chicken</span><span>150</span></div>
+        <div class="row"><span>Clear tom yum chicken</span><span>150</span></div>
+        <div class="row"><span>Tom yum shrimp</span><span>220</span></div>
+      </div>
+      <div class="tile">
+        <h3>Spaghetti</h3><span class="th">สปาเกตตี้</span>
+        <div class="row"><span>Carbonara</span><span>120</span></div>
+        <div class="row"><span>Clams with chili paste</span><span>120</span></div>
+        <div class="row"><span>Bolognese, pork</span><span>120</span></div>
+        <div class="row"><span>Bolognese, beef</span><span>180</span></div>
+      </div>
+      <div class="tile photo"><img src="img/carbonara.jpg" width="700" height="700" alt="Spaghetti carbonara with bacon" loading="lazy"><p>Carbonara</p></div>
+      <div class="tile coffee">
+        <h3>Coffee and tea</h3><span class="th">ชา กาแฟ</span>
+        <p class="key">Hot / iced</p>
+        <div class="row"><span>Espresso, latte, cappuccino</span><span>50 / 55</span></div>
+        <div class="row"><span>Matcha latte</span><span>50 / 55</span></div>
+        <div class="row"><span>Thai tea, lime Thai tea</span><span>50 / 55</span></div>
+        <div class="row"><span>Chocolate</span><span>50 / 55</span></div>
+        <div class="row"><span>Mocha</span><span>55 / 60</span></div>
+        <div class="row"><span>Esyen, Thai iced coffee</span><span>55</span></div>
+      </div>
+      <div class="tile">
+        <h3>Snacks</h3><span class="th">อาหารทานเล่น</span>
+        <div class="row"><span>French fries</span><span>70</span></div>
+        <div class="row"><span>Garlic bread</span><span>80</span></div>
+        <div class="row"><span>Vegetable spring rolls</span><span>80</span></div>
+        <div class="row"><span>Chicken wings</span><span>80</span></div>
+        <div class="row"><span>Nuggets</span><span>80</span></div>
+        <div class="row"><span>Clams in garlic butter with toast</span><span>100</span></div>
+      </div>
+      <div class="tile">
+        <h3>Something sweet</h3><span class="th">ขนมหวาน</span>
+        <div class="row"><span>Pudding</span><span>40</span></div>
+        <div class="row"><span>Pancake</span><span>60</span></div>
+        <div class="row"><span>Mango sticky rice</span><span>80</span></div>
+      </div>
+      <div class="tile">
+        <h3>Cold drinks</h3><span class="th">เครื่องดื่ม</span>
+        <div class="row"><span>Soft drink, water or soda</span><span>20</span></div>
+        <div class="row"><span>Honey lime soda</span><span>50</span></div>
+        <div class="row"><span>Fresh coconut</span><span>80</span></div>
+        <div class="row"><span>Fruit shake: mango, lime or passion fruit</span><span>80</span></div>
+        <div class="row"><span>Beer: Singha, Chang, Leo</span><span>60</span></div>
+        <div class="row"><span>SangSom</span><span>70</span></div>
+        <div class="row"><span>Gin (Bombay) or vodka (Absolut)</span><span>100</span></div>
+      </div>
+    </div>
+    <p class="menu-note">Takeaway and delivery too. Call us to reserve a table.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>From our kitchen</h2>
+    <p class="lede">Breakfast plates in the morning, curry and spaghetti later on.</p>
+    <div class="words">
+      <figure><img src="img/breakfast.jpg" width="700" height="700" alt="Breakfast plate with fried egg, sausages, toast and cucumber" loading="lazy"><figcaption>Breakfast</figcaption></figure>
+      <figure><img src="img/curry.jpg" width="700" height="700" alt="Curry with red chilli in a white bowl, next to the Mālie menu" loading="lazy"><figcaption>Curry</figcaption></figure>
+      <figure><img src="img/spaghetti.jpg" width="700" height="700" alt="Spaghetti with chili paste next to the Mālie menu" loading="lazy"><figcaption>Spaghetti</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div>
+      <h2>Find us in Mae Nam</h2>
+      <p class="lede">Look for the yellow awning. There's free parking, outdoor seats, and your dog can come too.</p>
+      <div class="btns">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=MALIE+EATERY+SAMUI+Mae+Nam">Open in Google Maps</a>
+        <a class="btn ghost" href="tel:+66953584852">Call us</a>
+      </div>
+    </div>
+    <dl>
+      <dt>Address</dt><dd>7/20 Mae Nam, Koh Samui, Surat Thani 84330</dd>
+      <dt>Hours</dt><dd>Wednesday to Monday, 10:00 to 22:00. Closed on Tuesdays.</dd>
+      <dt>Phone</dt><dd>095 358 4852</dd>
+      <dt>Payment</dt><dd>Cash only</dd>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Mālie Eatery Samui, Mae Nam, Koh Samui.</p>
+    <p>Photos from Mālie's own Google Maps uploads. Prices from the November 2025 menu; details from Google Maps, November 2026.</p>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Quick actions">
+  <a href="tel:+66953584852">Call</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=MALIE+EATERY+SAMUI+Mae+Nam">Directions</a>
+  <a href="#menu">Menu</a>
+</nav>
+</body>
+</html>
