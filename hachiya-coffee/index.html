@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-/* hallmark: shape "two floors" (the name set vertically like a shop sign, the building shown as floors: roaster and café below, workspace above, beans on a shelf of cards) · theme custom "sumi and matcha" from Hachiya's black crest, pale walls and matcha · genre quiet-minimal · job: stop by for coffee or a desk · signature: the vertical name and the floor plan */
+/* hallmark: shape "two floors" + opening "the pour" (scrolling turns an espresso into a latte: milk stream, foam spreading, heart) ·  (the name set vertically like a shop sign, the building shown as floors: roaster and café below, workspace above, beans on a shelf of cards) · theme custom "sumi and matcha" from Hachiya's black crest, pale walls and matcha · genre quiet-minimal · job: stop by for coffee or a desk · signature: the vertical name and the floor plan */
 /* critique: bean scores only where Hachiya printed them (Doi Saket card); coworking price not known so not shown; menu prices from their own online menu */
 :root{
   --color-paper:oklch(0.965 0.006 100);
@@ -22,6 +22,7 @@
   --color-matcha-pale:oklch(0.92 0.04 130);
   --color-on:oklch(0.97 0.005 100);
   --color-rule:oklch(0.24 0.008 260 / .14);
+  --color-milk:oklch(0.96 0.02 85);
   --font-display:"Shippori Mincho",serif;
   --font-body:"Zen Kaku Gothic New",system-ui,sans-serif;
   --space-1:.5rem;--space-2:1rem;--space-3:1.5rem;--space-4:2.5rem;--space-5:4rem;--space-6:6rem;
@@ -39,14 +40,27 @@ a:focus-visible{outline:2px solid var(--color-matcha);outline-offset:3px}
 .top nav{display:flex;gap:var(--space-3);font-size:.92rem}
 .top nav a{text-decoration:none;color:var(--color-muted)}
 .top nav a:hover{color:var(--color-ink)}
-.hero .wrap{display:grid;grid-template-columns:auto minmax(0,5fr) minmax(0,6fr);gap:var(--space-4);align-items:center;padding:var(--space-5) 0}
+/* pour: scroll turns the espresso into a latte */
+.pour{position:relative;height:260vh}
+.stage{position:sticky;top:0;height:100vh;height:100svh;display:flex;align-items:center;overflow:hidden}
+.stage .wrap{display:grid;grid-template-columns:auto minmax(0,5fr) minmax(0,6fr);gap:var(--space-4);align-items:center}
 .vertical{writing-mode:vertical-rl;font-family:var(--font-display);font-weight:700;font-size:clamp(2.6rem,6vw,4.4rem);letter-spacing:.35em;line-height:1;color:var(--color-sumi);border-left:1px solid var(--color-rule);padding-left:var(--space-2)}
-.hero h1{font-family:var(--font-display);font-weight:500;font-size:clamp(2rem,4vw,3.1rem);line-height:1.25;margin:0 0 var(--space-2)}
-.hero p{margin:0 0 var(--space-3);color:var(--color-muted);max-width:34ch}
-.hero .meta{font-size:.92rem;margin-bottom:var(--space-3)}
-.hero .meta b{font-weight:700;color:var(--color-matcha)}
-.hero figure{margin:0}
-.hero figure img{aspect-ratio:4/5;object-fit:cover;width:100%}
+.pour h1{font-family:var(--font-display);font-weight:500;font-size:clamp(2rem,4vw,3.1rem);line-height:1.25;margin:0 0 var(--space-2)}
+.pour p{margin:0 0 var(--space-3);color:var(--color-muted);max-width:34ch}
+.pour .meta{font-size:.92rem;margin-bottom:var(--space-3)}
+.pour .meta b{font-weight:700;color:var(--color-matcha)}
+.steps{list-style:none;margin:var(--space-4) 0 0;padding:0;border-top:1px solid var(--color-rule)}
+.steps li{display:grid;grid-template-columns:2.2rem minmax(0,1fr);padding:.55rem 0;border-bottom:1px solid var(--color-rule);opacity:.35;transition:opacity .4s}
+.steps li.on{opacity:1}
+.steps li span{font-family:var(--font-display);font-weight:700;color:var(--color-matcha)}
+.cup{position:relative;margin:0;width:100%;max-width:520px;justify-self:center;aspect-ratio:618/773;max-height:84svh;overflow:hidden}
+.layers{position:absolute;inset:0;transform:scale(var(--z,1.12));transform-origin:46% 45%;will-change:transform}
+.layers img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.layers .milk{filter:blur(var(--b,0px));-webkit-mask-image:radial-gradient(ellipse calc(var(--r,0)*30%) calc(var(--r,0)*16%) at 46% 44.6%,#000 60%,transparent 100%);mask-image:radial-gradient(ellipse calc(var(--r,0)*30%) calc(var(--r,0)*16%) at 46% 44.6%,#000 60%,transparent 100%)}
+.layers svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.stream{fill:none;stroke:var(--color-milk);stroke-linecap:round;stroke-dasharray:1 1;stroke-dashoffset:var(--o,1);stroke-width:var(--w,0);opacity:var(--so,0)}
+.hint{position:absolute;left:50%;bottom:var(--space-3);transform:translateX(-50%);font-size:.82rem;letter-spacing:.2em;color:var(--color-muted);opacity:var(--h,1)}
+.hint::after{content:"";display:block;width:1px;height:28px;margin:.4rem auto 0;background:var(--color-muted)}
 .btns{display:flex;flex-wrap:wrap;gap:var(--space-1)}
 .btn{display:inline-block;padding:.75rem 1.3rem;background:var(--color-sumi);color:var(--color-on);text-decoration:none;font-weight:500;transition:transform .15s}
 .btn:hover{transform:translateY(-2px)}
@@ -100,18 +114,21 @@ footer p{margin:.3rem 0}
 .bar a:first-child{background:var(--color-matcha);color:var(--color-sumi)}
 @media (max-width:880px){
   .top nav{display:none}
-  .hero .wrap{grid-template-columns:auto minmax(0,1fr)}
-  .hero figure{grid-column:1/-1;order:-1}
-  .vertical{font-size:2.4rem}
-  .hero figure img{aspect-ratio:16/10}
-  .hero .wrap{padding:var(--space-3) 0}
+  .pour{height:230vh}
+  .stage{align-items:flex-start;padding-top:var(--space-2)}
+  .stage .wrap{grid-template-columns:minmax(0,1fr);gap:var(--space-2)}
+  .vertical,.pour .lead,.pour .btns,.hint{display:none}
+  .cup{order:-1;max-height:46svh;width:auto;height:46svh}
+  .pour h1{font-size:1.7rem;margin-bottom:.4rem}
+  .pour .meta{margin-bottom:0}
+  .steps{margin-top:var(--space-2)}
   .floors,.farm,.visit .wrap{grid-template-columns:minmax(0,1fr)}
   .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
   .menu-grid{grid-template-columns:minmax(0,1fr)}
   .bar{display:flex}
 }
 @media (max-width:480px){.cards{grid-template-columns:minmax(0,1fr)}.shelf .photos{grid-template-columns:repeat(2,minmax(0,1fr))}.shelf .photos img:last-child{display:none}}
-@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.pour{height:auto}.stage{position:static;height:auto;padding:var(--space-4) 0}.layers{transform:none}.layers .milk{filter:none;-webkit-mask-image:none;mask-image:none}.layers svg,.hint{display:none}.steps li{opacity:1}}
 </style>
 </head>
 <body>
@@ -124,19 +141,33 @@ footer p{margin:.3rem 0}
   </div>
 </header>
 
-<section class="hero" style="padding:0">
-  <div class="wrap">
-    <div class="vertical" aria-hidden="true">HACHIYA</div>
-    <div>
-      <h1>Roasted in Mae Nam, poured with care</h1>
-      <p>A small Japanese-owned roastery. Café downstairs, a quiet place to work upstairs.</p>
-      <p class="meta"><b>8:30 – 17:00</b>, closed on Thursdays</p>
-      <div class="btns">
-        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Hachiya+coffee+roastery+Koh+Samui">Directions</a>
-        <a class="btn ghost" href="#menu">Menu</a>
+<section class="pour" id="pour" aria-label="Introduction">
+  <div class="stage">
+    <div class="wrap">
+      <div class="vertical" aria-hidden="true">HACHIYA</div>
+      <div>
+        <h1>Roasted in Mae Nam, poured with care</h1>
+        <p class="lead">A small Japanese-owned roastery. Café downstairs, a quiet place to work upstairs.</p>
+        <p class="meta"><b>8:30 – 17:00</b>, closed on Thursdays</p>
+        <div class="btns">
+          <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Hachiya+coffee+roastery+Koh+Samui">Directions</a>
+          <a class="btn ghost" href="#menu">Menu</a>
+        </div>
+        <ol class="steps">
+          <li class="on"><span>1</span>A double espresso, from beans we roast here</li>
+          <li><span>2</span>Steamed milk, poured slowly</li>
+          <li><span>3</span>And a heart on top</li>
+        </ol>
       </div>
+      <figure class="cup">
+        <div class="layers">
+          <img src="img/espresso.jpg" width="618" height="773" alt="">
+          <img class="milk" src="img/latte.jpg" width="618" height="773" alt="A latte with heart latte art in a blue-glazed ceramic cup on a wooden table">
+          <svg viewBox="0 0 618 773" aria-hidden="true"><path class="stream" pathLength="1" d="M302 -40 C 301 90, 294 210, 290 334"/></svg>
+        </div>
+      </figure>
     </div>
-    <figure><img src="img/latte.jpg" width="618" height="772" alt="A latte with heart latte art in a blue-glazed ceramic cup on a wooden table"></figure>
+    <div class="hint" aria-hidden="true">SCROLL TO POUR</div>
   </div>
 </section>
 
@@ -278,5 +309,31 @@ footer p{margin:.3rem 0}
   <a href="https://www.google.com/maps/search/?api=1&query=Hachiya+coffee+roastery+Koh+Samui">Directions</a>
   <a href="#menu">Menu</a>
 </nav>
+<script>
+(function(){
+  var sec=document.getElementById('pour');if(!sec)return;
+  var cup=sec.querySelector('.layers'),steps=sec.querySelectorAll('.steps li'),root=sec;
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){steps.forEach(function(li){li.classList.add('on')});return}
+  var c=function(x){return Math.max(0,Math.min(1,x))},e=function(t){return t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2};
+  var ticking=false;
+  function draw(){
+    ticking=false;
+    var r=sec.getBoundingClientRect(),span=r.height-window.innerHeight,p=span>0?c(-r.top/span):1;
+    var grow=c((p-.1)/.12), rr=e(c((p-.2)/.5)), lift=c((p-.74)/.1);
+    var w=p<.2?9*grow:(p<.62?9:9-7*c((p-.62)/.12));
+    cup.style.setProperty('--z',(1.12-.12*e(p)).toFixed(4));
+    cup.style.setProperty('--r',(rr*1.25).toFixed(4));
+    cup.style.setProperty('--b',((1-rr)*5).toFixed(2)+'px');
+    cup.style.setProperty('--w',w.toFixed(2));
+    cup.style.setProperty('--o',(lift>0?-lift:1-grow).toFixed(4));
+    cup.style.setProperty('--so',(grow>0&&lift<1?1:0));
+    sec.style.setProperty('--h',(1-c(p/.06)).toFixed(3));
+    var st=p<.2?0:(p<.68?1:2);
+    steps.forEach(function(li,i){li.classList.toggle('on',i===st)});
+  }
+  function on(){if(!ticking){ticking=true;requestAnimationFrame(draw)}}
+  window.addEventListener('scroll',on,{passive:true});window.addEventListener('resize',on);draw();
+})();
+</script>
 </body>
 </html>
