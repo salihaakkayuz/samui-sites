@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Nang Sabai Cafe, Bangrak</title>
+<meta name="description" content="Artisan bakery and restaurant in Bangrak, Koh Samui: bagels, sourdough, buckwheat galettes, breakfast your way and fruit shakes. Every day 8:00 to 17:00.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Karla:wght@400;500;700&family=Young+Serif&display=swap" rel="stylesheet">
+<style>
+/* hallmark: shape "bakery counter slip" — kraft paper and the mustard tape labels of their own menu; a breakfast you build on the page with a running bill; bagels as a wall of rings; shakes picked by colour, with a glass that fills
+   theme custom "kraft and mustard" from their menu (mustard tape headings, sage leaves, lime tape for drinks)
+   dynamic: the glass fills with the colour of the shake you pick; the bill adds up as you tap
+   critique: prices from three of their menu pages; the other pages were not read, so their dishes are left out; "vegan" is not marked per dish because the menu does not mark it, except the vegan cream cheese */
+:root{
+  --color-kraft:oklch(0.88 0.035 78);
+  --color-kraft-2:oklch(0.82 0.045 75);
+  --color-paper:oklch(0.975 0.008 90);
+  --color-mustard:oklch(0.78 0.13 82);
+  --color-lime:oklch(0.88 0.15 118);
+  --color-sage:oklch(0.62 0.06 145);
+  --color-sage-dark:oklch(0.36 0.05 150);
+  --color-ink:oklch(0.25 0.02 60);
+  --color-muted:oklch(0.47 0.02 60);
+  --color-rule:oklch(0.25 0.02 60 / .15);
+  --font-display:"Young Serif",Georgia,serif;
+  --font-hand:"Patrick Hand","Comic Sans MS",cursive;
+  --font-body:"Karla",system-ui,sans-serif;
+  --space-1:.5rem;--space-2:1rem;--space-3:1.5rem;--space-4:2.5rem;--space-5:4rem;--space-6:6rem;
+  --radius:10px;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--color-kraft);color:var(--color-ink);font:400 1.03rem/1.6 var(--font-body)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--color-sage-dark);outline-offset:3px}
+.wrap{width:min(1120px,100% - 2*var(--space-3));margin-inline:auto}
+.demo{font-size:.88rem;text-align:center;padding:.55rem var(--space-2);background:var(--color-sage-dark);color:var(--color-paper)}
+.tape{display:inline-block;background:var(--color-mustard);font-family:var(--font-hand);font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.1;padding:.2rem 1.1rem .1rem;transform:rotate(-1.2deg);clip-path:polygon(0 6%,3% 0,97% 4%,100% 0,99% 94%,96% 100%,2% 96%,0 100%);margin:0 0 var(--space-2)}
+.tape.lime{background:var(--color-lime)}
+
+.hero .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:var(--space-4);align-items:center;padding:var(--space-4) 0 var(--space-5)}
+.brand{font-family:var(--font-display);font-size:1.25rem;margin:0 0 var(--space-3)}
+.brand small{display:block;font-family:var(--font-body);font-size:.85rem;color:var(--color-muted);letter-spacing:.02em}
+h1{font-family:var(--font-display);font-weight:400;font-size:clamp(2.3rem,4.8vw,3.8rem);line-height:1.06;margin:0 0 var(--space-2)}
+.hero p{margin:0 0 var(--space-3);color:var(--color-muted);max-width:38ch}
+.btns{display:flex;flex-wrap:wrap;gap:var(--space-1)}
+.btn{display:inline-block;padding:.8rem 1.3rem;border-radius:999px;background:var(--color-sage-dark);color:var(--color-paper);font-weight:700;text-decoration:none;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--color-ink);box-shadow:inset 0 0 0 1.5px var(--color-ink)}
+.hero .pic{position:relative}
+.hero .pic img{border-radius:var(--radius);width:100%;aspect-ratio:4/3;object-fit:cover;box-shadow:0 18px 40px -20px oklch(0.3 0.04 60 / .5)}
+.hero .pic .tape{position:absolute;left:-12px;bottom:18px;font-size:1.3rem}
+.rate{font-size:.88rem;color:var(--color-muted);margin-top:var(--space-3)}
+
+section{padding:var(--space-5) 0}
+h2{font-family:var(--font-display);font-weight:400;font-size:clamp(1.8rem,3.4vw,2.6rem);line-height:1.1;margin:0 0 var(--space-2)}
+.lede{color:var(--color-muted);max-width:52ch;margin:0 0 var(--space-4)}
+
+/* builder */
+.build{background:var(--color-paper)}
+.build .wrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:var(--space-4);align-items:start}
+.opts h3{font-family:var(--font-hand);font-weight:400;font-size:1.5rem;margin:var(--space-3) 0 .4rem}
+.opts h3:first-child{margin-top:0}
+.chips{display:flex;flex-wrap:wrap;gap:.45rem}
+.chips button{all:unset;cursor:pointer;padding:.5rem .9rem;border-radius:999px;background:var(--color-kraft);font-weight:500;transition:transform .15s}
+.chips button:hover{transform:translateY(-2px)}
+.chips button[aria-pressed="true"]{background:var(--color-sage-dark);color:var(--color-paper)}
+.chips button b{font-weight:700;margin-left:.35rem}
+.slip{position:sticky;top:var(--space-3);background:var(--color-paper);border:1.5px dashed var(--color-rule);border-radius:4px;padding:var(--space-3);font-family:var(--font-hand);font-size:1.25rem;box-shadow:0 12px 30px -18px oklch(0.3 0.04 60 / .45)}
+.slip h3{font-family:var(--font-display);font-weight:400;font-size:1.2rem;margin:0 0 .6rem}
+.slip ul{list-style:none;margin:0;padding:0;min-height:3rem}
+.slip li{display:flex;justify-content:space-between;gap:var(--space-1);animation:in .25s ease-out}
+@keyframes in{from{opacity:0;transform:translateX(-6px)}to{opacity:1;transform:none}}
+.slip .sum{display:flex;justify-content:space-between;border-top:2px solid var(--color-ink);margin-top:.6rem;padding-top:.4rem;font-size:1.5rem}
+.slip p{font-family:var(--font-body);font-size:.85rem;color:var(--color-muted);margin:.6rem 0 0}
+
+/* galettes etc */
+.cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-4)}
+.list h3{font-family:var(--font-hand);font-weight:400;font-size:1.6rem;margin:0 0 .3rem}
+.list .sub{font-size:.88rem;color:var(--color-muted);margin:0 0 .5rem}
+.row{display:flex;justify-content:space-between;gap:var(--space-2);padding:.4rem 0;border-bottom:1px solid var(--color-rule)}
+.row span:last-child{font-weight:700;white-space:nowrap}
+.photo3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-2);margin-bottom:var(--space-4)}
+.photo3 img{border-radius:var(--radius);width:100%;aspect-ratio:4/5;object-fit:cover}
+
+/* bagels */
+.bagels{background:var(--color-paper)}
+.ring{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-2)}
+.b{position:relative;background:var(--color-kraft);border-radius:var(--radius);padding:var(--space-2) var(--space-2) var(--space-2) 3.6rem;min-height:5.4rem}
+.b::before{content:"";box-sizing:border-box;position:absolute;left:.8rem;top:1rem;width:2.2rem;height:2.2rem;border-radius:50%;border:.55rem solid oklch(0.62 0.1 62);box-shadow:inset 0 0 0 1px oklch(0.4 0.06 55 / .3)}
+.b.vg::before{border-color:var(--color-sage)}
+.b p{margin:0;font-size:.92rem;line-height:1.35}
+.b span{display:block;font-weight:700;margin-top:.25rem}
+.bagels .note{font-size:.9rem;color:var(--color-muted);margin-top:var(--space-3)}
+.bagels .key{display:inline-flex;align-items:center;gap:.4rem;margin-right:var(--space-2)}
+.bagels .key i{display:inline-block;width:1rem;height:1rem;border-radius:50%;border:.28rem solid oklch(0.62 0.1 62)}
+.bagels .key i.vg{border-color:var(--color-sage)}
+
+/* shakes */
+.shakes .wrap{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:var(--space-5);align-items:center}
+.glass{display:grid;place-items:center}
+.glass svg{width:min(100%,260px);height:auto}
+.fill{transform-box:fill-box;transform-origin:50% 100%;transition:fill .5s,transform .7s cubic-bezier(.3,1.2,.4,1)}
+.sw{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:var(--space-3)}
+.sw button{all:unset;cursor:pointer;display:flex;align-items:center;gap:.5rem;padding:.45rem .9rem .45rem .5rem;border-radius:999px;background:var(--color-paper);font-weight:500}
+.sw button i{width:1.4rem;height:1.4rem;border-radius:50%;background:var(--c)}
+.sw button[aria-pressed="true"]{box-shadow:inset 0 0 0 2px var(--color-ink)}
+.pick{font-family:var(--font-hand);font-size:1.5rem;margin:0}
+.pick small{display:block;font-family:var(--font-body);font-size:.95rem;color:var(--color-muted)}
+.shakes .more{margin-top:var(--space-3)}
+
+.place .wrap{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:var(--space-4);align-items:center}
+.place img{border-radius:var(--radius);width:100%;object-fit:cover}
+.visit{background:var(--color-sage-dark);color:var(--color-paper)}
+.visit .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-4);align-items:start}
+.visit p{opacity:.85;margin:0 0 var(--space-3);max-width:40ch}
+.visit .btn{background:var(--color-mustard);color:var(--color-ink)}
+.visit .btn.ghost{background:transparent;color:var(--color-paper);box-shadow:inset 0 0 0 1.5px var(--color-paper)}
+.visit dl{margin:0;background:oklch(1 0 0 / .08);border-radius:var(--radius);padding:var(--space-3)}
+.visit dt{font-family:var(--font-display);margin-top:var(--space-2)}
+.visit dt:first-child{margin-top:0}
+.visit dd{margin:0;opacity:.8}
+footer{background:var(--color-sage-dark);color:oklch(0.975 0.008 90 / .65);padding:var(--space-3) 0 var(--space-6);font-size:.86rem;text-align:center}
+footer p{margin:.3rem 0}
+.bar{position:fixed;left:0;right:0;bottom:0;display:none;gap:1px;background:var(--color-sage-dark);z-index:5}
+.bar a{flex:1;text-align:center;padding:.95rem .5rem;background:var(--color-sage-dark);color:var(--color-paper);text-decoration:none;font-weight:700}
+.bar a:first-child{background:var(--color-mustard);color:var(--color-ink)}
+@media (max-width:900px){
+  .hero .wrap,.build .wrap,.shakes .wrap,.place .wrap,.visit .wrap{grid-template-columns:minmax(0,1fr)}
+  .cols3{grid-template-columns:minmax(0,1fr);gap:var(--space-3)}
+  .ring{grid-template-columns:minmax(0,1fr)}
+  .slip{position:static}
+  .glass svg{width:150px}
+  .bar{display:flex}
+  body .i18n{bottom:4.6rem}
+}
+@media (min-width:901px) and (max-width:1100px){.ring{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="demo">Sample website made for Nang Sabai Cafe. Not live yet; nothing here is final.</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <p class="brand">Nang Sabai cafe<small>Artisan bakery and restaurant</small></p>
+      <h1>Bagels and sourdough in Bangrak</h1>
+      <p>Breakfast your way, buckwheat galettes and fresh shakes. Every day, 8:00 to 17:00.</p>
+      <div class="btns">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Nang+Sabai+Bophut+Koh+Samui">Directions</a>
+        <a class="btn ghost" href="#breakfast">See the menu</a>
+        <a class="btn ghost" href="tel:+66613077849">Call</a>
+      </div>
+      <p class="rate">4.8 on Google Maps from 519 reviews (Nov 2026).</p>
+    </div>
+    <div class="pic"><img src="img/table.jpg" width="1200" height="900" alt="A bagel sandwich, a grain bowl and a salad on a dotted tablecloth"><span class="tape">artisan bakery</span></div>
+  </div>
+</header>
+
+<section class="build" id="breakfast">
+  <div class="wrap">
+    <div class="opts">
+      <span class="tape">Breakfast, your way</span>
+      <p class="lede">Start with two eggs and add what you like. The bill adds up on the right.</p>
+      <h3>Two eggs</h3>
+      <div class="chips" data-one="egg">
+        <button type="button" data-p="40" data-n="Fried" aria-pressed="true">Fried<b>40</b></button>
+        <button type="button" data-p="40" data-n="Poached" aria-pressed="false">Poached<b>40</b></button>
+        <button type="button" data-p="50" data-n="Scrambled" aria-pressed="false">Scrambled<b>50</b></button>
+        <button type="button" data-p="50" data-n="Omelette" aria-pressed="false">Omelette<b>50</b></button>
+      </div>
+      <h3>Add</h3>
+      <div class="chips">
+        <button type="button" data-p="30" data-n="Sourdough with butter" aria-pressed="true">Sourdough with butter<b>30</b></button>
+        <button type="button" data-p="40" data-n="Bacon" aria-pressed="false">Bacon<b>40</b></button>
+        <button type="button" data-p="40" data-n="Ham" aria-pressed="false">Ham<b>40</b></button>
+        <button type="button" data-p="40" data-n="Chorizo" aria-pressed="false">Chorizo<b>40</b></button>
+        <button type="button" data-p="50" data-n="Avocado" aria-pressed="false">Avocado<b>50</b></button>
+        <button type="button" data-p="30" data-n="Cheese" aria-pressed="false">Cheese<b>30</b></button>
+        <button type="button" data-p="25" data-n="Mushroom" aria-pressed="false">Mushroom<b>25</b></button>
+        <button type="button" data-p="25" data-n="Tomato and onion" aria-pressed="false">Tomato and onion<b>25</b></button>
+        <button type="button" data-p="30" data-n="Spinach" aria-pressed="false">Spinach<b>30</b></button>
+        <button type="button" data-p="35" data-n="Kale" aria-pressed="false">Kale<b>35</b></button>
+        <button type="button" data-p="80" data-n="Grilled halloumi" aria-pressed="false">Grilled halloumi<b>80</b></button>
+      </div>
+    </div>
+    <aside class="slip" aria-live="polite">
+      <h3>Your plate</h3>
+      <ul id="lines"></ul>
+      <div class="sum"><span>Total</span><span id="total">0</span></div>
+      <p>Prices in baht, from our menu. Order at the counter.</p>
+    </aside>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="photo3">
+      <img src="img/galette.jpg" width="800" height="1000" alt="A buckwheat galette with fried eggs and salad" loading="lazy">
+      <img src="img/eggs.jpg" width="800" height="1000" alt="Scrambled eggs with a thick slice of sourdough" loading="lazy">
+      <img src="img/sandwich.jpg" width="800" height="1000" alt="A sourdough sandwich with salad" loading="lazy">
+    </div>
+    <div class="cols3">
+      <div class="list">
+        <h3>Buckwheat galettes</h3>
+        <p class="sub">Breton style, gluten-free. All 180.</p>
+        <div class="row"><span>Complete: egg, ham, emmental</span><span>180</span></div>
+        <div class="row"><span>Omelette, beet hummus, mozzarella</span><span>180</span></div>
+        <div class="row"><span>Mushroom, spinach, cheese, egg</span><span>180</span></div>
+        <div class="row"><span>Creamy mushroom, chicken</span><span>180</span></div>
+        <div class="row"><span>Grilled veggies, pesto</span><span>180</span></div>
+      </div>
+      <div class="list">
+        <h3>Avocado toast and shakshuka</h3>
+        <p class="sub">On sourdough.</p>
+        <div class="row"><span>With bacon and two eggs</span><span>160</span></div>
+        <div class="row"><span>With smoked salmon and scrambled egg</span><span>180</span></div>
+        <div class="row"><span>With pomegranate salsa and feta</span><span>180</span></div>
+        <div class="row"><span>Shakshuka, with pita</span><span>150</span></div>
+      </div>
+      <div class="list">
+        <h3>Wraps and muffins</h3>
+        <p class="sub">Breakfast wraps and English muffins.</p>
+        <div class="row"><span>Potato, egg, cheese and bacon</span><span>165</span></div>
+        <div class="row"><span>Spicy hummus, egg white, spinach, feta</span><span>180</span></div>
+        <div class="row"><span>Muffin: egg, bacon, cheese</span><span>150</span></div>
+        <div class="row"><span>Egg benedict, smoked salmon</span><span>200</span></div>
+        <div class="row"><span>Banana and peanut butter muffin</span><span>100</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bagels" id="bagels">
+  <div class="wrap">
+    <span class="tape">Bagel sandwiches</span>
+    <p class="lede">Our bagels, filled to order.</p>
+    <div class="ring">
+      <div class="b vg"><p>Vegan cream cheese, avocado, dill, arugula</p><span>160</span></div>
+      <div class="b vg"><p>Vegan cream cheese, tomato, cucumber</p><span>120</span></div>
+      <div class="b"><p>Avocado, smoked salmon, cream cheese with dill, arugula</p><span>200</span></div>
+      <div class="b"><p>Smoked salmon, cream cheese, caper, onion, arugula</p><span>180</span></div>
+      <div class="b"><p>Smoked salmon, wasabi herb cream cheese, cucumber, dill</p><span>180</span></div>
+      <div class="b"><p>Grilled halloumi, spicy muhammara, tomato, scallion cream cheese</p><span>200</span></div>
+      <div class="b"><p>Pastrami, fried egg, onion, pickle, scallion cream cheese, on rye</p><span>200</span></div>
+      <div class="b"><p>Salami, muhammara cream cheese, tomato, onion, arugula</p><span>180</span></div>
+      <div class="b"><p>Fried egg, bacon, cream cheese</p><span>150</span></div>
+      <div class="b"><p>Scrambled egg, bacon, Swiss cheese</p><span>150</span></div>
+      <div class="b"><p>Bacon, jalapeño cream cheese, tomato, onion</p><span>150</span></div>
+      <div class="b"><p>Greek tzatziki, chicken gyro</p><span>150</span></div>
+    </div>
+    <p class="note"><span class="key"><i class="vg"></i>vegan cream cheese</span>Plain cream cheese bagel 80. Extra cream cheese 30, avocado 50, smoked salmon 70, halloumi 80.</p>
+  </div>
+</section>
+
+<section class="shakes">
+  <div class="wrap">
+    <div class="glass" aria-hidden="true">
+      <svg viewBox="0 0 200 280">
+        <defs><clipPath id="cup"><path d="M30 30 L170 30 L150 262 Q148 272 138 272 L62 272 Q52 272 50 262 Z"/></clipPath></defs>
+        <g clip-path="url(#cup)"><rect class="fill" id="fill" x="0" y="60" width="200" height="220" fill="oklch(0.85 0.16 95)"/></g>
+        <path d="M30 30 L170 30 L150 262 Q148 272 138 272 L62 272 Q52 272 50 262 Z" fill="none" stroke="oklch(0.25 0.02 60)" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M120 0 L104 120" stroke="oklch(0.25 0.02 60)" stroke-width="7" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div>
+      <span class="tape lime">Shakes by colour</span>
+      <p class="lede">Pick a colour. Each is a shake, or a lassi with yoghurt.</p>
+      <div class="sw" role="group" aria-label="Pick a colour">
+        <button type="button" data-k="yellow" style="--c:oklch(0.85 0.16 95)" aria-pressed="true"><i></i>Three yellow</button>
+        <button type="button" data-k="red" style="--c:oklch(0.6 0.2 22)" aria-pressed="false"><i></i>Three red</button>
+        <button type="button" data-k="orange" style="--c:oklch(0.74 0.16 55)" aria-pressed="false"><i></i>Three orange</button>
+        <button type="button" data-k="green" style="--c:oklch(0.78 0.16 130)" aria-pressed="false"><i></i>Three green</button>
+        <button type="button" data-k="purple" style="--c:oklch(0.45 0.16 330)" aria-pressed="false"><i></i>Three purple</button>
+      </div>
+      <p class="pick" id="pick">Banana, mango, pineapple<small>Shake 90, lassi 110</small></p>
+      <div class="more">
+        <div class="row"><span>Mango</span><span>90 / 110</span></div>
+        <div class="row"><span>Mango and passion fruit</span><span>100 / 120</span></div>
+        <div class="row"><span>Avocado layer, avocado mango</span><span>130 / 150</span></div>
+        <div class="row"><span>Super green: kale, avocado, green apple, lime</span><span>120 / 140</span></div>
+        <div class="row"><span>Breakfast smoothie: muesli or oatmeal, banana, coconut milk</span><span>90 / 110</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="place">
+  <div class="wrap">
+    <img src="img/front.jpg" width="1100" height="733" alt="The café front with chalkboards and umbrellas" loading="lazy" style="aspect-ratio:3/2">
+    <div>
+      <h2>Sit outside, or take it with you</h2>
+      <p class="lede">Outdoor seats under the umbrellas, takeaway from the counter, and cakes from the bakery.</p>
+      <img src="img/cake.jpg" width="800" height="1000" alt="Chocolate roll cakes on a plate" loading="lazy" style="aspect-ratio:3/2">
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div>
+      <h2>Come by</h2>
+      <p>In Bangrak, on the 4171 road in Bo Put.</p>
+      <div class="btns">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Nang+Sabai+Bophut+Koh+Samui">Open in Google Maps</a>
+        <a class="btn ghost" href="tel:+66613077849">Call us</a>
+      </div>
+    </div>
+    <dl>
+      <dt>Address</dt><dd>4171 Road, Bangrak, Bo Put, Koh Samui 84320</dd>
+      <dt>Hours</dt><dd>Every day, 8:00 to 17:00</dd>
+      <dt>Phone</dt><dd>061 307 7849</dd>
+    </dl>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <p>Nang Sabai cafe, artisan bakery and restaurant, Bangrak, Koh Samui.</p>
+    <p>Photos from Nang Sabai's own Google Maps uploads. Prices from their menu pages; details from Google Maps, November 2026.</p>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Quick actions">
+  <a href="tel:+66613077849">Call</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Nang+Sabai+Bophut+Koh+Samui">Directions</a>
+  <a href="#breakfast">Menu</a>
+</nav>
+<script>
+(function(){
+  var lines=document.getElementById('lines'),total=document.getElementById('total');
+  function name(b){return b.getAttribute('data-n')}
+  function draw(){lines.innerHTML='';var t=0;
+    document.querySelectorAll('.opts button[aria-pressed="true"]').forEach(function(b){var p=+b.getAttribute('data-p');t+=p;var li=document.createElement('li');var a=document.createElement('span');a.textContent=b.closest('[data-one]')?'Two eggs, '+name(b).toLowerCase():name(b);var c=document.createElement('span');c.textContent=p;li.appendChild(a);li.appendChild(c);lines.appendChild(li)});
+    total.textContent=t;}
+  document.querySelectorAll('.opts .chips').forEach(function(g){var one=g.hasAttribute('data-one');
+    g.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;
+      if(one){g.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')})}
+      else{b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')==='true'?'false':'true')}
+      draw();})});
+  draw();
+  var S={yellow:['Banana, mango, pineapple','oklch(0.85 0.16 95)'],red:['Strawberry, watermelon, raspberry','oklch(0.6 0.2 22)'],orange:['Carrot, orange, melon','oklch(0.74 0.16 55)'],green:['Lime, apple, mint, banana','oklch(0.78 0.16 130)'],purple:['Beetroot, blueberry, lime, banana','oklch(0.45 0.16 330)']};
+  var fill=document.getElementById('fill'),pick=document.getElementById('pick'),sw=document.querySelectorAll('.sw button');
+  sw.forEach(function(b){b.addEventListener('click',function(){var k=b.getAttribute('data-k');
+    sw.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+    fill.style.transform='scaleY(0.15)';setTimeout(function(){fill.setAttribute('fill',S[k][1]);fill.style.transform='scaleY(1)'},window.matchMedia('(prefers-reduced-motion: reduce)').matches?0:250);
+    pick.replaceChild(document.createTextNode(S[k][0]),pick.firstChild);})});
+})();
+</script>
+<script src="th.js"></script>
+<script src="../i18n.js"></script>
+</body>
+</html>

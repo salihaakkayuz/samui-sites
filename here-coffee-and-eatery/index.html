@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>HERE Coffee &amp; Eatery, Bophut</title>
+<meta name="description" content="Breakfast all day, toasts, healthy plates and specialty coffee in Bophut, Koh Samui. Every day 8:00 to 17:00.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* hallmark: shape "poster stack" — the café's own printed posters become the page: breakfast (cream), toast (grey), health (lime), specials (white), coffee (black); on a big screen each poster slides up over the one before, like sheets on a pile
+   theme custom "HERE black and white" from their logo (heavy white grotesk on black) with each poster's own paper colour
+   dynamic: a map pin drops onto the word HERE; plates are set down (turn and settle) when their poster arrives
+   signature: round plate cut-outs from the owner's own menu photos
+   critique: prices and descriptions only from their posters; the smoothie poster's fruit pictures are stock, so smoothies are a text list */
+:root{
+  --color-black:oklch(0.17 0 0);
+  --color-black-2:oklch(0.24 0 0);
+  --color-white:oklch(0.99 0 0);
+  --color-cream:oklch(0.965 0.028 90);
+  --color-grey:oklch(0.925 0.003 90);
+  --color-lime:oklch(0.955 0.07 118);
+  --color-green:oklch(0.52 0.17 145);
+  --color-orange:oklch(0.74 0.17 62);
+  --color-ink:oklch(0.18 0 0);
+  --color-muted:oklch(0.45 0 0);
+  --color-rule:oklch(0.18 0 0 / .14);
+  --font-display:"Archivo Black","Arial Black",sans-serif;
+  --font-body:"Archivo",system-ui,sans-serif;
+  --space-1:.5rem;--space-2:1rem;--space-3:1.5rem;--space-4:2.5rem;--space-5:4rem;--space-6:6rem;
+  --radius:14px;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--color-black);color:var(--color-ink);font:400 1.02rem/1.55 var(--font-body)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--color-orange);outline-offset:3px}
+.wrap{width:min(1160px,100% - 2*var(--space-3));margin-inline:auto}
+.demo{font-size:.88rem;text-align:center;padding:.55rem var(--space-2);background:var(--color-white);color:var(--color-ink)}
+
+.hero{background:var(--color-black);color:var(--color-white);padding:var(--space-5) 0 var(--space-5)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:var(--space-4);align-items:center}
+.word{position:relative;display:inline-block;font-family:var(--font-display);font-size:clamp(4.5rem,13vw,10.5rem);line-height:.82;letter-spacing:-.02em}
+.word small{display:block;font-family:var(--font-body);font-weight:500;font-size:clamp(1.1rem,2.4vw,1.9rem);letter-spacing:.01em;margin-top:.5rem}
+.pin{position:absolute;left:74%;top:-.3em;width:.3em;height:auto;color:var(--color-orange)}
+.js .pin{animation:drop .9s .3s cubic-bezier(.3,1.5,.5,1) both}
+@keyframes drop{0%{transform:translateY(-120%);opacity:0}60%{opacity:1}100%{transform:none;opacity:1}}
+.tag{margin:var(--space-3) 0 var(--space-3);font-size:.95rem;opacity:.7}
+h1{font-family:var(--font-display);font-weight:400;font-size:clamp(1.8rem,3.4vw,2.8rem);line-height:1.08;margin:0 0 var(--space-2)}
+.hero p.sub{margin:0 0 var(--space-3);opacity:.8;max-width:40ch}
+.btns{display:flex;flex-wrap:wrap;gap:var(--space-1)}
+.btn{display:inline-block;padding:.8rem 1.3rem;border-radius:999px;background:var(--color-white);color:var(--color-black);font-weight:700;text-decoration:none;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:inherit;box-shadow:inset 0 0 0 2px currentColor}
+.hero .room img{border-radius:var(--radius);width:100%;aspect-ratio:4/3;object-fit:cover}
+.hero .room p{font-size:.86rem;opacity:.65;margin:.6rem 0 0}
+
+/* posters */
+.stack{position:relative}
+.poster{padding:var(--space-4) 0 var(--space-5);border-radius:28px 28px 0 0;box-shadow:0 -18px 40px -24px oklch(0 0 0 / .55)}
+.poster h2{font-family:var(--font-display);font-weight:400;font-size:clamp(2.6rem,7vw,5.6rem);line-height:.9;letter-spacing:-.02em;margin:0}
+.poster .say{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:var(--space-2);margin-bottom:var(--space-4)}
+.poster .say p{margin:0;font-weight:700;max-width:30ch}
+.p-break{background:var(--color-cream)}
+.p-toast{background:var(--color-grey)}
+.p-health{background:var(--color-lime)}
+.p-health h2{color:var(--color-green)}
+.p-special{background:var(--color-white)}
+.p-coffee{background:var(--color-black);color:var(--color-white)}
+.plates{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-3) var(--space-4)}
+.p-health .plates{grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--space-3)}
+.plate{display:grid;grid-template-columns:minmax(0,120px) minmax(0,1fr);gap:var(--space-2);align-items:center}
+.p-health .plate{grid-template-columns:minmax(0,1fr);text-align:center}
+.p-health .plate img{width:min(100%,170px);margin-inline:auto}
+.plate img{width:100%;aspect-ratio:1;filter:drop-shadow(0 10px 14px oklch(0 0 0 / .18))}
+.plate h3{font-family:var(--font-display);font-weight:400;font-size:1.05rem;line-height:1.15;margin:0 0 .25rem;text-transform:uppercase}
+.plate p{margin:0;font-size:.9rem;color:var(--color-muted)}
+.plate .pr{font-weight:700;color:var(--color-ink);margin-top:.25rem}
+.fav{display:inline-block;font-size:.75rem;font-weight:700;border:1.5px solid currentColor;border-radius:999px;padding:.05rem .5rem;margin-left:.3rem;vertical-align:2px}
+.p-toast .plates{grid-template-columns:repeat(3,minmax(0,1fr))}
+.p-toast .plate{grid-template-columns:minmax(0,1fr);text-align:center}
+.p-toast .plate img{width:min(100%,260px);margin-inline:auto}
+.js .plate img{transform:rotate(-28deg) scale(.86);opacity:0;transition:transform .7s cubic-bezier(.2,.9,.3,1.1),opacity .4s}
+.js .poster.on .plate img{transform:none;opacity:1}
+.cups{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--space-2);align-items:end}
+.cups figure{margin:0;text-align:center}
+.cups img{width:100%;max-width:200px;margin-inline:auto}
+.cups figcaption{font-family:var(--font-display);font-size:1rem;line-height:1.15;margin-top:.4rem;text-transform:uppercase}
+.cups figcaption small{display:block;font-family:var(--font-body);font-weight:500;text-transform:none;color:var(--color-muted);font-size:.85rem}
+.js .cups img{transform:translateY(30px);opacity:0;transition:transform .6s ease-out,opacity .5s}
+.js .poster.on .cups img{transform:none;opacity:1}
+.p-special .each{font-family:var(--font-display);font-size:1.6rem}
+.board{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--space-5)}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+th,td{padding:.5rem .3rem;border-bottom:1px solid oklch(1 0 0 / .14);text-align:left}
+thead th{font-family:var(--font-display);font-weight:400;font-size:.95rem;opacity:.8}
+td{text-align:right;width:4.5rem}
+tbody th{font-weight:500}
+.p-coffee h3{font-family:var(--font-display);font-weight:400;font-size:1.3rem;margin:var(--space-3) 0 .4rem}
+.p-coffee h3:first-child{margin-top:0}
+.smoothies{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:.2rem var(--space-2)}
+.smoothies li{padding:.45rem 0;border-bottom:1px solid oklch(1 0 0 / .14)}
+.p-coffee .note{opacity:.7;font-size:.9rem}
+
+@media (min-width:901px) and (min-height:720px){
+  .poster{position:sticky;top:0;min-height:100vh;min-height:100svh;display:flex;align-items:center}
+  .poster>.wrap{width:min(1160px,100% - 2*var(--space-3))}
+}
+
+.stay{background:var(--color-white);padding:var(--space-5) 0}
+.stay .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,4fr) minmax(0,3fr);gap:var(--space-2);align-items:end}
+.stay h2{font-family:var(--font-display);font-weight:400;font-size:clamp(2rem,4vw,3rem);line-height:1;margin:0 0 var(--space-2)}
+.stay p{color:var(--color-muted);margin:0 0 var(--space-2)}
+.stay img{border-radius:var(--radius);width:100%;object-fit:cover}
+.stay .a img{aspect-ratio:3/2}
+.stay .b img,.stay .c img{aspect-ratio:4/5}
+.visit{background:var(--color-black);color:var(--color-white);padding:var(--space-5) 0}
+.visit .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-4);align-items:start}
+.visit h2{font-family:var(--font-display);font-weight:400;font-size:clamp(2rem,4vw,3rem);line-height:1;margin:0 0 var(--space-2)}
+.visit p{opacity:.75;margin:0 0 var(--space-3);max-width:40ch}
+.visit dl{margin:0;border-top:2px solid var(--color-white)}
+.visit dt{font-family:var(--font-display);margin-top:var(--space-2)}
+.visit dd{margin:0;opacity:.75}
+footer{background:var(--color-black);color:oklch(1 0 0 / .6);padding:var(--space-3) 0 var(--space-6);font-size:.86rem;text-align:center}
+footer p{margin:.3rem 0}
+.bar{position:fixed;left:0;right:0;bottom:0;display:none;gap:1px;background:var(--color-black);z-index:5}
+.bar a{flex:1;text-align:center;padding:.95rem .5rem;background:var(--color-black);color:var(--color-white);text-decoration:none;font-weight:700}
+.bar a:first-child{background:var(--color-white);color:var(--color-black)}
+@media (max-width:900px){
+  .hero .wrap,.board,.visit .wrap{grid-template-columns:minmax(0,1fr)}
+  .plates,.p-toast .plates{grid-template-columns:minmax(0,1fr)}
+  .p-toast .plate{grid-template-columns:minmax(0,120px) minmax(0,1fr);text-align:left}
+  .p-health .plates{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .cups{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .stay .wrap{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .stay .a{grid-column:1/-1}
+  .bar{display:flex}
+  body .i18n{bottom:4.6rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.js .plate img,.js .cups img{transform:none;opacity:1}}
+</style>
+</head>
+<body>
+<div class="demo">Sample website made for HERE Coffee and Eatery. Not live yet; nothing here is final.</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <div class="word" role="img" aria-label="HERE coffee and eatery">HERE<svg class="pin" viewBox="0 0 24 32" aria-hidden="true"><path fill="currentColor" d="M12 0C5.4 0 0 5.2 0 11.7 0 20.4 12 32 12 32s12-11.6 12-20.3C24 5.2 18.6 0 12 0zm0 16.2a4.6 4.6 0 1 1 0-9.2 4.6 4.6 0 0 1 0 9.2z"/></svg><small>coffee &amp; eatery</small></div>
+      <p class="tag">A good day only needs a fresh start.</p>
+      <h1>Breakfast all day in Bophut</h1>
+      <p class="sub">Specialty coffee, toasts and healthy plates. Every day, 8:00 to 17:00.</p>
+      <div class="btns">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=HERE+COFFEE+AND+EATERY+Bophut+Koh+Samui">Directions</a>
+        <a class="btn ghost" href="#menu">See the menu</a>
+        <a class="btn ghost" href="tel:+66624144488">Call</a>
+      </div>
+    </div>
+    <div class="room">
+      <img src="img/room.jpg" width="1200" height="900" alt="Inside HERE: long wooden tables, a concrete floor and big windows">
+      <p>4.9 on Google Maps from 441 reviews (Nov 2026).</p>
+    </div>
+  </div>
+</header>
+
+<main class="stack" id="menu">
+  <section class="poster p-break">
+    <div class="wrap">
+      <div class="say"><h2>Breakfast<br>menu</h2><p>Have it all day, your way.</p></div>
+      <div class="plates">
+        <div class="plate"><img src="img/p-benedict.webp" width="560" height="560" alt="Eggs benedict with bacon on toast" loading="lazy"><div><h3>Eggs benedict toast <span class="fav">favourite</span></h3><p>Eggs benedict and bacon on toast, mini salad.</p><p class="pr">230</p></div></div>
+        <div class="plate"><img src="img/p-omelette.webp" width="560" height="560" alt="Avocado toast with an omelette and salad" loading="lazy"><div><h3>Avocado toast with omelette</h3><p>Veggie salsa and mini salad. Add onion, ham, cheese or mushroom.</p><p class="pr">260</p></div></div>
+        <div class="plate"><img src="img/p-classic.webp" width="560" height="560" alt="Classic breakfast with eggs, bacon, sausage and bread" loading="lazy"><div><h3>Classic breakfast</h3><p>Bread, sausage, sunny side-up eggs, bacon, cream cheese.</p><p class="pr">220</p></div></div>
+        <div class="plate"><img src="img/p-scrambled.webp" width="560" height="560" alt="Avocado toast with scrambled eggs and cherry tomatoes" loading="lazy"><div><h3>Avocado toast, scrambled eggs</h3><p>With sautéed cherry tomatoes.</p><p class="pr">200</p></div></div>
+        <div class="plate"><img src="img/p-pancakes.webp" width="560" height="560" alt="Pancakes with banana, strawberry and whipped cream" loading="lazy"><div><h3>Classic pancakes</h3><p>Maple syrup, fruit and whipped cream.</p><p class="pr">190</p></div></div>
+        <div class="plate"><img src="img/p-eggtoast.webp" width="560" height="560" alt="Egg toast with two sausages and salad" loading="lazy"><div><h3>Egg toast</h3><p>With sausages and mini salad.</p><p class="pr">180</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="poster p-toast">
+    <div class="wrap">
+      <div class="say"><h2>A toast</h2><p>To your faves.</p></div>
+      <div class="plates">
+        <div class="plate"><img src="img/p-avopoach.webp" width="560" height="560" alt="Avocado toast with a poached egg" loading="lazy"><div><h3>Avocado, poached eggs</h3><p>With veggie salsa.</p><p class="pr">220</p></div></div>
+        <div class="plate"><img src="img/p-salmontoast.webp" width="560" height="560" alt="Smoked salmon and avocado on toast" loading="lazy"><div><h3>Smoked salmon and avocado</h3><p>With veggie salsa.</p><p class="pr">290</p></div></div>
+        <div class="plate"><img src="img/p-blueberry.webp" width="560" height="560" alt="Toast with ricotta cream cheese and blueberries" loading="lazy"><div><h3>Blueberry cream cheese</h3><p>Blueberries and ricotta cream cheese.</p><p class="pr">160</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="poster p-health">
+    <div class="wrap">
+      <div class="say"><h2>Health-inspired<br>meals</h2><p>We love olive oil. My meal, my choice, my body.</p></div>
+      <div class="plates">
+        <div class="plate"><img src="img/p-protein.webp" width="560" height="560" alt="Grilled chicken breast with mushrooms, salsa and carrots" loading="lazy"><div><h3>Protein treat</h3><p>Grilled chicken, salsa, mushrooms, carrots.</p><p class="pr">220</p></div></div>
+        <div class="plate"><img src="img/p-wraps.webp" width="560" height="560" alt="Chicken wraps with salad and mayo dip" loading="lazy"><div><h3>Chicken wraps</h3><p>Veggies, salsa, mini salad, mayo sauce.</p><p class="pr">220</p></div></div>
+        <div class="plate"><img src="img/p-salmon.webp" width="560" height="560" alt="Grilled salmon with asparagus and lemon" loading="lazy"><div><h3>Salmon fillet</h3><p>Asparagus, lemon butter sauce.</p><p class="pr">320</p></div></div>
+        <div class="plate"><img src="img/p-bass.webp" width="560" height="560" alt="Grilled sea bass with asparagus and salsa" loading="lazy"><div><h3>Sea bass fillet</h3><p>Asparagus, salsa, butter lemon sauce.</p><p class="pr">320</p></div></div>
+        <div class="plate"><img src="img/p-vegbf.webp" width="560" height="560" alt="Vegetarian breakfast with poached eggs, tomatoes, spinach and mushrooms" loading="lazy"><div><h3>Vegetarian breakfast</h3><p>Tomatoes, mushrooms, spinach, poached eggs.</p><p class="pr">200</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="poster p-special">
+    <div class="wrap">
+      <div class="say"><h2>Here's<br>specials</h2><p class="each">120 each</p></div>
+      <div class="cups">
+        <figure><img src="img/d-orange.jpg" width="420" height="453" alt="Orange coffee: espresso over orange juice with ice" loading="lazy"><figcaption>Orange<small>coffee</small></figcaption></figure>
+        <figure><img src="img/d-punch.jpg" width="420" height="520" alt="Punch coffee with ice and lemon" loading="lazy"><figcaption>Punch<small>coffee, a favourite</small></figcaption></figure>
+        <figure><img src="img/d-coconut.jpg" width="420" height="520" alt="Iced coconut coffee" loading="lazy"><figcaption>Coconut<small>coffee</small></figcaption></figure>
+        <figure><img src="img/d-matcha.jpg" width="420" height="520" alt="Iced matcha with coconut" loading="lazy"><figcaption>Matcha<small>coconut, a favourite</small></figcaption></figure>
+        <figure><img src="img/d-cocoa.jpg" width="420" height="520" alt="Iced cocoa with coconut" loading="lazy"><figcaption>Cocoa<small>coconut</small></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="poster p-coffee">
+    <div class="wrap board">
+      <div>
+        <div class="say"><h2>Coffee<br>and drinks</h2></div>
+        <table>
+          <thead><tr><th scope="col">Coffee</th><td>Hot</td><td>Iced</td></tr></thead>
+          <tbody>
+            <tr><th scope="row">Espresso</th><td>70</td><td>–</td></tr>
+            <tr><th scope="row">Piccolo</th><td>90</td><td>–</td></tr>
+            <tr><th scope="row">Americano, latte, cappuccino, mocha</th><td>90</td><td>90</td></tr>
+            <tr><th scope="row">Dirty coffee</th><td>–</td><td>90</td></tr>
+            <tr><th scope="row">Es-yen, Thai style</th><td>–</td><td>90</td></tr>
+            <tr><th scope="row">Matcha, cocoa</th><td>90</td><td>90</td></tr>
+            <tr><th scope="row">Thai tea, cha-yen</th><td>–</td><td>90</td></tr>
+            <tr><th scope="row">Punch soda</th><td>–</td><td>90</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h3>Smoothies, 150</h3>
+        <ul class="smoothies">
+          <li>Coconut</li><li>Passion fruit and mango</li><li>Avocado</li><li>Banana</li><li>Strawberry</li><li>Watermelon</li>
+        </ul>
+        <h3>From the counter</h3>
+        <p class="note">Croissants, cakes and cheesecake. Ask what's on the counter today.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<section class="stay">
+  <div class="wrap">
+    <div class="a">
+      <h2>Stay a while</h2>
+      <p>Quiet, cosy and good for working on a laptop. Plenty of free parking, and a step-free entrance.</p>
+      <img src="img/front.jpg" width="1000" height="666" alt="The HERE café building from the road" loading="lazy">
+    </div>
+    <div class="b"><img src="img/bar.jpg" width="800" height="1000" alt="The coffee bar with its espresso machine" loading="lazy"></div>
+    <div class="c"><img src="img/cup.jpg" width="700" height="875" alt="An iced latte in a HERE cup held up at the door" loading="lazy"></div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div>
+      <h2>Find us HERE</h2>
+      <p>On the ring road in Bophut. Breakfast is served all day.</p>
+      <div class="btns">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=HERE+COFFEE+AND+EATERY+Bophut+Koh+Samui">Open in Google Maps</a>
+        <a class="btn ghost" href="tel:+66624144488">Call us</a>
+        <a class="btn ghost" href="https://www.facebook.com/share/1F1ZHWqPvL/">Facebook</a>
+      </div>
+    </div>
+    <dl>
+      <dt>Address</dt><dd>4169 Road, Bo Put, Koh Samui 84320</dd>
+      <dt>Hours</dt><dd>Every day, 8:00 to 17:00</dd>
+      <dt>Phone</dt><dd>062 414 4488</dd>
+      <dt>Payment</dt><dd>Phone payments accepted</dd>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>HERE Coffee and Eatery, Bophut, Koh Samui.</p>
+    <p>Photos from HERE's own Google Maps uploads and menu posters. Prices from the same posters; details from Google Maps, November 2026.</p>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Quick actions">
+  <a href="tel:+66624144488">Call</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=HERE+COFFEE+AND+EATERY+Bophut+Koh+Samui">Directions</a>
+  <a href="#menu">Menu</a>
+</nav>
+<script>
+document.documentElement.classList.add('js');
+(function(){
+  var ps=document.querySelectorAll('.poster');
+  if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches){ps.forEach(function(p){p.classList.add('on')});return}
+  ps.forEach(function(p){p.querySelectorAll('.plate img,.cups img').forEach(function(im,i){im.style.transitionDelay=(i*80)+'ms'})});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.3});
+  ps.forEach(function(p){io.observe(p)});
+})();
+</script>
+<script src="th.js"></script>
+<script src="../i18n.js"></script>
+</body>
+</html>

@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Thai Kitchen Restaurant, Chaweng Beach Road</title>
+<meta name="description" content="Thai food, charcoal BBQ and seafood from the ice on Chaweng Beach Road, Koh Samui. Open every day 11:00 to 2:00.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Work+Sans:wght@400;500;600&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* hallmark: shape "street counter at night" — the real gold-on-silver sign as the page's top band, the night street front under it, an ice counter you pick from (pick the catch, then how we cook it), a price grid for noodles and rice (one protein ladder for five dishes), and a chalkboard menu like the boards along their counter
+   theme custom "sign, slate and ice" from their own frontage: silver-blue sign, gold serif letters, chalkboards, orange woven lanterns, crushed ice
+   dynamic: a light sweep across the sign, the ice picker, the protein grid, chalk lines wiping in as you scroll
+   critique: prices only from the owner's menu pages; happy hour times not known, so none given; the menu's food pictures are stock photos and are not used */
+:root{
+  --color-sign:oklch(0.86 0.025 235);
+  --color-sign-2:oklch(0.78 0.03 235);
+  --color-gold:oklch(0.72 0.12 82);
+  --color-gold-2:oklch(0.83 0.11 88);
+  --color-slate:oklch(0.23 0.012 230);
+  --color-slate-2:oklch(0.29 0.014 230);
+  --color-chalk:oklch(0.95 0.01 90);
+  --color-chalk-dim:oklch(0.95 0.01 90 / .62);
+  --color-lantern:oklch(0.72 0.15 58);
+  --color-ice:oklch(0.95 0.02 225);
+  --color-paper:oklch(0.98 0.006 230);
+  --color-ink:oklch(0.22 0.015 240);
+  --color-muted:oklch(0.47 0.02 240);
+  --color-rule:oklch(0.22 0.015 240 / .14);
+  --font-sign:"Cinzel",Georgia,serif;
+  --font-body:"Work Sans",system-ui,sans-serif;
+  --font-chalk:"Caveat","Comic Sans MS",cursive;
+  --space-1:.5rem;--space-2:1rem;--space-3:1.5rem;--space-4:2.5rem;--space-5:4rem;--space-6:6rem;
+  --radius:8px;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--color-paper);color:var(--color-ink);font:400 1.02rem/1.6 var(--font-body)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--color-lantern);outline-offset:3px}
+.wrap{width:min(1140px,100% - 2*var(--space-3));margin-inline:auto}
+.demo{font-size:.88rem;text-align:center;padding:.55rem var(--space-2);background:var(--color-slate);color:var(--color-chalk)}
+
+/* the sign */
+.sign{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--color-sign),var(--color-sign-2));border-bottom:6px solid var(--color-slate);text-align:center;padding:clamp(.9rem,2vw,1.4rem) var(--space-2) clamp(.8rem,1.8vw,1.2rem)}
+.sign b{display:block;font-family:var(--font-sign);font-weight:800;color:var(--color-gold);font-size:clamp(2.2rem,6vw,4.4rem);line-height:1;letter-spacing:.06em;text-shadow:0 1px 0 oklch(1 0 0 / .5),0 2px 3px oklch(0.3 0.05 80 / .35)}
+.sign span{display:block;font-family:var(--font-sign);font-weight:600;color:var(--color-gold);font-size:clamp(1.1rem,2.6vw,2rem);margin-top:.2rem}
+.sign::after{content:"";position:absolute;top:0;bottom:0;left:0;width:30%;background:linear-gradient(100deg,transparent,oklch(1 0 0 / .45),transparent);transform:translateX(-120%) skewX(-18deg);pointer-events:none}
+.js .sign::after{animation:sweep 2.6s .6s ease-in-out 1 both}
+@keyframes sweep{to{transform:translateX(420%) skewX(-18deg)}}
+
+.hero{position:relative;background:var(--color-slate)}
+.front img{width:100%;height:min(74vh,760px);object-fit:cover;object-position:50% 40%}
+.board{color:var(--color-chalk);padding:var(--space-4) 0 var(--space-3);position:absolute;left:0;right:0;bottom:0;background:linear-gradient(180deg,transparent,oklch(0.18 0.012 230 / .82) 32%,oklch(0.18 0.012 230 / .95))}
+.board .wrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--space-4);align-items:end}
+h1{font-family:var(--font-sign);font-weight:600;font-size:clamp(2rem,4.4vw,3.4rem);line-height:1.08;margin:0 0 var(--space-2);color:var(--color-chalk)}
+.board p{margin:0 0 var(--space-3);color:var(--color-chalk-dim);max-width:42ch}
+.btns{display:flex;flex-wrap:wrap;gap:var(--space-1)}
+.btn{display:inline-block;padding:.8rem 1.3rem;border-radius:999px;background:var(--color-gold);color:var(--color-slate);font-weight:600;text-decoration:none;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--color-chalk);box-shadow:inset 0 0 0 1.5px var(--color-chalk-dim)}
+.facts{font-family:var(--font-chalk);font-size:1.45rem;line-height:1.35;border-left:2px dashed var(--color-chalk-dim);padding-left:var(--space-3)}
+.facts p{margin:0 0 .5rem;color:var(--color-chalk)}
+.facts small{display:block;font-family:var(--font-body);font-size:.85rem;color:var(--color-chalk-dim);margin-top:var(--space-2)}
+
+section{padding:var(--space-5) 0}
+h2{font-family:var(--font-sign);font-weight:600;font-size:clamp(1.7rem,3.2vw,2.5rem);line-height:1.12;margin:0 0 var(--space-2)}
+.lede{color:var(--color-muted);max-width:52ch;margin:0 0 var(--space-4)}
+
+/* ice picker */
+.ice{background:var(--color-ice)}
+.icebanner{border-radius:var(--radius);width:100%;aspect-ratio:2/1;object-fit:cover;margin-bottom:var(--space-4)}
+.picker{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--space-4);align-items:start}
+.catch{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-2)}
+.catch button{all:unset;cursor:pointer;display:block;border-radius:var(--radius);background:var(--color-paper);overflow:hidden;box-shadow:0 0 0 2px transparent;transition:transform .2s,box-shadow .2s}
+.catch button:hover{transform:translateY(-3px)}
+.catch button[aria-pressed="true"]{box-shadow:0 0 0 3px var(--color-slate)}
+.catch img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.catch b{display:block;padding:.6rem .8rem 0;font-weight:600}
+.catch small{display:block;padding:0 .8rem .7rem;color:var(--color-muted);font-size:.88rem}
+.ways{background:var(--color-paper);border-radius:var(--radius);padding:var(--space-3)}
+.ways h3{font-family:var(--font-sign);font-weight:600;font-size:1.2rem;margin:0 0 .3rem}
+.ways .note{font-size:.9rem;color:var(--color-muted);margin:0 0 var(--space-2)}
+.ways ul{list-style:none;margin:0;padding:0}
+.ways li{display:flex;justify-content:space-between;gap:var(--space-2);padding:.45rem 0;border-bottom:1px solid var(--color-rule);opacity:0;transform:translateY(6px);animation:in .35s ease-out forwards}
+.ways li span:last-child{font-weight:600;white-space:nowrap}
+@keyframes in{to{opacity:1;transform:none}}
+.ways .more{font-size:.9rem;color:var(--color-muted);margin:var(--space-2) 0 0}
+
+/* signature */
+.sig .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--space-4);align-items:center}
+.frame{border:6px solid var(--color-gold-2);outline:1px solid var(--color-gold);outline-offset:6px;padding:var(--space-4) var(--space-3);text-align:center;background:var(--color-paper)}
+.frame small{display:block;color:var(--color-muted)}
+.frame strong{display:block;font-family:var(--font-sign);font-weight:800;font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.15;margin:.4rem 0 var(--space-2)}
+.frame .price{display:inline-block;background:var(--color-slate);color:var(--color-chalk);border-radius:999px;padding:.35rem 1.3rem;font-weight:600;font-size:1.3rem}
+.row{display:flex;justify-content:space-between;gap:var(--space-2);padding:.4rem 0;border-bottom:1px solid var(--color-rule)}
+.row span:last-child{font-weight:600;white-space:nowrap}
+.row small{display:block;color:var(--color-muted);font-size:.84rem}
+
+/* price grid */
+.grid{background:var(--color-paper)}
+.prot{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:var(--space-3)}
+.prot button{all:unset;cursor:pointer;padding:.5rem 1rem;border-radius:999px;box-shadow:inset 0 0 0 1.5px var(--color-rule);font-weight:500}
+.prot button[aria-pressed="true"]{background:var(--color-slate);color:var(--color-chalk);box-shadow:none}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+th,td{padding:.7rem .6rem;text-align:left;border-bottom:1px solid var(--color-rule)}
+thead th{font-weight:500;color:var(--color-muted);font-size:.9rem}
+tbody th{font-weight:600}
+td{text-align:right;transition:opacity .2s}
+thead th:not(:first-child){text-align:right}
+table[data-col] td,table[data-col] thead th:not(:first-child){opacity:.32}
+table[data-col="1"] .c1,table[data-col="2"] .c2,table[data-col="3"] .c3,table[data-col="4"] .c4{opacity:1;font-weight:600}
+.extras{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 var(--space-4);margin-top:var(--space-4)}
+
+/* chalkboard */
+.chalk{background:var(--color-slate);color:var(--color-chalk)}
+.chalk h2{color:var(--color-chalk)}
+.chalk .lede{color:var(--color-chalk-dim)}
+.boards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-3)}
+.cb{background:var(--color-slate-2);border:8px solid oklch(0.42 0.05 60);border-radius:4px;padding:var(--space-3);box-shadow:inset 0 0 40px oklch(0 0 0 / .35)}
+.cb h3{font-family:var(--font-chalk);font-weight:700;font-size:2rem;line-height:1;margin:0 0 .6rem;color:var(--color-gold-2)}
+.cb .c{display:flex;justify-content:space-between;gap:var(--space-2);font-family:var(--font-chalk);font-size:1.35rem;line-height:1.25;padding:.2rem 0}
+.cb .c span:last-child{white-space:nowrap}
+.cb .c small{display:block;font-size:1rem;opacity:.7}
+.cb .foot{font-family:var(--font-chalk);font-size:1.15rem;opacity:.75;margin:.6rem 0 0}
+.js .cb .c{clip-path:inset(0 100% 0 0);transition:clip-path .5s ease-out}
+.js .cb.seen .c{clip-path:inset(0 0 0 0)}
+
+.strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-2)}
+.strip img{border-radius:var(--radius);aspect-ratio:4/5;object-fit:cover;width:100%}
+.strip figure{margin:0}
+.strip figcaption{font-size:.88rem;color:var(--color-muted);margin-top:.4rem}
+
+.night{background:var(--color-sign)}
+.night .wrap{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:var(--space-4);align-items:center}
+.night img{border-radius:var(--radius);width:100%;aspect-ratio:3/2;object-fit:cover}
+
+.visit .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-4);align-items:start}
+.visit dl{margin:0;background:var(--color-ice);border-radius:var(--radius);padding:var(--space-3)}
+.visit dt{font-weight:600;margin-top:var(--space-2)}
+.visit dt:first-child{margin-top:0}
+.visit dd{margin:0;color:var(--color-muted)}
+.visit .btn.ghost{color:var(--color-ink);box-shadow:inset 0 0 0 1.5px var(--color-ink)}
+.visit .btn{background:var(--color-slate);color:var(--color-chalk)}
+footer{padding:var(--space-4) 0 var(--space-6);font-size:.86rem;color:var(--color-muted);text-align:center}
+footer p{margin:.3rem 0}
+.bar{position:fixed;left:0;right:0;bottom:0;display:none;gap:1px;background:var(--color-slate);z-index:5}
+.bar a{flex:1;text-align:center;padding:.95rem .5rem;background:var(--color-slate);color:var(--color-chalk);text-decoration:none;font-weight:500}
+.bar a:first-child{background:var(--color-gold);color:var(--color-slate)}
+
+@media (max-width:900px){
+  .board .wrap,.picker,.sig .wrap,.night .wrap,.visit .wrap,.extras{grid-template-columns:minmax(0,1fr)}
+  .boards{grid-template-columns:minmax(0,1fr)}
+  .strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .front img{height:auto;aspect-ratio:4/3}
+  .board{position:static;background:var(--color-slate)}
+  table[data-col] thead th:not(:first-child),table[data-col] td{display:none}
+  table[data-col="1"] thead th.c1,table[data-col="2"] thead th.c2,table[data-col="3"] thead th.c3,table[data-col="4"] thead th.c4,table[data-col="1"] tbody td.c1,table[data-col="2"] tbody td.c2,table[data-col="3"] tbody td.c3,table[data-col="4"] tbody td.c4{display:table-cell}
+  body .i18n{bottom:4.6rem}
+  .bar{display:flex}
+  footer{padding-bottom:7rem}
+}
+@media (max-width:520px){.catch{grid-template-columns:repeat(3,minmax(0,1fr));gap:.5rem}.catch b{font-size:.92rem;padding:.5rem .5rem 0}.catch small{padding:0 .5rem .5rem;font-size:.8rem}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.ways li{opacity:1;transform:none}.js .cb .c{clip-path:none}}
+</style>
+</head>
+<body>
+<div class="demo">Sample website made for Thai Kitchen Restaurant. Not live yet; nothing here is final.</div>
+
+<header>
+  <div class="sign" role="img" aria-label="Thai Kitchen Restaurant"><b>THAI KITCHEN</b><span>Restaurant</span></div>
+  <div class="hero">
+  <div class="front"><img src="img/front.jpg" width="1600" height="739" alt="Thai Kitchen at night on Chaweng Beach Road, with lanterns and chalkboard menus along the front"></div>
+  <div class="board">
+    <div class="wrap">
+      <div>
+        <h1>Thai food and seafood until 2 AM</h1>
+        <p>On Chaweng Beach Road, near Central Samui. Pick your seafood from the ice, or order from the Thai kitchen.</p>
+        <div class="btns">
+          <a class="btn" href="tel:+66644037000">Call to book</a>
+          <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=THAI+KITCHEN+RESTAURANT+Chaweng+Beach+Road+Koh+Samui">Directions</a>
+          <a class="btn ghost" href="#menu">See the menu</a>
+        </div>
+      </div>
+      <div class="facts">
+        <p>Open every day, 11:00 to 2:00</p>
+        <p>Lobster, snapper and tiger prawns on ice</p>
+        <p>Charcoal BBQ and cocktails</p>
+        <small>4.9 on Google Maps from 5,468 reviews (Nov 2026).</small>
+      </div>
+    </div>
+  </div>
+  </div>
+</header>
+
+<section class="ice" id="ice">
+  <div class="wrap">
+    <h2>Pick it from the ice</h2>
+    <p class="lede">Choose from the counter at the front, then tell us how to cook it.</p>
+    <img class="icebanner" src="img/ice.jpg" width="1400" height="700" alt="The seafood counter: lobster, prawns, shellfish and carved watermelon on crushed ice" loading="lazy">
+    <div class="picker">
+      <div class="catch" role="group" aria-label="Choose your seafood">
+        <button type="button" data-k="lobster" aria-pressed="true"><img src="img/pick-lobster.jpg" width="700" height="875" alt="Two spiny lobsters on ice" loading="lazy"><b>Lobster</b><small>200 per 100 g</small></button>
+        <button type="button" data-k="snapper" aria-pressed="false"><img src="img/pick-snapper.jpg" width="700" height="875" alt="Red snapper on ice" loading="lazy"><b>Snapper</b><small>red or white, 480</small></button>
+        <button type="button" data-k="prawn" aria-pressed="false"><img src="img/pick-prawn.jpg" width="700" height="876" alt="Tiger prawns on ice" loading="lazy"><b>Tiger prawns</b><small>from 290</small></button>
+      </div>
+      <div class="ways" aria-live="polite">
+        <h3 id="wh">Lobster</h3>
+        <p class="note" id="wn">Priced by weight: 200 baht per 100 g.</p>
+        <ul id="wl"></ul>
+        <p class="more">What's on the ice changes with the catch. Ask at the counter.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sig">
+  <div class="wrap">
+    <div class="frame">
+      <small>Signature dish from our Thai kitchen</small>
+      <strong>Thai-style golden crab rice</strong>
+      <span class="price">360</span>
+    </div>
+    <div>
+      <h2>Thai curry, Aussie ribeye</h2>
+      <p class="lede">Our special menu: a ribeye steak with the curry of your choice.</p>
+      <div class="row"><span>Green curry with Aussie ribeye</span><span>690</span></div>
+      <div class="row"><span>Red curry with Aussie ribeye</span><span>690</span></div>
+      <div class="row"><span>Panaeng curry with Aussie ribeye</span><span>690</span></div>
+      <div class="row"><span>Massaman curry with Aussie ribeye</span><span>690</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="grid" id="menu">
+  <div class="wrap">
+    <h2>Noodles and rice</h2>
+    <p class="lede">Five dishes, one price for each choice. Pick what goes in.</p>
+    <div class="prot" role="group" aria-label="Choose what goes in">
+      <button type="button" data-c="1" aria-pressed="false">Vegetable</button>
+      <button type="button" data-c="2" aria-pressed="true">Chicken or pork</button>
+      <button type="button" data-c="3" aria-pressed="false">Beef or seafood</button>
+      <button type="button" data-c="4" aria-pressed="false">Tiger prawn</button>
+    </div>
+    <table id="pt" data-col="2">
+      <thead><tr><th scope="col">Dish</th><th class="c1" scope="col">Vegetable</th><th class="c2" scope="col">Chicken or pork</th><th class="c3" scope="col">Beef or seafood</th><th class="c4" scope="col">Tiger prawn</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Pad thai</th><td class="c1">120</td><td class="c2">160</td><td class="c3">220</td><td class="c4">290</td></tr>
+        <tr><th scope="row">Thai egg noodle</th><td class="c1">120</td><td class="c2">160</td><td class="c3">220</td><td class="c4">290</td></tr>
+        <tr><th scope="row">Fried glass noodle</th><td class="c1">120</td><td class="c2">160</td><td class="c3">220</td><td class="c4">290</td></tr>
+        <tr><th scope="row">Fried flat noodle</th><td class="c1">120</td><td class="c2">160</td><td class="c3">220</td><td class="c4">290</td></tr>
+        <tr><th scope="row">Fried rice</th><td class="c1">120</td><td class="c2">160</td><td class="c3">220</td><td class="c4">290</td></tr>
+      </tbody>
+    </table>
+    <div class="extras">
+      <div>
+        <div class="row"><span>Pineapple fried rice with tiger prawn</span><span>360</span></div>
+        <div class="row"><span>Pineapple fried rice with seafood</span><span>250</span></div>
+        <div class="row"><span>Mango fried rice with tiger prawn</span><span>360</span></div>
+        <div class="row"><span>Mango fried rice with seafood</span><span>250</span></div>
+      </div>
+      <div>
+        <div class="row"><span>Crab meat fried rice</span><span>250</span></div>
+        <div class="row"><span>Tom yam kung fried rice</span><span>360</span></div>
+        <div class="row"><span>Sticky rice or steamed rice</span><span>30</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="chalk">
+  <div class="wrap">
+    <h2>From the boards</h2>
+    <p class="lede">The same dishes you see chalked up along our counter.</p>
+    <div class="boards">
+      <div class="cb">
+        <h3>Curry</h3>
+        <div class="c"><span>Red curry</span><span>160</span></div>
+        <div class="c"><span>Green curry</span><span>160</span></div>
+        <div class="c"><span>Yellow curry</span><span>160</span></div>
+        <div class="c"><span>Massaman curry</span><span>160</span></div>
+        <div class="c"><span>Panaeng curry</span><span>160</span></div>
+        <div class="c"><span>Masala curry</span><span>160</span></div>
+        <div class="c"><span>Thai curry seabass</span><span>360</span></div>
+        <div class="c"><span>Roast duck in red curry</span><span>360</span></div>
+        <p class="foot">With chicken, beef or pork</p>
+      </div>
+      <div class="cb">
+        <h3>Wok and salad</h3>
+        <div class="c"><span>Hot basil</span><span>160</span></div>
+        <div class="c"><span>Cashew nut</span><span>160</span></div>
+        <div class="c"><span>Garlic pepper</span><span>160</span></div>
+        <div class="c"><span>Morning glory</span><span>160</span></div>
+        <div class="c"><span>Kale with crispy pork</span><span>260</span></div>
+        <div class="c"><span>Papaya salad</span><span>120</span></div>
+        <div class="c"><span>Thai beef salad</span><span>220</span></div>
+        <div class="c"><span>Papaya or green mango salad with seafood</span><span>190</span></div>
+        <div class="c"><span>Chicken satay</span><span>160</span></div>
+        <div class="c"><span>Prawn cake</span><span>180</span></div>
+      </div>
+      <div class="cb">
+        <h3>BBQ</h3>
+        <div class="c"><span>Fillet steak and mixed kebabs</span><span>790</span></div>
+        <div class="c"><span>Grilled tiger prawn</span><span>590</span></div>
+        <div class="c"><span>Spareribs</span><span>390</span></div>
+        <div class="c"><span>Pork chop</span><span>390</span></div>
+        <div class="c"><span>Duck breast</span><span>390</span></div>
+        <div class="c"><span>Tuna, salmon or barracuda steak</span><span>390</span></div>
+        <div class="c"><span>Grilled chicken</span><span>290</span></div>
+        <p class="foot">With sweet corn, potato and salad. Pepper, mushroom, garlic butter or spicy lime chili sauce.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap strip">
+    <figure><img src="img/bbq-lobster.jpg" width="800" height="1000" alt="Grilled lobster halves with sweet corn and fries" loading="lazy"><figcaption>Grilled lobster</figcaption></figure>
+    <figure><img src="img/lobster-plate.jpg" width="1000" height="667" alt="Lobster served with herbs, lime and an orchid" loading="lazy"><figcaption>Lobster from the ice</figcaption></figure>
+    <figure><img src="img/crab.jpg" width="700" height="876" alt="A large crab on crushed ice" loading="lazy"><figcaption>On the ice today</figcaption></figure>
+    <figure><img src="img/chef.jpg" width="1000" height="667" alt="Our chef behind the seafood counter" loading="lazy"><figcaption>At the counter</figcaption></figure>
+  </div>
+</section>
+
+<section class="night">
+  <div class="wrap">
+    <img src="img/night.jpg" width="1200" height="800" alt="Thai Kitchen lit up at night on Chaweng Beach Road" loading="lazy">
+    <div>
+      <h2>Late, and happy</h2>
+      <p class="lede">Cocktails, cold beer and wine at the bar, a kitchen that stays open until 2, and a happy hour. Ask us about today's drinks.</p>
+      <p class="lede">After dinner, a slice of watermelon is on the house.</p>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div>
+      <h2>Come by</h2>
+      <p class="lede">We take bookings. Families and kids are welcome, and there is free parking.</p>
+      <div class="btns">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=THAI+KITCHEN+RESTAURANT+Chaweng+Beach+Road+Koh+Samui">Open in Google Maps</a>
+        <a class="btn ghost" href="tel:+66644037000">Call us</a>
+      </div>
+    </div>
+    <dl>
+      <dt>Address</dt><dd>167/51 Beach Road, Chaweng, Bo Put, Koh Samui 84320</dd>
+      <dt>Hours</dt><dd>Every day, 11:00 to 2:00</dd>
+      <dt>Phone</dt><dd>064 403 7000</dd>
+      <dt>Payment</dt><dd>Cash, cards and phone payments</dd>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Thai Kitchen Restaurant, Chaweng Beach Road, Koh Samui.</p>
+    <p>Photos from Thai Kitchen's own Google Maps uploads. Prices from the restaurant's menu pages; details from Google Maps, November 2026.</p>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Quick actions">
+  <a href="tel:+66644037000">Call</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=THAI+KITCHEN+RESTAURANT+Chaweng+Beach+Road+Koh+Samui">Directions</a>
+  <a href="#menu">Menu</a>
+</nav>
+<script>
+document.documentElement.classList.add('js');
+(function(){
+  var W={
+    lobster:{h:'Lobster',n:'Priced by weight: 200 baht per 100 g.',l:[['BBQ',''],['Yellow curry',''],['Red curry',''],['Green curry',''],['Panang curry',''],['Fried with garlic and pepper',''],['Thermidor, with cream cheese sauce','']]},
+    snapper:{h:'Snapper',n:'Red or white snapper, a whole fish. 480 baht however we cook it.',l:[['Steamed, lime chili sauce','480'],['Steamed, ginger soya sauce','480'],['Fried, panang curry sauce','480'],['Fried, red curry sauce','480'],['Fried, tamarind sauce','480'],['Fried, sweet chili sauce','480'],['Fried, garlic pepper','480'],['Grilled, with sweet corn, potato and salad','480']]},
+    prawn:{h:'Tiger prawns',n:'Off the grill, or in the wok with rice and noodles.',l:[['Grilled tiger prawns, with corn, potato and salad','590'],['Pineapple fried rice with tiger prawn','360'],['Mango fried rice with tiger prawn','360'],['Tom yam kung fried rice','360'],['Pad thai with tiger prawn','290'],['Fried glass noodle with tiger prawn','290']]}
+  };
+  var bs=document.querySelectorAll('.catch button'),wh=document.getElementById('wh'),wn=document.getElementById('wn'),wl=document.getElementById('wl');
+  function show(k){var d=W[k];wh.textContent=d.h;wn.textContent=d.n;wl.innerHTML='';
+    d.l.forEach(function(r,i){var li=document.createElement('li');li.style.animationDelay=(i*45)+'ms';var a=document.createElement('span');a.textContent=r[0];var b=document.createElement('span');b.textContent=r[1];li.appendChild(a);li.appendChild(b);wl.appendChild(li)});
+    bs.forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-k')===k?'true':'false')});}
+  bs.forEach(function(b){b.addEventListener('click',function(){show(b.getAttribute('data-k'))})});
+  show('lobster');
+  var t=document.getElementById('pt'),ps=document.querySelectorAll('.prot button');
+  ps.forEach(function(b){b.addEventListener('click',function(){t.setAttribute('data-col',b.getAttribute('data-c'));ps.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')})})});
+  var cbs=document.querySelectorAll('.cb');
+  if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches){cbs.forEach(function(c){c.classList.add('seen')});return}
+  cbs.forEach(function(c){c.querySelectorAll('.c').forEach(function(r,i){r.style.transitionDelay=(i*60)+'ms'})});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('seen');io.unobserve(e.target)}})},{threshold:.25});
+  cbs.forEach(function(c){io.observe(c)});
+})();
+</script>
+<script src="th.js"></script>
+<script src="../i18n.js"></script>
+</body>
+</html>

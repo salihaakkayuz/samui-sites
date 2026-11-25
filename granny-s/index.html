@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Granny's, Maenam</title>
+<meta name="description" content="Syrniki, crêpes, homemade bread, cakes and live music in Maenam, Koh Samui. Every day 10:00 to midnight.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,700&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap" rel="stylesheet">
+<style>
+/* hallmark: shape "granny's recipe tin" — a day at Granny's (morning, afternoon, evening), the menu as recipe cards in a tin with tabbed dividers, cakes set on lace doilies, the rooms with their rugs
+   theme custom "rug and lace" from the room: indigo of their round sign, rug red, warm wood, lace white; headings in a Bodoni like their printed menu
+   dynamic: lace doilies turn slowly under the cakes as you scroll; recipe cards fan out of the tin when you pick a divider
+   critique: prices only from their menu page and their drinks board (the board shows two prices; we give the lower one as "from"); mains, soups and cakes have no listed prices, so none shown; the cannabis sign is left out on purpose */
+:root{
+  --color-indigo:oklch(0.33 0.09 258);
+  --color-indigo-2:oklch(0.42 0.1 258);
+  --color-rug:oklch(0.45 0.14 25);
+  --color-rug-2:oklch(0.6 0.12 45);
+  --color-wood:oklch(0.5 0.08 55);
+  --color-lace:oklch(0.975 0.012 85);
+  --color-card:oklch(0.995 0.004 85);
+  --color-paper:oklch(0.94 0.02 75);
+  --color-ink:oklch(0.24 0.03 260);
+  --color-muted:oklch(0.45 0.03 260);
+  --color-on:oklch(0.97 0.012 85);
+  --color-rule:oklch(0.24 0.03 260 / .14);
+  --font-display:"Bodoni Moda",Didot,serif;
+  --font-body:"Nunito Sans",system-ui,sans-serif;
+  --space-1:.5rem;--space-2:1rem;--space-3:1.5rem;--space-4:2.5rem;--space-5:4rem;--space-6:6rem;
+  --radius:10px;
+}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--color-lace);color:var(--color-ink);font:400 1.03rem/1.6 var(--font-body)}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--color-rug-2);outline-offset:3px}
+.wrap{width:min(1120px,100% - 2*var(--space-3));margin-inline:auto}
+.demo{font-size:.88rem;text-align:center;padding:.55rem var(--space-2);background:var(--color-indigo);color:var(--color-on)}
+/* rug border band */
+.rugband{height:22px;background:
+  repeating-linear-gradient(90deg,var(--color-rug) 0 14px,var(--color-indigo) 14px 18px,var(--color-rug-2) 18px 26px,var(--color-indigo) 26px 30px),
+  var(--color-rug);
+  -webkit-mask:linear-gradient(#000 0 0);border-block:4px solid var(--color-indigo)}
+
+.hero{background:var(--color-indigo);color:var(--color-on)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:var(--space-4);align-items:center;padding:var(--space-4) 0 var(--space-5)}
+.badge{display:inline-flex;align-items:center;justify-content:center;width:92px;height:92px;border-radius:50%;border:3px solid var(--color-on);font-family:var(--font-display);font-weight:700;font-size:1.05rem;letter-spacing:.04em;margin-bottom:var(--space-3)}
+h1{font-family:var(--font-display);font-weight:500;font-size:clamp(2.4rem,5vw,4rem);line-height:1.04;margin:0 0 var(--space-2)}
+.hero p{margin:0 0 var(--space-3);opacity:.85;max-width:38ch}
+.btns{display:flex;flex-wrap:wrap;gap:var(--space-1)}
+.btn{display:inline-block;padding:.8rem 1.3rem;border-radius:999px;background:var(--color-on);color:var(--color-indigo);font-weight:700;text-decoration:none;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:inherit;box-shadow:inset 0 0 0 1.5px currentColor}
+.hero .pic img{border-radius:50% 50% var(--radius) var(--radius);width:100%;aspect-ratio:5/4;object-fit:cover}
+.hero .rate{font-size:.88rem;opacity:.7;margin-top:var(--space-3)}
+
+section{padding:var(--space-5) 0}
+h2{font-family:var(--font-display);font-weight:500;font-size:clamp(1.9rem,3.6vw,2.8rem);line-height:1.1;margin:0 0 var(--space-2)}
+.lede{color:var(--color-muted);max-width:50ch;margin:0 0 var(--space-4)}
+
+.day .wrap>.cols{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-3)}
+.day figure{margin:0}
+.day img{border-radius:var(--radius);width:100%;aspect-ratio:4/5;object-fit:cover}
+.day h3{font-family:var(--font-display);font-weight:700;font-size:1.3rem;margin:var(--space-2) 0 .2rem}
+.day .t{font-size:.9rem;color:var(--color-rug);font-weight:700}
+.day p{margin:.2rem 0 0;color:var(--color-muted)}
+
+/* recipe tin */
+.tin{background:var(--color-paper)}
+.dividers{display:flex;flex-wrap:wrap;gap:4px;padding-left:var(--space-2)}
+.dividers button{all:unset;cursor:pointer;padding:.55rem 1rem .45rem;border-radius:10px 10px 0 0;background:oklch(0.88 0.03 75);font-weight:700;font-size:.95rem;transform:translateY(6px);transition:transform .2s}
+.dividers button:hover{transform:translateY(2px)}
+.dividers button[aria-selected="true"]{background:var(--color-indigo);color:var(--color-on);transform:none}
+.box{background:var(--color-indigo);border-radius:var(--radius);padding:var(--space-3);min-height:340px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-2)}
+.card{background:var(--color-card);border-radius:6px;padding:var(--space-2) var(--space-3);background-image:repeating-linear-gradient(transparent 0 27px,oklch(0.7 0.06 250 / .25) 27px 28px);background-position:0 46px;transform-origin:50% 120%;animation:fan .45s cubic-bezier(.2,.9,.3,1.15) both}
+.card:nth-child(3n+1){--r:-2deg}.card:nth-child(3n+2){--r:1deg}.card:nth-child(3n){--r:2.5deg}
+@keyframes fan{from{opacity:0;transform:translateY(40px) rotate(0)}to{opacity:1;transform:translateY(0) rotate(var(--r,0deg))}}
+.card h3{display:flex;justify-content:space-between;gap:var(--space-1);font-family:var(--font-display);font-weight:700;font-size:1.12rem;line-height:1.2;margin:0 0 .35rem;border-bottom:2px solid var(--color-rug);padding-bottom:.35rem}
+.card h3 span:last-child{white-space:nowrap}
+.card p{margin:0;font-size:.92rem;color:var(--color-muted);line-height:28px}
+.v{display:inline-block;font-family:var(--font-body);font-size:.7rem;font-weight:700;color:oklch(0.45 0.12 145);border:1.5px solid currentColor;border-radius:999px;padding:0 .4rem;margin-left:.35rem;vertical-align:3px}
+.extras{margin:var(--space-3) 0 0;font-size:.9rem;color:var(--color-muted)}
+
+/* doilies */
+.cakes{background:var(--color-rug);color:var(--color-on)}
+.cakes .lede{color:oklch(0.97 0.012 85 / .8)}
+.plates{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--space-3);align-items:center}
+.doily{position:relative;aspect-ratio:1;display:grid;place-items:center}
+.doily svg{position:absolute;inset:0;width:100%;height:100%;transform:rotate(var(--spin,0deg))}
+.doily img{position:relative;width:70%;aspect-ratio:1;object-fit:cover;border-radius:50%;box-shadow:0 8px 18px oklch(0 0 0 / .3)}
+.plates figure{margin:0;text-align:center}
+.plates figcaption{font-size:.88rem;opacity:.8;margin-top:.3rem}
+
+.kitchen .row4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-2)}
+.kitchen figure{margin:0}
+.kitchen img{border-radius:var(--radius);width:100%;aspect-ratio:4/5;object-fit:cover}
+.kitchen figcaption{font-family:var(--font-display);font-weight:700;margin-top:.4rem}
+.kitchen figcaption small{display:block;font-family:var(--font-body);font-weight:400;color:var(--color-muted);font-size:.86rem}
+
+.drinks{background:var(--color-card)}
+.drinks .wrap{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:var(--space-5);align-items:center}
+.drinks img{border-radius:50%;width:100%;aspect-ratio:1;object-fit:cover}
+.duo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0 var(--space-4)}
+.row{display:flex;justify-content:space-between;gap:var(--space-2);padding:.4rem 0;border-bottom:1px solid var(--color-rule)}
+.row span:last-child{font-weight:700;white-space:nowrap}
+.drinks h3{font-family:var(--font-display);font-weight:700;font-size:1.2rem;margin:var(--space-2) 0 .3rem}
+.drinks .note{font-size:.9rem;color:var(--color-muted);margin-top:var(--space-2)}
+
+.rooms .grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-2)}
+.rooms img{border-radius:var(--radius);width:100%;aspect-ratio:4/5;object-fit:cover}
+
+.visit{background:var(--color-indigo);color:var(--color-on)}
+.visit .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--space-4);align-items:start}
+.visit p{opacity:.85;margin:0 0 var(--space-3);max-width:40ch}
+.visit dl{margin:0;background:oklch(1 0 0 / .08);border-radius:var(--radius);padding:var(--space-3)}
+.visit dt{font-family:var(--font-display);font-weight:700;margin-top:var(--space-2)}
+.visit dt:first-child{margin-top:0}
+.visit dd{margin:0;opacity:.8}
+footer{background:var(--color-indigo);color:oklch(0.97 0.012 85 / .65);padding:var(--space-3) 0 var(--space-6);font-size:.86rem;text-align:center}
+footer p{margin:.3rem 0}
+.bar{position:fixed;left:0;right:0;bottom:0;display:none;gap:1px;background:var(--color-indigo);z-index:5}
+.bar a{flex:1;text-align:center;padding:.95rem .5rem;background:var(--color-indigo);color:var(--color-on);text-decoration:none;font-weight:700}
+.bar a:first-child{background:var(--color-rug);}
+@media (max-width:900px){
+  .hero .wrap,.drinks .wrap,.visit .wrap{grid-template-columns:minmax(0,1fr)}
+  .day .wrap>.cols{grid-template-columns:minmax(0,1fr)}
+  .day img{aspect-ratio:3/2}
+  .cards{grid-template-columns:minmax(0,1fr)}
+  .plates{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .kitchen .row4,.rooms .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .duo{grid-template-columns:minmax(0,1fr)}
+  .drinks img{width:60%;margin-inline:auto}
+  .bar{display:flex}
+  body .i18n{bottom:4.6rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.card{transform:rotate(var(--r,0deg))}}
+</style>
+</head>
+<body>
+<div class="demo">Sample website made for Granny's. Not live yet; nothing here is final.</div>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <div class="badge" aria-hidden="true">GRANNY'S</div>
+      <h1>Home cooking and cakes in Maenam</h1>
+      <p>Syrniki in the morning, cake in the afternoon, live music at night. Open every day, 10:00 to midnight.</p>
+      <div class="btns">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Granny%27s+Maenam+Koh+Samui">Directions</a>
+        <a class="btn ghost" href="#menu">See the menu</a>
+        <a class="btn ghost" href="tel:+66631190970">Call</a>
+      </div>
+      <p class="rate">4.9 on Google Maps from 464 reviews (Nov 2026).</p>
+    </div>
+    <div class="pic"><img src="img/table.jpg" width="1200" height="960" alt="A round wooden table on a rug, set with ribs, soup, pickles, bread, syrniki and coffee"></div>
+  </div>
+</header>
+<div class="rugband" aria-hidden="true"></div>
+
+<section class="day">
+  <div class="wrap">
+    <h2>A day at Granny's</h2>
+    <p class="lede">Come for breakfast and stay for dinner.</p>
+    <div class="cols">
+      <figure><img src="img/syrniki.jpg" width="700" height="700" alt="Syrniki with blueberries, condensed milk and sour cream" loading="lazy"><figcaption><span class="t">From 10:00</span><h3>Breakfast</h3><p>Syrniki, porridge, crêpes and eggs on homemade bread.</p></figcaption></figure>
+      <figure><img src="img/coffee.jpg" width="600" height="600" alt="A cappuccino with latte art" loading="lazy"><figcaption><span class="t">Afternoon</span><h3>Coffee and cake</h3><p>Cakes from the counter, coffee and a pot of tea.</p></figcaption></figure>
+      <figure><img src="img/evening.jpg" width="800" height="1000" alt="A candle-lit table by the window in the evening" loading="lazy"><figcaption><span class="t">Until midnight</span><h3>Evenings</h3><p>Cocktails and house infusions, live music on some nights, and board games on the shelf.</p></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="tin" id="menu">
+  <div class="wrap">
+    <h2>Granny's recipe tin</h2>
+    <p class="lede">Pick a divider. Bread is homemade. <span class="v">v</span> means vegetarian.</p>
+    <div class="dividers" role="tablist" aria-label="Menu sections">
+      <button type="button" role="tab" data-t="sweet" aria-selected="true">Sweet breakfast</button>
+      <button type="button" role="tab" data-t="eggs" aria-selected="false">Breakfast</button>
+      <button type="button" role="tab" data-t="toast" aria-selected="false">Toasts</button>
+      <button type="button" role="tab" data-t="crepe" aria-selected="false">Crêpes</button>
+      <button type="button" role="tab" data-t="salad" aria-selected="false">Salads</button>
+    </div>
+    <div class="box" role="tabpanel" aria-live="polite"><div class="cards" id="cards"></div></div>
+    <p class="extras">Add an egg or bread 20, bacon 50, avocado 50, pickles 50, feta 60, sun-dried tomatoes 60, salted salmon 80, chicken liver pâté 80.</p>
+  </div>
+</section>
+
+<section class="cakes">
+  <div class="wrap">
+    <h2>Cake on a doily</h2>
+    <p class="lede">Cakes from our counter. Come and see what's on it today.</p>
+    <div class="plates">
+      <figure><div class="doily"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#lace"/></svg><img src="img/cake1.jpg" width="600" height="600" alt="A chocolate cake with cherries, cut into slices" loading="lazy"></div></figure>
+      <figure><div class="doily"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#lace"/></svg><img src="img/cake2.jpg" width="600" height="600" alt="A cupcake with toasted meringue" loading="lazy"></div></figure>
+      <figure><div class="doily"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#lace"/></svg><img src="img/cake3.jpg" width="600" height="600" alt="A chocolate brownie with whipped cream and mint" loading="lazy"></div></figure>
+      <figure><div class="doily"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#lace"/></svg><img src="img/cake4.jpg" width="600" height="600" alt="A slice of cheesecake" loading="lazy"></div></figure>
+      <figure><div class="doily"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#lace"/></svg><img src="img/cake5.jpg" width="600" height="600" alt="A small tart with cream, blueberries and mint" loading="lazy"></div></figure>
+    </div>
+  </div>
+</section>
+
+<section class="kitchen">
+  <div class="wrap">
+    <h2>Also from the kitchen</h2>
+    <p class="lede">Soups, dumplings and mains. Ask us what's cooking today.</p>
+    <div class="row4">
+      <figure><img src="img/pumpkin.jpg" width="700" height="875" alt="Pumpkin soup with seeds and cream" loading="lazy"><figcaption>Pumpkin soup</figcaption></figure>
+      <figure><img src="img/dumplings.jpg" width="700" height="875" alt="Dumplings with sour cream on a painted plate" loading="lazy"><figcaption>Dumplings<small>with sour cream</small></figcaption></figure>
+      <figure><img src="img/shakshuka.jpg" width="700" height="875" alt="Shakshuka with rye bread" loading="lazy"><figcaption>Shakshuka<small>220</small></figcaption></figure>
+      <figure><img src="img/ribs.jpg" width="700" height="875" alt="Glazed ribs with fries and greens" loading="lazy"><figcaption>Ribs</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="drinks">
+  <div class="wrap">
+    <img src="img/lamp.jpg" width="700" height="875" alt="A mosaic glass lamp glowing over the bar" loading="lazy">
+    <div>
+      <h2>Coffee and tea</h2>
+      <div class="duo">
+        <div>
+          <div class="row"><span>Espresso</span><span>70</span></div>
+          <div class="row"><span>Americano</span><span>from 70</span></div>
+          <div class="row"><span>Cappuccino</span><span>from 80</span></div>
+          <div class="row"><span>Latte</span><span>from 90</span></div>
+          <div class="row"><span>Piccolo latte</span><span>80</span></div>
+          <div class="row"><span>Cocoa</span><span>from 70</span></div>
+        </div>
+        <div>
+          <div class="row"><span>Matcha latte</span><span>from 90</span></div>
+          <div class="row"><span>Thai tea</span><span>from 50</span></div>
+          <div class="row"><span>Thai green tea</span><span>from 50</span></div>
+          <div class="row"><span>Pot of tea</span><span>120</span></div>
+          <div class="row"><span>Cup of tea</span><span>from 40</span></div>
+        </div>
+      </div>
+      <p class="note">Syrup 10. Oat, almond or coconut milk 20. In the evening: cocktails and our house infusions.</p>
+    </div>
+  </div>
+</section>
+
+<section class="rooms">
+  <div class="wrap">
+    <h2>Rugs, lamps and a garden room</h2>
+    <p class="lede">Cool inside on a hot day, with seats outside too.</p>
+    <div class="grid">
+      <img src="img/room.jpg" width="800" height="1000" alt="A dining room with a large rug and a colourful painting" loading="lazy">
+      <img src="img/garden.jpg" width="800" height="1000" alt="The garden room with wooden lattice walls and armchairs" loading="lazy">
+      <img src="img/bar.jpg" width="800" height="1000" alt="Shelves of bottles behind the bar" loading="lazy">
+      <img src="img/front.jpg" width="800" height="1000" alt="The Granny's sign over the glass front at night" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<div class="rugband" aria-hidden="true"></div>
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div>
+      <h2>Come and eat</h2>
+      <p>In Maenam, on Koh Samui's north coast. We also do takeaway and delivery.</p>
+      <div class="btns">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Granny%27s+Maenam+Koh+Samui">Open in Google Maps</a>
+        <a class="btn ghost" href="tel:+66631190970">Call us</a>
+        <a class="btn ghost" href="https://www.instagram.com/grannys.samui/">Instagram</a>
+      </div>
+    </div>
+    <dl>
+      <dt>Address</dt><dd>127 Moo 4, Mae Nam, Koh Samui 84330</dd>
+      <dt>Hours</dt><dd>Every day, 10:00 to midnight</dd>
+      <dt>Phone</dt><dd>063 119 0970</dd>
+    </dl>
+  </div>
+</section>
+<footer>
+  <div class="wrap">
+    <p>Granny's, Maenam, Koh Samui.</p>
+    <p>Photos from Granny's own Google Maps uploads. Prices from their menu and drinks board; details from Google Maps, November 2026.</p>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Quick actions">
+  <a href="tel:+66631190970">Call</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Granny%27s+Maenam+Koh+Samui">Directions</a>
+  <a href="#menu">Menu</a>
+</nav>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <g id="lace" fill="none" stroke="oklch(0.97 0.012 85)" stroke-width="1.6">
+      <circle cx="100" cy="100" r="96" stroke-dasharray="3 4"/>
+      <circle cx="100" cy="100" r="88"/>
+      <g id="petals">
+        <path d="M100 4 q10 10 0 22 q-10 -12 0 -22z"/><path d="M100 4 q10 10 0 22 q-10 -12 0 -22z" transform="rotate(20 100 100)"/><path d="M100 4 q10 10 0 22 q-10 -12 0 -22z" transform="rotate(40 100 100)"/><path d="M100 4 q10 10 0 22 q-10 -12 0 -22z" transform="rotate(60 100 100)"/><path d="M100 4 q10 10 0 22 q-10 -12 0 -22z" transform="rotate(80 100 100)"/><path d="M100 4 q10 10 0 22 q-10 -12 0 -22z" transform="rotate(100 100 100)"/><path d="M100 4 q10 10 0 22 q-10 -12 0 -22z" transform="rotate(120 100 100)"/><path d="M100 4 q10 10 0 22 q-10 -12 0 -22z" transform="rotate(140 100 100)"/><path d="M100 4 q10 10 0 22 q-10 -12 0 -22z" transform="rotate(160 100 100)"/>
+      </g>
+      <use href="#petals" transform="rotate(180 100 100)"/>
+      <circle cx="100" cy="100" r="76" stroke-dasharray="1 5" stroke-width="3" stroke-linecap="round"/>
+    </g>
+  </defs>
+</svg>
+<script>
+document.documentElement.classList.add('js');
+(function(){
+  var M={
+    sweet:[['Syrniki','200','Cottage cheese pancakes, blueberries, condensed milk, sour cream.',1],['Oatmeal porridge','140','Oat and coconut milk, banana, mango, blueberries.',1],['Chia pudding','140','Chia seeds, coconut milk, seasonal fruit.',1]],
+    eggs:[['Salmon and avocado breakfast','240','Two scrambled eggs, salted salmon, avocado, green salad, homemade bread.'],['Bacon and pâté breakfast','220','Two scrambled eggs, bacon, chicken liver pâté, green salad, homemade bread.'],['Shakshuka','220','Tomatoes, bell peppers, two runny eggs, cream cheese, homemade bread.',1],['Eggs benedict with salmon','260','Croissant, salted salmon, avocado, poached egg, hollandaise.'],['Eggs benedict with bacon','240','Croissant, bacon, poached egg, Caesar sauce, hollandaise.'],['Omelette with tomatoes and mushrooms','180','Two-egg folded omelette, mozzarella, homemade bread.',1]],
+    toast:[['Salmon toast','180','Salted salmon, cream cheese, cucumber, salad, poached egg.'],['Bacon and cheese toast','180','Bacon, Caesar sauce, pickled cucumbers, cheese, poached egg.'],['Avocado toast','160','Mashed avocado, cream cheese, poached egg, salad, sesame.',1],['Chicken liver pâté toast','160','Chicken liver pâté, fig jam, pistachios.'],['Sun-dried tomatoes toast','160','Tomatoes, olives, cream cheese, pesto, oregano, capers.',1],['Pork lard toast','140','Pork lard, paprika, green onion.']],
+    crepe:[['Plain crêpes','160','Three crêpes, condensed milk, sour cream.',1],['Crêpes with beef','200','Two beef crêpes, onions, sour cream.'],['Crêpes with chicken','180','Two chicken crêpes, mushrooms, onions, sour cream.'],['Crêpes with salmon','220','Two salmon crêpes, cream cheese, dill, sour cream.'],['Chicken liver crêpes','220','Two chicken liver crêpes, onions, carrots, sour cream.']],
+    salad:[['Mimosa','180','Potatoes, carrots, mayonnaise, tuna, boiled eggs, rye bread.'],['Greek salad','180','Bell peppers, tomatoes, black olives, sun-dried tomatoes, feta, onions.',1],['Olivier, Russian salad','180','Sausage, potatoes, carrots, pickles, green peas, eggs, mayonnaise, rye bread.'],['Caesar salad','220','Chicken or shrimp, cherry tomatoes, quail eggs, Parmesan, breadcrumbs.'],['Green salad','200','Lettuce, cucumber, mango, avocado, sesame sauce, pumpkin and sunflower seeds.',1]]
+  };
+  var box=document.getElementById('cards'),tabs=document.querySelectorAll('.dividers button');
+  function show(k){box.innerHTML='';M[k].forEach(function(r,i){var c=document.createElement('article');c.className='card';c.style.animationDelay=(i*60)+'ms';
+    var h=document.createElement('h3'),a=document.createElement('span'),b=document.createElement('span');a.textContent=r[0];if(r[3]){var v=document.createElement('span');v.className='v';v.textContent='v';a.appendChild(document.createTextNode(' '));a.appendChild(v)}b.textContent=r[1];h.appendChild(a);h.appendChild(b);
+    var p=document.createElement('p');p.textContent=r[2];c.appendChild(h);c.appendChild(p);box.appendChild(c)});
+    tabs.forEach(function(t){t.setAttribute('aria-selected',t.getAttribute('data-t')===k?'true':'false')});}
+  tabs.forEach(function(t){t.addEventListener('click',function(){show(t.getAttribute('data-t'))})});
+  show('sweet');
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var ds=document.querySelectorAll('.doily svg'),tk=false;
+  function spin(){tk=false;var y=window.scrollY;ds.forEach(function(s,i){s.style.setProperty('--spin',((i%2?-1:1)*y*0.08).toFixed(1)+'deg')})}
+  window.addEventListener('scroll',function(){if(!tk){tk=true;requestAnimationFrame(spin)}},{passive:true});spin();
+})();
+</script>
+<script src="th.js"></script>
+<script src="../i18n.js"></script>
+</body>
+</html>
